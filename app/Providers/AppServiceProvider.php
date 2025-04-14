@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\AIRID_Departement;
+use App\Models\Departement;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -12,6 +14,8 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         //
+
+       
     }
 
     /**
@@ -19,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        
+         // $departements_menu = [];
+        $departements_menu = AIRID_Departement::where("afficher_menu",1)->get();
+        view()->share("departements_menu",$departements_menu);
     }
 }
