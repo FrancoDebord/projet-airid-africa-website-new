@@ -41,6 +41,23 @@
 
                         <div class="post-body">
 
+                            <div class="entry-header">
+                                <div class="post-meta">
+                                  <span class="post-author">
+                                    <i class="far fa-user"></i><a href="#"> AIRID</a>
+                                  </span>
+                                  <span class="post-cat">
+                                    <i class="far fa-folder-open"></i><a href="#"> Project</a>
+                                  </span>
+                                  <span class="post-meta-date"><i class="far fa-calendar"></i> {{ date("F j, Y",strtotime( $projet->date_debut_project)) }}</span>
+                                  {{-- <span class="post-comment"><i class="far fa-comment"></i> 03<a href="#"
+                                      class="comments-link">Comments</a></span> --}}
+                                </div>
+                                <h2 class="entry-title">
+                                    {{ $projet->long_title_project }}
+                                </h2>
+                              </div><!-- header end -->
+                  
 
                             <div class="entry-content">
                                 <p> {!! $projet->description_riche !!}</p>
@@ -128,7 +145,7 @@
         </div><!-- Conatiner end -->
 
         <div class="container">
-            <h3>Key Personnel</h3>
+            <h3>Key Personnel associated</h3>
             <div class="row">
 
                 @forelse ($projet->personnelsTeam??[] as $personnelsTeam)
@@ -143,16 +160,13 @@
                             </div>
                             <div class="d-flex">
                                 <div class="ts-service-box-img">
-                                    {{-- <img loading="lazy"
-                                        src="{{ asset('storage/assets/sub_departements/' . $personnelsTeam->photo_personnelsTeam) }}"
-                                        alt="service-icon"> --}}
+                                   
                                 </div>
                                 <div class="ts-service-info">
                                     <h3 class="service-box-title">{{ $personnelsTeam->titre." ".$personnelsTeam->prenom_personnel." ".$personnelsTeam->nom_personnel }}
                                     </h3>
                                     <p>{{ $personnelsTeam->posteOccupe->intitule_poste }}</p>
-                                    {{-- <a class="learn-more d-inline-block" href="#" aria-label="service-details"><i
-                                            class="fa fa-caret-right"></i> Learn more</a> --}}
+                                  
                                 </div>
                             </div>
                         </div><!-- Service1 end -->

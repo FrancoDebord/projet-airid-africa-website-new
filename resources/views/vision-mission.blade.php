@@ -109,4 +109,6 @@ style="background-image:url({{ asset('storage/assets_vendor/images/banner/banner
     </div>
 </section>
 
+@include('partials.partenaires')
+
 @endsection

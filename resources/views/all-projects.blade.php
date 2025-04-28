@@ -111,9 +111,6 @@
             </div>
             <!--/ Content row end -->
 
-            <div class="general-btn text-center mt-4">
-                <a class="btn btn-primary" href="news-left-sidebar.html">See All Projects</a>
-            </div>
 
         </div>
         <!--/ Container end -->

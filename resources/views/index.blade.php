@@ -1,23 +1,3 @@
-<!--
- // WEBSITE: https://themefisher.com
- // TWITTER: https://twitter.com/themefisher
- // FACEBOOK: https://www.facebook.com/themefisher
- // GITHUB: https://github.com/themefisher/
--->
-
-<!--
-THEME: Constra - Construction Html5 Template
-VERSION: 1.0.0
-AUTHOR: Themefisher
-
-HOMEPAGE: https://themefisher.com/products/constra-construction-template/
-DEMO: https://demo.themefisher.com/constra/
-GITHUB: https://github.com/themefisher/Constra-Bootstrap-Construction-Template
-
-WEBSITE: https://themefisher.com
-TWITTER: https://twitter.com/themefisher
-FACEBOOK: https://www.facebook.com/themefisher
--->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -138,7 +118,7 @@ FACEBOOK: https://www.facebook.com/themefisher
                             <h3 class="widget-title">Get in touch with us</h3>
                             <div class="working-hours">
 
-                                Akpaka Donaten, Land 6544, House HONKPEHEDJI Noutai Rodrigue, Cotonou, Benin
+                                Secrétariat AIRID, Maison 115, Rue 1543 Donaten, AKPAKPA, (Rue SOBEPEC, 4e Von à gauche, dernier immeuble à gauche), Cotonou, Benin
                                 <br><br> Email :  <span class="text-right"> <a href="mailto:info@airid-africa.com" >info@airid-africa.com</a> </span>
                                 <br> Phone number: <span class="text-right"> <a href="tel:(+229) 01 67 16 44 99" > (+229) 01 67 16 44 99</a> </span>
                             </div>
@@ -147,11 +127,11 @@ FACEBOOK: https://www.facebook.com/themefisher
                         <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
                             <h3 class="widget-title">Quick  links</h3>
                             <ul class="list-arrow">
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">All our projects</a></li>
+                                <li><a href="{{ route("aboutPage") }}">About us</a></li>
+                                <li><a href="{{ route("allProjectsPage") }}">All our projects</a></li>
                                 <li><a href="#">News</a></li>
                                 <li><a href="{{ route("allServicesPage") }}">All departments</a></li>
-                                <li><a href="#">Scientific Publications</a></li>
+                                <li><a href="{{ route("allPublicationsPage") }}">Scientific Publications</a></li>
                             </ul>
                         </div><!-- Col end -->
                     </div><!-- Row end -->

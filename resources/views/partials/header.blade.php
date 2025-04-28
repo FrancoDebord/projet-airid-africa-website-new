@@ -9,7 +9,7 @@
                         </a>
                     </div><!-- logo end -->
 
-                    <div class="col-lg-9 header-right">
+                    <div class="col-lg-9 header-right d-none d-sm-block">
                         <ul class="top-info-box">
                             <li>
                                 <div class="info-box">
@@ -94,11 +94,12 @@
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Medias <i
                                             class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">Publications</a></li>
+                                        <li><a href="{{ route("allPublicationsPage") }}">Publications</a></li>
                                         <li><a href="#">News</a></li>
-                                        <li><a href="#">Our Gallery</a></li>
+                                        <li><a href="{{ route('photosPage') }}">Our Gallery</a></li>
+                                        <li><a href="{{ route("videoPage") }}">Video library</a></li>
                                         <li class="{{ $menu =="all-projects"?"active":"" }}"><a href="{{ route("allProjectsPage") }}">Projects</a></li>
-                                        <li><a href="https://onlinetraining.airid-africa.com">Online Training
+                                        <li><a href="https://onlinetraining.airid-africa.com" target="_blank">Online Training
                                                 Platform of AIRID</a></li>
                                     </ul>
                                 </li>

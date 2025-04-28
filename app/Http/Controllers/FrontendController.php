@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\AIRID_Departement;
 use App\Models\AIRID_Personnel;
+use App\Models\AIRID_Photo;
 use App\Models\AIRID_Project;
 use App\Models\AIRID_ProjetCategory;
+use App\Models\AIRID_Publication;
 use App\Models\AIRID_Sub_Departement;
+use App\Models\AIRID_Video;
 use App\Models\Departement;
 use Illuminate\Http\Request;
 
@@ -74,7 +77,8 @@ class FrontendController extends Controller
     function MissionVisionPage()
     {
 
-        return view("vision-mission");
+        $all_departements = AIRID_Departement::all();
+        return view("vision-mission",compact("all_departements"));
     }
 
     function staffAirid()
@@ -125,5 +129,56 @@ class FrontendController extends Controller
         } catch (\Throwable $th) {
             //throw $th;
         }
+    }
+
+    function allPublicationsPage(){
+
+        $all_publications = AIRID_Publication::orderBy("date_publication","desc")->simplePaginate(6);
+        return view("all-publications",compact("all_publications"));
+    }
+
+    function detailPublication($id, $slug, Request $request){
+
+        try {
+
+            $publication = AIRID_Publication::findOrFail($id);
+
+            $others_publications = AIRID_Publication::where("id","<>",$id)
+            ->orderBy("date_publication","desc")
+            ->simplePaginate(10);
+
+        return view("detail-publication",compact("publication","others_publications"));
+            
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
+
+
+    function videoPage(Request $request){
+
+        $all_videos = AIRID_Video::orderBy("date_video","desc")->get();
+
+     
+
+        return view("videos",compact("all_videos"));
+    }
+
+    function photosPage(Request $request){
+
+        $all_photos = AIRID_Photo::orderBy("date_event","desc")->get();
+        $all_photos_categories = AIRID_Photo::select("categorie_photo")->distinct()->get();
+
+        return view("photos",compact("all_photos","all_photos_categories"));
+    }
+
+
+    function photoDetailPage($tag, Request $request){
+
+        $all_photos = AIRID_Photo::orderBy("date_event","desc")
+        ->where("tag",$tag)
+        ->get();
+
+        return view("detail-photo",compact("all_photos"));
     }
 }

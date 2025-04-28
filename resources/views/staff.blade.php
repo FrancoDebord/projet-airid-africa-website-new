@@ -29,7 +29,7 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-12">
-                    <h3 class="section-sub-title">Our Leaderships</h3>
+                    <h3 class="section-sub-title">Our Leadership</h3>
                 </div>
             </div>
             <!--/ Title row end -->
