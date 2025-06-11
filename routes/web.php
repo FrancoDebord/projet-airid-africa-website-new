@@ -18,3 +18,13 @@ Route::get('/all-publications/{id}-{slug}"', [FrontendController::class,"detailP
 Route::get('/our-videos', [FrontendController::class,"videoPage"])->name("videoPage");
 Route::get('/our-photos', [FrontendController::class,"photosPage"])->name("photosPage");
 Route::get('/our-photos/detail/{tag}', [FrontendController::class,"photoDetailPage"])->name("photoDetailPage");
+Route::get('/our-partners', [FrontendController::class,"partnersPage"])->name("partnersPage");
+Route::get('/our-labs', [FrontendController::class,"bioAssayLab"])->name("bioAssayLab");
+Route::get('/molecular-lab', [FrontendController::class,"molecularLabPage"])->name("molecularLabPage");
+Route::get('/analytical-chemistry-lab', [FrontendController::class,"analyticalCheminstryLabPage"])->name("analyticalCheminstryLabPage");
+Route::get('/field-station', [FrontendController::class,"fieldStationPage"])->name("fieldStationPage");
+Route::get('/our-insectary', [FrontendController::class,"insectaryPage"])->name("insectaryPage");
+Route::get('/our-animal-house', [FrontendController::class,"animalHousePage"])->name("animalHousePage");
+Route::get('/our-experimental-huts', [FrontendController::class,"experimentalHutStationPage"])->name("experimentalHutStationPage");
+Route::get('/contact', [FrontendController::class,"contactPage"])->name("contactPage");
+Route::post('/post-contact', [FrontendController::class,"postContactMessage"])->name("postContactMessage");

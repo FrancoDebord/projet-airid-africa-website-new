@@ -1,4 +1,4 @@
-<section class="content">
+<section class="contents">
     <div class="container">
       <div class="row">
           <div class="col-lg-12 mt-5 mt-lg-0">
@@ -44,7 +44,7 @@
   
                 <div class="col-sm-4 col-6 col-md-3">
                   <figure class="clients-logo">
-                      <a href="#!"><img loading="lazy" class="img-fluid" src="{{ asset("storage/assets/logo/pam.png")}}" alt="clients-logo" /></a>
+                      <a href="#!"><img loading="lazy" class="img-fluid" src="{{ asset("storage/assets/logo/PAMVERC-LOGO.png")}}" alt="clients-logo" /></a>
                   </figure>
                 </div><!-- Client 6 end -->
                 <div class="col-sm-4 col-6 col-md-3">

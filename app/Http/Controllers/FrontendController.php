@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AIRID_Contact;
 use App\Models\AIRID_Departement;
 use App\Models\AIRID_Personnel;
 use App\Models\AIRID_Photo;
@@ -180,5 +181,62 @@ class FrontendController extends Controller
         ->get();
 
         return view("detail-photo",compact("all_photos"));
+    }
+
+    function partnersPage(Request $request){
+
+        return view("partenaires-page");
+    }
+
+
+    function bioAssayLab(Request $request){
+
+        return view("bioassay-lab-page");
+    }
+    function molecularLabPage(Request $request){
+
+        return view("molecular-lab-page");
+    }
+
+    function analyticalCheminstryLabPage(Request $request){
+
+        return view("analytical-chemistry-lab-page");
+    }
+    function fieldStationPage(Request $request){
+
+        return view("filed-station-page");
+    }
+    function insectaryPage(Request $request){
+
+        return view("insectary-page");
+    }
+    function animalHousePage(Request $request){
+
+        return view("animal-house-page");
+    }
+
+    function experimentalHutStationPage(Request $request){
+
+        return view("experimental-hut-station-page");
+    }
+    function contactPage(Request $request){
+
+        return view("contact");
+    }
+
+    function postContactMessage(Request $request){
+
+        $rules = [
+            "full_name"=>"required",
+            "adresse_mail"=>"required|email",
+            "subject"=>"required",
+            "detailed_message"=>"required",
+        ];
+
+        $request->validate($rules);
+
+        $create = AIRID_Contact::create($request->all());
+
+        return redirect()->route("contactPage")->with("message","Contact message successfully sent. We'll get back to you via your mail address.");
     }
 }

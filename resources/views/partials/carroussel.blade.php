@@ -1,5 +1,79 @@
 <div class="banner-carousel banner-carousel-1 mb-0">
-    <div class="banner-carousel-item" style="background-image:url({{ asset("storage/assets/images/slider/Image_Moustique_1.jpeg")}})">
+    {{-- <div class="banner-carousel-item">
+        <!-- The video -->
+        <video autoplay muted loop id="myVideo">
+            <source src="{{ asset('storage/assets/video/video_banniere_airid.mp4') }}" type="video/mp4">
+        </video>
+
+        <!-- Optional: some overlay text to describe the video -->
+        <div class="content">
+            <h1>Heading</h1>
+            <p>Lorem ipsum...</p>
+            <!-- Use a button to pause/play the video with JavaScript -->
+            <button id="myBtn" onclick="myFunction()">Pause</button>
+        </div>
+
+    </div> --}}
+
+
+    <div class="banner-carousel-item"
+        style="background-image:url({{ asset('storage/assets/images/slider/IMG_5233.jpg') }})">
+        <div class="slider-content">
+            <div class="container h-100">
+                <div class="row align-items-center h-100">
+                    <div class="col-md-12 text-center">
+                        <h2 class="slide-title bg-danger" data-animation-in="slideInLeft">African Institute for Research in </h2>
+                        <h3 class="slide-sub-title bg-warning" data-animation-in="slideInRight">Infectious Diseases
+                        </h3>
+                        <p data-animation-in="slideInLeft" data-duration-in="1.2">
+                            <a href="{{ route('allServicesPage') }}" class="slider btn btn-primary">Our Services</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="banner-carousel-item"
+        style="background-image:url({{ asset('storage/assets/images/slider/IMG_1783.jpg') }})">
+        <div class="slider-content">
+            <div class="container h-100">
+                <div class="row align-items-center h-100">
+                    <div class="col-md-12 text-center">
+                        <h2 class="slide-title bg-danger" data-animation-in="slideInLeft">African Institute for Research in </h2>
+                        <h3 class="slide-sub-title bg-warning" data-animation-in="slideInRight">Infectious Diseases
+                        </h3>
+                        <p data-animation-in="slideInLeft" data-duration-in="1.2">
+                            <a href="{{ route('allServicesPage') }}" class="slider btn btn-primary">Our Services</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- <div class="banner-carousel-item"
+        style="background-image:url({{ asset('storage/assets/images/slider/IMG_1569.jpg') }})">
+        <div class="slider-content">
+            <div class="container h-100">
+                <div class="row align-items-center h-100">
+                    <div class="col-md-12 text-center">
+                        <h2 class="slide-title " data-animation-in="slideInLeft">African Institute for Research in </h2>
+                        <h3 class="slide-sub-title" data-animation-in="slideInRight">Infectious Diseases
+                        </h3>
+                        <p data-animation-in="slideInLeft" data-duration-in="1.2">
+                            <a href="{{ route('allServicesPage') }}" class="slider btn btn-primary">Our Services</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+
+
+
+    <div class="banner-carousel-item"
+        style="background-image:url({{ asset('storage/assets/images/slider/Image_Moustique_1.jpeg') }})">
         <div class="slider-content">
             <div class="container h-100">
                 <div class="row align-items-center h-100">
@@ -8,8 +82,7 @@
                         <h3 class="slide-sub-title" data-animation-in="slideInRight">Infectious Diseases
                         </h3>
                         <p data-animation-in="slideInLeft" data-duration-in="1.2">
-                            <a href="{{ route("allServicesPage") }}" class="slider btn btn-primary">Our Services</a>
-                            {{-- <a href="contact.html" class="slider btn btn-primary border">Contact Now</a> --}}
+                            <a href="{{ route('allServicesPage') }}" class="slider btn btn-primary">Our Services</a>
                         </p>
                     </div>
                 </div>
@@ -34,20 +107,16 @@
         </div>
     </div> --}}
 
-    <div class="banner-carousel-item" style="background-image:url({{ asset("storage/assets/images/slider/image.jpg")}})">
+    <div class="banner-carousel-item"
+        style="background-image:url({{ asset('storage/assets/images/slider/image.jpg') }})">
         <div class="slider-content text-right">
             <div class="container h-100">
                 <div class="row align-items-center h-100">
                     <div class="col-md-12">
-                        {{-- <h2 class="slide-title" data-animation-in="slideInDown">Meet Our Engineers</h2> --}}
                         <h3 class="slide-sub-title" data-animation-in="fadeIn">Testing Equipment</h3>
-                        {{-- <p class="slider-description lead" data-animation-in="slideInRight">We will deal with
-                            your failure that determines how you achieve success.</p> --}}
                         <div data-animation-in="slideInLeft">
-                            <a href="{{ route("allServicesPage") }}" class="slider btn btn-primary"
+                            <a href="{{ route('allServicesPage') }}" class="slider btn btn-primary"
                                 aria-label="contact-with-us">Our services</a>
-                            {{-- <a href="about.html" class="slider btn btn-primary border"
-                                aria-label="learn-more-about-us">Learn more</a> --}}
                         </div>
                     </div>
                 </div>

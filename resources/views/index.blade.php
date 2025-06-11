@@ -21,7 +21,7 @@
 
     <!-- Favicon
 ================================================== -->
-    <link rel="icon" type="image/png" href="{{ asset('storage/assets/logo/airid.png') }}">
+    <link rel="icon" type="image/png" sizes="196x196" href="{{ asset('storage/assets/logo/airid.png') }}">
 
     <!-- CSS
 ================================================== -->
@@ -39,13 +39,15 @@
     <!-- Template styles-->
     <link rel="stylesheet" href="{{ asset('storage/assets_vendor/css/style.css') }}">
 
+    @yield('css')
+
 </head>
 
 <body>
     <div class="body-inner">
 
         <div id="top-bar" class="top-bar">
-            <div class="container">
+            {{-- <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-md-8">
                         <ul class="top-info text-center text-md-left">
@@ -77,7 +79,7 @@
                     <!--/ Top social end -->
                 </div>
                 <!--/ Content row end -->
-            </div>
+            </div> --}}
             <!--/ Container end -->
         </div>
         <!--/ Topbar end -->
@@ -198,6 +200,8 @@
 
         <!-- Template custom -->
         <script src="{{ asset("storage/assets_vendor/js/script.js")}}"></script>
+
+        @yield('js')
 
     </div><!-- Body inner end -->
 </body>
