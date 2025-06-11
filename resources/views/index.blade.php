@@ -158,9 +158,9 @@
                         <div class="col-md-6">
                             <div class="footer-menu text-center text-md-right">
                                 <ul class="list-unstyled">
-                                    <li><a href="#">Contact Us</a></li>
-                                    <li><a href="#">Our Vision & Mission</a></li>
-                                    <li><a href="#">Our Staff</a></li>
+                                    <li><a href="{{ route("contactPage") }}">Contact Us</a></li>
+                                    <li><a href="{{ route("aboutPage") }}">Our Vision & Mission</a></li>
+                                    <li><a href="{{ route("staffAirid") }}">Our Staff</a></li>
                                 </ul>
                             </div>
                         </div>
