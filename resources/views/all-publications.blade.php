@@ -29,7 +29,35 @@
         <div class="container">
             <div class="row">
 
-                @forelse ($all_publications as $publication)
+                <table class="table table-striped table-bordered table-condensed">
+
+                    <tr>
+                        <th>Year</th>
+                        <th>Title</th>
+                        <th>Action</th>
+                    </tr>
+
+                    @forelse ($all_publications as $publication)
+                        <tr>
+                            <td>{{ $publication->annee_publication }}</td>
+                            <td>
+                                <a href="{{ $publication->url_publication }}" 
+                                    target="_blank" class="publication-title">{{ $publication->titre_publication }}</a>
+                                <br> <br> <br>  <strong>Authors : </strong> {{ $publication->auteurs }}
+                            </td>
+                            <td>
+                                <a href="{{ asset('storage/assets/publications/pdf/' . $publication->fichier_publication) }}"
+                                    target="_blank" class="btn btn-primary">Download</a>
+                            </td>
+                        </tr>
+                    @empty
+                        <div class="col-12">
+                            <p class="alert alert-info text-center p-3">
+                                <i class="fa fa-exclamation-circle">&nbsp;</i> No departments yet registered.
+                            </p>
+                    @endforelse
+                </table>
+                {{-- @forelse ($all_publications as $publication)
                     <div class="col-lg-4 col-md-6 mb-5  ">
                         <div class="ts-service-box ">
                             <div class="ts-service-image-wrapper">
@@ -62,9 +90,9 @@
                             <i class="fa fa-exclamation-circle">&nbsp;</i> No departments yet registered.
                         </p>
                     </div>
-                @endforelse
+                @endforelse --}}
 
-                
+
 
             </div>
             <div class="row justify-content-center">

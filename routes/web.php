@@ -28,3 +28,5 @@ Route::get('/our-animal-house', [FrontendController::class,"animalHousePage"])->
 Route::get('/our-experimental-huts', [FrontendController::class,"experimentalHutStationPage"])->name("experimentalHutStationPage");
 Route::get('/contact', [FrontendController::class,"contactPage"])->name("contactPage");
 Route::post('/post-contact', [FrontendController::class,"postContactMessage"])->name("postContactMessage");
+Route::get('/crec-lshtm-project', [FrontendController::class,"pageCRECLSHTM"])->name("pageCRECLSHTM");
+Route::get('/vacancies-at-airid', [FrontendController::class,"vacanciesPage"])->name("vacanciesPage");

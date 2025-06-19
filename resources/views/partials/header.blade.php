@@ -4,13 +4,13 @@
             <div class="logo-area">
                 <div class="row align-items-center">
                     <div class="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
-                        <a class="d-block" href="{{ route("index") }}">
+                        <a class="d-block" href="{{ route('index') }}">
                             <img loading="lazy" src="{{ asset('storage/assets/logo/airid.png') }}" alt="AIRID">
                         </a>
                     </div><!-- logo end -->
 
                     <div class="col-lg-9 header-right d-none d-sm-block">
-                        <ul class="top-info-box">
+                        {{-- <ul class="top-info-box">
                             <li>
                                 <div class="info-box">
                                     <div class="info-box-content">
@@ -34,7 +34,7 @@
                                 </div>
                             </li>
 
-                        </ul><!-- Ul end -->
+                        </ul><!-- Ul end --> --}}
                     </div><!-- header right end -->
                 </div><!-- logo area end -->
 
@@ -60,17 +60,23 @@
                         <div id="navbar-collapse" class="collapse navbar-collapse">
                             <ul class="nav navbar-nav mr-auto">
 
-                                <li class="nav-item {{ ($menu == "defaut" ?"active":"") }}"><a class="nav-link" href="{{ route("index") }}">Home</a></li>
+                                <li class="nav-item {{ $menu == 'defaut' ? 'active' : '' }}"><a class="nav-link"
+                                        href="{{ route('index') }}">Home</a></li>
 
-                                <li class="nav-item dropdown {{ ($menu =="about-us" || $menu =="mission-vision" || $menu == "staff" ) ? "active":""}}">
-                                    <a href="{{ route("index") }}" class="nav-link dropdown-toggle" data-toggle="dropdown">About AIRID <i
-                                            class="fa fa-angle-down"></i></a>
+                                <li
+                                    class="nav-item dropdown {{ $menu == 'about-us' || $menu == 'mission-vision' || $menu == 'staff' ? 'active' : '' }}">
+                                    <a href="{{ route('index') }}" class="nav-link dropdown-toggle"
+                                        data-toggle="dropdown">About AIRID <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown-menu" role="menu">
-                                        <li class="{{ $menu =="default"?"active":"" }}"><a href="{{ route("index") }}">Director's Message</a></li>
-                                        <li class="{{ $menu =="about-us"?"active":"" }}"><a href="{{ route("aboutPage") }}">Who we are </a></li>
+                                        <li class="{{ $menu == 'default' ? 'active' : '' }}"><a
+                                                href="{{ route('index') }}">Director's Message</a></li>
+                                        <li class="{{ $menu == 'about-us' ? 'active' : '' }}"><a
+                                                href="{{ route('aboutPage') }}">Who we are </a></li>
                                         {{-- <li class="{{ $menu =="mission-vision"?"active":"" }}"><a href="{{ route("MissionVisionPage") }}">Vision & Mission</a></li> --}}
-                                        <li class="{{ $menu =="mission-vision"?"active":"" }}"><a href="{{ route("allServicesPage") }}">Departments</a></li>
-                                        <li {{ $menu =="staff"?"active":"" }}><a href="{{ route("staffAirid") }}">Our Team</a></li>
+                                        <li class="{{ $menu == 'mission-vision' ? 'active' : '' }}"><a
+                                                href="{{ route('allServicesPage') }}">Departments</a></li>
+                                        <li {{ $menu == 'staff' ? 'active' : '' }}><a href="{{ route('staffAirid') }}">Our
+                                                Team</a></li>
                                     </ul>
                                 </li>
 
@@ -99,12 +105,13 @@
                                 @endforelse --}}
 
                                 <li class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Our Work <i
-                                            class="fa fa-angle-down"></i></a>
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Our Work
+                                        <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown-menu" role="menu">
-                                        <li><a href="{{ route("allProjectsPage") }}">Research Projects</a></li>
+                                        <li><a href="{{ route('allProjectsPage') }}">Research Projects</a></li>
                                         <li><a href="#">Trainings</a></li>
                                         <li><a href="#">Services</a></li>
+                                        <li><a href="{{ route('partnersPage') }}">Partners</a></li>
                                     </ul>
                                 </li>
 
@@ -112,35 +119,44 @@
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Medias <i
                                             class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown-menu" role="menu">
-                                        <li><a href="{{ route("allPublicationsPage") }}">Publications</a></li>
+                                        <li><a href="{{ route('allPublicationsPage') }}">Publications</a></li>
                                         <li><a href="#">News</a></li>
                                         <li><a href="#">Newsletter</a></li>
                                         <li><a href="#">Events</a></li>
                                         <li><a href="#">Blog</a></li>
                                         <li><a href="{{ route('photosPage') }}">Our Gallery</a></li>
-                                        <li><a href="{{ route("videoPage") }}">Video library</a></li>
-                                        <li><a href="https://onlinetraining.airid-africa.com" target="_blank">Online Training
+                                        <li><a href="{{ route('videoPage') }}">Video library</a></li>
+                                        <li><a href="https://onlinetraining.airid-africa.com" target="_blank">Online
+                                                Training
                                                 Platform of AIRID</a></li>
                                     </ul>
                                 </li>
 
                                 <li class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Facilities <i
-                                            class="fa fa-angle-down"></i></a>
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Facilities
+                                        <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown-menu" role="menu">
-                                        <li><a href="{{ route("bioAssayLab") }}">Bioassay Labs</a></li>
-                                        <li><a href="{{ route("molecularLabPage") }}">Molecular Lab</a></li>
-                                        <li><a href="{{ route("analyticalCheminstryLabPage") }}">Analytical and Chemistry Lab</a></li>
-                                        <li><a href="{{ route("fieldStationPage") }}">Field Station</a></li>
-                                        <li><a href="{{ route("insectaryPage") }}">Insectaries</a></li>
-                                        <li><a href="{{ route("animalHousePage") }}">Animal House</a></li>
-                                        <li><a href="{{ route("experimentalHutStationPage") }}">Experimental Huts</a></li>
+                                        <li><a href="{{ route('bioAssayLab') }}">Bioassay Labs</a></li>
+                                        <li><a href="{{ route('molecularLabPage') }}">Molecular Lab</a></li>
+                                        <li><a href="{{ route('analyticalCheminstryLabPage') }}">Analytical and
+                                                Chemistry Lab</a></li>
+                                        <li><a href="{{ route('fieldStationPage') }}">Field Station</a></li>
+                                        <li><a href="{{ route('insectaryPage') }}">Insectaries</a></li>
+                                        <li><a href="{{ route('animalHousePage') }}">Animal House</a></li>
+                                        <li><a href="{{ route('experimentalHutStationPage') }}">Experimental Huts</a>
+                                        </li>
                                     </ul>
                                 </li>
 
-                                <li class="nav-item"><a class="nav-link" href="{{ route("partnersPage") }}">Partners</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route("contactPage") }}">Contact</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('contactPage') }}">Contact</a>
+                                </li>
                             </ul>
+
+                            <div class="nav-item link-crec-vacancies"><a class="nav-link" href="{{ route("vacanciesPage") }}">Vacancies </a>
+                            </div>
+                            <div class="nav-item link-crec"><a class="nav-link" href="{{ route("pageCRECLSHTM") }}">The Project CREC/LSHTM</a>
+                            </div>
+
                         </div>
                     </nav>
                 </div>
@@ -148,9 +164,9 @@
             </div>
             <!--/ Row end -->
 
-            <div class="nav-search">
+            {{-- <div class="nav-search">
                 <span id="search"><i class="fa fa-search"></i></span>
-            </div><!-- Search end -->
+            </div><!-- Search end --> --}}
 
             <div class="search-block" style="display: none;">
                 <label for="search-field" class="w-100 mb-0">

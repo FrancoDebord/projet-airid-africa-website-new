@@ -1,12 +1,39 @@
 <section class="contents">
     <div class="container">
-      <div class="row">
-          <div class="col-lg-12 mt-5 mt-lg-0">
-  
-            <h3 class="column-title">Our partners</h3>
-  
-            <div class="row all-clients">
-                <div class="col-sm-4 col-6 col-md-3">
+        <div class="row">
+            <div class="col-lg-12 mt-5 mt-lg-0">
+
+                <h3 class="column-title">Our partners</h3>
+
+                <div class="row all-clients">
+
+                    @forelse ($all_partenaires as $partenaire)
+                        <div class="col-sm-4 col-6 col-md-3 ">
+
+                            <div class="row" style="height: 230px">
+                                <div class="col-12">
+                                    <figure class="clients-logo">
+                                        <a href="{{ $partenaire->site_web }}" target="_blank">
+                                            <img loading="lazy" class="img-fluid"
+                                                src="{{ asset('storage/assets/logo/' . $partenaire->logo_partenaire) }}"
+                                                alt="{{ $partenaire->nom_partenaire }}" /></a>
+                                    </figure>
+                                </div>
+
+                                <div class="col-12">
+                                    <h5 class="h5_nom_partenaire">
+                                        <a href="{{ $partenaire->site_web }}"
+                                            target="_blank">{{ $partenaire->nom_partenaire }}</a>
+                                    </h5>
+                                </div>
+                            </div>
+
+                        </div><!-- Client 1 end -->
+                    @empty
+                    @endforelse
+
+
+                    {{-- <div class="col-sm-4 col-6 col-md-3">
                   <figure class="clients-logo">
                       <a href="#!"><img loading="lazy" class="img-fluid" src="{{ asset("storage/assets/logo/ivcc.png")}}" alt="clients-logo" /></a>
                   </figure>
@@ -66,14 +93,14 @@
                   <figure class="clients-logo">
                       <a href="#!"><img loading="lazy" class="img-fluid" src="{{ asset("storage/assets/logo/WHO.png")}}" alt="clients-logo" /></a>
                   </figure>
-                </div><!-- Client 6 end -->
-  
-            </div><!-- Clients row end -->
-  
-          </div><!-- Col end -->
-  
-      </div>
-      <!--/ Content row end -->
+                </div><!-- Client 6 end --> --}}
+
+                </div><!-- Clients row end -->
+
+            </div><!-- Col end -->
+
+        </div>
+        <!--/ Content row end -->
     </div>
     <!--/ Container end -->
-  </section><!-- Content end -->
+</section><!-- Content end -->

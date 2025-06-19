@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AIRID_Contact;
 use App\Models\AIRID_Departement;
+use App\Models\AIRID_Partenaire;
 use App\Models\AIRID_Personnel;
 use App\Models\AIRID_Photo;
 use App\Models\AIRID_Project;
@@ -26,8 +27,9 @@ class FrontendController extends Controller
 
         $all_recents_projects = AIRID_Project::orderBy("date_debut_project", "desc")->get();
         $all_projects_categories = AIRID_ProjetCategory::all();
+          $all_partenaires = AIRID_Partenaire::all();
 
-        return view("accueil", compact("all_recents_projects", "all_projects_categories"));
+        return view("accueil", compact("all_recents_projects", "all_projects_categories","all_partenaires"));
     }
 
     /**
@@ -39,7 +41,10 @@ class FrontendController extends Controller
         try {
 
             $departement = AIRID_Departement::findOrFail($id_departement);
-            $others_departements = AIRID_Departement::where("id", "<>", $id_departement)->get();
+            $others_departements = AIRID_Departement::
+            where("afficher_menu", "<>", 0)
+            ->where("id", "<>", $id_departement)
+            ->get();
 
             return view("departements", compact("departement", "others_departements"));
         } catch (\Throwable $th) {
@@ -67,7 +72,7 @@ class FrontendController extends Controller
 
         try {
 
-            $all_departements = AIRID_Departement::all();
+            $all_departements = AIRID_Departement::where("afficher_menu", "<>", 0)->get();
 
             return view("all-departements", compact("all_departements"));
         } catch (\Throwable $th) {
@@ -78,7 +83,7 @@ class FrontendController extends Controller
     function MissionVisionPage()
     {
 
-        $all_departements = AIRID_Departement::all();
+        $all_departements = AIRID_Departement::where("afficher_menu", "<>", 0)->get();
         return view("vision-mission",compact("all_departements"));
     }
 
@@ -106,14 +111,14 @@ class FrontendController extends Controller
 
     function aboutPage(){
 
-        $all_departements = AIRID_Departement::all();
+        $all_departements = AIRID_Departement::where("afficher_menu", "<>", 0)->get();
 
         return view("about",compact("all_departements"));
     }
 
     function allProjectsPage(){
 
-        $all_projects = AIRID_Project::all();
+        $all_projects = AIRID_Project::orderBy("date_debut_project","desc")->simplePaginate(9);
 
         return view("all-projects",compact("all_projects"));
     }
@@ -124,7 +129,9 @@ class FrontendController extends Controller
         try {
 
             $projet = AIRID_Project::findOrFail($id);
-            $others_projects = AIRID_Project::where("id","<>",$id)->get();
+            $others_projects = AIRID_Project::where("id","<>",$id)
+            ->orderBy("date_debut_project","desc")
+            ->get();
 
             return view("project-detail", compact("projet","others_projects"));
         } catch (\Throwable $th) {
@@ -134,7 +141,7 @@ class FrontendController extends Controller
 
     function allPublicationsPage(){
 
-        $all_publications = AIRID_Publication::orderBy("date_publication","desc")->simplePaginate(6);
+        $all_publications = AIRID_Publication::orderBy("date_publication","desc")->simplePaginate(20);
         return view("all-publications",compact("all_publications"));
     }
 
@@ -185,7 +192,9 @@ class FrontendController extends Controller
 
     function partnersPage(Request $request){
 
-        return view("partenaires-page");
+
+        $all_partenaires = AIRID_Partenaire::all();
+        return view("partenaires-page",compact("all_partenaires"));
     }
 
 
@@ -238,5 +247,15 @@ class FrontendController extends Controller
         $create = AIRID_Contact::create($request->all());
 
         return redirect()->route("contactPage")->with("message","Contact message successfully sent. We'll get back to you via your mail address.");
+    }
+
+
+    function pageCRECLSHTM(Request $request){
+
+        return view("crec-lshtm-project");
+    }
+    function vacanciesPage(Request $request){
+
+        return view("vacancies");
     }
 }

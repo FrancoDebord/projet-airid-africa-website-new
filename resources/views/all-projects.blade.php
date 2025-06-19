@@ -54,7 +54,7 @@
                                 <div class="latest-post-meta">
                                     <span class="post-item-date">
                                         <i class="fa fa-clock-o"></i>
-                                        {{ date('F j, Y', strtotime($projet->date_debut_project)) }}
+                                        {{ $projet->date_debut_project ? date('F j, Y', strtotime($projet->date_debut_project)):"Not yet started" }}
                                     </span>
                                 </div>
                             </div>
