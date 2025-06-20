@@ -17,7 +17,7 @@
 
 
     <div class="banner-carousel-item"
-        style="background-image:url({{ asset('storage/assets/images/slider/facility.jpg') }})">
+        style="background-image:url({{ asset('storage/assets/images/slider/facility2.jpg') }})">
         <div class="slider-content">
             <div class="container h-100">
                 <div class="row align-items-center h-100">
@@ -86,7 +86,7 @@
         </div>
     </div>
     <div class="banner-carousel-item"
-        style="background-image:url({{ asset('storage/assets/images/slider/IMG_1420.jpg') }})">
+        style="background-image:url({{ asset('storage/assets/images/slider/ridwane_nadia.png') }})">
         <div class="slider-content">
             <div class="container h-100">
                 <div class="row align-items-center h-100">

@@ -148,14 +148,23 @@
                                     </ul>
                                 </li>
 
+                                 <li class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Working With us
+                                        <i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ route('vacanciesPage') }}">Vacancies</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item"><a class="nav-link" href="{{ route('pageCRECLSHTM') }}">CREC/LSHTM</a>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('contactPage') }}">Contact</a>
                                 </li>
                             </ul>
 
-                            <div class="nav-item link-crec-vacancies"><a class="nav-link" href="{{ route("vacanciesPage") }}">Vacancies </a>
+                            {{-- <div class="nav-item link-crec-vacancies"><a class="nav-link" href="{{ route("vacanciesPage") }}">Vacancies </a>
                             </div>
                             <div class="nav-item link-crec"><a class="nav-link" href="{{ route("pageCRECLSHTM") }}">The Project CREC/LSHTM</a>
-                            </div>
+                            </div> --}}
 
                         </div>
                     </nav>

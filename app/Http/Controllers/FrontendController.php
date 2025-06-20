@@ -167,9 +167,9 @@ class FrontendController extends Controller
 
         $all_videos = AIRID_Video::orderBy("date_video","desc")->get();
 
-     
+     $all_partenaires = AIRID_Partenaire::all();
 
-        return view("videos",compact("all_videos"));
+        return view("videos",compact("all_videos","all_partenaires"));
     }
 
     function photosPage(Request $request){
@@ -177,7 +177,9 @@ class FrontendController extends Controller
         $all_photos = AIRID_Photo::orderBy("date_event","desc")->get();
         $all_photos_categories = AIRID_Photo::select("categorie_photo")->distinct()->get();
 
-        return view("photos",compact("all_photos","all_photos_categories"));
+         $all_partenaires = AIRID_Partenaire::all();
+
+        return view("photos",compact("all_photos","all_photos_categories","all_partenaires"));
     }
 
 
@@ -252,7 +254,9 @@ class FrontendController extends Controller
 
     function pageCRECLSHTM(Request $request){
 
-        return view("crec-lshtm-project");
+        $all_partenaires = AIRID_Partenaire::where("partenaire_crec_lshtm",1)->get();
+
+        return view("crec-lshtm-project",compact("all_partenaires"));
     }
     function vacanciesPage(Request $request){
 
