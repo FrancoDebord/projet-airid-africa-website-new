@@ -12,13 +12,13 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="banner-heading">
-                            <h1 class="banner-title">Mission & Vision</h1>
-                            <nav aria-label="breadcrumb">
+                            <h1 class="banner-title top_title">Mission & Vision</h1>
+                            {{-- <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb justify-content-center">
                                     <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
                                     <li class="breadcrumb-item"><a href="#">Mission & Vision</a></li>
                                 </ol>
-                            </nav>
+                            </nav> --}}
                         </div>
                     </div><!-- Col end -->
                 </div><!-- Row end -->

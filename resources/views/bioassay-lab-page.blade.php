@@ -11,13 +11,13 @@ style="background-image:url({{ asset('storage/assets_vendor/images/banner/banner
         <div class="row">
             <div class="col-lg-12">
                 <div class="banner-heading">
-                    <h1 class="banner-title">Our Bioassay Labs</h1>
-                    <nav aria-label="breadcrumb">
+                    <h1 class="banner-title top_title">Our Bioassay Labs</h1>
+                    {{-- <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
                             <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
                             <li class="breadcrumb-item"><a href="#">Our Bioassay Labs</a></li>
                         </ol>
-                    </nav>
+                    </nav> --}}
                 </div>
             </div><!-- Col end -->
         </div><!-- Row end -->
@@ -36,31 +36,35 @@ style="background-image:url({{ asset('storage/assets_vendor/images/banner/banner
         </div>
 
         <div class="col-12 col-sm-6">
-            <img src="{{ asset("storage/assets/facility/bioassay-lab/IMG_1569.jpg") }}" alt="Image Bio Assay Lab" class="img-fluid img-thumbnail"/>
+            {{-- <img src="{{ asset("storage/assets/facility/bioassay-lab/IMG_1569.jpg") }}" alt="Image Bio Assay Lab" class="img-fluid img-thumbnail"/> --}}
+            <img src="{{ asset("storage/assets/facility/bioassay-lab/lab_nadia.jpg") }}" alt="Image Bio Assay Lab" class="img-fluid img-thumbnail"/>
 
             <p class="mt-2 bg-danger p-2 text-white text-center">
-                <strong>NET SAMPLES WASHING</strong>
+                <strong>Lab Photo</strong>
             </p>
         </div>
         <div class="col-12 col-sm-6 ">
-            <img src="{{ asset("storage/assets/facility/bioassay-lab/IMG_1571.jpg") }}" alt="Image Bio Assay Lab" class="img-fluid img-thumbnail">
+            {{-- <img src="{{ asset("storage/assets/facility/bioassay-lab/IMG_1571.jpg") }}" alt="Image Bio Assay Lab" class="img-fluid img-thumbnail"> --}}
+            <img src="{{ asset("storage/assets/facility/bioassay-lab/lab1.jpg") }}" alt="Image Bio Assay Lab" class="img-fluid img-thumbnail">
             <p class="mt-2 bg-danger p-2 text-white text-center">
-                <strong>NET SAMPLES WASHING ROOM</strong>
+                <strong>Lab Photo</strong>
             </p>
         </div>
         <div class="col-12 col-sm-6 ">
-            <img src="{{ asset("storage/assets/facility/bioassay-lab/IMG_1467.jpg") }}" alt="Image Bio Assay Lab" class="img-fluid img-thumbnail">
+            {{-- <img src="{{ asset("storage/assets/facility/bioassay-lab/IMG_1467.jpg") }}" alt="Image Bio Assay Lab" class="img-fluid img-thumbnail"> --}}
+            <img src="{{ asset("storage/assets/facility/bioassay-lab/lab2.jpg") }}" alt="Image Bio Assay Lab" class="img-fluid img-thumbnail">
             <p class="mt-2 bg-danger p-2 text-white text-center">
-                <strong>CONE TEST ON NET SAMPLES</strong>
+                <strong>Lab Photo</strong>
             </p>
         </div>
         <div class="col-12 col-sm-6 ">
-            <img src="{{ asset("storage/assets/facility/bioassay-lab/IMG_1476.jpg") }}" alt="Image Bio Assay Lab" class="img-fluid img-thumbnail">
+            <img src="{{ asset("storage/assets/facility/bioassay-lab/lab3.jpg") }}" alt="Image Bio Assay Lab" class="img-fluid img-thumbnail">
+            {{-- <img src="{{ asset("storage/assets/facility/bioassay-lab/IMG_1476.jpg") }}" alt="Image Bio Assay Lab" class="img-fluid img-thumbnail"> --}}
             <p class="mt-2 bg-danger p-2 text-white text-center">
-                <strong>TUNNEL TEST </strong>
+                <strong>Lab Photo </strong>
             </p>
         </div>
-        <div class="col-12 col-sm-6 ">
+        {{-- <div class="col-12 col-sm-6 ">
             <img src="{{ asset("storage/assets/facility/bioassay-lab/IMG_1493.jpg") }}" alt="Image Bio Assay Lab" class="img-fluid img-thumbnail">
             <p class="mt-2 bg-danger p-2 text-white text-center">
                 <strong>WHO TUBE TEST </strong>
@@ -73,7 +77,7 @@ style="background-image:url({{ asset('storage/assets_vendor/images/banner/banner
             <p class="mt-2 bg-danger p-2 text-white text-center">
                 <strong>ARM-IN-CAGE TEST</strong>
             </p>
-        </div>
+        </div> --}}
        
      
 

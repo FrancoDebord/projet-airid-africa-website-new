@@ -12,14 +12,14 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="banner-heading">
-                            <h1 class="banner-title">Detail of Project </h1>
-                            <nav aria-label="breadcrumb">
+                            <h1 class="banner-title top_title">Detail of Project </h1>
+                            {{-- <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb justify-content-center">
                                     <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
                                     <li class="breadcrumb-item"><a href="{{ route("allProjectsPage") }}">All Projects</a></li>
                                     <li class="breadcrumb-item"><a href="#">Detail Project</a></li>
                                 </ol>
-                            </nav>
+                            </nav> --}}
                         </div>
                     </div><!-- Col end -->
                 </div><!-- Row end -->

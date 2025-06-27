@@ -73,7 +73,30 @@
             <div class="row">
 
                 <div class="col-12">
-                    <h4>Our History</h4>
+
+                        <p class="" style="text-align: justify">
+                        {{-- The African Institute for Research in Infectious Diseases is a leading African research center
+                        dedicated to advancing scientific knowledge and innovative solutions in the fight against
+                        infectious diseases. Through cutting-edge scientific research, innovative healthcare solutions,
+                        and strong collaborations, we aim to develop sustainable public health strategies, and
+                        strengthen capacity-building efforts to combat diseases that disproportionately affect
+                        communities across Africa.
+                        With a multidisciplinary team of experts in epidemiology, microbiology, immunology,
+                        biotechnology, Public health entomology, Virology, Parasitology, Social Sciences and public
+                        health, we work collaboratively with global and local partners to drive impactful research and
+                        translate scientific discoveries into real-world applications. --}}
+
+                        <strong>The African Institute for Research in Infectious Diseases (AIRID)</strong> is a pioneering non-governmental research institution based in Benin, West Africa. Established in 2021, AIRID is committed to addressing the continent’s most pressing health challenges through cutting-edge 
+                        scientific research, innovative solutions, and strong partnerships.
+
+                    </p>
+
+                    <p class="" style="text-align: justify">
+                        At AIRID, we believe that Africa’s public health priorities are best addressed through African leadership, expertise, and innovation. Sustainable solutions to the continent’s health challenges must be rooted in local knowledge and scientific excellence. Our mission is to generate high-impact research that informs national and regional policies, enhances disease control strategies, 
+                        and contributes meaningfully to global efforts to eliminate infectious diseases and improve health equity.
+                    </p>
+
+                    <h4 class="title-section">Our History</h4>
 
                     <p class="text-justify">
                         The African Institute for Research in Infectious Diseases (AIRID) was established in
@@ -91,10 +114,10 @@
                     </p>
                 </div>
                 <div class="col-12">
-                    <h4>Our Vision at AIRID</h4>
+                    <h4 class="title-section">Our Vision</h4>
 
                     <p class="text-justify">
-                        AIRID aims to be a leading center of excellence in infectious disease research,
+                        {{-- AIRID aims to be a leading center of excellence in infectious disease research,
                         recognized for
                         innovative,
                         impactful work that builds local capacity and fosters collaboration. By combining
@@ -102,20 +125,25 @@
                         with
                         community engagement, AIRID strives to eliminate endemic diseases and promote health
                         equity across
-                        Africa.
+                        Africa. --}}
+
+                        To become Africa’s leading center of excellence in infectious disease research, training, and innovation—shaping the future of global health through African-led science.
                     </p>
                 </div>
 
                 <div class="col-12">
-                    <h4>Our Mission at AIRID</h4>
+                    <h4 class="title-section">Our Mission</h4>
 
                     <p class="text-justify">
-                        AIRID’s mission is to generate evidence-based knowledge that informs public health
+                        {{-- AIRID’s mission is to generate evidence-based knowledge that informs public health
                         policies and
                         interventions for controlling and eliminating infectious diseases in Africa. The
                         institute is
-                        dedicated to:
+                        dedicated to: --}}
 
+                        To conduct world-class research, build local scientific capacity, and deliver data-driven 
+                        solutions to reduce the burden of infectious diseases in Africa.
+{{-- 
                     <ul>
                         <li>Conducting research on tropical infectious diseases</li>
                         <li>Evaluating tools and interventions for diagnosis, prevention, and treatment</li>
@@ -123,13 +151,46 @@
                         <li>Promoting partnerships and community engagement to support disease control efforts
                         </li>
                         <li>Advancing health research excellence in Africa through African leadership</li>
-                    </ul>
+                    </ul> --}}
                     </p>
                 </div>
 
 
                 <div class="col-12">
-                    <h4>Within the framework of training and capacity building</h4>
+                    <h4 class="title-section">What we do</h4>
+
+                    <p class="text-justify">
+                      
+
+                    <ul  class="text-justify list-group list-group-flush">
+                        <li class="mt-2 list-group-item">
+                            <strong>Applied Research :</strong> We design and implement research studies that tackle real-world challenges in malaria, 
+                            neglected tropical diseases, HIV, Tuberculosis, emerging infections, and antimicrobial resistance.
+                        </li>
+
+                        <li class="mt-2 list-group-item">
+                            <strong>Innovation & Evaluation :</strong> We evaluate new tools, technologies, and interventions for
+                             prevention and control and control of infectious diseases, including diagnostics, 
+                            vector control tools such as insecticide-treated nets, vaccines, chemoprevention etc.
+                        </li>
+
+                        <li class="mt-2 list-group-item">
+                            <strong>Capacity Strengthening :</strong> We train the next generation of African scientists 
+                            and public health professionals through internships, postgraduate programs, and hands-on research experiences.
+                        </li>
+
+                        <li class="mt-2 list-group-item">
+                            <strong>Policy Engagement : </strong> We work closely with national and regional governments, WHO,
+                             and global health partners to ensure our research informs policies and program implementation.
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+
+
+
+                {{-- <div class="col-12">
+                    <h4 class="title-section">Within the framework of training and capacity building</h4>
 
                     <p class="">
                         We aim to :
@@ -143,10 +204,10 @@
                         <li>Organizing training for young researchers in general</li>
                     </ul>
                     </p>
-                </div>
+                </div> --}}
 
-                <div class="col-12">
-                    <h4>Networking and partnerships</h4>
+                {{-- <div class="col-12">
+                    <h4 class="title-section">Networking and partnerships</h4>
 
                     <p class="">
                         We aim to :
@@ -160,10 +221,10 @@
                         <li>Partnering with foreign organizations in the fight against infectious diseases</li>
                     </ul>
                     </p>
-                </div>
+                </div> --}}
 
-                <div class="col-12">
-                    <h4>As part of the philantropy</h4>
+                {{-- <div class="col-12">
+                    <h4 class="title-section">As part of the philantropy</h4>
 
                     <p class="">
                         We aim to :
@@ -181,7 +242,7 @@
                         </li>
                     </ul>
                     </p>
-                </div>
+                </div> --}}
 
             </div>
         </div>

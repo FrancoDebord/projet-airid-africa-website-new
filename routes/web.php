@@ -8,7 +8,8 @@ Route::get("/detail-department/{id}-{slug}",[FrontendController::class,"detailDe
 Route::get("/detail-sub-department/{id}-{slug}",[FrontendController::class,"detailSubDepartement"])->name("detailSubDepartement");
 Route::get('/all-departements', [FrontendController::class,"allServicesPage"])->name("allServicesPage");
 Route::get('/our-mission', [FrontendController::class,"MissionVisionPage"])->name("MissionVisionPage");
-Route::get('/our-vision', [FrontendController::class,"MissionVisionPage"])->name("MissionVisionPage");
+Route::get('/our-vision', [FrontendController::class,"MissionVisionPage"])->name("MissionVisionPage1");
+Route::get('/mission-vision', [FrontendController::class,"MissionVisionPage"])->name("MissionVisionPage2");
 Route::get('/our-team', [FrontendController::class,"staffAirid"])->name("staffAirid");
 Route::get('/about-us', [FrontendController::class,"aboutPage"])->name("aboutPage");
 Route::get('/our-projects', [FrontendController::class,"allProjectsPage"])->name("allProjectsPage");
@@ -30,3 +31,7 @@ Route::get('/contact', [FrontendController::class,"contactPage"])->name("contact
 Route::post('/post-contact', [FrontendController::class,"postContactMessage"])->name("postContactMessage");
 Route::get('/crec-lshtm-project', [FrontendController::class,"pageCRECLSHTM"])->name("pageCRECLSHTM");
 Route::get('/vacancies-at-airid', [FrontendController::class,"vacanciesPage"])->name("vacanciesPage");
+Route::get('/directors-message', [FrontendController::class,"motDirecteur"])->name("motDirecteur");
+Route::get('/board-directors-message', [FrontendController::class,"motBoardOfDirectors"])->name("motBoardOfDirectors");
+Route::get('/research-activities', [FrontendController::class,"researchActivitiesPage"])->name("researchActivitiesPage");
+Route::get('/education-training', [FrontendController::class,"educationTrainingPage"])->name("educationTrainingPage");

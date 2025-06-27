@@ -1,6 +1,6 @@
 @extends('index')
 
-@section('title', 'Vacancies at AIRID')
+@section('title', 'Education & Training')
 
 
 @section('content')
@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="banner-heading">
-                            <h1 class="banner-title top_title">Vacancies</h1>
+                            <h1 class="banner-title top_title">Education & Training</h1>
                             {{-- <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb justify-content-center">
                                     <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>

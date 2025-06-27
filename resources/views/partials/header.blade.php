@@ -35,6 +35,13 @@
                             </li>
 
                         </ul><!-- Ul end --> --}}
+
+                        <p class="slogan-p" id="slogan-p">
+                            Bold Science. African-Led. Impact-Driven
+                        </p>
+                        <p class="slogan-fr" id="slogan-fr">
+                            Science Audacieuse. Portée par l’Afrique. Axée sur l’Impact.
+                        </p>
                     </div><!-- header right end -->
                 </div><!-- logo area end -->
 
@@ -68,67 +75,35 @@
                                     <a href="{{ route('index') }}" class="nav-link dropdown-toggle"
                                         data-toggle="dropdown">About AIRID <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown-menu" role="menu">
+                                        <li class="{{ $menu == 'mission-vision' ? 'active' : '' }}"><a href="{{ route('aboutPage') }}">Vision & Mission</a></li>
+                                        {{-- <li class="{{ $menu == 'mission-vision' ? 'active' : '' }}"><a href="{{ route('MissionVisionPage2') }}">Vision & Mission</a></li> --}}
                                         <li class="{{ $menu == 'default' ? 'active' : '' }}"><a
-                                                href="{{ route('index') }}">Director's Message</a></li>
-                                        <li class="{{ $menu == 'about-us' ? 'active' : '' }}"><a
-                                                href="{{ route('aboutPage') }}">Who we are </a></li>
-                                        {{-- <li class="{{ $menu =="mission-vision"?"active":"" }}"><a href="{{ route("MissionVisionPage") }}">Vision & Mission</a></li> --}}
-                                        <li class="{{ $menu == 'mission-vision' ? 'active' : '' }}"><a
-                                                href="{{ route('allServicesPage') }}">Departments</a></li>
-                                        <li {{ $menu == 'staff' ? 'active' : '' }}><a href="{{ route('staffAirid') }}">Our
+                                                href="{{ route('motDirecteur') }}">Director's Message</a></li>
+                                                
+                                        <li class="{{ $menu == 'default' ? 'active' : '' }}"><a
+                                                href="{{ route('motBoardOfDirectors') }}">Board of Directors' Message</a></li>
+
+                                        {{-- <li class="{{ $menu == 'about-us' ? 'active' : '' }}"><a
+                                                href="{{ route('aboutPage') }}">Who we are </a></li> --}}
+                                        {{-- <li class="{{ $menu == 'mission-vision' ? 'active' : '' }}"><a
+                                                href="{{ route('allServicesPage') }}">Departments</a></li> --}}
+                                        <li {{ $menu == 'staff' ? 'active' : '' }}><a
+                                                href="{{ route('staffAirid') }}">Our
                                                 Team</a></li>
                                     </ul>
                                 </li>
 
-                                {{-- @forelse ($departements_menu as $menu_departement)
-                                    @php
-                                        $sous_departements = $menu_departement->sub_departements;
-
-                                        $menu_2 = request()->segment(2, 'default');
-                                        $tab = explode("-",$menu_2);
-
-                                        $departement_id = 0; 
-
-                                        if(count($tab) > 1){
-                                            
-                                            $departement_id = $tab[0];
-                                        }
-                                        
-
-                                    @endphp
-
-                                    <li class="nav-item {{ $departement_id ==$menu_departement->id ?"active":""  }} "><a class="nav-link"
-                                            href="{{ route('detailDepartementPage', ['id' => $menu_departement->id, 'slug' => \Str::slug($menu_departement->nom_departement)]) }}">{{ $menu_departement->nom_departement }}</a>
-                                    </li>
-
-                                @empty
-                                @endforelse --}}
 
                                 <li class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Our Work
                                         <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown-menu" role="menu">
-                                        <li><a href="{{ route('allProjectsPage') }}">Research Projects</a></li>
-                                        <li><a href="#">Trainings</a></li>
-                                        <li><a href="#">Services</a></li>
-                                        <li><a href="{{ route('partnersPage') }}">Partners</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Medias <i
-                                            class="fa fa-angle-down"></i></a>
-                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ route("researchActivitiesPage") }}">Research activities</a></li>
+                                        {{-- <li><a href="{{ route('allProjectsPage') }}">Research Projects</a></li> --}}
+                                        <li><a href="{{ route("educationTrainingPage") }}">Education & Trainings</a></li>
                                         <li><a href="{{ route('allPublicationsPage') }}">Publications</a></li>
-                                        <li><a href="#">News</a></li>
-                                        <li><a href="#">Newsletter</a></li>
-                                        <li><a href="#">Events</a></li>
-                                        <li><a href="#">Blog</a></li>
-                                        <li><a href="{{ route('photosPage') }}">Our Gallery</a></li>
-                                        <li><a href="{{ route('videoPage') }}">Video library</a></li>
-                                        <li><a href="https://onlinetraining.airid-africa.com" target="_blank">Online
-                                                Training
-                                                Platform of AIRID</a></li>
+                                        <li><a href="{{ route('partnersPage') }}">Partnerships</a></li>
+                                        <li><a href="{{ route('vacanciesPage') }}">Working with us</a></li>
                                     </ul>
                                 </li>
 
@@ -136,28 +111,76 @@
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Facilities
                                         <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown-menu" role="menu">
-                                        <li><a href="{{ route('bioAssayLab') }}">Bioassay Labs</a></li>
+                                        <li><a href="{{ route('bioAssayLab') }}">Insecticide testing Laboratories</a>
+                                        </li>
                                         <li><a href="{{ route('molecularLabPage') }}">Molecular Lab</a></li>
+                                        <li><a href="{{ route('insectaryPage') }}">Insectary</a></li>
+                                        <li><a href="{{ route('experimentalHutStationPage') }}">Semi-field Station</a>
+                                        </li>
                                         <li><a href="{{ route('analyticalCheminstryLabPage') }}">Analytical and
                                                 Chemistry Lab</a></li>
                                         <li><a href="{{ route('fieldStationPage') }}">Field Station</a></li>
-                                        <li><a href="{{ route('insectaryPage') }}">Insectaries</a></li>
                                         <li><a href="{{ route('animalHousePage') }}">Animal House</a></li>
-                                        <li><a href="{{ route('experimentalHutStationPage') }}">Experimental Huts</a>
-                                        </li>
+
                                     </ul>
                                 </li>
 
-                                 <li class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Working With us
+                                <li class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Research
+                                        Projects
                                         <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown-menu" role="menu">
-                                        <li><a href="{{ route('vacanciesPage') }}">Vacancies</a></li>
+                                        <li><a href="#">GAVI-SIRI </a></li>
+                                        <li><a href="#">OPMTIMVEC</a></li>
+                                        <li><a href="#">ATSB Knowledge Gaps</a></li>
+
+                                        <li><a href="#">VESTERGAARD ITN Testing</a></li>
+                                        <li><a href="#">Duranet Plus Community Evaluation</a></li>
+                                        <li><a href="#">Spatial Repellents Project</a></li>
+
+                                        <li class="dropdown-submenu">
+                                            <a href="#!" class="dropdown-toggle" data-toggle="dropdown">Product Development</a>
+                                            <ul class="dropdown-menu">
+                                                 <li><a href="#">Interceptor </a></li>
+                                                <li><a href="#">Duranet</a></li>
+                                                <li><a href="#">Yorkool</a></li>
+                                                <li><a href="#">Health Pulse</a></li>
+                                                <li><a href="#">Yorkool G4</a></li>
+                                            </ul>
+                                        </li>
+                                       
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle"
+                                        data-toggle="dropdown">Research
+                                        Units
+                                        <i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ route('pageCRECLSHTM') }}">CREC/LSHTM </a></li>
+                                        <li><a href="#">PAMVERC-BENIN</a></li>
                                     </ul>
                                 </li>
 
-                                <li class="nav-item"><a class="nav-link" href="{{ route('pageCRECLSHTM') }}">CREC/LSHTM</a>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('contactPage') }}">Contact</a>
+
+
+                                <li class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Medias
+                                        <i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        {{-- <li><a href="#">News</a></li> --}}
+                                        <li><a href="#">Newsletter</a></li>
+                                        {{-- <li><a href="#">Events</a></li> --}}
+                                        {{-- <li><a href="#">Blog</a></li> --}}
+                                        <li><a href="{{ route('photosPage') }}">Our Gallery</a></li>
+                                        <li><a href="{{ route('videoPage') }}">Video library</a></li>
+                                        <li><a href="https://onlinetraining.airid-africa.com" target="_blank">Online
+                                                Training
+                                                Platform of AIRID</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item"><a class="nav-link"
+                                        href="{{ route('contactPage') }}">Contact</a>
                                 </li>
                             </ul>
 

@@ -43,7 +43,8 @@
 
 </head>
 
-<body>
+{{-- <body style="background-image: url({{ asset("storage/assets/images/4-1.jpg") }}); background-position:cover; background-repeat:no-repeat"> --}}
+<body style="">
     <div class="body-inner">
 
         <div id="top-bar" class="top-bar">
@@ -197,7 +198,8 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
         <!-- Google Map Plugin-->
         <script src="{{ asset("storage/assets_vendor/plugins/google-map/map.js")}}" defer></script>
-
+        
+        {{-- <script src="{{ asset("storage/assets_vendor/plugins/jquery_marquee/jquery.marquee.min.js")}}" defer></script> --}}
         <!-- Template custom -->
         <script src="{{ asset("storage/assets_vendor/js/script.js")}}"></script>
 

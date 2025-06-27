@@ -83,8 +83,9 @@ class FrontendController extends Controller
     function MissionVisionPage()
     {
 
+         $all_partenaires = AIRID_Partenaire::all();
         $all_departements = AIRID_Departement::where("afficher_menu", "<>", 0)->get();
-        return view("vision-mission",compact("all_departements"));
+        return view("vision-mission",compact("all_departements","all_partenaires"));
     }
 
     function staffAirid()
@@ -261,5 +262,22 @@ class FrontendController extends Controller
     function vacanciesPage(Request $request){
 
         return view("vacancies");
+    }
+
+    function motDirecteur(Request $request){
+
+        return view("mot_directeur");
+    }
+    function motBoardOfDirectors(Request $request){
+
+        return view("message_board_of_directors");
+    }
+    function researchActivitiesPage(Request $request){
+
+        return view("research-activities");
+    }
+    function educationTrainingPage(Request $request){
+
+        return view("education-training");
     }
 }
