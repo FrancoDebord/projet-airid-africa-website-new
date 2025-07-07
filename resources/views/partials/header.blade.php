@@ -132,7 +132,7 @@
                                         Projects
                                         <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">GAVI-SIRI </a></li>
+                                        <li><a href="{{ route("projetGaviSiriPage") }}">GAVI-SIRI </a></li>
                                         <li><a href="#">OPMTIMVEC</a></li>
                                         <li><a href="#">ATSB Knowledge Gaps</a></li>
 

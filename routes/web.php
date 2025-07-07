@@ -36,3 +36,4 @@ Route::get('/directors-message', [FrontendController::class,"motDirecteur"])->na
 Route::get('/board-directors-message', [FrontendController::class,"motBoardOfDirectors"])->name("motBoardOfDirectors");
 Route::get('/research-activities', [FrontendController::class,"researchActivitiesPage"])->name("researchActivitiesPage");
 Route::get('/education-training', [FrontendController::class,"educationTrainingPage"])->name("educationTrainingPage");
+Route::get('/gavi-siri-project', [FrontendController::class,"projetGaviSiriPage"])->name("projetGaviSiriPage");

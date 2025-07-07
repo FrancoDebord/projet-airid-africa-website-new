@@ -286,4 +286,10 @@ class FrontendController extends Controller
 
         return view("education-training");
     }
+
+    function projetGaviSiriPage(Request $request){
+
+
+        return view("gavi-siri-project");
+    }
 }
