@@ -25,7 +25,7 @@
         </div><!-- Banner text end -->
     </div><!-- Banner area end -->
 
-    <section class="content">
+    <section class="content main-container">
         <div class="container">
             <div class="row">
 

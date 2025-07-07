@@ -27,6 +27,7 @@ Route::get('/field-station', [FrontendController::class,"fieldStationPage"])->na
 Route::get('/our-insectary', [FrontendController::class,"insectaryPage"])->name("insectaryPage");
 Route::get('/our-animal-house', [FrontendController::class,"animalHousePage"])->name("animalHousePage");
 Route::get('/our-experimental-huts', [FrontendController::class,"experimentalHutStationPage"])->name("experimentalHutStationPage");
+Route::get('/mosquito-plasmodium-laboratory', [FrontendController::class,"mosquitoPlasmodiumLaboratoryPage"])->name("mosquitoPlasmodiumLaboratoryPage");
 Route::get('/contact', [FrontendController::class,"contactPage"])->name("contactPage");
 Route::post('/post-contact', [FrontendController::class,"postContactMessage"])->name("postContactMessage");
 Route::get('/crec-lshtm-project', [FrontendController::class,"pageCRECLSHTM"])->name("pageCRECLSHTM");

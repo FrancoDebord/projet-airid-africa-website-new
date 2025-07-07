@@ -117,6 +117,8 @@
                                         <li><a href="{{ route('insectaryPage') }}">Insectary</a></li>
                                         <li><a href="{{ route('experimentalHutStationPage') }}">Semi-field Station</a>
                                         </li>
+                                        <li><a href="{{ route('mosquitoPlasmodiumLaboratoryPage') }}">Mosquito Plasmodium Infection Laboratory</a>
+                                        </li>
                                         <li><a href="{{ route('analyticalCheminstryLabPage') }}">Analytical and
                                                 Chemistry Lab</a></li>
                                         <li><a href="{{ route('fieldStationPage') }}">Field Station</a></li>

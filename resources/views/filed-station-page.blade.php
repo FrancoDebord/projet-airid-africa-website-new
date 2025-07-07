@@ -12,12 +12,7 @@
                     <div class="col-lg-12">
                         <div class="banner-heading">
                             <h1 class="banner-title top_title">Our Field Station</h1>
-                            {{-- <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb justify-content-center">
-                                    <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-                                    <li class="breadcrumb-item"><a href="#">Our Field Station</a></li>
-                                </ol>
-                            </nav> --}}
+                          
                         </div>
                     </div><!-- Col end -->
                 </div><!-- Row end -->
@@ -25,7 +20,7 @@
         </div><!-- Banner text end -->
     </div><!-- Banner area end -->
 
-    <section class="content">
+    <section class="content main-container">
         <div class="container">
             <div class="row">
 
@@ -38,8 +33,7 @@
                         stations set in a huge rice growing area proving large numbers free-flying mosquitoes.</p>
                 </div>
 
-
-
+               
                 <div class="col-12 col-sm-6 ">
                     <img src="{{ asset('storage/assets/facility/field-station/DJI_0152.jpg') }}" alt="Image Field station"
                         class="img-fluid img-thumbnail">

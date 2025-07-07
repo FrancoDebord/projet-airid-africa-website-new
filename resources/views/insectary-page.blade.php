@@ -25,19 +25,115 @@
         </div><!-- Banner text end -->
     </div><!-- Banner area end -->
 
-    <section class="content">
+    <section class="content main-container">
         <div class="container">
             <div class="row">
 
                 <div class="col-12 mt-2">
-                    <h4 class="text-bold border p-3 text-center text-danger">Our Insectary</h4>
+                    <h4 class="text-bold border p-3 text-center text-danger">Insectary</h4>
 
-                    <p class="mt-3 text-justify"> We raise different strains of mosquitoes in our insectary that we hold
-                        from different regions.</p>
+                    <p class="mt-3 text-justify"> 
+                        {{-- We raise different strains of mosquitoes in our insectary that we hold
+                        from different regions. --}}
+
+                        AIRID’s research is supported by a growing network of specialized laboratories and field sites
+                        designed to
+                        deliver high-quality, Africa-led scientific research. Each facility plays a critical role in
+                        generating evidence
+                        for disease control, product evaluation, and innovation. Our facilities are staffed by dedicated
+                        teams of supervisors,
+                        research assistants, and technicians who ensure operational excellence
+                        and adherence to international standards.
+                    </p>
+                    </p>
+                </div>
+
+                  <div class="col-12">
+
+                    <div class=" col-12  text-center">
+                        <img src="{{ asset('storage/assets/facility/insectary/IMG_1372.jpg') }}"
+                            class=" img-research-activities " alt="">
+                    </div>
+
+                    <h5 class="title-section mt-2">Overview</h5>
+
+                    <p class="text-justify mt-2">
+                        The Insectary at AIRID is a high-quality entomological facility that supports
+                        the rearing, maintenance, and manipulation of mosquito colonies essential for
+                        a wide range of vector biology research. It provides standardized and well-characterized
+                        colonies of Anopheles, Aedes, and Culex mosquitoes used in laboratory bioassays,
+                        behavioral experiments, vector competence studies, and infection trials.
+                    </p>
+
+                    <p class="text-justify mt-2">
+                        All rearing activities are conducted under <strong>Good Laboratory Practice (GLP)-compliant</strong>
+                        conditions, with rigorous quality control and environmental monitoring. The insectary
+                        plays a foundational role in maintaining colony integrity and
+                        ensuring reproducibility and reliability in entomological research.
+                    </p>
+
+                    <h5 class="title-section">Key Activities</h5>
+
+                    <ul class="text-justify mt-2">
+                        <li>
+                            Maintenance of <strong>insecticide-susceptible</strong> and field-derived resistant mosquito
+                            strains
+                        </li>
+                        <li>
+                            Support for experimental mosquito infections with Plasmodium and other pathogens
+                        </li>
+                        <li>
+                            Monitoring of life-history traits (e.g., longevity, fecundity, emergence rates)
+                        </li>
+                        <li>
+                            Selection and characterization of specific mosquito lines with desired traits (e.g., resistance,
+                            species complex)
+                        </li>
+                    </ul>
+
+                    <h5 class="title-section">Infrastructure</h5>
+
+                    <p class="text-justify mt-2">
+                        The insectary includes:
+                    </p>
+
+                    <ul class="text-justify mt-2">
+                        <li>
+                            <strong>Temperature- and humidity-controlled rearing rooms</strong>
+                        </li>
+                        <li>
+                            <strong>Larval and pupal trays</strong> for aquatic stage development
+                        </li>
+                        <li>
+                            <strong>Adult holding cages</strong> for mating and oviposition
+                        </li>
+                        <li>
+                            <strong>Blood-feeding stations</strong>, including membrane feeders and animal hosts (where
+                            approved)
+                        </li>
+                        <li>
+                            <strong>Dedicated preparation and waste-handling areas</strong>
+                        </li>
+                        <li>
+                            <strong>Colony record systems</strong> for tracking strain lineage, performance, and health
+                        </li>
+                    </ul>
+
+                    <h5 class="title-section">Why It Matters</h5>
+
+                    <p class="text-justify mt-2">
+                        A well-maintained insectary is the backbone of high-quality vector control research.
+                        It ensures the availability of consistent, healthy mosquito populations for experimental
+                        use—whether for evaluating insecticide efficacy, understanding transmission dynamics, or
+                        developing new tools. By maintaining both susceptible and resistant colonies, AIRID is positioned
+                        to test how products perform against real-world resistance profiles, helping national
+                        and global partners make informed decisions on vector control strategies.
+                    </p>
                 </div>
 
 
 
+                 <h5 class="title-section mt-2">Our mosquito strains</h5>
                 <div class="col-12 mt-3">
 
                     <table class="table table-bordered table-striped text-center ">
@@ -159,7 +255,7 @@
                 </div>
 
                 <div class="mt-2 col-12 mb-3">
-                    <strong>Few images of our insectary installations : </strong>
+                    <h5 class="title-section mt-2">Few images of our insectary installations : </h5>
                 </div>
 
                 <div class="col-12 col-sm-6 ">

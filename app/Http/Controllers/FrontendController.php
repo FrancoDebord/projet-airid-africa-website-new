@@ -231,6 +231,12 @@ class FrontendController extends Controller
 
         return view("experimental-hut-station-page");
     }
+
+    function mosquitoPlasmodiumLaboratoryPage(Request $request){
+
+        return view("mosquito-plasmodium-laboratory");
+    }
+
     function contactPage(Request $request){
 
         return view("contact");
