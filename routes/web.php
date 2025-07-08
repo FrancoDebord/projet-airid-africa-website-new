@@ -37,3 +37,15 @@ Route::get('/board-directors-message', [FrontendController::class,"motBoardOfDir
 Route::get('/research-activities', [FrontendController::class,"researchActivitiesPage"])->name("researchActivitiesPage");
 Route::get('/education-training', [FrontendController::class,"educationTrainingPage"])->name("educationTrainingPage");
 Route::get('/gavi-siri-project', [FrontendController::class,"projetGaviSiriPage"])->name("projetGaviSiriPage");
+Route::get('/optimvec-project', [FrontendController::class,"projetOptimvecPage"])->name("projetOptimvecPage");
+Route::get('/duranet-project', [FrontendController::class,"projetDuranetPage"])->name("projetDuranetPage");
+Route::get('/atsb-project', [FrontendController::class,"projetATSBPage"])->name("projetATSBPage");
+Route::get('/vesterguaard-itn-testing-project', [FrontendController::class,"projetVesterguaardITNPage"])->name("projetVesterguaardITNPage");
+Route::get('/spatial-repellents-project', [FrontendController::class,"projetSpatialRepellentsPage"])->name("projetSpatialRepellentsPage");
+Route::get('/interceptor-product-development', [FrontendController::class,"interceptorProductDevelopmentPage"])->name("interceptorProductDevelopmentPage");
+Route::get('/duranet-product-development', [FrontendController::class,"duranetProductDevelopmentPage"])->name("duranetProductDevelopmentPage");
+Route::get('/yorkool-product-development', [FrontendController::class,"yorkoolProductDevelopmentPage"])->name("yorkoolProductDevelopmentPage");
+Route::get('/health-pulse-product-development', [FrontendController::class,"healthPulseProductDevelopmentPage"])->name("healthPulseProductDevelopmentPage");
+Route::get('/yorkool-g4-product-development', [FrontendController::class,"yorkoolG4ProductDevelopmentPage"])->name("yorkoolG4ProductDevelopmentPage");
+Route::get('/pamverc-benin', [FrontendController::class,"pamvercBeninPage"])->name("pamvercBeninPage");
+Route::get('/newsletter-airid', [FrontendController::class,"newsletterPage"])->name("newsletterPage");

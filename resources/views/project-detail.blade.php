@@ -60,7 +60,8 @@
                   
 
                             <div class="entry-content">
-                                <p class="text-justify"> {!! $projet->description_riche ??"No Description for now" !!}</p>
+                                {!! $projet->description_riche ??"<p class='text-justify'>No Description for now</p>" !!}
+                                {{-- <p class="text-justify"> {!! $projet->description_riche ??"No Description for now" !!}</p> --}}
 
 
                             </div>

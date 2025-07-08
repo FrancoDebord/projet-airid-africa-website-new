@@ -133,21 +133,21 @@
                                         <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown-menu" role="menu">
                                         <li><a href="{{ route("projetGaviSiriPage") }}">GAVI-SIRI </a></li>
-                                        <li><a href="#">OPMTIMVEC</a></li>
-                                        <li><a href="#">ATSB Knowledge Gaps</a></li>
+                                        <li><a href="{{ route("projetOptimvecPage") }}">OPMTIMVEC</a></li>
+                                        <li><a href="{{ route("projetATSBPage") }}">ATSB Knowledge Gaps</a></li>
 
-                                        <li><a href="#">VESTERGAARD ITN Testing</a></li>
-                                        <li><a href="#">Duranet Plus Community Evaluation</a></li>
-                                        <li><a href="#">Spatial Repellents Project</a></li>
+                                        <li><a href="{{ route("projetVesterguaardITNPage") }}">VESTERGAARD ITN Testing</a></li>
+                                        <li><a href="{{ route("projetDuranetPage") }}">Duranet Plus Community Evaluation</a></li>
+                                        <li><a href="{{ route("projetSpatialRepellentsPage") }}">Spatial Repellents Project</a></li>
 
                                         <li class="dropdown-submenu">
                                             <a href="#!" class="dropdown-toggle" data-toggle="dropdown">Product Development</a>
                                             <ul class="dropdown-menu">
-                                                 <li><a href="#">Interceptor </a></li>
-                                                <li><a href="#">Duranet</a></li>
-                                                <li><a href="#">Yorkool</a></li>
-                                                <li><a href="#">Health Pulse</a></li>
-                                                <li><a href="#">Yorkool G4</a></li>
+                                                 <li><a href="{{ route("interceptorProductDevelopmentPage") }}">Interceptor </a></li>
+                                                <li><a href="{{ route("duranetProductDevelopmentPage") }}">Duranet</a></li>
+                                                <li><a href="{{ route("yorkoolProductDevelopmentPage") }}">Yorkool</a></li>
+                                                <li><a href="{{ route("healthPulseProductDevelopmentPage") }}">Health Pulse</a></li>
+                                                <li><a href="{{ route("yorkoolG4ProductDevelopmentPage") }}">Yorkool G4</a></li>
                                             </ul>
                                         </li>
                                        
@@ -160,7 +160,7 @@
                                         <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown-menu" role="menu">
                                         <li><a href="{{ route('pageCRECLSHTM') }}">CREC/LSHTM </a></li>
-                                        <li><a href="#">PAMVERC-BENIN</a></li>
+                                        <li><a href="{{ route("pamvercBeninPage") }}">PAMVERC-BENIN</a></li>
                                     </ul>
                                 </li>
 
@@ -171,7 +171,7 @@
                                         <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown-menu" role="menu">
                                         {{-- <li><a href="#">News</a></li> --}}
-                                        <li><a href="#">Newsletter</a></li>
+                                        <li><a href="{{ route("newsletterPage") }}">Newsletter</a></li>
                                         {{-- <li><a href="#">Events</a></li> --}}
                                         {{-- <li><a href="#">Blog</a></li> --}}
                                         <li><a href="{{ route('photosPage') }}">Our Gallery</a></li>

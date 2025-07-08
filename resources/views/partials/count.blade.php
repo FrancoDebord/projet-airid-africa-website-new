@@ -41,7 +41,7 @@
                             alt="facts-img">
                     </div>
                     <div class="ts-facts-content">
-                        <h2 class="ts-facts-num"><span class="counterUp" data-count="74">0</span>+</h2>
+                        <h2 class="ts-facts-num"><span class="counterUp" data-count="84">0</span>+</h2>
                         <h3 class="ts-facts-title">Experimental Huts</h3>
                     </div>
                 </div><!-- Col end -->

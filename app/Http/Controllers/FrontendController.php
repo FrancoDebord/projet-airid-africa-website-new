@@ -292,4 +292,69 @@ class FrontendController extends Controller
 
         return view("gavi-siri-project");
     }
+    function projetOptimvecPage(Request $request){
+
+
+        return view("projet-optimvec");
+    }
+
+    function projetDuranetPage(Request $request){
+
+
+        return view("duranet-project");
+    }
+    function projetATSBPage(Request $request){
+
+
+        return view("atsb-project");
+    }
+    function projetVesterguaardITNPage(Request $request){
+
+
+        return view("vesterguard-itn-project");
+    }
+    function projetSpatialRepellentsPage(Request $request){
+
+
+        return view("spatial-repellents-project");
+    }
+
+
+    function interceptorProductDevelopmentPage(Request $request){
+
+
+        return view("interceptor-development");
+    }
+    function duranetProductDevelopmentPage(Request $request){
+
+
+        return view("duranet-product-development");
+    }
+
+    function yorkoolProductDevelopmentPage(Request $request){
+
+
+        return view("yorkool-product-development");
+    }
+    function healthPulseProductDevelopmentPage(Request $request){
+
+
+        return view("health-pulse-product-development");
+    }
+
+      function yorkoolG4ProductDevelopmentPage(Request $request){
+
+
+        return view("yorkool-g4-product-development");
+    }
+      function pamvercBeninPage(Request $request){
+
+
+        return view("pamverc-benin");
+    }
+      function newsletterPage(Request $request){
+
+
+        return view("newsletter");
+    }
 }

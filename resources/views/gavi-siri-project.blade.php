@@ -161,17 +161,12 @@
                     </ul>
                 </div>
 
-                <div class="col-12">
-                    <h5 class="title-section mt-2">Funders</h5>
+                  <div class="col-12">
+                    <h5 class="title-section mt-2">Budget</h5>
 
-                    <ul class="text-justify mt-2">
-                       <li>
-                        <strong>Gavi, the Vaccine Alliance</strong>
-                       </li>
-                       <li>
-                        <strong>Global Health EDCTP3</strong>
-                       </li>
-                    </ul>
+                    <p class="text-justify mt-2">
+                       <strong>USD 2,070,791</strong>
+                    </p>
                 </div>
 
 
