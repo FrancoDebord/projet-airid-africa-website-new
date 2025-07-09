@@ -39,9 +39,11 @@
                         <p class="slogan-p" id="slogan-p">
                             Bold Science. African-Led. Impact-Driven
                         </p>
-                        <p class="slogan-fr" id="slogan-fr">
+                        {{-- <p class="slogan-fr" id="slogan-fr">
                             Science Audacieuse. Portée par l’Afrique. Axée sur l’Impact.
-                        </p>
+                        </p> --}}
+
+                   
                     </div><!-- header right end -->
                 </div><!-- logo area end -->
 

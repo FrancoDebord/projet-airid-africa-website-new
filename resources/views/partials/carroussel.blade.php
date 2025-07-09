@@ -17,7 +17,7 @@
 
 
     <div class="banner-carousel-item"
-        style="background-image:url({{ asset('storage/assets/images/slider/facility2.jpg') }})">
+        style="background-image:url({{ asset('storage/assets/images/slider/facility3.jpg') }});background-size: cover;;">
         <div class="slider-content">
             <div class="container h-100">
                 <div class="row align-items-center h-100">
@@ -33,15 +33,15 @@
             </div>
         </div>
     </div>
-    <div class="banner-carousel-item"
-        style="background-image:url({{ asset('storage/assets/images/slider/quant.jpg') }})">
+    {{-- <div class="banner-carousel-item"
+        style="background-image:url({{ asset('storage/assets/images/slider/arm-in-cage.jpg') }});background-size: cover;;">
         <div class="slider-content">
             <div class="container h-100">
                 <div class="row align-items-center h-100">
                     <div class="col-md-12 text-center">
-                        {{-- <h2 class="slide-title bg-danger" data-animation-in="slideInLeft">African Institute for Research in </h2>
+                        <h2 class="slide-title bg-danger" data-animation-in="slideInLeft">African Institute for Research in </h2>
                         <h3 class="slide-sub-title bg-secondary" data-animation-in="slideInRight">Infectious Diseases
-                        </h3> --}}
+                        </h3>
                         <p data-animation-in="slideInLeft" data-duration-in="1.2">
                             <a href="{{ route('allServicesPage') }}" class="slider btn btn-primary">Our Services</a>
                         </p>
@@ -49,9 +49,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <div class="banner-carousel-item"
-        style="background-image:url({{ asset('storage/assets/images/slider/IMG_5233.jpg') }})">
+        style="background-image:url({{ asset('storage/assets/images/slider/image_main.jpeg') }});background-size: cover;;">
         <div class="slider-content">
             <div class="container h-100">
                 <div class="row align-items-center h-100">
@@ -68,15 +68,15 @@
         </div>
     </div>
     
-    <div class="banner-carousel-item"
+    {{-- <div class="banner-carousel-item"
         style="background-image:url({{ asset('storage/assets/images/slider/IMG_1453.jpg') }})">
         <div class="slider-content">
             <div class="container h-100">
                 <div class="row align-items-center h-100">
                     <div class="col-md-12 text-center">
-                        {{-- <h2 class="slide-title bg-danger" data-animation-in="slideInLeft">African Institute for Research in </h2>
+                        <h2 class="slide-title bg-danger" data-animation-in="slideInLeft">African Institute for Research in </h2>
                         <h3 class="slide-sub-title bg-warning" data-animation-in="slideInRight">Infectious Diseases
-                        </h3> --}}
+                        </h3>
                         <p data-animation-in="slideInLeft" data-duration-in="1.2">
                             <a href="{{ route('allServicesPage') }}" class="slider btn btn-primary">Our Services</a>
                         </p>
@@ -84,9 +84,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <div class="banner-carousel-item"
-        style="background-image:url({{ asset('storage/assets/images/slider/ridwane_nadia.png') }})">
+        style="background-image:url({{ asset('storage/assets/images/slider/ridwane_nadia2.png') }});background-size: cover;;">
         <div class="slider-content">
             <div class="container h-100">
                 <div class="row align-items-center h-100">
@@ -107,7 +107,7 @@
 
 
     <div class="banner-carousel-item"
-        style="background-image:url({{ asset('storage/assets/images/slider/IMG_1607.jpg') }})">
+        style="background-image:url({{ asset('storage/assets/images/slider/IMG_1607.jpg') }});background-size: cover;;">
         <div class="slider-content">
             <div class="container h-100">
                 <div class="row align-items-center h-100">
