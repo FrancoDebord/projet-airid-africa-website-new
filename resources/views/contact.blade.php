@@ -6,7 +6,7 @@
 
 @section('content')
     <div id="banner-area" class="banner-area"
-        style="background-image:url({{ asset('storage/assets_vendor/images/banner/banner1.jpg') }})">
+        style="background-image:url({{ asset('storage/assets_vendor/images/banner/banner2_new.png') }})">
         <div class="banner-text">
             <div class="container">
                 <div class="row">
