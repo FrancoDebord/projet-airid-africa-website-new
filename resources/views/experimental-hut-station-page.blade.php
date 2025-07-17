@@ -29,13 +29,13 @@
 
                     <p class="mt-3 text-justify">
 
-                        The <strong>Semi-Field Station at AIRID</strong>, located in <strong>Covè, Benin (📍 7.2164° N,
-                            2.3408° E)</strong> , is a
-                        world-class research platform that simulates <strong>real-life environmental conditions</strong>
+                        The Semi-Field Station at AIRID, located in Covè, Benin (📍 7.2164° N,
+                            2.3408° E) , is a
+                        world-class research platform that simulates real-life environmental conditions
                         while
-                        maintaining the <strong>experimental control</strong> needed for rigorous scientific evaluation. Set
+                        maintaining the experimental control needed for rigorous scientific evaluation. Set
                         in
-                        a vast <strong>rice-growing region</strong> with high mosquito density, this station enables
+                        a vast rice-growing region with high mosquito density, this station enables
                         semi-field
                         trials of vector control tools under realistic ecological and household conditions.
 
@@ -45,11 +45,11 @@
                     </p>
 
                     <p class="mt-2 text-justify">
-                        It is a critical testing ground for <strong>interventions such as insecticide-treated nets (ITNs),
-                            indoor residual spraying (IRS), spatial repellents</strong>, and <strong>attractive targeted
-                            sugar baits (ATSBs)</strong>.
-                        All studies are conducted in compliance with <strong>WHO protocols</strong> and <strong>Good
-                            Laboratory Practice (GLP)</strong> standards.
+                        It is a critical testing ground for interventions such as insecticide-treated nets (ITNs),
+                            indoor residual spraying (IRS), spatial repellents, and attractive targeted
+                            sugar baits (ATSBs).
+                        All studies are conducted in compliance with WHO protocols and Good
+                            Laboratory Practice (GLP) standards.
                     </p>
                 </div>
 
@@ -69,8 +69,8 @@
                     {{-- <h5 class="title-section mt-3">Overview</h5> --}}
 
                     <p class="text-justify mt-3">
-                        Covè provides ideal conditions for semi-field testing due to its <strong>abundant,
-                            free-flying mosquito population</strong>, dominated by :
+                        Covè provides ideal conditions for semi-field testing due to its abundant,
+                            free-flying mosquito population, dominated by :
                     </p>
                     <ul class="text-justify mt-2">
                         <li>
@@ -116,21 +116,21 @@
 
                     <ul class="text-justify mt-2">
                         <li>
-                            <strong>84 experimental huts</strong> built to WHO standards (72 West African style, 12 Open
+                            84 experimental huts built to WHO standards (72 West African style, 12 Open
                             Eave style)
                         </li>
                         <li>
-                            <strong>Mosquito release chambers </strong> for controlled release-recapture studies
+                            Mosquito release chambers  for controlled release-recapture studies
                         </li>
                         <li>
-                            A fully equipped <strong>weather station</strong> for real-time measurement of temperature,
+                            A fully equipped weather station for real-time measurement of temperature,
                             humidity, wind speed, and rainfall
                         </li>
                         <li>
-                            <strong>On-site data and specimen processing labs</strong> for immediate analysis
+                            On-site data and specimen processing labs for immediate analysis
                         </li>
                         <li>
-                            <strong>Backup power systems</strong> to ensure continuous environmental control and data
+                            Backup power systems to ensure continuous environmental control and data
                             recording
                         </li>
 
@@ -141,24 +141,24 @@
                     <p class="text-justify mt-2">
                         By bridging the gap between lab and field, AIRID’s Semi-Field Station delivers
                         high-quality evidence on how
-                        tools perform in <strong>real-world African settings</strong>. This evidence is critical to:
+                        tools perform in real-world African settings. This evidence is critical to:
                     </p>
                     <ul class="mt-2 text-justify">
                         <li>
-                            Inform <strong>national malaria control strategies</strong>
+                            Inform national malaria control strategies
                         </li>
                         <li>
-                            Support <strong>product registration and WHO prequalification</strong>
+                            Support product registration and WHO prequalification
                         </li>
                         <li>
-                            Guide <strong>donor and government investments</strong> in effective interventions
+                            Guide donor and government investments in effective interventions
                         </li>
                     </ul>
 
                     <p class="text-justify mt-2">
                         As a cornerstone of AIRID’s research infrastructure,
-                        the Semi-Field Station reflects our commitment to <strong>African-led, evidence-based
-                            innovation</strong>
+                        the Semi-Field Station reflects our commitment to African-led, evidence-based
+                            innovation
                         in the fight against malaria and vector-borne diseases.
                     </p>
                 </div>

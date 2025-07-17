@@ -37,22 +37,22 @@
                     <hr>
 
                     <p class="mt-3 text-justify">
-                        <strong> Establishing local capacity for chemical analysis of vector control products</strong>
+                       <strong>  Establishing local capacity for chemical analysis of vector control products </strong>
                     </p>
                     <hr>
 
                     <p class="text-justify mt-2">
 
-                        AIRID is currently developing a state-of-the-art <strong> Chemistry Laboratory </strong>
-                        dedicated to <strong>analytical testing and quality control</strong> of public health insecticide
+                        AIRID is currently developing a state-of-the-art  Chemistry Laboratory 
+                        dedicated to analytical testing and quality control of public health insecticide
                          products. Once operational, this laboratory will play a critical role in supporting 
                          national and regional decision-making on the use of insecticide-treated nets (ITNs), 
                          indoor residual sprays (IRS), and other vector control
-                         tools by ensuring they meet international standards for <strong>content, stability, and performance</strong>.
+                         tools by ensuring they meet international standards for content, stability, and performance.
                     </p>
                     <p class="text-justify mt-2">
-                        The facility is being designed in alignment with <strong> Good Laboratory Practice (GLP)</strong>
-                         principles and <strong>WHO prequalification guidelines</strong>, positioning it as 
+                        The facility is being designed in alignment with  Good Laboratory Practice (GLP)
+                         principles and WHO prequalification guidelines, positioning it as 
                         a future hub for regulatory-quality product evaluation in West Africa.
                     </p>
                 </div>
@@ -64,19 +64,19 @@
 
                     <ul class="text-justify mt-2">
                             <li>
-                                <strong>High-Performance Liquid Chromatography (HPLC):</strong> Accurate measurement of active ingredients in treated materials
+                                High-Performance Liquid Chromatography (HPLC): Accurate measurement of active ingredients in treated materials
                             </li>
                             <li>
-                                <strong>Gas Chromatography (GC):</strong> Detection of volatile compounds in formulations and environmental samples
+                                Gas Chromatography (GC): Detection of volatile compounds in formulations and environmental samples
                             </li>
                             <li>
-                                <strong>Stability and degradation testing:</strong> Assessment of product durability under different temperature and humidity conditions
+                                Stability and degradation testing: Assessment of product durability under different temperature and humidity conditions
                             </li>
                             <li>
-                                <strong>Residue analysis:</strong> Evaluation of insecticide levels in field samples, such as wall surfaces and used nets
+                                Residue analysis: Evaluation of insecticide levels in field samples, such as wall surfaces and used nets
                             </li>
                             <li>
-                                <strong>Product specification verification: </strong>Ensuring compliance with international standards for insecticide-treated products
+                                Product specification verification: Ensuring compliance with international standards for insecticide-treated products
                             </li>
                     </ul>
 
@@ -112,29 +112,29 @@
 
                     <p class="text-justify mt-2">
                        As countries scale up next-generation vector control tools, 
-                       reliable chemical analysis becomes critical for <strong>product evaluation,
-                        procurement assurance</strong>, and <strong>program monitoring</strong>. 
+                       reliable chemical analysis becomes critical for product evaluation,
+                        procurement assurance, and program monitoring. 
                        Once operational, AIRID’s Chemistry Laboratory will:
                     </p>
 
                     <ul class="text-justify mt-2">
                         <li>
-                            Enhance <strong>national quality assurance capacity</strong>
+                            Enhance national quality assurance capacity
                         </li>
                         <li>
-                            Contribute to <strong>WHO prequalification dossiers</strong>
+                            Contribute to WHO prequalification dossiers
                         </li>
                         <li>
-                            Support <strong>field trials and durability monitoring</strong>
+                            Support field trials and durability monitoring
                         </li>
                         <li>
-                            Build <strong>local expertise in regulatory science</strong>
+                            Build local expertise in regulatory science
                         </li>
                     </ul>
 
                     <p class="text-justify mt-2">
                         By strengthening regional infrastructure, AIRID aims 
-                        to ensure that only <strong>safe, effective, and high-quality products</strong>
+                        to ensure that only safe, effective, and high-quality products
                          reach the communities most at risk—helping to 
                         improve public health outcomes and sustain progress in malaria control.
                     </p>

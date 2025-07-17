@@ -58,16 +58,16 @@
                         The Molecular Laboratory at AIRID serves as a center of excellence for the detection,
                         identification, and genetic characterization of pathogens and vectors. By leveraging advanced
                         molecular tools and high-throughput technologies, the laboratory supports
-                        research in <strong>epidemiology, disease surveillance, vector resistance, and product
-                            validation</strong>.
+                        research in epidemiology, disease surveillance, vector resistance, and product
+                            validation.
                     </p>
 
 
                     <p class="text-justify mt-2">
-                        All procedures are conducted in compliance with <strong>international quality standards</strong>,
-                        including <strong>Good Laboratory Practice (GLP)</strong>, and aligned with <strong>WHO protocols
+                        All procedures are conducted in compliance with international quality standards,
+                        including Good Laboratory Practice (GLP), and aligned with WHO protocols
                             for molecular
-                            diagnostics and resistance monitoring</strong>. The lab plays a pivotal role in AIRID’s mission
+                            diagnostics and resistance monitoring. The lab plays a pivotal role in AIRID’s mission
                         to deliver data that informs control strategies and strengthens public health programs across
                         Africa.
                     </p>
@@ -133,9 +133,9 @@
 
                     <p class="text-justify mt-2">
                         The Molecular Laboratory provides the scientific foundation for many of
-                        AIRID’s programs—from monitoring <strong>drug and insecticide resistance</strong>, to validating
-                        diagnostic tools and <strong>tracking disease transmission</strong>. Its ability to produce precise,
-                        rapid, and reproducible results enhances <strong> data-driven decision-making </strong>for
+                        AIRID’s programs—from monitoring drug and insecticide resistance, to validating
+                        diagnostic tools and tracking disease transmission. Its ability to produce precise,
+                        rapid, and reproducible results enhances  data-driven decision-making for
                         national control programs and international partners.
                     </p>
 

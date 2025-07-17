@@ -56,16 +56,16 @@
                     <p class="text-justify mt-2">
                         The Insecticide Bioassay Laboratory at AIRID is a core facility dedicated to evaluating the efficacy
                         of a wide range of vector control interventions under standardized laboratory conditions.
-                        These include <strong>insecticide-treated nets (ITNs), indoor residual sprays (IRS),
+                        These include insecticide-treated nets (ITNs), indoor residual sprays (IRS),
                             attractive targeted sugar baits (ATSBs), spatial repellents, Topical repellents,
-                            larvicides,</strong>
+                            larvicides,
                         and other novel tools.
                     </p>
 
                     <p class="text-justify mt-2">
-                        All studies are conducted <strong>in accordance with the OECD Principles of Good Laboratory Practice
-                            (GLP) </strong> and follow the <strong>World Health Organization (WHO)
-                            prequalification guidelines</strong>, ensuring scientific rigour, data integrity, and regulatory
+                        All studies are conducted in accordance with the OECD Principles of Good Laboratory Practice
+                            (GLP)  and follow the World Health Organization (WHO)
+                            prequalification guidelines, ensuring scientific rigour, data integrity, and regulatory
                         compliance.
                     </p>
 
@@ -177,7 +177,7 @@
                 <p class="mt-2 bg-danger p-2 text-white text-center">
                     <strong>ARM-IN-CAGE TEST</strong>
                 </p>
-            </div> --}}
+            </div> 
 
 
 

@@ -76,7 +76,7 @@
 
                     <ul class="text-justify mt-2">
                         <li>
-                            Maintenance of <strong>insecticide-susceptible</strong> and field-derived resistant mosquito
+                            Maintenance of insecticide-susceptible and field-derived resistant mosquito
                             strains
                         </li>
                         <li>
@@ -151,102 +151,102 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="text-left"><strong>Anopheles gambiae kisumu</strong></td>
-                                <td style="width: 5%;"><strong>An. gambiae Kisumu</strong></td>
-                                <td><strong>An. gambiae</strong></td>
-                                <td class="text-left"><strong>Kenya</strong></td>
-                                <td class="text-left"><strong>BEI Ressources</strong></td>
-                                <td style="width: 5%;"><strong>2006</strong></td>
-                                <td><strong>Susceptible </strong></td>
-                                <td class="text-left"><strong>None</strong></td>
+                                <td class="text-left">Anopheles gambiae kisumu</td>
+                                <td style="width: 5%;">An. gambiae Kisumu</td>
+                                <td>An. gambiae</td>
+                                <td class="text-left">Kenya</td>
+                                <td class="text-left">BEI Ressources</td>
+                                <td style="width: 5%;">2006</td>
+                                <td>Susceptible </td>
+                                <td class="text-left">None</td>
                             </tr>
                             <tr>
-                                <td class="text-left"><strong>Anopheles VKPer </strong></td>
-                                <td style="width: 5%;"><strong> An. gambiae Vkper</strong></td>
-                                <td><strong>An. gambiae</strong></td>
-                                <td class="text-left"><strong> Kou Valley (Burkina-Faso)</strong></td>
+                                <td class="text-left">Anopheles VKPer </td>
+                                <td style="width: 5%;"> An. gambiae Vkper</td>
+                                <td>An. gambiae</td>
+                                <td class="text-left"> Kou Valley (Burkina-Faso)</td>
 
-                                <td class="text-left"><strong>IRSS, Burkina Faso</strong></td>
-                                <td style="width: 5%;"><strong>2004</strong></td>
-                                <td><strong>Resistant</strong></td>
-                                <td class="text-left"><strong> Kdr (L1014F)</strong></td>
+                                <td class="text-left">IRSS, Burkina Faso</td>
+                                <td style="width: 5%;">2004</td>
+                                <td>Resistant</td>
+                                <td class="text-left"> Kdr (L1014F)</td>
                             </tr>
                             <tr>
-                                <td class="text-left" "=""><strong>Anopheles Covè </strong></td>
-                                                        <td><strong>An. gambiae Covè</strong></td>
-                                                        <td><strong>An. gambiae - An. gambiae coluzzii</strong></td>
-                                                         <td class="text-left"><strong>Benin</strong></td>
+                                <td class="text-left" "="">Anopheles Covè </td>
+                                                        <td>An. gambiae Covè</td>
+                                                        <td>An. gambiae - An. gambiae coluzzii</td>
+                                                         <td class="text-left">Benin</td>
 
-                                                         <td class="text-left" "=""><strong>Covè; Benin</strong></td>
-                                <td><strong>2014</strong></td>
-                                <td><strong>Resistant</strong></td>
-                                <td class="text-left"><strong>Kdr (L1014F); Metabolic resistance (CYP6P3)</strong></td>
+                                                         <td class="text-left" "="">Covè; Benin</td>
+                                <td>2014</td>
+                                <td>Resistant</td>
+                                <td class="text-left">Kdr (L1014F); Metabolic resistance (CYP6P3)</td>
                             </tr>
                             <tr>
-                                <td class="text-left" "=""><strong>Anopheles Akron </strong></td>
-                                                        <td style="width: 5%;"><strong>An. gambiae Akron</strong></td>
-                                                        <td><strong>An. gambiae coluzzii</strong></td>
-                                                         <td class="text-left"><strong>Benin</strong></td>
+                                <td class="text-left" "="">Anopheles Akron </td>
+                                                        <td style="width: 5%;">An. gambiae Akron</td>
+                                                        <td>An. gambiae coluzzii</td>
+                                                         <td class="text-left">Benin</td>
 
-                                                         <td class="text-left" "=""><strong>BEI Ressources</strong></td>
-                                <td style="width: 5%;"><strong>2018</strong></td>
-                                <td><strong>Resistant</strong></td>
-                                <td class="text-left"><strong>Ace-1 mutation; Kdr (L1014F).</strong></td>
+                                                         <td class="text-left" "="">BEI Ressources</td>
+                                <td style="width: 5%;">2018</td>
+                                <td>Resistant</td>
+                                <td class="text-left">Ace-1 mutation; Kdr (L1014F).</td>
                             </tr>
                             <tr>
-                                <td class="text-left" "=""><strong>Aedes ROCK</strong></td>
-                                                        <td style="width: 5%;"><strong>Aedes  ROCK</strong></td>
-                                                        <td><strong>Aedes aegypti</strong></td>
-                                                         <td class="text-left"><strong>New York</strong></td>
+                                <td class="text-left" "="">Aedes ROCK</td>
+                                                        <td style="width: 5%;">Aedes  ROCK</td>
+                                                        <td>Aedes aegypti</td>
+                                                         <td class="text-left">New York</td>
 
-                                                         <td class="text-left" "=""><strong>BEI Ressources</strong></td>
-                                <td style="width: 5%;"><strong>2018</strong></td>
-                                <td><strong>Susceptible </strong></td>
-                                <td class="text-left"><strong>None</strong></td>
+                                                         <td class="text-left" "="">BEI Ressources</td>
+                                <td style="width: 5%;">2018</td>
+                                <td>Susceptible </td>
+                                <td class="text-left">None</td>
                             </tr>
                             <tr>
-                                <td class="text-left" style="width: 10%;"><strong> Aedes Dandji </strong></td>
-                                <td style="width: 5%;"><strong>Aedes Dandji</strong></td>
-                                <td><strong>Aedes aegypti</strong></td>
-                                <td class="text-left"><strong>Benin</strong></td>
+                                <td class="text-left" style="width: 10%;"> Aedes Dandji </td>
+                                <td style="width: 5%;">Aedes Dandji</td>
+                                <td>Aedes aegypti</td>
+                                <td class="text-left">Benin</td>
 
-                                <td class="text-left" style="width: 10%;"><strong> Dandji; Benin </strong></td>
-                                <td style="width: 5%;"><strong>2018</strong></td>
-                                <td><strong>Resistant</strong></td>
-                                <td class="text-left"><strong>Not characterized</strong></td>
+                                <td class="text-left" style="width: 10%;"> Dandji; Benin </td>
+                                <td style="width: 5%;">2018</td>
+                                <td>Resistant</td>
+                                <td class="text-left">Not characterized</td>
                             </tr>
                             <tr>
-                                <td class="text-left"><strong>Culex Dandji</strong> </td>
-                                <td style="width: 5%;"><strong>Culex Dandji</strong></td>
-                                <td><strong>Culex quinquefasciatus</strong></td>
-                                <td class="text-left"><strong>Benin</strong></td>
+                                <td class="text-left">Culex Dandji </td>
+                                <td style="width: 5%;">Culex Dandji</td>
+                                <td>Culex quinquefasciatus</td>
+                                <td class="text-left">Benin</td>
 
                                 <td class="text-left">Dandji; Benin </td>
-                                <td style="width: 5%;"><strong>2020</strong></td>
-                                <td><strong>Resistant</strong></td>
-                                <td class="text-left"><strong> Not characterized</strong></td>
+                                <td style="width: 5%;">2020</td>
+                                <td>Resistant</td>
+                                <td class="text-left"> Not characterized</td>
                             </tr>
                             <tr>
-                                <td class="text-left"><strong>Culex Covè </strong></td>
-                                <td style="width: 5%;"><strong>Culex Covè</strong></td>
-                                <td><strong>Culex quinquefasciatus</strong></td>
-                                <td class="text-left"><strong>Benin</strong></td>
+                                <td class="text-left">Culex Covè </td>
+                                <td style="width: 5%;">Culex Covè</td>
+                                <td>Culex quinquefasciatus</td>
+                                <td class="text-left">Benin</td>
 
                                 <td class="text-left">Covè; Benin </td>
-                                <td style="width: 5%;"><strong>2020</strong></td>
-                                <td><strong>Resistant</strong></td>
-                                <td class="text-left"><strong> Not characterized</strong></td>
+                                <td style="width: 5%;">2020</td>
+                                <td>Resistant</td>
+                                <td class="text-left"> Not characterized</td>
                             </tr>
                             <tr>
-                                <td class="text-left"><strong>FUMOZ</strong></td>
-                                <td style="width: 5%;"><strong>Anopheles FUMOZ</strong></td>
-                                <td><strong>Anopheles funestus</strong></td>
-                                <td class="text-left"><strong>Mozambique</strong></td>
+                                <td class="text-left">FUMOZ</td>
+                                <td style="width: 5%;">Anopheles FUMOZ</td>
+                                <td>Anopheles funestus</td>
+                                <td class="text-left">Mozambique</td>
 
                                 <td class="text-left">BEI Ressources </td>
-                                <td style="width: 5%;"><strong>2021</strong></td>
-                                <td><strong>Resistant</strong></td>
-                                <td class="text-left"><strong> Metabolic resistance (CYP6P9a and CYP6P9b)</strong></td>
+                                <td style="width: 5%;">2021</td>
+                                <td>Resistant</td>
+                                <td class="text-left"> Metabolic resistance (CYP6P9a and CYP6P9b)</td>
                             </tr>
                         </tbody>
                     </table>
