@@ -26,34 +26,32 @@
             <div class="row">
 
                 <div class="col-12">
-                    <span class="title-section" style="font-size: 1.2em; font-weight: bold">Optimizing Vector Control
-                        Through Strategic Intervention Combinations</span>
+                    <span class="title-section" style="font-size: 1.2em; font-weight: bold">Optimising Complementary
+                        Insecticide-Based Strategies for Malaria Vector Control</span>
                 </div>
-               
 
-                <p class="text-justify mt-3">
-
-                    The OPTIMVEC project is a cutting-edge research initiative designed to address
-                    the challenge of residual malaria transmission during the third year after mass
-                    distribution of insecticide-treated nets (ITNs). In Benin, the project is led by
-                    the Centre de Recherche Entomologique de Cotonou (CREC) in collaboration with
-                    the African Institute for Research in Infectious Diseases (AIRID), with modelling
-                    support from Imperial College London.
-                </p>
-
-                <p class="text-justify mt-2">
-                    The project investigates the effectiveness, interaction, and public health value of
-                    deploying additional indoor vector control tools—such as spatial repellents, IRS,
-                    and treated wall linings—alongside aged (24-month-old) ITNs,
-                    with the goal of improving protection during the later phase of the ITN coverage cycle.
-                </p>
-
-                 <div class="col-12">
+                <div class="col-12 mt-2">
                     <h5 class="title-section mt-2">Principal Investigator</h5>
                     <p class="text-justify mt-2">
                         Dr Corine Ngufor
                     </p>
                 </div>
+
+                 <div class="col-12">
+                    <h5 class="title-section mt-2">Background</h5>
+                    <p class="text-justify mt-2">
+                        The OPTIMVEC project is a cutting-edge research initiative
+                         designed to address the challenge of residual malaria transmission 
+                         that persists during the third year after mass distribution of insecticide-treated 
+                         nets (ITNs). As ITNs age and lose efficacy—especially in areas with widespread 
+                         insecticide resistance—new strategies are urgently needed to maintain protection. 
+                         The project aims to identify and optimise insecticide-based interventions that 
+                        can complement ITNs and enhance overall vector control effectiveness.
+                    </p>
+                </div>
+
+
+
 
                 <div class="col-12">
                     <h5 class="title-section mt-2">Project Objectives</h5>
@@ -61,18 +59,16 @@
 
                     <ul class="text-justify mt-2">
                         <li>
-                            Assess synergistic or antagonistic effects of combining insecticide classes
-                            using laboratory bioassays
+                            Assess the synergistic or antagonistic effects of combining insecticides through laboratory bioassays.
                         </li>
                         <li>
-                            Evaluate the efficacy of additional vector control tools (e.g. spatial
-                            repellents, IRS) when paired
-                            with aged ITNs through  semi-field and experimental hut trials
+                            Evaluate the efficacy of supplementary vector control tools (e.g., spatial repellents, IRS) with aged ITNs.
                         </li>
                         <li>
-                            Use mathematical modelling to project the public health impact
-                            of various
-                            intervention combinations under different ecological and housing conditions
+                           Model the public health impact of various intervention combinations under diverse conditions.
+                        </li>
+                        <li>
+                            Explore the influence of environmental variables and resistance on intervention outcomes.
                         </li>
                     </ul>
                 </div>
@@ -82,71 +78,87 @@
                     <h5 class="title-section mt-2">Core Activities</h5>
 
                     <p class="text-justify mt-2">
-                        Laboratory Research
+                       <strong> Laboratory Research</strong>
                     </p>
                     <ul class="text-justify mt-2">
                         <li>
-                            Susceptibility testing of local Anopheles vectors to transfluthrin
+                            Testing insecticide combinations against both pyrethroid-susceptible and -resistant mosquitoes.
                         </li>
                         <li>
-                            Evaluation of synergism between PBO and pyrethroids
+                            Synergist bioassays (e.g., PBO + pyrethroids).
                         </li>
                         <li>
-                            Behavioural assays on interactions between spatial repellents and next-gen ITNs
+                            Behavioural assays on mosquito responses to spatial repellents and ITNs.
                         </li>
                     </ul>
 
 
                     <p class="text-justify mt-2">
-                        Semi-Field & Experimental Trials
+                       <strong>Experimental Hut Trials</strong>
                     </p>
                     <ul class="text-justify mt-2">
                         <li>
-                            Release-recapture studies with resistant mosquitoes
+                            Pairing transfluthrin passive emanators with aged ITNs.
                         </li>
                         <li>
-                            Experimental hut comparisons across different hut designs (open vs. closed eaves)
+                            Trials in huts with different structural designs.
                         </li>
                         <li>
-                            Assessment of complementary use of IRS and SRs with 24-month-old ITNs
+                            Controlled mosquito release studies with resistant and susceptible strains.
                         </li>
                     </ul>
 
 
                     <p class="text-justify mt-2">
-                        Modelling & Environmental Analysis
+                        <strong>Modelling & Environmental Analysis</strong>
                     </p>
 
 
                     <ul class="text-justify mt-2">
                         <li>
-                            Simulation of malaria burden reduction under various product mixes
+                            Simulations of malaria burden reduction with various intervention mixes.
                         </li>
                         <li>
-                            Evaluation of how temperature, humidity, and housing types affect intervention performance
+                            Analysis of temperature, humidity, and housing factors.
                         </li>
-                       
+                        <li>
+                            Identification of optimal tool combinations for specific settings.
+                        </li>
+
                     </ul>
                 </div>
 
 
-               
+                 <div class="col-12">
+                    <h5 class="title-section mt-2">AIRID’s Role</h5>
+
+                   <p class="text-justify mt-2">
+                        AIRID plays a central role in implementing experimental hut studies
+                         and supporting laboratory evaluations in Benin. Its field infrastructure 
+                         and expertise are essential to testing innovative strategies 
+                        that can inform national and global policies.
+                    </p>
+                </div>
+
 
                 <div class="col-12">
-                    <h5 class="title-section mt-2">Project Partners</h5>
+                    <h5 class="title-section mt-2">Partners & Funders</h5>
 
                     <ul class="text-justify mt-2">
-                      
+
                         <li>
-                            Centre de Recherche Entomologique de Cotonou (CREC) – Lead Institution
+                            Lead Institution: Centre de Recherche Entomologique de Cotonou (CREC)
                         </li>
                         <li>
-                            African Institute for Research in Infectious Diseases (AIRID) – Research Collaborator
+                            Research Collaborator: African Institute for Research in Infectious Diseases (AIRID)
                         </li>
                         <li>
-                            Imperial College London – Modelling Consultant
+                            Modelling Consultant: Imperial College London
                         </li>
-                        
+                        <li>
+                            Funder: Bill & Melinda Gates Foundation
+                        </li>
+
                     </ul>
                 </div>
 
@@ -155,31 +167,14 @@
 
                     <ul class="text-justify mt-2">
                         <li>
-                            Gates Foundation
+                            Budget: USD 1,200,352
                         </li>
-                       
+                        <li>
+                            Timeline: January 2025 – December 2027
+                        </li>
+
                     </ul>
                 </div>
-
-                
-
-
-                <div class="col-12">
-                    <h5 class="title-section mt-2">Budget</h5>
-
-                    <p class="text-justify mt-2">
-                       USD 1,200,352
-                    </p>
-                </div>
-
-                <div class="col-12">
-                    <h5 class="title-section mt-2">Timeline</h5>
-
-                    <p class="text-justify mt-2">
-                        January 2025 – December 2027
-                    </p>
-                </div>
-
 
             </div>
         </div>

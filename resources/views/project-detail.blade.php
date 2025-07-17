@@ -144,7 +144,7 @@
         </div><!-- Main row end -->
 
         </div><!-- Conatiner end -->
-
+{{-- 
         <div class="container">
             <h3>Key Personnel associated</h3>
             <div class="row">
@@ -183,6 +183,6 @@
 
 
             </div>
-        </div>
+        </div> --}}
     </section>
 @endsection

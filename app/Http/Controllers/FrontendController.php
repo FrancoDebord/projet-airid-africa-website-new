@@ -142,7 +142,7 @@ class FrontendController extends Controller
 
     function allPublicationsPage(){
 
-        $all_publications = AIRID_Publication::orderBy("date_publication","desc")->simplePaginate(20);
+        $all_publications = AIRID_Publication::orderBy("annee_publication","desc")->simplePaginate(20);
         return view("all-publications",compact("all_publications"));
     }
 
