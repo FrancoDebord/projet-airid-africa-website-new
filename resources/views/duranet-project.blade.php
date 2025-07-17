@@ -33,20 +33,27 @@
 
                 <p class="text-justify mt-3">
 
-                    The <strong>DuraNet® Plus Durability Study</strong> is a major multi-country
+                    The DuraNet® Plus Durability Study is a major multi-country
                     operational research project evaluating the long-term physical
-                    and insecticidal durability of <strong>DuraNet® Plus</strong>—a WHO-prequalified
-                    long-lasting insecticidal net (LLIN) that combines <strong>alpha-cypermethrin
-                        and piperonyl butoxide (PBO)</strong> to improve protection against pyrethroid-resistant malaria
+                    and insecticidal durability of DuraNet® Plus—a WHO-prequalified
+                    long-lasting insecticidal net (LLIN) that combines alpha-cypermethrin
+                        and piperonyl butoxide (PBO) to improve protection against pyrethroid-resistant malaria
                     vectors.
                 </p>
 
                 <p class="text-justify mt-2">
-                    The study is conducted across <strong>Benin, Cameroon, and Tanzania,</strong>
+                    The study is conducted across Benin, Cameroon, and Tanzania,
                     representing diverse malaria transmission settings in West, Central,
                     and East Africa. It compares the performance of DuraNet® Plus to a standard
-                    pyrethroid-only LLIN (DuraNet®) over a <strong>three-year period</strong> of household use.
+                    pyrethroid-only LLIN (DuraNet®) over a three-year period of household use.
                 </p>
+
+                 <div class="col-12">
+                    <h5 class="title-section mt-2">Principal Investigator</h5>
+                    <p class="text-justify mt-2">
+                        Dr Corine Ngufor
+                    </p>
+                </div>
 
                 <div class="col-12">
                     <h5 class="title-section mt-2">Role of AIRID</h5>
@@ -54,9 +61,9 @@
 
                     <p class="text-justify mt-2">
                         AIRID is a core partner in this multi-country study, contributing
-                        to <strong>field implementation, entomological evaluations</strong>, and <strong>cross-site
-                            coordination</strong>. The experimental hut trials in Benin—used to assess bioefficacy
-                        under natural conditions—are conducted at <strong>AIRID’s Semi-Field Station in Covè</strong>.
+                        to field implementation, entomological evaluations, and cross-site
+                            coordination. The experimental hut trials in Benin—used to assess bioefficacy
+                        under natural conditions—are conducted at AIRID’s Semi-Field Station in Covè.
                     </p>
                 </div>
 
@@ -66,7 +73,7 @@
 
 
                     <p class="text-justify mt-2">
-                        <strong> PAMVERC-BENIN</strong> (Pan-African Malaria Vector Research Consortium)
+                         PAMVERC-BENIN (Pan-African Malaria Vector Research Consortium)
                         serves as the lead partner, coordinating study design, data quality assurance,
                         and overall project implementation across countries.
                     </p>
@@ -78,18 +85,18 @@
 
                     <ul class="text-justify mt-2">
                         <li>
-                            Assess <strong>net attrition, fabric integrity, insecticidal content</strong>, and bioefficacy
+                            Assess net attrition, fabric integrity, insecticidal content, and bioefficacy
                             over time
                         </li>
                         <li>
                             Compare the durability and effectiveness of DuraNet® Plus to conventional pyrethroid-only LLINs
                         </li>
                         <li>
-                            Monitor <strong> PBO performance</strong> against resistant mosquito populations
+                            Monitor  PBO performance against resistant mosquito populations
                         </li>
                         <li>
-                            Provide high-quality evidence to guide <strong>procurement
-                                and policy decisions</strong> at national and global levels
+                            Provide high-quality evidence to guide procurement
+                                and policy decisions at national and global levels
                         </li>
                     </ul>
                 </div>
@@ -99,17 +106,17 @@
 
                     <ul class="text-justify mt-2">
                         <li>
-                            <strong> Household surveys</strong> to monitor net usage, wear-and-tear, and user acceptability
+                             Household surveys to monitor net usage, wear-and-tear, and user acceptability
                         </li>
                         <li>
-                            <strong>Chemical analysis</strong> and <strong>bioassays</strong> to assess active ingredient
+                            Chemical analysis and bioassays to assess active ingredient
                             content and mosquito knockdown
                         </li>
                         <li>
-                            <strong>Experimental hut trials </strong> with free-flying resistant mosquitoes
+                            Experimental hut trials  with free-flying resistant mosquitoes
                         </li>
                         <li>
-                            <strong>Qualitative research</strong> on user perception and behaviour
+                            Qualitative research on user perception and behaviour
                         </li>
                     </ul>
                 </div>
@@ -119,18 +126,18 @@
 
                     <ul class="text-justify mt-2">
                         <li>
-                            <strong>Benin</strong> – Zakpota District
+                            Benin – Zakpota District
                         </li>
                         <li>
-                            <strong>Cameroon</strong> – Mbalmayo District
+                            Cameroon – Mbalmayo District
                         </li>
                         <li>
-                            <strong>Tanzania</strong> – Muheza District
+                            Tanzania – Muheza District
                         </li>
                     </ul>
 
                     <p class="text-justify mt-2">
-                        Each country includes approximately <strong>1,800 households</strong>, with two follow-up cohorts 
+                        Each country includes approximately 1,800 households, with two follow-up cohorts 
                         (non-destructive and destructive sampling) monitored over 36 months.
                     </p>
                 </div>
@@ -167,8 +174,8 @@
                     <h5 class="title-section mt-2">Timeline</h5>
 
                     <p class="text-justify mt-2">
-                        <strong>2023–2025</strong> – Ongoing follow-up and data collection <br>
-                        <strong>Final results expected by late 2025</strong>
+                        2023–2025 – Ongoing follow-up and data collection <br>
+                        Final results expected by late 2025
 
                     </p>
                 </div>

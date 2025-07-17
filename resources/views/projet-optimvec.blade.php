@@ -33,20 +33,27 @@
 
                 <p class="text-justify mt-3">
 
-                    The <strong>OPTIMVEC project</strong> is a cutting-edge research initiative designed to address
-                    the challenge of <strong>residual malaria transmission</strong> during the third year after mass
-                    distribution of insecticide-treated nets (ITNs). In <strong>Benin</strong>, the project is led by
-                    the <strong>Centre de Recherche Entomologique de Cotonou (CREC)</strong> in collaboration with
-                    the <strong>African Institute for Research in Infectious Diseases (AIRID)</strong>, with modelling
-                    support from <strong>Imperial College London</strong>.
+                    The OPTIMVEC project is a cutting-edge research initiative designed to address
+                    the challenge of residual malaria transmission during the third year after mass
+                    distribution of insecticide-treated nets (ITNs). In Benin, the project is led by
+                    the Centre de Recherche Entomologique de Cotonou (CREC) in collaboration with
+                    the African Institute for Research in Infectious Diseases (AIRID), with modelling
+                    support from Imperial College London.
                 </p>
 
                 <p class="text-justify mt-2">
-                    The project investigates the <strong>effectiveness, interaction, and public health value</strong> of
+                    The project investigates the effectiveness, interaction, and public health value of
                     deploying additional indoor vector control tools—such as spatial repellents, IRS,
-                    and treated wall linings—alongside <strong>aged (24-month-old) ITNs</strong>,
+                    and treated wall linings—alongside aged (24-month-old) ITNs,
                     with the goal of improving protection during the later phase of the ITN coverage cycle.
                 </p>
+
+                 <div class="col-12">
+                    <h5 class="title-section mt-2">Principal Investigator</h5>
+                    <p class="text-justify mt-2">
+                        Dr Corine Ngufor
+                    </p>
+                </div>
 
                 <div class="col-12">
                     <h5 class="title-section mt-2">Project Objectives</h5>
@@ -54,16 +61,16 @@
 
                     <ul class="text-justify mt-2">
                         <li>
-                            Assess <strong>synergistic or antagonistic effects</strong> of combining insecticide classes
+                            Assess synergistic or antagonistic effects of combining insecticide classes
                             using laboratory bioassays
                         </li>
                         <li>
-                            Evaluate the <strong>efficacy of additional vector control tools</strong> (e.g. spatial
+                            Evaluate the efficacy of additional vector control tools (e.g. spatial
                             repellents, IRS) when paired
-                            with aged ITNs through <strong> semi-field and experimental hut trials</strong>
+                            with aged ITNs through  semi-field and experimental hut trials
                         </li>
                         <li>
-                            Use <strong>mathematical modelling</strong> to project the <strong>public health impact</strong>
+                            Use mathematical modelling to project the public health impact
                             of various
                             intervention combinations under different ecological and housing conditions
                         </li>
@@ -75,7 +82,7 @@
                     <h5 class="title-section mt-2">Core Activities</h5>
 
                     <p class="text-justify mt-2">
-                        <strong>Laboratory Research</strong>
+                        Laboratory Research
                     </p>
                     <ul class="text-justify mt-2">
                         <li>
@@ -91,7 +98,7 @@
 
 
                     <p class="text-justify mt-2">
-                        <strong>Semi-Field & Experimental Trials</strong>
+                        Semi-Field & Experimental Trials
                     </p>
                     <ul class="text-justify mt-2">
                         <li>
@@ -107,7 +114,7 @@
 
 
                     <p class="text-justify mt-2">
-                        <strong>Modelling & Environmental Analysis</strong>
+                        Modelling & Environmental Analysis
                     </p>
 
 
@@ -116,7 +123,7 @@
                             Simulation of malaria burden reduction under various product mixes
                         </li>
                         <li>
-                            Evaluation of how <strong>temperature, humidity</strong>, and <strong>housing types</strong> affect intervention performance
+                            Evaluation of how temperature, humidity, and housing types affect intervention performance
                         </li>
                        
                     </ul>
@@ -148,7 +155,7 @@
 
                     <ul class="text-justify mt-2">
                         <li>
-                            <strong>Gates Foundation</strong>
+                            Gates Foundation
                         </li>
                        
                     </ul>
@@ -161,7 +168,7 @@
                     <h5 class="title-section mt-2">Budget</h5>
 
                     <p class="text-justify mt-2">
-                       <strong>USD 1,200,352</strong>
+                       USD 1,200,352
                     </p>
                 </div>
 
@@ -169,7 +176,7 @@
                     <h5 class="title-section mt-2">Timeline</h5>
 
                     <p class="text-justify mt-2">
-                        <strong>January 2025 – December 2027</strong>
+                        January 2025 – December 2027
                     </p>
                 </div>
 

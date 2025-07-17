@@ -30,24 +30,24 @@
                         Malaria Vaccine Delivery in Benin; feasibility, impact, and cost effectiveness</span>
                 </div>
                 <div class="col-12    mt-3">
-                   <div class="row">
-                    <div class="col-12  text-center">
-                         <img src="{{ asset('storage/assets/projects/gavi_siri.jpg') }}" class="img-thumbnail "
-                        style="height: 420px" alt="">
+                    <div class="row">
+                        <div class="col-12  text-center">
+                            <img src="{{ asset('storage/assets/projects/gavi_siri.jpg') }}" class="img-thumbnail "
+                                style="height: 420px" alt="">
+                        </div>
                     </div>
-                   </div>
                 </div>
 
                 <p class="text-justify mt-3">
 
-                    The <strong>GAVI-SIRI</strong> project is a multi-country operational research initiative
+                    The GAVI-SIRI project is a multi-country operational research initiative
                     evaluating a new strategy to optimize the timing of malaria vaccine delivery
-                    in areas with highly seasonal malaria transmission. In <strong>Benin</strong>, the project is led
-                    by the <strong>Centre de Recherche Entomologique de Cotonou (CREC)</strong> in collaboration with
-                    the <strong>African Institute for Research in Infectious Diseases (AIRID)</strong> and the
-                    <strong>national
-                        immunisation and malaria control programmes</strong>. AIRID plays a central
-                    role in coordinating <strong>implementation of field research activities.</strong>
+                    in areas with highly seasonal malaria transmission. In Benin, the project is led
+                    by the Centre de Recherche Entomologique de Cotonou (CREC) in collaboration with
+                    the African Institute for Research in Infectious Diseases (AIRID) and the
+                    national
+                    immunisation and malaria control programmes. AIRID plays a central
+                    role in coordinating implementation of field research activities.
                 </p>
 
                 <p class="text-justify mt-2">
@@ -57,17 +57,25 @@
                 </p>
 
                 <div class="col-12">
+                    <h5 class="title-section mt-2">Principal Investigator</h5>
+                    <p class="text-justify mt-2">
+                        Dr Corine Ngufor
+                    </p>
+                </div>
+
+                
+                <div class="col-12">
                     <h5 class="title-section mt-2">Context</h5>
 
 
                     <p class="text-justify mt-2">
                         In regions like central Benin, where malaria cases spike during the rainy season,
                         there may be substantial benefit to aligning vaccine delivery with this high-risk
-                        period. The project compares a <strong>“seasonal intensification”</strong> strategy in the
-                        <strong>Dassa-Glazoué </strong>
-                        health zone to standard age-based vaccination in <strong>Tchaourou</strong>. Vaccination efforts are
+                        period. The project compares a “seasonal intensification” strategy in the
+                        Dassa-Glazoué
+                        health zone to standard age-based vaccination in Tchaourou. Vaccination efforts are
                         intensified
-                        in May and June, and the timing of the <strong>fourth vaccine dose </strong>is adjusted to ensure
+                        in May and June, and the timing of the fourth vaccine dose is adjusted to ensure
                         maximum protection
                         during peak transmission months.
                     </p>
@@ -80,17 +88,17 @@
 
                     <ul class="text-justify mt-2">
                         <li>
-                            Improve malaria vaccine <strong>uptake and scheduling</strong> among children under 2
+                            Improve malaria vaccine uptake and scheduling among children under 2
                         </li>
                         <li>
-                            Enhance <strong>protection during peak malaria season</strong>
+                            Enhance protection during peak malaria season
                         </li>
                         <li>
-                            Assess <strong>feasibility, community acceptance</strong>, and <strong>operational
-                                challenges</strong>
+                            Assess feasibility, community acceptance, and operational
+                            challenges
                         </li>
                         <li>
-                            Determine the <strong>cost-effectiveness</strong> of seasonal delivery compared to routine
+                            Determine the cost-effectiveness of seasonal delivery compared to routine
                             age-based vaccination
                         </li>
                     </ul>
@@ -102,16 +110,16 @@
 
                     <ul class="text-justify mt-2">
                         <li>
-                            <strong>Qualitative research</strong> with caregivers, health workers, and community leaders
+                            Qualitative research with caregivers, health workers, and community leaders
                         </li>
                         <li>
-                            <strong>Health facility data collection</strong> to assess malaria incidence
+                            Health facility data collection to assess malaria incidence
                         </li>
                         <li>
-                            <strong>Coverage surveys</strong> to measure uptake and timing of vaccine doses
+                            Coverage surveys to measure uptake and timing of vaccine doses
                         </li>
                         <li>
-                            <strong>Cost analysis and modelling</strong> to assess financial sustainability and health
+                            Cost analysis and modelling to assess financial sustainability and health
                             impact
                         </li>
                     </ul>
@@ -125,7 +133,7 @@
                             Ministry of Health (Benin)
                         </li>
                         <li>
-                            	Centre de Recherche Entomologique de Cotonou (CREC)
+                            Centre de Recherche Entomologique de Cotonou (CREC)
                         </li>
                         <li>
                             African Institute for Research in Infectious Diseases (AIRID)
@@ -152,20 +160,20 @@
                     <h5 class="title-section mt-2">Funders</h5>
 
                     <ul class="text-justify mt-2">
-                       <li>
-                        <strong>Gavi, the Vaccine Alliance</strong>
-                       </li>
-                       <li>
-                        <strong>Global Health EDCTP3</strong>
-                       </li>
+                        <li>
+                            Gavi, the Vaccine Alliance
+                        </li>
+                        <li>
+                            Global Health EDCTP3
+                        </li>
                     </ul>
                 </div>
 
-                  <div class="col-12">
+                <div class="col-12">
                     <h5 class="title-section mt-2">Budget</h5>
 
                     <p class="text-justify mt-2">
-                       <strong>USD 2,070,791</strong>
+                        USD 2,070,791
                     </p>
                 </div>
 
@@ -174,9 +182,9 @@
                     <h5 class="title-section mt-2">Timeline</h5>
 
                     <p class="text-justify mt-2">
-                     The study began in <strong>May 2025</strong>, with preliminary results expected in <strong> early 2026</strong>.
-                      Outcomes will inform malaria 
-                     vaccine policy and delivery strategies across sub-Saharan Africa.
+                        The study began in May 2025, with preliminary results expected in early 2026.
+                        Outcomes will inform malaria
+                        vaccine policy and delivery strategies across sub-Saharan Africa.
                     </p>
                 </div>
 
