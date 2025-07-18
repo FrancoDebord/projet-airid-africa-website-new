@@ -12,12 +12,6 @@
                     <div class="col-lg-12">
                         <div class="banner-heading">
                             <h1 class="banner-title top_title">Our Insectary</h1>
-                            {{-- <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb justify-content-center">
-                                    <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-                                    <li class="breadcrumb-item"><a href="#">Our Insectary</a></li>
-                                </ol>
-                            </nav> --}}
                         </div>
                     </div><!-- Col end -->
                 </div><!-- Row end -->
@@ -33,8 +27,7 @@
                     <h4 class="text-bold border p-3 text-center text-danger">Insectary</h4>
 
                     <p class="mt-3 text-justify"> 
-                        {{-- We raise different strains of mosquitoes in our insectary that we hold
-                        from different regions. --}}
+                     
 
                         AIRID’s research is supported by a growing network of specialized laboratories and field sites
                         designed to
@@ -66,7 +59,7 @@
                     </p>
 
                     <p class="text-justify mt-2">
-                        All rearing activities are conducted under <strong>Good Laboratory Practice (GLP)-compliant</strong>
+                        All rearing activities are conducted under Good Laboratory Practice (GLP)-compliant
                         conditions, with rigorous quality control and environmental monitoring. The insectary
                         plays a foundational role in maintaining colony integrity and
                         ensuring reproducibility and reliability in entomological research.
@@ -99,23 +92,23 @@
 
                     <ul class="text-justify mt-2">
                         <li>
-                            <strong>Temperature- and humidity-controlled rearing rooms</strong>
+                            Temperature- and humidity-controlled rearing rooms
                         </li>
                         <li>
-                            <strong>Larval and pupal trays</strong> for aquatic stage development
+                            Larval and pupal trays for aquatic stage development
                         </li>
                         <li>
-                            <strong>Adult holding cages</strong> for mating and oviposition
+                            Adult holding cages for mating and oviposition
                         </li>
                         <li>
-                            <strong>Blood-feeding stations</strong>, including membrane feeders and animal hosts (where
+                            Blood-feeding stations, including membrane feeders and animal hosts (where
                             approved)
                         </li>
                         <li>
-                            <strong>Dedicated preparation and waste-handling areas</strong>
+                            Dedicated preparation and waste-handling areas
                         </li>
                         <li>
-                            <strong>Colony record systems</strong> for tracking strain lineage, performance, and health
+                            Colony record systems for tracking strain lineage, performance, and health
                         </li>
                     </ul>
 
@@ -263,7 +256,7 @@
                         class="img-fluid img-thumbnail" />
 
                     <p class="mt-2 bg-danger p-2 text-white text-center">
-                        <strong>Insectary Entrance</strong>
+                      <strong>  Insectary Entrance</strong>
                     </p>
                 </div>
                 <div class="col-12 col-sm-6 ">
