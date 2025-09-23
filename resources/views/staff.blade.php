@@ -36,32 +36,48 @@
 
             <div class="row justify-content-center">
                 @forelse ($executive_director as $leader)
+                    <div class="col-lg-4 col-sm-6 mb-5 d-flex">
 
-                <div class="col-lg-3 col-sm-6 mb-5">
-                    <div class="ts-team-wrapper">
-                        <div class="team-img-wrapper">
-                            <img loading="lazy" src="{{ asset('storage/assets/staff/' . $leader->photo_personnel) }}" class="img-fluid card-img-bottom" alt="team-img">
-                        </div>
-                        <div class="ts-team-content-classic">
-                            <h3 class="ts-name">{{ $leader->titre . ' ' . $leader->prenom_personnel . ' ' . $leader->nom_personnel }}</h3>
-                            <p class="ts-designation">{{ $leader->posteOccupe->intitule_poste }}</p>
-                            <p class="ts-description">{{ Str::limit($leader->intro_personnel,100) }}
-                            </p>
-                            <div class="team-social-icons">
-                                <a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a target="_blank" href="#"><i class="fab fa-twitter"></i></a>
-                                <a target="_blank" href="#"><i class="fab fa-linkedin"></i></a>
+                         <div class="card flex-fill text-center">
+                            <img src="{{ asset('storage/assets/staff/' . $leader->photo_personnel) }}" class="card-img-top img-fluid" alt="...">
+                            <div class="card-body">
+                                <h3 class="ts-name">
+                                    {{ $leader->titre . ' ' . $leader->prenom_personnel . ' ' . $leader->nom_personnel }}</h3>
+                                <p class="ts-designation">{{ $leader->posteOccupe->intitule_poste }}</p>
+
+                                <div class="team-social-icons">
+                                    <a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a target="_blank" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a target="_blank" href="#"><i class="fab fa-linkedin"></i></a>
+                                </div>
                             </div>
-                            <!--/ social-icons-->
                         </div>
-                    </div>
-                    <!--/ Team wrapper 1 end -->
 
-                </div><!-- Col end -->
+                        {{-- <div class="ts-team-wrapper">
+                            <div class="team-img-wrapper">
+                                <img loading="lazy" src="{{ asset('storage/assets/staff/' . $leader->photo_personnel) }}"
+                                    class="img-fluid card-img-bottom" alt="team-img">
+                            </div>
+                            <div class="ts-team-content-classic">
+                                <h3 class="ts-name">
+                                    {{ $leader->titre . ' ' . $leader->prenom_personnel . ' ' . $leader->nom_personnel }}
+                                </h3>
+                                <p class="ts-designation">{{ $leader->posteOccupe->intitule_poste }}</p>
+                                </p>
+                                <div class="team-social-icons">
+                                    <a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a target="_blank" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a target="_blank" href="#"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                                <!--/ social-icons-->
+                            </div>
+                        </div> --}}
+                        <!--/ Team wrapper 1 end -->
+
+                    </div><!-- Col end -->
                 @empty
-                    
                 @endforelse
-              
+
             </div>
 
             <div class="row text-center">
@@ -73,32 +89,47 @@
 
             <div class="row justify-content-center">
                 @forelse ($other_staffs as $staff)
+                    <div class="col-lg-3 col-sm-6 mb-5 d-flex">
 
-                <div class="col-lg-3 col-sm-6 mb-5">
-                    <div class="ts-team-wrapper">
-                        <div class="team-img-wrapper">
-                            <img loading="lazy" src="{{ asset('storage/assets/staff/' . $staff->photo_personnel) }}" class="img-fluid card-img-bottom " alt="team-img">
-                        </div>
-                        <div class="ts-team-content-classic">
-                            <h3 class="ts-name">{{ $staff->titre . ' ' . $staff->prenom_personnel . ' ' . $staff->nom_personnel }}</h3>
-                            <p class="ts-designation">{{ $staff->posteOccupe->intitule_poste }}</p>
-                            <p class="ts-description">{{ Str::limit($staff->intro_personnel,100) }}
-                            </p>
-                            <div class="team-social-icons">
-                                <a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a target="_blank" href="#"><i class="fab fa-twitter"></i></a>
-                                <a target="_blank" href="#"><i class="fab fa-linkedin"></i></a>
+                        <div class="card flex-fill text-center">
+                            <img src="{{ asset('storage/assets/staff/' . $staff->photo_personnel) }}" class="card-img-top img-fluid" alt="...">
+                            <div class="card-body">
+                                <h3 class="ts-name">
+                                    {{ $staff->titre . ' ' . $staff->prenom_personnel . ' ' . $staff->nom_personnel }}</h3>
+                                <p class="ts-designation">{{ $staff->posteOccupe->intitule_poste }}</p>
+
+                                <div class="team-social-icons">
+                                    <a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a target="_blank" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a target="_blank" href="#"><i class="fab fa-linkedin"></i></a>
+                                </div>
                             </div>
-                            <!--/ social-icons-->
                         </div>
-                    </div>
-                    <!--/ Team wrapper 1 end -->
 
-                </div><!-- Col end -->
+                        {{-- <div class="ts-team-wrapper">
+                            <div class="team-img-wrapper">
+                                <img loading="lazy" src="{{ asset('storage/assets/staff/' . $staff->photo_personnel) }}"
+                                    class="img-fluid card-img-bottom " alt="team-img">
+                            </div>
+                            <div class="ts-team-content-classic">
+                                <h3 class="ts-name">
+                                    {{ $staff->titre . ' ' . $staff->prenom_personnel . ' ' . $staff->nom_personnel }}</h3>
+                                <p class="ts-designation">{{ $staff->posteOccupe->intitule_poste }}</p>
+                                </p>
+                                <div class="team-social-icons">
+                                    <a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a target="_blank" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a target="_blank" href="#"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                                <!--/ social-icons-->
+                            </div>
+                        </div> --}}
+                        <!--/ Team wrapper 1 end -->
+
+                    </div><!-- Col end -->
                 @empty
-                    
                 @endforelse
-              
+
             </div>
 
         </div>

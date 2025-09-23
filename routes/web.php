@@ -49,3 +49,4 @@ Route::get('/health-pulse-product-development', [FrontendController::class,"heal
 Route::get('/yorkool-g4-product-development', [FrontendController::class,"yorkoolG4ProductDevelopmentPage"])->name("yorkoolG4ProductDevelopmentPage");
 Route::get('/pamverc-benin', [FrontendController::class,"pamvercBeninPage"])->name("pamvercBeninPage");
 Route::get('/newsletter-airid', [FrontendController::class,"newsletterPage"])->name("newsletterPage");
+Route::post('/add-email-to-newsletter-airid-list', [FrontendController::class,"subscribeNewsLetter"])->name("subscribeNewsLetter");

@@ -104,6 +104,9 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
+
+                                    <input type="hidden" name="fill_robot">
+                                    
                                     <label>Name</label>
                                     <input
                                         class="form-control form-control-name @error('full_name') is-invalid @enderror"

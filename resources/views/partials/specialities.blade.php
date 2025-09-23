@@ -1,4 +1,4 @@
-<section id="ts-service-area" class="ts-service-area pb-0">
+<section id="ts-service-area" class="ts-service-area pb-0" id="specialites">
     <div class="container">
         <div class="row text-center">
             <div class="col-12">
@@ -98,12 +98,12 @@
             </div><!-- Col end -->
 
         </div><!-- Content row end -->
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-12 text-center mt-3">
                 <h3 class=""><a href="{{ route("allServicesPage") }}" class="btn btn-secondary btn-lg">More about our services</a></h3>
 
             </div>
-        </div>
+        </div> --}}
 
     </div>
     <!--/ Container end -->

@@ -74,10 +74,23 @@
     {{-- @include('partials.projets') --}}
 
 
+    @if (session('message'))
+        <div class="row mt-2 justify-content-center mb-2 " id="newsletter-section-message">
+            <div class="col-6 ">
 
-    <section class="subscribe no-padding">
+                <p class="  alert alert-success text-center">
+                    <strong>
+                        {{ session('message') }}
+                    </strong>
+                </p>
+            </div>
+        </div>
+    @endif
+    <section class="subscribe no-padding" id="newsletter-section">
         <div class="container">
             <div class="row">
+
+
                 <div class="col-lg-4">
                     <div class="subscribe-call-to-acton">
                         <h3>You want to collaborate on a project ? </h3>
@@ -93,10 +106,12 @@
                         </div>
 
                         <div class="col-md-7 newsletter-form">
-                            <form action="#" method="post">
+                            <form action="{{ route('subscribeNewsLetter') }}" method="post">
+                                @csrf
+                                <input type="hidden" name="fill_robot">
                                 <div class="form-group">
                                     <label for="newsletter-email" class="content-hidden">Newsletter Email</label>
-                                    <input type="email" name="email" id="newsletter-email"
+                                    <input type="email" name="email_newsletter" id="newsletter-email"
                                         class="form-control form-control-lg" placeholder="Your your email and hit enter"
                                         autocomplete="off">
                                 </div>
@@ -142,7 +157,7 @@
                                 <div class="latest-post-meta">
                                     <span class="post-item-date">
                                         <i class="fa fa-clock-o"></i>
-                                        {{ $projet->date_debut_project ? date('F j, Y', strtotime($projet->date_debut_project)):"Not Yet Started" }}
+                                        {{ $projet->date_debut_project ? date('F j, Y', strtotime($projet->date_debut_project)) : 'Not Yet Started' }}
                                     </span>
                                 </div>
                             </div>
@@ -168,5 +183,4 @@
 
 
     @include('partials.partenaires')
-
 @endsection

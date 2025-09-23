@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AIRID_Contact;
 use App\Models\AIRID_Departement;
+use App\Models\Airid_NewsLetterEmail;
 use App\Models\AIRID_Partenaire;
 use App\Models\AIRID_Personnel;
 use App\Models\AIRID_Photo;
@@ -27,9 +28,9 @@ class FrontendController extends Controller
 
         $all_recents_projects = AIRID_Project::orderBy("date_debut_project", "desc")->get();
         $all_projects_categories = AIRID_ProjetCategory::all();
-          $all_partenaires = AIRID_Partenaire::all();
+        $all_partenaires = AIRID_Partenaire::all();
 
-        return view("accueil", compact("all_recents_projects", "all_projects_categories","all_partenaires"));
+        return view("accueil", compact("all_recents_projects", "all_projects_categories", "all_partenaires"));
     }
 
     /**
@@ -41,10 +42,9 @@ class FrontendController extends Controller
         try {
 
             $departement = AIRID_Departement::findOrFail($id_departement);
-            $others_departements = AIRID_Departement::
-            where("afficher_menu", "<>", 0)
-            ->where("id", "<>", $id_departement)
-            ->get();
+            $others_departements = AIRID_Departement::where("afficher_menu", "<>", 0)
+                ->where("id", "<>", $id_departement)
+                ->get();
 
             return view("departements", compact("departement", "others_departements"));
         } catch (\Throwable $th) {
@@ -83,9 +83,9 @@ class FrontendController extends Controller
     function MissionVisionPage()
     {
 
-         $all_partenaires = AIRID_Partenaire::all();
+        $all_partenaires = AIRID_Partenaire::all();
         $all_departements = AIRID_Departement::where("afficher_menu", "<>", 0)->get();
-        return view("vision-mission",compact("all_departements","all_partenaires"));
+        return view("vision-mission", compact("all_departements", "all_partenaires"));
     }
 
     function staffAirid()
@@ -110,18 +110,20 @@ class FrontendController extends Controller
         }
     }
 
-    function aboutPage(){
+    function aboutPage()
+    {
 
         $all_departements = AIRID_Departement::where("afficher_menu", "<>", 0)->get();
 
-        return view("about",compact("all_departements"));
+        return view("about", compact("all_departements"));
     }
 
-    function allProjectsPage(){
+    function allProjectsPage()
+    {
 
-        $all_projects = AIRID_Project::orderBy("date_debut_project","desc")->simplePaginate(9);
+        $all_projects = AIRID_Project::orderBy("date_debut_project", "desc")->simplePaginate(9);
 
-        return view("all-projects",compact("all_projects"));
+        return view("all-projects", compact("all_projects"));
     }
 
     function detailProject($id, $slug, Request $request)
@@ -130,231 +132,298 @@ class FrontendController extends Controller
         try {
 
             $projet = AIRID_Project::findOrFail($id);
-            $others_projects = AIRID_Project::where("id","<>",$id)
-            ->orderBy("date_debut_project","desc")
-            ->get();
+            $others_projects = AIRID_Project::where("id", "<>", $id)
+                ->orderBy("date_debut_project", "desc")
+                ->get();
 
-            return view("project-detail", compact("projet","others_projects"));
+            return view("project-detail", compact("projet", "others_projects"));
         } catch (\Throwable $th) {
             //throw $th;
         }
     }
 
-    function allPublicationsPage(){
+    function allPublicationsPage()
+    {
 
-        $all_publications = AIRID_Publication::orderBy("annee_publication","desc")->simplePaginate(20);
-        return view("all-publications",compact("all_publications"));
+        $all_publications = AIRID_Publication::orderBy("annee_publication", "desc")->simplePaginate(20);
+        return view("all-publications", compact("all_publications"));
     }
 
-    function detailPublication($id, $slug, Request $request){
+    function detailPublication($id, $slug, Request $request)
+    {
 
         try {
 
             $publication = AIRID_Publication::findOrFail($id);
 
-            $others_publications = AIRID_Publication::where("id","<>",$id)
-            ->orderBy("date_publication","desc")
-            ->simplePaginate(10);
+            $others_publications = AIRID_Publication::where("id", "<>", $id)
+                ->orderBy("date_publication", "desc")
+                ->simplePaginate(10);
 
-        return view("detail-publication",compact("publication","others_publications"));
-            
+            return view("detail-publication", compact("publication", "others_publications"));
         } catch (\Throwable $th) {
             //throw $th;
         }
     }
 
 
-    function videoPage(Request $request){
+    function videoPage(Request $request)
+    {
 
-        $all_videos = AIRID_Video::orderBy("date_video","desc")->get();
+        $all_videos = AIRID_Video::orderBy("date_video", "desc")->get();
 
-     $all_partenaires = AIRID_Partenaire::all();
+        $all_partenaires = AIRID_Partenaire::all();
 
-        return view("videos",compact("all_videos","all_partenaires"));
+        return view("videos", compact("all_videos", "all_partenaires"));
     }
 
-    function photosPage(Request $request){
+    function photosPage(Request $request)
+    {
 
-        $all_photos = AIRID_Photo::orderBy("date_event","desc")->get();
+        $all_photos = AIRID_Photo::orderBy("date_event", "desc")->get();
         $all_photos_categories = AIRID_Photo::select("categorie_photo")->distinct()->get();
 
-         $all_partenaires = AIRID_Partenaire::all();
+        $all_partenaires = AIRID_Partenaire::all();
 
-        return view("photos",compact("all_photos","all_photos_categories","all_partenaires"));
+        return view("photos", compact("all_photos", "all_photos_categories", "all_partenaires"));
     }
 
 
-    function photoDetailPage($tag, Request $request){
+    function photoDetailPage($tag, Request $request)
+    {
 
-        $all_photos = AIRID_Photo::orderBy("date_event","desc")
-        ->where("tag",$tag)
-        ->get();
+        $all_photos = AIRID_Photo::orderBy("date_event", "desc")
+            ->where("tag", $tag)
+            ->get();
 
-        return view("detail-photo",compact("all_photos"));
+        return view("detail-photo", compact("all_photos"));
     }
 
-    function partnersPage(Request $request){
+    function partnersPage(Request $request)
+    {
 
 
         $all_partenaires = AIRID_Partenaire::all();
-        return view("partenaires-page",compact("all_partenaires"));
+        return view("partenaires-page", compact("all_partenaires"));
     }
 
 
-    function bioAssayLab(Request $request){
+    function bioAssayLab(Request $request)
+    {
 
         return view("bioassay-lab-page");
     }
-    function molecularLabPage(Request $request){
+    function molecularLabPage(Request $request)
+    {
 
         return view("molecular-lab-page");
     }
 
-    function analyticalCheminstryLabPage(Request $request){
+    function analyticalCheminstryLabPage(Request $request)
+    {
 
         return view("analytical-chemistry-lab-page");
     }
-    function fieldStationPage(Request $request){
+    function fieldStationPage(Request $request)
+    {
 
         return view("filed-station-page");
     }
-    function insectaryPage(Request $request){
+    function insectaryPage(Request $request)
+    {
 
         return view("insectary-page");
     }
-    function animalHousePage(Request $request){
+    function animalHousePage(Request $request)
+    {
 
         return view("animal-house-page");
     }
 
-    function experimentalHutStationPage(Request $request){
+    function experimentalHutStationPage(Request $request)
+    {
 
         return view("experimental-hut-station-page");
     }
 
-    function mosquitoPlasmodiumLaboratoryPage(Request $request){
+    function mosquitoPlasmodiumLaboratoryPage(Request $request)
+    {
 
         return view("mosquito-plasmodium-laboratory");
     }
 
-    function contactPage(Request $request){
+    function contactPage(Request $request)
+    {
 
         return view("contact");
     }
 
-    function postContactMessage(Request $request){
+    function postContactMessage(Request $request)
+    {
 
         $rules = [
-            "full_name"=>"required",
-            "adresse_mail"=>"required|email",
-            "subject"=>"required",
-            "detailed_message"=>"required",
+            "full_name" => "required",
+            "adresse_mail" => "required|email",
+            "subject" => "required",
+            "detailed_message" => "required",
         ];
 
         $request->validate($rules);
 
-        $create = AIRID_Contact::create($request->all());
 
-        return redirect()->route("contactPage")->with("message","Contact message successfully sent. We'll get back to you via your mail address.");
+        if (!$request->fill_robot) { //COntrol anti robot
+
+            $create = AIRID_Contact::create($request->all());
+            return redirect()->route("contactPage")->with("message", "Contact message successfully sent. We'll get back to you via your mail address.");
+        }
+
+        return redirect()->route("contactPage")->with("message", "Anti Robot Control Positif.");
     }
 
 
-    function pageCRECLSHTM(Request $request){
+    function pageCRECLSHTM(Request $request)
+    {
 
-        $all_partenaires = AIRID_Partenaire::where("partenaire_crec_lshtm",1)->get();
+        $all_partenaires = AIRID_Partenaire::where("partenaire_crec_lshtm", 1)->get();
 
-        return view("crec-lshtm-project",compact("all_partenaires"));
+        return view("crec-lshtm-project", compact("all_partenaires"));
     }
-    function vacanciesPage(Request $request){
+    function vacanciesPage(Request $request)
+    {
 
         return view("vacancies");
     }
 
-    function motDirecteur(Request $request){
+    function motDirecteur(Request $request)
+    {
 
         return view("mot_directeur");
     }
-    function motBoardOfDirectors(Request $request){
+    function motBoardOfDirectors(Request $request)
+    {
 
         return view("message_board_of_directors");
     }
-    function researchActivitiesPage(Request $request){
+    function researchActivitiesPage(Request $request)
+    {
 
         return view("research-activities");
     }
-    function educationTrainingPage(Request $request){
+    function educationTrainingPage(Request $request)
+    {
 
         return view("education-training");
     }
 
-    function projetGaviSiriPage(Request $request){
+    function projetGaviSiriPage(Request $request)
+    {
 
 
         return view("gavi-siri-project");
     }
-    function projetOptimvecPage(Request $request){
+    function projetOptimvecPage(Request $request)
+    {
 
 
         return view("projet-optimvec");
     }
 
-    function projetDuranetPage(Request $request){
+    function projetDuranetPage(Request $request)
+    {
 
 
         return view("duranet-project");
     }
-    function projetATSBPage(Request $request){
+    function projetATSBPage(Request $request)
+    {
 
 
         return view("atsb-project");
     }
-    function projetVesterguaardITNPage(Request $request){
+    function projetVesterguaardITNPage(Request $request)
+    {
 
 
         return view("vesterguard-itn-project");
     }
-    function projetSpatialRepellentsPage(Request $request){
+    function projetSpatialRepellentsPage(Request $request)
+    {
 
 
         return view("spatial-repellents-project");
     }
 
 
-    function interceptorProductDevelopmentPage(Request $request){
+    function interceptorProductDevelopmentPage(Request $request)
+    {
 
 
         return view("interceptor-development");
     }
-    function duranetProductDevelopmentPage(Request $request){
+    function duranetProductDevelopmentPage(Request $request)
+    {
 
 
         return view("duranet-product-development");
     }
 
-    function yorkoolProductDevelopmentPage(Request $request){
+    function yorkoolProductDevelopmentPage(Request $request)
+    {
 
 
         return view("yorkool-product-development");
     }
-    function healthPulseProductDevelopmentPage(Request $request){
+    function healthPulseProductDevelopmentPage(Request $request)
+    {
 
 
         return view("health-pulse-product-development");
     }
 
-      function yorkoolG4ProductDevelopmentPage(Request $request){
+    function yorkoolG4ProductDevelopmentPage(Request $request)
+    {
 
 
         return view("yorkool-g4-product-development");
     }
-      function pamvercBeninPage(Request $request){
+    function pamvercBeninPage(Request $request)
+    {
 
 
         return view("pamverc-benin");
     }
-      function newsletterPage(Request $request){
+    function newsletterPage(Request $request)
+    {
 
 
         return view("newsletter");
+    }
+
+    function subscribeNewsLetter(Request $request)
+    {
+
+        $rules = [
+            "email_newsletter" => "email|required"
+        ];
+
+        $request->validate($rules);
+
+        $data_subscription = [
+            "email_subscribe" => $request->email_newsletter,
+            "date_start_subscribe" => now(),
+        ];
+
+        $check = Airid_NewsLetterEmail::where("email_subscribe", $request->email_newsletter)->first();
+        if ($check) {
+            return redirect()->to(route("index") . "#newsletter-section-message")->with(["message" => "This address is already added to our list. No need again"]);
+        }
+
+        if (!$request->fill_robot) { //COntrol anti robot
+
+            $create = Airid_NewsLetterEmail::create($data_subscription);
+            return redirect()->to(route("index") . "#newsletter-section-message")->with(["message" => "Your mail address successfully added to our newsletter list"]);
+        }
+
+        return redirect()->to(route("index") . "#newsletter-section-message");
     }
 }
