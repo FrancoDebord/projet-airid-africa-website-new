@@ -89,7 +89,7 @@
 
             <div class="row justify-content-center">
                 @forelse ($other_staffs as $staff)
-                    <div class="col-lg-3 col-sm-6 mb-5 d-flex">
+                    <div class="col-lg-3 col-sm-6 col-6 mb-5 d-flex">
 
                         <div class="card flex-fill text-center">
                             <img src="{{ asset('storage/assets/staff/' . $staff->photo_personnel) }}" class="card-img-top img-fluid" alt="...">
