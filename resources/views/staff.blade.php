@@ -41,8 +41,8 @@
                          <div class="card flex-fill text-center">
                             <img src="{{ asset('storage/assets/staff/' . $leader->photo_personnel) }}" class="card-img-top img-fluid" alt="...">
                             <div class="card-body">
-                                <h3 class="ts-name">
-                                    {{ $leader->titre . ' ' . $leader->prenom_personnel . ' ' . $leader->nom_personnel }}</h3>
+                                <h5 class="ts-name">
+                                    {{ $leader->titre . ' ' . $leader->prenom_personnel . ' ' . $leader->nom_personnel }}</h5>
                                 <p class="ts-designation">{{ $leader->posteOccupe->intitule_poste }}</p>
 
                                 <div class="team-social-icons">
@@ -94,8 +94,8 @@
                         <div class="card flex-fill text-center">
                             <img src="{{ asset('storage/assets/staff/' . $staff->photo_personnel) }}" class="card-img-top img-fluid" alt="...">
                             <div class="card-body">
-                                <h3 class="ts-name">
-                                    {{ $staff->titre . ' ' . $staff->prenom_personnel . ' ' . $staff->nom_personnel }}</h3>
+                                <h5 class="ts-name">
+                                    {{ $staff->titre . ' ' . $staff->prenom_personnel . ' ' . $staff->nom_personnel }}</h5>
                                 <p class="ts-designation">{{ $staff->posteOccupe->intitule_poste }}</p>
 
                                 <div class="team-social-icons">
