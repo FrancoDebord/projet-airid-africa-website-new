@@ -31,7 +31,13 @@ Route::get('/mosquito-plasmodium-laboratory', [FrontendController::class,"mosqui
 Route::get('/contact', [FrontendController::class,"contactPage"])->name("contactPage");
 Route::post('/post-contact', [FrontendController::class,"postContactMessage"])->name("postContactMessage");
 Route::get('/crec-lshtm-project', [FrontendController::class,"pageCRECLSHTM"])->name("pageCRECLSHTM");
+
+
 Route::get('/vacancies-at-airid', [FrontendController::class,"vacanciesPage"])->name("vacanciesPage");
+Route::get('/vacancies-chimiste-analytique', [FrontendController::class,"vacanciesChimisteAnalytiquePage"])->name("vacanciesChimisteAnalytiquePage");
+Route::get('/vacancies-agents-terrain-gavi', [FrontendController::class,"vacanciesAgentTerrainGavi"])->name("vacanciesAgentTerrainGavi");
+
+
 Route::get('/directors-message', [FrontendController::class,"motDirecteur"])->name("motDirecteur");
 Route::get('/board-directors-message', [FrontendController::class,"motBoardOfDirectors"])->name("motBoardOfDirectors");
 Route::get('/research-activities', [FrontendController::class,"researchActivitiesPage"])->name("researchActivitiesPage");

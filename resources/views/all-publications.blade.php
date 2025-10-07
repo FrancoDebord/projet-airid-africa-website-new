@@ -53,7 +53,7 @@
                     @empty
                         <div class="col-12">
                             <p class="alert alert-info text-center p-3">
-                                <i class="fa fa-exclamation-circle">&nbsp;</i> No departments yet registered.
+                                <i class="fa fa-exclamation-circle">&nbsp;</i> No publications yet registered.
                             </p>
                     @endforelse
                 </table>

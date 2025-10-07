@@ -29,12 +29,81 @@
         <div class="container">
             <div class="row">
 
-             
                 <div class="col-12">
-                    <p class="text-justify p-3 text-center font-weight-bold" style="border: 1px dashed #c20102">Content of this page coming soon</p>
+                    <h3>All vacancies </h3>
                 </div>
 
+                <div class="col-12 table-responsive mt-2">
+                    <table class="table table-striped table-bordered table-condensed">
 
+                        <tr>
+                            <th>Year</th>
+                            <th>Job Title</th>
+                            <th>Contract Type</th>
+                            <th>Job Location</th>
+                            <th>Application Deadline</th>
+                            <th>Details</th>
+                            <th>Download</th>
+                            <th>Apply</th>
+                        </tr>
+
+                        @forelse ($all_vacancies as $vacancies)
+                            <tr>
+                                <td>{{ date('Y', strtotime($vacancies->application_lunch_date)) }}</td>
+                                <td>
+                                    <a href="{{ url($vacancies->url_page) }}">{{ $vacancies->job_title }}</a>
+
+                                </td>
+                                <td>{{ $vacancies->contract_type }}</td>
+                                <td>{{ $vacancies->location }}</td>
+                                <td>{{ $vacancies->application_deadline }}</td>
+                                <td>
+                                    <a href="{{ url($vacancies->url_page) }}" class="btn btn-outline-success">Details </a>
+                                </td>
+                                <td>
+
+
+
+                                    @if (date('Y-m-d') <= $vacancies->application_deadline)
+                                        <div class="dropdown">
+                                            <button class="btn btn-primary dropdown-toggle" type="button"
+                                                id="dropdownMenuButton_{{ $vacancies->id }}" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-download"></i>
+                                            </button>
+                                            <div class="dropdown-menu"
+                                                aria-labelledby="dropdownMenuButton_{{ $vacancies->id }}">
+                                                <li><a class="dropdown-item" target="_blank"
+                                                        href="{{ asset('storage/documents_recrutement/' . $vacancies->application_file_fr . '') }}">Français</a>
+                                                </li>
+                                                <li><a class="dropdown-item" target="_blank"
+                                                        href="{{ asset('storage/documents_recrutement/' . $vacancies->application_file_en . '') }}">English</a>
+                                                </li>
+                                            </div>
+                                        </div>
+                                    @else
+                                        <p class="alert alert-info">No more application</p>
+                                    @endif
+                                </td>
+                                <td>
+
+                                    @if (date('Y-m-d') <= $vacancies->application_deadline)
+                                        <a href="mailto:{{ $vacancies->email_apply }}?subject={{ $vacancies->subject }}"
+                                            class="btn btn-outline-danger  " style="float: right">Apply</a>
+                                    @else
+                                        <p class="alert alert-info">No more application</p>
+                                    @endif
+
+                                </td>
+                            </tr>
+                        @empty
+                            <div class="col-12">
+                                <p class="alert alert-info text-center p-3">
+                                    <i class="fa fa-exclamation-circle">&nbsp;</i> No vacancies yet registered.
+                                </p>
+                        @endforelse
+                    </table>
+                </div>
             </div><!-- Sidebar end -->
         </div><!-- Sidebar Col end -->
 
@@ -42,7 +111,7 @@
 
         </div><!-- Conatiner end -->
 
-    
+
     </section>
 
 @endsection

@@ -12,6 +12,7 @@ use App\Models\AIRID_Project;
 use App\Models\AIRID_ProjetCategory;
 use App\Models\AIRID_Publication;
 use App\Models\AIRID_Sub_Departement;
+use App\Models\AIRID_Vacancies;
 use App\Models\AIRID_Video;
 use App\Models\Departement;
 use Illuminate\Http\Request;
@@ -91,8 +92,12 @@ class FrontendController extends Controller
     function staffAirid()
     {
 
-        $executive_director = AIRID_Personnel::where("niveau_poste", 1)->get();
-        $other_staffs = AIRID_Personnel::where("niveau_poste", "<>", 1)->get();
+        $executive_director = AIRID_Personnel::where("niveau_poste", 1)
+            ->orderBy("poids_personnel", "desc")
+            ->get();
+        $other_staffs = AIRID_Personnel::where("niveau_poste", "<>", 1)
+            ->orderBy("poids_personnel", "desc")
+            ->get();
 
         return view("staff", compact("executive_director", "other_staffs"));
     }
@@ -288,11 +293,27 @@ class FrontendController extends Controller
 
         return view("crec-lshtm-project", compact("all_partenaires"));
     }
+
     function vacanciesPage(Request $request)
     {
 
-        return view("vacancies");
+        $all_vacancies = AIRID_Vacancies::orderBy("application_deadline", "desc")->get();
+
+        return view("vacancies", compact("all_vacancies"));
     }
+
+    function vacanciesChimisteAnalytiquePage(Request $request)
+    {
+
+        return view("vacancies-chimiste-analytique");
+    }
+
+    function vacanciesAgentTerrainGavi(Request $request)
+    {
+
+        return view("vacancies-agents-terrain-gavi");
+    }
+
 
     function motDirecteur(Request $request)
     {

@@ -14,10 +14,8 @@
     <!-- Mobile Specific Metas
 ================================================== -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Construction Html5 Template">
+    <meta name="description" content="African Institute for Research In Infectious Diseases">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name=author content="Themefisher">
-    <meta name=generator content="Themefisher Constra HTML Template v1.0">
 
     <!-- Favicon
 ================================================== -->
@@ -26,7 +24,12 @@
     <!-- CSS
 ================================================== -->
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="{{ asset('storage/assets_vendor/plugins/bootstrap/bootstrap.min.css') }}">
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
+        {{-- <link rel="stylesheet" href="{{ asset('storage/assets_vendor/plugins/bootstrap/bootstrap.min.css') }}"> --}}
+        <link rel="stylesheet" href="{{ asset('storage/assets_vendor/plugins/bootstrap/bootstrap-new-4.5.3.css') }}">
+        {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"/> --}}
+
+     
     <!-- FontAwesome -->
     <link rel="stylesheet" href="{{ asset('storage/assets_vendor/plugins/fontawesome/css/all.min.css') }}">
     <!-- Animation -->
@@ -182,9 +185,20 @@
   ================================================== -->
 
         <!-- initialize jQuery Library -->
-        <script src="{{ asset("storage/assets_vendor/plugins/jQuery/jquery.min.js")}}"></script>
+        <script src="{{ asset("storage/assets_vendor/plugins/jQuery/jquery-new-slim.js")}}"></script>
+        <script src="{{ asset("storage/assets_vendor/plugins/jQuery/popper.js")}}"></script>
         <!-- Bootstrap jQuery -->
-        <script src="{{ asset("storage/assets_vendor/plugins/bootstrap/bootstrap.min.js")}}" defer></script>
+        {{-- <script src="{{ asset("storage/assets_vendor/plugins/bootstrap/bootstrap.min.js")}}" defer></script> --}}
+        {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> --}}
+        <!-- jQuery -->
+{{-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<!-- Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script> --}}
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
+
         <!-- Slick Carousel -->
         <script src="{{ asset("storage/assets_vendor/plugins/slick/slick.min.js")}}"></script>
         <script src="{{ asset("storage/assets_vendor/plugins/slick/slick-animation.min.js")}}"></script>
