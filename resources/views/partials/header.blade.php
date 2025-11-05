@@ -36,7 +36,7 @@
 
                         </ul><!-- Ul end --> --}}
 
-                        <p class="slogan-p" id="slogan-p">
+                        <p class="slogan-p" id="slogan-p" style="margin-left: -15% ; font-size: 18px; font-weight: bold;    ">
                             Bold Science. African-Led. Impact-Driven
                         </p>
                         {{-- <p class="slogan-fr" id="slogan-fr">

@@ -28,14 +28,14 @@
             font-size: 18px;
             padding: 10px;
             border: none;
-            background: #000;
+            /* background: #000; */
             color: #fff;
             cursor: pointer;
         }
 
         #myBtn:hover {
             background: #ddd;
-            color: black;
+            /* color: black; */
         }
     </style>
 @endsection
@@ -106,17 +106,28 @@
                         </div>
 
                         <div class="col-md-7 newsletter-form">
-                            <form action="{{ route('subscribeNewsLetter') }}" method="post">
-                                @csrf
-                                <input type="hidden" name="fill_robot">
-                                <div class="form-group">
-                                    <label for="newsletter-email" class="content-hidden">Newsletter Email</label>
-                                    <input type="email" name="email_newsletter" id="newsletter-email"
-                                        class="form-control form-control-lg" placeholder="Your your email and hit enter"
-                                        autocomplete="off">
-                                </div>
-                            </form>
-                        </div>
+    <form action="{{ route('subscribeNewsLetter') }}" method="POST" class="d-flex flex-column">
+        @csrf
+        <input type="hidden" name="fill_robot">
+
+        <div class="form-group mb-3">
+            <input 
+                type="email" 
+                name="email_newsletter" 
+                id="newsletter-email" 
+                class="form-control form-control-lg"
+                placeholder="Entrez votre adresse e-mail"
+                style="background-color: white;"
+                required
+            >
+        </div>
+
+        <button type="submit" class="btn btn-primary px-4 py-2">
+            S’abonner
+        </button>
+    </form>
+</div>
+
                     </div><!-- Newsletter end -->
                 </div><!-- Col end -->
 
@@ -126,60 +137,121 @@
     </section>
     <!--/ subscribe end -->
 
-    <section id="news" class="news">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-12">
-                    <h2 class="section-title">Work of Excellence</h2>
-                    <h3 class="section-sub-title">Recent Projects</h3>
-                </div>
+  <section id="news" class="news py-5 bg-light">
+    <div class="container">
+        <!-- Titre -->
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2 class="section-title fw-bold">Work of Excellence</h2>
+                <h3 class="section-sub-title text-muted fw-bold">Recent Projects</h3>
             </div>
-            <!--/ Title row end -->
+        </div>
 
-            <div class="row">
-
-                @forelse ($all_recents_projects as $projet)
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="latest-post">
-                            <div class="latest-post-media">
-                                <a href="{{ route('detailProject', ['id' => $projet->id, 'slug' => Str::slug($projet->short_title_project)]) }}"
-                                    class="latest-post-img">
-                                    <img loading="lazy" class="img-fluid"
-                                        src="{{ asset('storage/assets/projects/' . $projet->photo_couverture) }}"
-                                        alt="img">
-                                </a>
-                            </div>
-                            <div class="post-body">
-                                <h4 class="post-title">
-                                    <a href="{{ route('detailProject', ['id' => $projet->id, 'slug' => Str::slug($projet->short_title_project)]) }}"
-                                        class="d-inline-block">{{ $projet->short_title_project }}</a>
-                                </h4>
-                                <div class="latest-post-meta">
-                                    <span class="post-item-date">
+        <!-- Liste des projets -->
+        <div class="row g-4">
+            @forelse ($all_recents_projects->sortByDesc('date_debut_project') as $projet)
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="project-card position-relative overflow-hidden rounded shadow-sm">
+                        <a href="{{ route('detailProject', ['id' => $projet->id, 'slug' => Str::slug($projet->short_title_project)]) }}">
+                            <img 
+                                loading="lazy"
+                                src="{{ asset('storage/assets/projects/' . $projet->photo_couverture) }}"
+                                alt="{{ $projet->short_title_project }}"
+                                class="project-img w-100"
+                            >
+                            <div class="project-overlay d-flex flex-column justify-content-end">
+                                <div class="text-white p-3" style="background: rgba(242, 154, 154, 0.5);">
+                                    <h5 class="fw-bold mb-1" style="color: rgb(10, 226, 46))" >{{ $projet->short_title_project }}</h5>
+                                    <small class="fw-bold d-block">
                                         <i class="fa fa-clock-o"></i>
                                         {{ $projet->date_debut_project ? date('F j, Y', strtotime($projet->date_debut_project)) : 'Not Yet Started' }}
-                                    </span>
+                                    </small>
                                 </div>
                             </div>
-                        </div><!-- Latest post end -->
-                    </div><!-- 1st post col end -->
-
-                @empty
-                @endforelse
-
-
-
-            </div>
-            <!--/ Content row end -->
-
-            <div class="general-btn text-center mt-4">
-                <a class="btn btn-primary" href="{{ route('allProjectsPage') }}">See All Projects</a>
-            </div>
-
+                        </a>
+                    </div>
+                </div>
+            @empty
+                <p class="text-center text-muted fw-bold">Aucun projet récent pour le moment.</p>
+            @endforelse
         </div>
-        <!--/ Container end -->
-    </section>
-    <!--/ News end -->
+
+        <!-- Bouton -->
+        <div class="text-center mt-5">
+            <a class="btn btn-primary px-4 py-2 fw-bold" href="{{ route('allProjectsPage') }}">
+                Voir tous les projets
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .project-card {
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.1);
+}
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    transition: opacity 0.4s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-overlay .text-white {
+    color: #fff;
+    /* text-shadow: 0 2px 5px rgba(243, 34, 34, 0.6); */
+}
+
+.section-title, 
+.section-sub-title,
+.project-overlay h5,
+.project-overlay small,
+.btn {
+    font-weight: bold !important;
+}
+
+@media (max-width: 992px) {
+    .project-card {
+        height: 260px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        height: 220px;
+    }
+}
+
+/* @media (max-width: 576px) {
+    .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+} */
+
+</style>
 
 
     @include('partials.partenaires')
