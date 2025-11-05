@@ -276,7 +276,7 @@ class FrontendController extends Controller
         $request->validate($rules);
 
 
-        if (!$request->fill_robot) { //COntrol anti robot
+        if ($request->fill_robot != "") { //COntrol anti robot
 
             $create = AIRID_Contact::create($request->all());
             return redirect()->route("contactPage")->with("message", "Contact message successfully sent. We'll get back to you via your mail address.");
