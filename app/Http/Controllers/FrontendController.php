@@ -259,30 +259,64 @@ class FrontendController extends Controller
 
     function contactPage(Request $request)
     {
+        // Toujours générer une nouvelle question mathématique aléatoire pour l'anti-bot
+        // La question change à chaque chargement de page (actualisation ou après soumission)
+        $num1 = rand(1, 10);
+        $num2 = rand(1, 10);
+        $answer = $num1 + $num2;
+        
+        // Stocker la réponse dans la session
+        session(['math_answer' => $answer]);
+        session(['math_question' => "$num1 + $num2"]);
 
-        return view("contact");
+        return view("contact", [
+            'math_question' => "$num1 + $num2"
+        ]);
     }
 
     function postContactMessage(Request $request)
     {
+        // Vérifier d'abord le honeypot field (must be empty)
+        if (!empty($request->robot_trap)) { // Si le champ honeypot est rempli, c'est un bot
+            return redirect()->route("contactPage")->with("message", "Anti-robot control failed.");
+        }
 
         $rules = [
             "full_name" => "required",
             "adresse_mail" => "required|email",
             "subject" => "required",
             "detailed_message" => "required",
+            "math_answer" => "required|numeric",
         ];
 
         $request->validate($rules);
 
-
-        if (!$request->fill_robot) { //COntrol anti robot
-
-            $create = AIRID_Contact::create($request->all());
-            return redirect()->route("contactPage")->with("message", "Contact message successfully sent. We'll get back to you via your mail address.");
+        // Vérifier la réponse mathématique depuis la session
+        $correctAnswer = session('math_answer');
+        
+        // Si la session a expiré ou n'existe pas, régénérer une nouvelle question
+        if ($correctAnswer === null) {
+            return redirect()->route("contactPage")
+                ->withErrors(['math_answer' => 'Session expired. Please refresh the page and try again.'])
+                ->withInput();
         }
 
-        return redirect()->route("contactPage")->with("message", "Anti Robot Control Positif.");
+        // Vérifier si la réponse est correcte
+        if ((int)$request->math_answer !== (int)$correctAnswer) {
+            // Nettoyer la session pour générer une nouvelle question après l'erreur
+            session()->forget(['math_answer', 'math_question']);
+            
+            return redirect()->route("contactPage")
+                ->withErrors(['math_answer' => 'The mathematical answer is incorrect. Please try again.'])
+                ->withInput();
+        }
+
+        // Nettoyer la session après validation réussie
+        // Une nouvelle question sera générée automatiquement par contactPage()
+        session()->forget(['math_answer', 'math_question']);
+
+        $create = AIRID_Contact::create($request->all());
+        return redirect()->route("contactPage")->with("message", "Contact message successfully sent. We'll get back to you via your mail address.");
     }
 
 

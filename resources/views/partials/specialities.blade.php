@@ -18,9 +18,12 @@
                     </div>
                     <div class="ts-service-box-info">
                         <h3 class="service-box-title"><a href="#">Disease Surveillance</a></h3>
-                        <p>Continuous collection, analysis, and interpretation of health data to detect, monitor, and
+                        <p  >Continuous collection, analysis,...
+                            
+                            {{-- and interpretation of health data to detect, monitor, and
                             control disease outbreaks, guiding public health decisions and responses effectively and
-                            efficiently.</p>
+                            efficiently. --}}
+                        </p>
                     </div>
                 </div><!-- Service 1 end -->
 
@@ -32,7 +35,10 @@
                     </div>
                     <div class="ts-service-box-info">
                         <h3 class="service-box-title"><a href="#">Control of vector-borne diseases </a></h3>
-                        <p>Development of vector control products</p>
+                        <p>Development of vector control...
+                            
+                            {{-- products --}}
+                        </p>
                     </div>
                 </div><!-- Service 2 end -->
 
@@ -65,7 +71,9 @@
                     </div>
                     <div class="ts-service-box-info">
                         <h3 class="service-box-title"><a href="#">Epidemiology</a></h3>
-                        <p>Conducting epidemiological studies to understand the determinants of the diseases.</p>
+                        <p>Conducting epidemiological... 
+                            {{--studies to understand the determinants of the diseases. --}}
+                        </p>
                     </div>
                 </div><!-- Service 4 end -->
 
@@ -77,7 +85,10 @@
                     </div>
                     <div class="ts-service-box-info">
                         <h3 class="service-box-title"><a href="#">Capacity building</a></h3>
-                        <p>We offer Masters and PhDs to students</p>
+                        <p>We offer Masters and PhDs... 
+                            {{-- to students --}}
+
+                        </p>
                     </div>
                 </div><!-- Service 5 end -->
 

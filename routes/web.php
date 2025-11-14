@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
 
@@ -11,6 +12,7 @@ Route::get('/our-mission', [FrontendController::class,"MissionVisionPage"])->nam
 Route::get('/our-vision', [FrontendController::class,"MissionVisionPage"])->name("MissionVisionPage1");
 Route::get('/mission-vision', [FrontendController::class,"MissionVisionPage"])->name("MissionVisionPage2");
 Route::get('/our-team', [FrontendController::class,"staffAirid"])->name("staffAirid");
+Route::get('/detail-staff/{id}-{slug}', [FrontendController::class,"detailStaffAirid"])->name("detail-staff");
 Route::get('/about-us', [FrontendController::class,"aboutPage"])->name("aboutPage");
 Route::get('/our-projects', [FrontendController::class,"allProjectsPage"])->name("allProjectsPage");
 Route::get('/all-projects/detail/{id}-{slug}"', [FrontendController::class,"detailProject"])->name("detailProject");
@@ -56,3 +58,38 @@ Route::get('/yorkool-g4-product-development', [FrontendController::class,"yorkoo
 Route::get('/pamverc-benin', [FrontendController::class,"pamvercBeninPage"])->name("pamvercBeninPage");
 Route::get('/newsletter-airid', [FrontendController::class,"newsletterPage"])->name("newsletterPage");
 Route::post('/add-email-to-newsletter-airid-list', [FrontendController::class,"subscribeNewsLetter"])->name("subscribeNewsLetter");
+
+// Admin Routes
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/login', [AdminController::class, 'login'])->name('login');
+    Route::post('/login', [AdminController::class, 'authenticate'])->name('login.authenticate');
+    Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
+
+    Route::middleware('admin.auth')->group(function () {
+        Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');
+
+        // Staff routes
+        Route::get('/staff', [AdminController::class, 'staffIndex'])->name('staff.index');
+        Route::get('/staff/create', [AdminController::class, 'staffCreate'])->name('staff.create');
+        Route::post('/staff', [AdminController::class, 'staffStore'])->name('staff.store');
+        Route::get('/staff/{id}/edit', [AdminController::class, 'staffEdit'])->name('staff.edit');
+        Route::put('/staff/{id}', [AdminController::class, 'staffUpdate'])->name('staff.update');
+        Route::delete('/staff/{id}', [AdminController::class, 'staffDestroy'])->name('staff.destroy');
+
+        // Publications routes
+        Route::get('/publications', [AdminController::class, 'publicationsIndex'])->name('publications.index');
+        Route::get('/publications/create', [AdminController::class, 'publicationsCreate'])->name('publications.create');
+        Route::post('/publications', [AdminController::class, 'publicationsStore'])->name('publications.store');
+        Route::get('/publications/{id}/edit', [AdminController::class, 'publicationsEdit'])->name('publications.edit');
+        Route::put('/publications/{id}', [AdminController::class, 'publicationsUpdate'])->name('publications.update');
+        Route::delete('/publications/{id}', [AdminController::class, 'publicationsDestroy'])->name('publications.destroy');
+
+        // Vacancies routes
+        Route::get('/vacancies', [AdminController::class, 'vacanciesIndex'])->name('vacancies.index');
+        Route::get('/vacancies/create', [AdminController::class, 'vacanciesCreate'])->name('vacancies.create');
+        Route::post('/vacancies', [AdminController::class, 'vacanciesStore'])->name('vacancies.store');
+        Route::get('/vacancies/{id}/edit', [AdminController::class, 'vacanciesEdit'])->name('vacancies.edit');
+        Route::put('/vacancies/{id}', [AdminController::class, 'vacanciesUpdate'])->name('vacancies.update');
+        Route::delete('/vacancies/{id}', [AdminController::class, 'vacanciesDestroy'])->name('vacancies.destroy');
+    });
+});

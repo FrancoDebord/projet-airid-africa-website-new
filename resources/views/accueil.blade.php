@@ -161,7 +161,10 @@
                             >
                             <div class="project-overlay d-flex flex-column justify-content-end">
                                 <div class="text-white p-3" style="background: rgba(242, 154, 154, 0.5);">
-                                    <h5 class="fw-bold mb-1" style="color: rgb(10, 226, 46))" >{{ $projet->short_title_project }}</h5>
+                                    <h5 class="fw-bold mb-1 text-truncate" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
+    {{ $projet->short_title_project }}
+</h5>
+
                                     <small class="fw-bold d-block">
                                         <i class="fa fa-clock-o"></i>
                                         {{ $projet->date_debut_project ? date('F j, Y', strtotime($projet->date_debut_project)) : 'Not Yet Started' }}

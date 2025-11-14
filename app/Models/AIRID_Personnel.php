@@ -13,7 +13,39 @@ class AIRID_Personnel extends Model
 
     protected $table="airid_personnels";
 
-    protected $guarded=["created_at","updated_at"];
+    protected $fillable = [
+        'titre',
+        'prenom_personnel',
+        'nom_personnel',
+        'photo_personnel',
+        'departement_id',
+        'poste_id',
+        'niveau_poste',
+        'poids_personnel',
+    ];
+
+    /**
+     * Get the photo path attribute - normalise le chemin de la photo
+     * Gère les anciennes données avec chemin complet et les nouvelles avec juste le nom
+     */
+    public function getPhotoPathAttribute()
+    {
+        if (!$this->photo_personnel) {
+            return null;
+        }
+
+        // Si c'est déjà un chemin complet, extraire juste le nom du fichier
+        $fileName = basename($this->photo_personnel);
+        
+        // Vérifier si le fichier existe dans public/assets/staff/
+        $publicPath = public_path('assets/staff/' . $fileName);
+        if (file_exists($publicPath)) {
+            return $fileName;
+        }
+
+        // Si le fichier n'existe pas, retourner le nom tel quel
+        return $fileName;
+    }
 
     /**
      * Get the departement that owns the AIRID_Personnel
