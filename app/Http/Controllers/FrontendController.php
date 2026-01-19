@@ -314,6 +314,7 @@ class FrontendController extends Controller
                 ->withInput();
         }
 
+
         // Vérifier si la réponse est correcte
         if ((int)$request->math_answer !== (int)$correctAnswer) {
             // Nettoyer la session pour générer une nouvelle question après l'erreur
@@ -322,6 +323,12 @@ class FrontendController extends Controller
             return redirect()->route("contactPage")
                 ->withErrors(['math_answer' => 'The mathematical answer is incorrect. Please try again.'])
                 ->withInput();
+
+        if ($request->fill_robot != "") { //COntrol anti robot
+
+            $create = AIRID_Contact::create($request->all());
+            return redirect()->route("contactPage")->with("message", "Contact message successfully sent. We'll get back to you via your mail address.");
+          main
         }
 
         // Nettoyer la session après validation réussie
