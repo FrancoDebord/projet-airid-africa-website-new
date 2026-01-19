@@ -2,6 +2,9 @@
 
 @section('title', 'VESTERGAARD ITN Testing Project')
 
+@section('css')
+    @include('partials.modern-css')
+@endsection
 
 @section('content')
     <div id="banner-area" class="banner-area"
@@ -11,91 +14,108 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="banner-heading">
-                            <h1 class="banner-title top_title">VESTERGAARD ITN Testing</h1>
-
+                            <h1 class="banner-title top_title fade-in-up">VESTERGAARD ITN Testing</h1>
+                            <p class="text-white mt-3 fade-in-up" style="font-size: 1.2rem;">
+                                Supporting Innovation in Vector Control: R&D Collaboration with PAMVERC-BENIN and Vestergaard Sarl
+                            </p>
                         </div>
-                    </div><!-- Col end -->
-                </div><!-- Row end -->
-            </div><!-- Container end -->
-        </div><!-- Banner text end -->
-    </div><!-- Banner area end -->
-
-    <section id="main-container" class="main-container">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-12">
-                    <span class="title-section" style="font-size: 1.2em; font-weight: bold">Supporting Innovation in Vector
-                        Control: R&D Collaboration with PAMVERC-BENIN and Vestergaard Sarl</span>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </div>
 
-
-
-                <div class="col-12 mt-2">
-                    <p class="text-justify mt-2">
+    <section class="py-5">
+        <div class="container">
+            <div class="content-section fade-in-up">
+                <h2 class="section-title">
+                    <i class="fas fa-handshake"></i>Project Overview
+                </h2>
+                <div class="section-content">
+                    <p>
                         AIRID, through its involvement in the Pan-African Malaria Vector Research
                         Consortium (PAMVERC), plays a key role in supporting the research and
                         development (R&D) of next-generation insecticide-treated nets (ITNs)
                         developed by Vestergaard Sarl—a global leader in disease prevention technologies.
                     </p>
                 </div>
+            </div>
 
-
-                <div class="col-12">
-                    <h5 class="title-section mt-2">What We Do</h5>
-
-                    <p class="text-justify mt-2">
+            <div class="content-section fade-in-up">
+                <h3 class="section-subtitle">What We Do</h3>
+                <div class="section-content">
+                    <p>
                         As part of this collaboration, AIRID conducts rigorous evaluations of
-                        Vestergaard’s ITN products across three major research platforms:
+                        Vestergaard's ITN products across three major research platforms:
                     </p>
-
-                    <ul class="text-justify mt-2">
+                    <ul>
                         <li>
-                            Laboratory Bioassays: Controlled tests to assess the bioefficacy of Vestergaard’s
+                            <strong>Laboratory Bioassays:</strong> Controlled tests to assess the bioefficacy of Vestergaard's
                             innovative insecticide formulations against local strains of malaria vectors, including
                             resistant populations.
                         </li>
                         <li>
-                            Experimental Hut Trials: Semi-field studies in purpose-built huts
+                            <strong>Experimental Hut Trials:</strong> Semi-field studies in purpose-built huts
                             to measure mosquito mortality, blood-feeding inhibition,
                             and deterrence in realistic exposure scenarios.
                         </li>
                         <li>
-                            Community-Level Field Studies: Longitudinal evaluations of net durability, bioefficacy, and
-                            community
-                            acceptance under real-world conditions, in line with WHO guidelines.
+                            <strong>Community-Level Field Studies:</strong> Longitudinal evaluations of net durability, bioefficacy, and
+                            community acceptance under real-world conditions, in line with WHO guidelines.
                         </li>
-
                     </ul>
                 </div>
+            </div>
 
-                <div class="col-12">
-                    <h5 class="title-section mt-2">Our Impact</h5>
-
-                    <p class="text-justify mt-2">
+            <div class="content-section fade-in-up">
+                <h3 class="section-subtitle">Our Impact</h3>
+                <div class="section-content">
+                    <p>
                         By generating high-quality data on the performance and
                         longevity of Vestergaard ITNs, AIRID helps accelerate the
                         development, optimization, and regulatory approval
                         of tools that strengthen malaria control and resistance management strategies across Africa.
                     </p>
                 </div>
+            </div>
 
-
-                <div class="col-12">
-                    <h5 class="title-section mt-2">Collaborative Science for African Health</h5>
-
-                    <p class="text-justify mt-2">
-                        This partnership reinforces AIRID’s commitment
+            <div class="content-section fade-in-up">
+                <h3 class="section-subtitle">Collaborative Science for African Health</h3>
+                <div class="section-content">
+                    <p>
+                        This partnership reinforces AIRID's commitment
                         to science-led innovation, evidence-based public health,
                         and African leadership in global health R&D. Through PAMVERC
                         and other regional networks, AIRID is advancing a shared vision for
                         sustainable malaria control driven by African institutions and local expertise.
                     </p>
                 </div>
-
-
             </div>
         </div>
     </section>
+@endsection
 
+@section('js')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const animatedElements = document.querySelectorAll('.fade-in-up');
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
 @endsection

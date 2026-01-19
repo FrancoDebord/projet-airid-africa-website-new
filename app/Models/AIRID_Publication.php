@@ -11,5 +11,13 @@ class AIRID_Publication extends Model
 
     protected $table="airid_publications";
 
-    protected $guarded=["created_at","updated_at"];
+    protected $fillable = [
+        'titre_publication',
+        'auteurs',
+        'annee_publication',
+        'url_publication',
+        'resume_publication',
+        'photo_couverture',
+        'fichier_publication',
+    ];
 }

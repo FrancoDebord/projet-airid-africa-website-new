@@ -125,7 +125,7 @@
                             <div class="working-hours">
 
                                 Secrétariat AIRID, Maison 115, Rue 1543 Donaten, AKPAKPA, (Rue SOBEPEC, 4e Von à gauche, dernier immeuble à gauche), Cotonou, Benin
-                                <br><br> Email :  <span class="text-right"> <a href="mailto:info@airid-africa.com" >info@airid-africa.com</a> </span>
+                                <br><br> Email :  <span class="text-right"> <a href="mailto:admin@airid-africa.com" >admin@airid-africa.com</a> </span>
                                 <br> Phone number: <span class="text-right"> <a href="tel:(+229) 01 67 16 44 99" > (+229) 01 67 16 44 99</a> </span>
                             </div>
                         </div><!-- Col end -->

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\AIRID_Contact;
 use App\Models\AIRID_Departement;
 use App\Models\Airid_NewsLetterEmail;
+use App\Models\AIRID_News;
+use App\Models\AIRID_Blog;
 use App\Models\AIRID_Partenaire;
 use App\Models\AIRID_Personnel;
 use App\Models\AIRID_Photo;
@@ -16,6 +18,7 @@ use App\Models\AIRID_Vacancies;
 use App\Models\AIRID_Video;
 use App\Models\Departement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
 
 class FrontendController extends Controller
 {
@@ -30,8 +33,18 @@ class FrontendController extends Controller
         $all_recents_projects = AIRID_Project::orderBy("date_debut_project", "desc")->get();
         $all_projects_categories = AIRID_ProjetCategory::all();
         $all_partenaires = AIRID_Partenaire::all();
+        $all_news = AIRID_News::orderBy("created_at", "desc")->get();
+        
+        // Vérifier si la colonne 'active' existe avant de l'utiliser
+        $vacancyQuery = AIRID_Vacancies::orderBy('application_deadline', 'desc');
+        if (Schema::hasColumn('airid_vacancies', 'active')) {
+            $vacancyQuery->where('active', 1);
+        }
+        $recent_vacancy = $vacancyQuery->first();
+        
+        $recent_publication = AIRID_Publication::orderBy('annee_publication', 'desc')->first();
 
-        return view("accueil", compact("all_recents_projects", "all_projects_categories", "all_partenaires"));
+        return view("accueil", compact("all_recents_projects", "all_projects_categories", "all_partenaires", "all_news", "recent_vacancy", "recent_publication"));
     }
 
     /**
@@ -259,30 +272,71 @@ class FrontendController extends Controller
 
     function contactPage(Request $request)
     {
+        // Toujours générer une nouvelle question mathématique aléatoire pour l'anti-bot
+        // La question change à chaque chargement de page (actualisation ou après soumission)
+        $num1 = rand(1, 10);
+        $num2 = rand(1, 10);
+        $answer = $num1 + $num2;
+        
+        // Stocker la réponse dans la session
+        session(['math_answer' => $answer]);
+        session(['math_question' => "$num1 + $num2"]);
 
-        return view("contact");
+        return view("contact", [
+            'math_question' => "$num1 + $num2"
+        ]);
     }
 
     function postContactMessage(Request $request)
     {
+        // Vérifier d'abord le honeypot field (must be empty)
+        if (!empty($request->robot_trap)) { // Si le champ honeypot est rempli, c'est un bot
+            return redirect()->route("contactPage")->with("message", "Anti-robot control failed.");
+        }
 
         $rules = [
             "full_name" => "required",
             "adresse_mail" => "required|email",
             "subject" => "required",
             "detailed_message" => "required",
+            "math_answer" => "required|numeric",
         ];
 
         $request->validate($rules);
 
+        // Vérifier la réponse mathématique depuis la session
+        $correctAnswer = session('math_answer');
+        
+        // Si la session a expiré ou n'existe pas, régénérer une nouvelle question
+        if ($correctAnswer === null) {
+            return redirect()->route("contactPage")
+                ->withErrors(['math_answer' => 'Session expired. Please refresh the page and try again.'])
+                ->withInput();
+        }
+
+
+        // Vérifier si la réponse est correcte
+        if ((int)$request->math_answer !== (int)$correctAnswer) {
+            // Nettoyer la session pour générer une nouvelle question après l'erreur
+            session()->forget(['math_answer', 'math_question']);
+            
+            return redirect()->route("contactPage")
+                ->withErrors(['math_answer' => 'The mathematical answer is incorrect. Please try again.'])
+                ->withInput();
 
         if ($request->fill_robot != "") { //COntrol anti robot
 
             $create = AIRID_Contact::create($request->all());
             return redirect()->route("contactPage")->with("message", "Contact message successfully sent. We'll get back to you via your mail address.");
+          main
         }
 
-        return redirect()->route("contactPage")->with("message", "Anti Robot Control Positif.");
+        // Nettoyer la session après validation réussie
+        // Une nouvelle question sera générée automatiquement par contactPage()
+        session()->forget(['math_answer', 'math_question']);
+
+        $create = AIRID_Contact::create($request->all());
+        return redirect()->route("contactPage")->with("message", "Contact message successfully sent. We'll get back to you via your mail address.");
     }
 
 
@@ -300,6 +354,26 @@ class FrontendController extends Controller
         $all_vacancies = AIRID_Vacancies::orderBy("application_deadline", "desc")->get();
 
         return view("vacancies", compact("all_vacancies"));
+    }
+
+    function newsPage(Request $request)
+    {
+        $all_projects = AIRID_Project::orderBy("date_debut_project", "desc")->get();
+        
+        // Vérifier si la colonne 'active' existe avant de l'utiliser
+        $vacancyQuery = AIRID_Vacancies::orderBy("application_deadline", "desc");
+        if (Schema::hasColumn('airid_vacancies', 'active')) {
+            $vacancyQuery->where("active", 1);
+        }
+        $all_vacancies = $vacancyQuery->get();
+        
+        $all_publications = AIRID_Publication::orderBy("annee_publication", "desc")->get();
+        $all_videos = AIRID_Video::orderBy("date_video", "desc")->get();
+        $all_photos = AIRID_Photo::orderBy("date_event", "desc")->get();
+        $all_news = AIRID_News::orderBy("created_at", "desc")->get();
+        $all_blogs = AIRID_Blog::orderBy("created_at", "desc")->get();
+
+        return view("news", compact("all_projects", "all_vacancies", "all_publications", "all_videos", "all_photos", "all_news", "all_blogs"));
     }
 
     function vacanciesChimisteAnalytiquePage(Request $request)
@@ -446,5 +520,10 @@ class FrontendController extends Controller
         }
 
         return redirect()->to(route("index") . "#newsletter-section-message");
+    }
+
+    function getInvolvedPage(Request $request)
+    {
+        return view("get-involved");
     }
 }
