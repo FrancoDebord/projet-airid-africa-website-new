@@ -31,6 +31,33 @@
                     </div>
                 </div>
             </div>
+            <div class="col-sm-6 col-xl-4">
+                <div class="bg-white rounded d-flex align-items-center justify-content-between p-4">
+                    <i class="fa fa-project-diagram fa-3x text-primary"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">Total Projets</p>
+                        <h6 class="mb-0" style="color: black">{{ $projectsCount }}</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xl-4">
+                <div class="bg-white rounded d-flex align-items-center justify-content-between p-4">
+                    <i class="fa fa-newspaper fa-3x text-primary"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">Total News</p>
+                        <h6 class="mb-0" style="color: black">{{ $newsCount }}</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xl-4">
+                <div class="bg-white rounded d-flex align-items-center justify-content-between p-4">
+                    <i class="fa fa-blog fa-3x text-primary"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">Total Blogs</p>
+                        <h6 class="mb-0" style="color: black">{{ $blogsCount }}</h6>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Sale & Revenue End -->

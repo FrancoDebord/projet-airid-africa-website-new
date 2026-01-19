@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\AIRID_Contact;
 use App\Models\AIRID_Departement;
 use App\Models\Airid_NewsLetterEmail;
+use App\Models\AIRID_News;
+use App\Models\AIRID_Blog;
 use App\Models\AIRID_Partenaire;
 use App\Models\AIRID_Personnel;
 use App\Models\AIRID_Photo;
@@ -16,6 +18,7 @@ use App\Models\AIRID_Vacancies;
 use App\Models\AIRID_Video;
 use App\Models\Departement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
 
 class FrontendController extends Controller
 {
@@ -30,8 +33,18 @@ class FrontendController extends Controller
         $all_recents_projects = AIRID_Project::orderBy("date_debut_project", "desc")->get();
         $all_projects_categories = AIRID_ProjetCategory::all();
         $all_partenaires = AIRID_Partenaire::all();
+        $all_news = AIRID_News::orderBy("created_at", "desc")->get();
+        
+        // Vérifier si la colonne 'active' existe avant de l'utiliser
+        $vacancyQuery = AIRID_Vacancies::orderBy('application_deadline', 'desc');
+        if (Schema::hasColumn('airid_vacancies', 'active')) {
+            $vacancyQuery->where('active', 1);
+        }
+        $recent_vacancy = $vacancyQuery->first();
+        
+        $recent_publication = AIRID_Publication::orderBy('annee_publication', 'desc')->first();
 
-        return view("accueil", compact("all_recents_projects", "all_projects_categories", "all_partenaires"));
+        return view("accueil", compact("all_recents_projects", "all_projects_categories", "all_partenaires", "all_news", "recent_vacancy", "recent_publication"));
     }
 
     /**
@@ -336,6 +349,26 @@ class FrontendController extends Controller
         return view("vacancies", compact("all_vacancies"));
     }
 
+    function newsPage(Request $request)
+    {
+        $all_projects = AIRID_Project::orderBy("date_debut_project", "desc")->get();
+        
+        // Vérifier si la colonne 'active' existe avant de l'utiliser
+        $vacancyQuery = AIRID_Vacancies::orderBy("application_deadline", "desc");
+        if (Schema::hasColumn('airid_vacancies', 'active')) {
+            $vacancyQuery->where("active", 1);
+        }
+        $all_vacancies = $vacancyQuery->get();
+        
+        $all_publications = AIRID_Publication::orderBy("annee_publication", "desc")->get();
+        $all_videos = AIRID_Video::orderBy("date_video", "desc")->get();
+        $all_photos = AIRID_Photo::orderBy("date_event", "desc")->get();
+        $all_news = AIRID_News::orderBy("created_at", "desc")->get();
+        $all_blogs = AIRID_Blog::orderBy("created_at", "desc")->get();
+
+        return view("news", compact("all_projects", "all_vacancies", "all_publications", "all_videos", "all_photos", "all_news", "all_blogs"));
+    }
+
     function vacanciesChimisteAnalytiquePage(Request $request)
     {
 
@@ -480,5 +513,10 @@ class FrontendController extends Controller
         }
 
         return redirect()->to(route("index") . "#newsletter-section-message");
+    }
+
+    function getInvolvedPage(Request $request)
+    {
+        return view("get-involved");
     }
 }

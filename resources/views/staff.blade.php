@@ -12,8 +12,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="banner-heading">
-                            <h1 class="banner-title top_title animate-fade-in">Notre Équipe AIRID</h1>
-                            <p class="banner-subtitle animate-slide-up">Découvrez les talents qui font la force de notre institut</p>
+                            <h1 class="banner-title top_title animate-fade-in">Our AIRID Team</h1>
+                            <p class="banner-subtitle animate-slide-up">Discover the talents that make our institute strong</p>
                         </div>
                     </div>
                 </div>
@@ -28,9 +28,9 @@
             <div class="row text-center mb-5">
                 <div class="col-lg-12">
                     <div class="section-header">
-                        <h3 class="section-sub-title">Notre Direction</h3>
+                        <h3 class="section-sub-title">Our Management</h3>
                         <div class="section-divider"></div>
-                        <p class="section-description">Le leadership qui guide notre vision et notre mission</p>
+                        <p class="section-description">The leadership that guides our vision and mission</p>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@
                     <div class="col-12 text-center">
                         <div class="no-data-message">
                             <i class="fas fa-users fa-3x mb-3"></i>
-                            <p>Aucun membre de la direction pour le moment</p>
+                            <p>No management members at the moment</p>
                         </div>
                     </div>
                 @endforelse
@@ -102,9 +102,9 @@
             <div class="row text-center mb-5">
                 <div class="col-lg-12">
                     <div class="section-header">
-                        <h3 class="section-sub-title">Notre Équipe</h3>
+                        <h3 class="section-sub-title">Our Team</h3>
                         <div class="section-divider"></div>
-                        <p class="section-description">Les experts et professionnels dédiés à l'excellence</p>
+                        <p class="section-description">The experts and professionals dedicated to excellence</p>
                     </div>
                 </div>
             </div>
@@ -162,7 +162,7 @@
                     <div class="col-12 text-center">
                         <div class="no-data-message">
                             <i class="fas fa-user-friends fa-3x mb-3"></i>
-                            <p>Aucun membre du personnel pour le moment</p>
+                            <p>No staff members at the moment</p>
                         </div>
                     </div>
                 @endforelse

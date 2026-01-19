@@ -131,6 +131,34 @@
                             </div>
                         </div>
 
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="email_personnel" class="form-label">Email</label>
+                                <input type="email" class="form-control @error('email_personnel') is-invalid @enderror" id="email_personnel" name="email_personnel" value="{{ old('email_personnel', $staff->email_personnel) }}">
+                                @error('email_personnel')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                                <small class="form-text text-muted">Email pour l'authentification</small>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="password" class="form-label">Mot de passe <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control @error('password') is-invalid @enderror" id="password" name="password" value="{{ old('password', $currentPassword ?? '') }}" required>
+                                    <button class="btn btn-outline-secondary" type="button" onclick="copyPassword()" title="Copier le mot de passe">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                @error('password')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                                <small class="form-text text-muted">
+                                    <strong>Mot de passe actuel :</strong> {{ $currentPassword ?? 'N/A' }}<br>
+                                    <strong>Pour modifier :</strong> Entrez un nouveau mot de passe (minimum 6 caractères). Le mot de passe sera mis à jour immédiatement.
+                                </small>
+                            </div>
+                        </div>
+
                         <button type="submit" class="btn btn-primary">Modifier</button>
                         <a href="{{ route('admin.staff.index') }}" class="btn btn-secondary">Annuler</a>
                     </form>
@@ -138,4 +166,26 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function copyPassword() {
+            const passwordInput = document.getElementById('password');
+            passwordInput.select();
+            passwordInput.setSelectionRange(0, 99999); // Pour les appareils mobiles
+            document.execCommand('copy');
+            
+            // Afficher une notification
+            const btn = event.target.closest('button');
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i>';
+            btn.classList.add('btn-success');
+            btn.classList.remove('btn-outline-secondary');
+            
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.classList.remove('btn-success');
+                btn.classList.add('btn-outline-secondary');
+            }, 2000);
+        }
+    </script>
 @endsection

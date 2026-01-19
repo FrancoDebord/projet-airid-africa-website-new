@@ -131,11 +131,10 @@
                                                         <i class="fas fa-trash"></i>
                                                     </button>
                                                 </form>
-                                                <a href="{{ route('detail-staff', ['id' => $member->id, 'slug' => \Illuminate\Support\Str::slug($member->nom_personnel . ' ' . $member->prenom_personnel)]) }}" 
+                                                <a href="{{ route('admin.staff.show', $member->id) }}" 
                                                    class="btn btn-info" 
                                                    title="Voir détails"
-                                                   data-bs-toggle="tooltip"
-                                                   target="_blank">
+                                                   data-bs-toggle="tooltip">
                                                     <i class="fas fa-eye"></i>
                                                 </a>
                                             </div>

@@ -32,6 +32,7 @@ Route::get('/our-experimental-huts', [FrontendController::class,"experimentalHut
 Route::get('/mosquito-plasmodium-laboratory', [FrontendController::class,"mosquitoPlasmodiumLaboratoryPage"])->name("mosquitoPlasmodiumLaboratoryPage");
 Route::get('/contact', [FrontendController::class,"contactPage"])->name("contactPage");
 Route::post('/post-contact', [FrontendController::class,"postContactMessage"])->name("postContactMessage");
+Route::get('/get-involved', [FrontendController::class,"getInvolvedPage"])->name("getInvolvedPage");
 Route::get('/crec-lshtm-project', [FrontendController::class,"pageCRECLSHTM"])->name("pageCRECLSHTM");
 
 
@@ -58,6 +59,7 @@ Route::get('/yorkool-g4-product-development', [FrontendController::class,"yorkoo
 Route::get('/pamverc-benin', [FrontendController::class,"pamvercBeninPage"])->name("pamvercBeninPage");
 Route::get('/newsletter-airid', [FrontendController::class,"newsletterPage"])->name("newsletterPage");
 Route::post('/add-email-to-newsletter-airid-list', [FrontendController::class,"subscribeNewsLetter"])->name("subscribeNewsLetter");
+Route::get('/news', [FrontendController::class,"newsPage"])->name("newsPage");
 
 // Admin Routes
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -72,6 +74,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/staff', [AdminController::class, 'staffIndex'])->name('staff.index');
         Route::get('/staff/create', [AdminController::class, 'staffCreate'])->name('staff.create');
         Route::post('/staff', [AdminController::class, 'staffStore'])->name('staff.store');
+        Route::get('/staff/{id}', [AdminController::class, 'staffShow'])->name('staff.show');
         Route::get('/staff/{id}/edit', [AdminController::class, 'staffEdit'])->name('staff.edit');
         Route::put('/staff/{id}', [AdminController::class, 'staffUpdate'])->name('staff.update');
         Route::delete('/staff/{id}', [AdminController::class, 'staffDestroy'])->name('staff.destroy');
@@ -80,6 +83,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/publications', [AdminController::class, 'publicationsIndex'])->name('publications.index');
         Route::get('/publications/create', [AdminController::class, 'publicationsCreate'])->name('publications.create');
         Route::post('/publications', [AdminController::class, 'publicationsStore'])->name('publications.store');
+        Route::get('/publications/{id}', [AdminController::class, 'publicationsShow'])->name('publications.show');
         Route::get('/publications/{id}/edit', [AdminController::class, 'publicationsEdit'])->name('publications.edit');
         Route::put('/publications/{id}', [AdminController::class, 'publicationsUpdate'])->name('publications.update');
         Route::delete('/publications/{id}', [AdminController::class, 'publicationsDestroy'])->name('publications.destroy');
@@ -88,8 +92,45 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/vacancies', [AdminController::class, 'vacanciesIndex'])->name('vacancies.index');
         Route::get('/vacancies/create', [AdminController::class, 'vacanciesCreate'])->name('vacancies.create');
         Route::post('/vacancies', [AdminController::class, 'vacanciesStore'])->name('vacancies.store');
+        Route::get('/vacancies/{id}', [AdminController::class, 'vacanciesShow'])->name('vacancies.show');
         Route::get('/vacancies/{id}/edit', [AdminController::class, 'vacanciesEdit'])->name('vacancies.edit');
         Route::put('/vacancies/{id}', [AdminController::class, 'vacanciesUpdate'])->name('vacancies.update');
         Route::delete('/vacancies/{id}', [AdminController::class, 'vacanciesDestroy'])->name('vacancies.destroy');
+
+        // Partners routes
+        Route::get('/partners', [AdminController::class, 'partnersIndex'])->name('partners.index');
+        Route::get('/partners/create', [AdminController::class, 'partnersCreate'])->name('partners.create');
+        Route::post('/partners', [AdminController::class, 'partnersStore'])->name('partners.store');
+        Route::get('/partners/{id}', [AdminController::class, 'partnersShow'])->name('partners.show');
+        Route::get('/partners/{id}/edit', [AdminController::class, 'partnersEdit'])->name('partners.edit');
+        Route::put('/partners/{id}', [AdminController::class, 'partnersUpdate'])->name('partners.update');
+        Route::delete('/partners/{id}', [AdminController::class, 'partnersDestroy'])->name('partners.destroy');
+
+        // Projects routes
+        Route::get('/projects', [AdminController::class, 'projectsIndex'])->name('projects.index');
+        Route::get('/projects/create', [AdminController::class, 'projectsCreate'])->name('projects.create');
+        Route::post('/projects', [AdminController::class, 'projectsStore'])->name('projects.store');
+        Route::get('/projects/{id}', [AdminController::class, 'projectsShow'])->name('projects.show');
+        Route::get('/projects/{id}/edit', [AdminController::class, 'projectsEdit'])->name('projects.edit');
+        Route::put('/projects/{id}', [AdminController::class, 'projectsUpdate'])->name('projects.update');
+        Route::delete('/projects/{id}', [AdminController::class, 'projectsDestroy'])->name('projects.destroy');
+
+        // News routes
+        Route::get('/news', [AdminController::class, 'newsIndex'])->name('news.index');
+        Route::get('/news/create', [AdminController::class, 'newsCreate'])->name('news.create');
+        Route::post('/news', [AdminController::class, 'newsStore'])->name('news.store');
+        Route::get('/news/{id}', [AdminController::class, 'newsShow'])->name('news.show');
+        Route::get('/news/{id}/edit', [AdminController::class, 'newsEdit'])->name('news.edit');
+        Route::put('/news/{id}', [AdminController::class, 'newsUpdate'])->name('news.update');
+        Route::delete('/news/{id}', [AdminController::class, 'newsDestroy'])->name('news.destroy');
+
+        // Blogs routes
+        Route::get('/blogs', [AdminController::class, 'blogsIndex'])->name('blogs.index');
+        Route::get('/blogs/create', [AdminController::class, 'blogsCreate'])->name('blogs.create');
+        Route::post('/blogs', [AdminController::class, 'blogsStore'])->name('blogs.store');
+        Route::get('/blogs/{id}', [AdminController::class, 'blogsShow'])->name('blogs.show');
+        Route::get('/blogs/{id}/edit', [AdminController::class, 'blogsEdit'])->name('blogs.edit');
+        Route::put('/blogs/{id}', [AdminController::class, 'blogsUpdate'])->name('blogs.update');
+        Route::delete('/blogs/{id}', [AdminController::class, 'blogsDestroy'])->name('blogs.destroy');
     });
 });

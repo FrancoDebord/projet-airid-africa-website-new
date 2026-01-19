@@ -1,20 +1,29 @@
-<section class="contents py-5 bg-light">
+<section class="contents py-5" style="background: linear-gradient(135deg, rgba(194, 1, 2, 0.02) 0%, rgba(139, 1, 1, 0.02) 100%);">
     <div class="container">
-        <h3 class="column-title text-center mb-4">Nos partenaires</h3>
+        <div class="row text-center mb-4 fade-in-up">
+            <div class="col-12">
+                <h2 class="section-title" style="font-size: 2.2rem; font-weight: 700; color: #2c3e50;">Our Partners</h2>
+                <p class="text-muted mb-3" style="font-size: 1rem;">
+                    Trusted organizations working with us
+                </p>
+                <div class="title-divider mx-auto" style="width: 80px; height: 3px; background: linear-gradient(135deg, #c20102 0%, #8b0101 100%); border-radius: 2px;"></div>
+            </div>
+        </div>
 
         <div class="partners-carousel d-flex align-items-center overflow-hidden">
             <div class="partners-track d-flex align-items-center">
                 @foreach ($all_partenaires as $partenaire)
                     <div class="partner-card mx-3 text-center">
-                        <a href="{{ $partenaire->site_web }}" target="_blank">
+                        <a href="{{ $partenaire->site_web ?? '#' }}" target="_blank" rel="noopener noreferrer">
                             <img loading="lazy"
                                  src="{{ asset('storage/assets/logo/' . $partenaire->logo_partenaire) }}"
                                  alt="{{ $partenaire->nom_partenaire }}"
                                  class="partner-logo">
                         </a>
                         <h6 class="mt-2 fw-semibold">
-                            <a href="{{ $partenaire->site_web }}" 
+                            <a href="{{ $partenaire->site_web ?? '#' }}" 
                                target="_blank" 
+                               rel="noopener noreferrer"
                                class="text-dark text-decoration-none">
                                 {{ $partenaire->nom_partenaire }}
                             </a>

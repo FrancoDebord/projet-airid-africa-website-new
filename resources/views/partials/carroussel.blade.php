@@ -1,4 +1,16 @@
-<div class="banner-carousel banner-carousel-1 mb-0">
+@php
+    $recentProjects = $all_recents_projects->sortByDesc('date_debut_project')->take(1)->first();
+    $vacancyQuery = \App\Models\AIRID_Vacancies::where('application_deadline', '>=', now())
+        ->orderBy('application_deadline', 'desc');
+    if (\Illuminate\Support\Facades\Schema::hasColumn('airid_vacancies', 'active')) {
+        $vacancyQuery->where('active', 1);
+    }
+    $recentVacancies = $vacancyQuery->take(1)->first();
+    $recentPublications = \App\Models\AIRID_Publication::orderBy('annee_publication', 'desc')->take(1)->first();
+@endphp
+
+<div class="banner-carousel banner-carousel-1 mb-0" style="position: relative;">
+
     {{-- <div class="banner-carousel-item">
         <!-- The video -->
         <video autoplay muted loop id="myVideo">
@@ -15,7 +27,6 @@
 
     </div> --}}
 
-
     <div class="banner-carousel-item"
         style="background-image:url({{ asset('storage/assets/images/slider/facility3.jpg') }});background-size: cover;;">
         <div class="slider-content">
@@ -25,9 +36,9 @@
                         {{-- <h2 class="slide-title bg-danger" data-animation-in="slideInLeft">African Institute for Research in </h2>
                         <h3 class="slide-sub-title bg-secondary" data-animation-in="slideInRight">Infectious Diseases
                         </h3> --}}
-                        <p data-animation-in="slideInLeft" data-duration-in="1.2">
+                        {{-- <p data-animation-in="slideInLeft" data-duration-in="1.2">
                             <a href="{{ route('allServicesPage') }}" class="slider btn btn-primary">Our Services</a>
-                        </p>
+                        </p> --}}
                     </div>
                 </div>
             </div>
@@ -59,9 +70,9 @@
                         {{-- <h2 class="slide-title bg-danger" data-animation-in="slideInLeft">African Institute for Research in </h2>
                         <h3 class="slide-sub-title bg-warning" data-animation-in="slideInRight">Infectious Diseases
                         </h3> --}}
-                        <p data-animation-in="slideInLeft" data-duration-in="1.2">
+                        {{-- <p data-animation-in="slideInLeft" data-duration-in="1.2">
                             <a href="{{ route('allServicesPage') }}" class="slider btn btn-primary">Our Services</a>
-                        </p>
+                        </p> --}}
                     </div>
                 </div>
             </div>
@@ -94,9 +105,9 @@
                         {{-- <h2 class="slide-title bg-danger" data-animation-in="slideInLeft">African Institute for Research in </h2>
                         <h3 class="slide-sub-title bg-warning" data-animation-in="slideInRight">Infectious Diseases
                         </h3> --}}
-                        <p data-animation-in="slideInLeft" data-duration-in="1.2">
+                        {{-- <p data-animation-in="slideInLeft" data-duration-in="1.2">
                             <a href="{{ route('allServicesPage') }}" class="slider btn btn-primary">Our Services</a>
-                        </p>
+                        </p> --}}
                     </div>
                 </div>
             </div>
@@ -115,9 +126,9 @@
                         {{-- <h2 class="slide-title" data-animation-in="slideInLeft">African Institute for Research in </h2>
                         <h3 class="slide-sub-title" data-animation-in="slideInRight">Infectious Diseases
                         </h3> --}}
-                        <p data-animation-in="slideInLeft" data-duration-in="1.2">
+                        {{-- <p data-animation-in="slideInLeft" data-duration-in="1.2">
                             <a href="{{ route('allServicesPage') }}" class="slider btn btn-primary">Our Services</a>
-                        </p>
+                        </p> --}}
                     </div>
                 </div>
             </div>

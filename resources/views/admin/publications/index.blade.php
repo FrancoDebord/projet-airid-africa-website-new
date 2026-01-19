@@ -60,6 +60,9 @@
                                         </td>
                                         <td>
                                             <div class="btn-group btn-group-sm" role="group">
+                                                <a href="{{ route('admin.publications.show', $publication->id) }}" class="btn btn-info" title="Voir détails">
+                                                    <i class="fas fa-eye"></i>
+                                                </a>
                                                 <a href="{{ route('admin.publications.edit', $publication->id) }}" class="btn btn-warning" title="Modifier">
                                                     <i class="fas fa-edit"></i>
                                                 </a>

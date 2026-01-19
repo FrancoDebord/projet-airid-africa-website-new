@@ -54,12 +54,19 @@
                     <form action="{{ route('admin.login.authenticate') }}" method="POST">
                         @csrf
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" style="background-color: white; color:black"  required>
-                            <label for="nom">Nom</label>
+                            <input type="email" class="form-control" id="email_personnel" name="email_personnel" placeholder="Email" style="background-color: white; color:black" required>
+                            <label for="email_personnel">Email</label>
                         </div>
-                        <div class="form-floating mb-4">
-                            <input type="text" class="form-control" id="poste" name="poste" placeholder="Poste" style="background-color: white; color:black" required>
-                            <label for="poste">Poste</label>
+                        <div class="form-floating mb-3 position-relative">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Mot de passe" style="background-color: white; color:black; padding-right: 45px;" required>
+                            <label for="password">Mot de passe</label>
+                            <button type="button" class="btn btn-link position-absolute end-0 top-50 translate-middle-y" id="togglePassword" style="border: none; background: none; color: #6c757d; padding: 0.5rem 1rem; text-decoration: none; z-index: 10;">
+                                <i class="fas fa-eye" id="togglePasswordIcon"></i>
+                            </button>
+                        </div>
+                        <div class="form-check mb-4">
+                            <input type="checkbox" class="form-check-input" id="remember" name="remember" style="background-color: rgb(237, 46, 46); color:black">
+                            <label class="form-check-label" for="remember" style="color:white">Se souvenir de moi</label>
                         </div>
                         <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Login</button>
                     </form>
@@ -81,5 +88,23 @@
 
     <!-- Template Javascript -->
     <script src="{{ asset('js/main.js') }}"></script>
+    
+    <!-- Toggle Password Visibility -->
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordInput = document.getElementById('password');
+            const passwordIcon = document.getElementById('togglePasswordIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                passwordIcon.classList.remove('fa-eye');
+                passwordIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                passwordIcon.classList.remove('fa-eye-slash');
+                passwordIcon.classList.add('fa-eye');
+            }
+        });
+    </script>
 </body>
 </html>
