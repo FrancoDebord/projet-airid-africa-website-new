@@ -103,6 +103,17 @@
                                 @enderror
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="email_personnel" class="form-label">Email</label>
+                                <input type="email" class="form-control @error('email_personnel') is-invalid @enderror" id="email_personnel" name="email_personnel" value="{{ old('email_personnel') }}">
+                                @error('email_personnel')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                                <small class="form-text text-muted">Email pour l'authentification</small>
+                            </div>
+                        </div>
                         <button type="submit" class="btn btn-primary">Ajouter</button>
                         <a href="{{ route('admin.staff.index') }}" class="btn btn-secondary">Annuler</a>
                     </form>

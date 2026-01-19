@@ -88,6 +88,7 @@ class AdminController extends Controller
             'titre' => 'required|string',
             'prenom_personnel' => 'required|string',
             'nom_personnel' => 'required|string',
+            'email_personnel' => 'nullable|email|unique:airid_personnels,email_personnel',
             'photo_personnel' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'departement_id' => 'required|integer',
             'poste_id' => 'required|integer',
