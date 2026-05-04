@@ -11,14 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('airid_newsletters_emails', function (Blueprint $table) {
-            $table->id();
-            $table->string("email_subscribe");
-            $table->date("date_start_subscribe");
-            $table->date("date_end_subscribe")->nullable();
-            $table->boolean("active")->default(true);
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('airid_newsletters_emails')) {
+            Schema::create('airid_newsletters_emails', function (Blueprint $table) {
+                $table->id();
+                $table->string("email_subscribe");
+                $table->date("date_start_subscribe");
+                $table->date("date_end_subscribe")->nullable();
+                $table->boolean("active")->default(true);
+                $table->timestamps();
+            });
+        }
     }
 
     /**

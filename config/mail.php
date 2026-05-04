@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'default' => env('MAIL_MAILER', 'log'),
+    'default' => config('app.mail.mailer', 'smtp'),
 
     /*
     |--------------------------------------------------------------------------
@@ -39,14 +39,13 @@ return [
 
         'smtp' => [
             'transport' => 'smtp',
-            'scheme' => env('MAIL_SCHEME'),
-            'url' => env('MAIL_URL'),
-            'host' => env('MAIL_HOST', '127.0.0.1'),
-            'port' => env('MAIL_PORT', 2525),
-            'username' => env('MAIL_USERNAME'),
-            'password' => env('MAIL_PASSWORD'),
+            'host' => config('app.mail.host', 'smtp.gmail.com'),
+            'port' => config('app.mail.port', 587),
+            'encryption' => config('app.mail.encryption', 'tls'),
+            'username' => config('app.mail.username'),
+            'password' => config('app.mail.password'),
             'timeout' => null,
-            'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url(env('APP_URL', 'http://localhost'), PHP_URL_HOST)),
+            'local_domain' => parse_url(config('app.url', 'http://localhost'), PHP_URL_HOST),
         ],
 
         'ses' => [
@@ -109,8 +108,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => config('app.mail.from_address'),
+        'name' => config('app.mail.from_name'),
     ],
 
 ];

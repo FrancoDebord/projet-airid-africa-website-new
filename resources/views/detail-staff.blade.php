@@ -49,20 +49,20 @@
         }
 
         .staff-name {
-            font-size: 2.2rem;
+            font-size: var(--airid-h1-size);
             font-weight: 700;
             color: #2c3e50;
             margin-bottom: 0.5rem;
         }
 
         .staff-title {
-            font-size: 1.1rem;
-            color: #7f8c8d;
+            font-size: var(--airid-text-size);
+            color: var(--airid-text-color);
             margin-bottom: 0.5rem;
         }
 
         .staff-position {
-            font-size: 1.2rem;
+            font-size: var(--airid-h3-size);
             color: #c20102;
             font-weight: 600;
             margin-bottom: 1rem;
@@ -79,8 +79,8 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: #7f8c8d;
-            font-size: 0.95rem;
+            color: var(--airid-text-color);
+            font-size: var(--airid-text-size);
         }
 
         .staff-meta-item i {
@@ -102,7 +102,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #7f8c8d;
+            color: var(--airid-text-color);
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -127,7 +127,7 @@
         }
 
         .section-title {
-            font-size: 1.8rem;
+            font-size: var(--airid-h2-size);
             font-weight: 700;
             color: #2c3e50;
             margin-bottom: 1.5rem;
@@ -145,10 +145,31 @@
         .section-content {
             line-height: 1.8;
             color: #555;
+            text-align: left;
         }
 
         .section-content p {
             margin-bottom: 1rem;
+        }
+
+        .section-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Description profil : paragraphes et alignement */
+        .staff-description {
+            text-align: justify;
+            hyphens: auto;
+            word-spacing: -0.02em;
+        }
+
+        .staff-description p {
+            margin-bottom: 1rem;
+            line-height: 1.75;
+        }
+
+        .staff-description p:last-child {
+            margin-bottom: 0;
         }
 
         /* ============================================
@@ -225,8 +246,8 @@
         }
 
         .list-item-meta {
-            font-size: 0.9rem;
-            color: #7f8c8d;
+            font-size: var(--airid-tagline-size);
+            color: var(--airid-text-color);
         }
 
         /* ============================================
@@ -264,7 +285,7 @@
                     <div class="col-lg-12">
                         <div class="banner-heading">
                             <h1 class="banner-title top_title fade-in-up">Team Member</h1>
-                            <p class="text-white mt-3 fade-in-up" style="font-size: 1.2rem;">
+                            <p class="text-white mt-3 fade-in-up tagline mb-0" style="font-size: 1.4rem;">
                                 Meet our dedicated research team
                             </p>
                         </div>
@@ -280,10 +301,16 @@
             <!-- Header du Profil -->
             <div class="staff-profile-header fade-in-up">
                 <div class="staff-photo-wrapper">
-                    <img loading="lazy"
-                         src="{{ asset('storage/assets/staff/' . $staff->photo_personnel) }}"
-                         alt="{{ $staff->prenom_personnel . ' ' . $staff->nom_personnel }}"
-                         class="staff-photo">
+                    @if($staff->photo_personnel)
+                        @php
+                            $photoName = basename($staff->photo_personnel);
+                            $staffPhotoPath = 'assets/staff/' . $photoName;
+                            $placeholderUrl = asset('storage/assets_vendor/images/team/placeholder.jpg');
+                        @endphp
+                        <img loading="lazy" src="{{ asset($staffPhotoPath) }}" alt="{{ $staff->prenom_personnel . ' ' . $staff->nom_personnel }}" class="staff-photo" onerror="this.onerror=null; this.src='{{ $placeholderUrl }}';">
+                    @else
+                        <img loading="lazy" src="{{ asset('storage/assets_vendor/images/team/placeholder.jpg') }}" alt="{{ $staff->prenom_personnel . ' ' . $staff->nom_personnel }}" class="staff-photo">
+                    @endif
                 </div>
                 <div class="staff-info">
                     <h1 class="staff-name">
@@ -304,7 +331,7 @@
                         @if($staff->email_personnel)
                             <div class="staff-meta-item">
                                 <i class="fas fa-envelope"></i>
-                                <a href="mailto:{{ $staff->email_personnel }}" style="color: #7f8c8d; text-decoration: none;">
+                                <a href="mailto:{{ $staff->email_personnel }}" style="color: var(--airid-text-color); text-decoration: none;">
                                     {{ $staff->email_personnel }}
                                 </a>
                             </div>
@@ -312,16 +339,22 @@
                         @if($staff->telephone_personnel)
                             <div class="staff-meta-item">
                                 <i class="fas fa-phone"></i>
-                                <a href="tel:{{ $staff->telephone_personnel }}" style="color: #7f8c8d; text-decoration: none;">
+                                <a href="tel:{{ $staff->telephone_personnel }}" style="color: var(--airid-text-color); text-decoration: none;">
                                     {{ $staff->telephone_personnel }}
                                 </a>
                             </div>
                         @endif
                     </div>
                     <div class="staff-social">
-                        <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        @if(!empty($staff->link_facebook))
+                            <a href="{{ $staff->link_facebook }}" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        @endif
+                        @if(!empty($staff->link_twitter))
+                            <a href="{{ $staff->link_twitter }}" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        @endif
+                        @if(!empty($staff->link_linkedin))
+                            <a href="{{ $staff->link_linkedin }}" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        @endif
                         @if($staff->email_personnel)
                             <a href="mailto:{{ $staff->email_personnel }}" title="Email"><i class="fas fa-envelope"></i></a>
                         @endif
@@ -332,6 +365,24 @@
             <div class="row">
                 <!-- Colonne Principale -->
                 <div class="col-lg-8">
+                    <!-- Description du profil (saisie admin) -->
+                    @if($staff->description_poste)
+                        <div class="content-section fade-in-up">
+                            <h2 class="section-title">
+                                <i class="fas fa-id-badge"></i>Profile
+                            </h2>
+                            <div class="section-content staff-description">
+                                @php
+                                    $desc = e(trim($staff->description_poste));
+                                    $paras = preg_split('/\n\s*\n/', $desc, -1, PREG_SPLIT_NO_EMPTY);
+                                @endphp
+                                @foreach($paras as $para)
+                                    <p>{!! nl2br($para) !!}</p>
+                                @endforeach
+                            </div>
+                        </div>
+                    @endif
+
                     <!-- Biographie -->
                     @if($staff->biographie_personnel)
                         <div class="content-section fade-in-up">
@@ -376,7 +427,7 @@
                         <h2 class="section-title">
                             <i class="fas fa-info-circle"></i>Information
                         </h2>
-                        <div class="info-grid">
+                        {{-- <div class="info-grid">
                             @if($staff->departement)
                                 <div class="info-item">
                                     <div class="info-item-label">
@@ -386,7 +437,7 @@
                                         {{ $staff->departement->nom_departement }}
                                     </div>
                                 </div>
-                            @endif
+                            @endif --}}
                             @if($staff->posteOccupe)
                                 <div class="info-item">
                                     <div class="info-item-label">
@@ -397,6 +448,7 @@
                                     </div>
                                 </div>
                             @endif
+                            <br>
                             @if($staff->email_personnel)
                                 <div class="info-item">
                                     <div class="info-item-label">

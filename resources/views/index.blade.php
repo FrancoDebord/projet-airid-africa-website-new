@@ -32,6 +32,8 @@
      
     <!-- FontAwesome -->
     <link rel="stylesheet" href="{{ asset('storage/assets_vendor/plugins/fontawesome/css/all.min.css') }}">
+    <!-- Fallback CDN si les fichiers locaux ne se chargent pas (icônes footer, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Animation -->
     <link rel="stylesheet" href="{{ asset('storage/assets_vendor/plugins/animate-css/animate.css') }}">
     <!-- slick Carousel -->
@@ -41,6 +43,8 @@
     <link rel="stylesheet" href="{{ asset('storage/assets_vendor/plugins/colorbox/colorbox.css') }}">
     <!-- Template styles-->
     <link rel="stylesheet" href="{{ asset('storage/assets_vendor/css/style.css') }}">
+    <!-- Typographie projet : définie pour tout le site (référence: hero Advancing African-Led Science / Bold science / intro) -->
+    <link rel="stylesheet" href="{{ asset('css/typography.css') }}">
 
     @yield('css')
 
@@ -95,90 +99,7 @@
 
         @yield('content')
 
-        
-        <footer id="footer" class="footer bg-overlay">
-            <div class="footer-main">
-                <div class="container">
-                    <div class="row justify-content-between">
-                        <div class="col-lg-4 col-md-6 footer-widget footer-about">
-                            <h3 class="widget-title">About Us</h3>
-                            <img loading="lazy" width="200px" class="footer-logo" src="{{ asset("storage/assets/logo/airid1.jpg") }}"
-                                alt="Constra">
-                            <p>The African Institute for Research in Infectious Diseases is a leading African research center dedicated to advancing scientific knowledge and innovative solutions in the fight against infectious diseases.</p>
-                            <div class="footer-social">
-                                <ul>
-                                    <li><a href="https://facebook.com/themefisher" aria-label="Facebook"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="https://twitter.com/themefisher" aria-label="Twitter"><i
-                                                class="fab fa-twitter"></i></a>
-                                    </li>
-                                    <li><a href="https://instagram.com/themefisher" aria-label="Instagram"><i
-                                                class="fab fa-instagram"></i></a></li>
-                                    <li><a href="https://github.com/themefisher" aria-label="Github"><i
-                                                class="fab fa-github"></i></a></li>
-                                </ul>
-                            </div><!-- Footer social end -->
-                        </div><!-- Col end -->
-
-                        <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
-                            <h3 class="widget-title">Get in touch with us</h3>
-                            <div class="working-hours">
-
-                                Secrétariat AIRID, Maison 115, Rue 1543 Donaten, AKPAKPA, (Rue SOBEPEC, 4e Von à gauche, dernier immeuble à gauche), Cotonou, Benin
-                                <br><br> Email :  <span class="text-right"> <a href="mailto:admin@airid-africa.com" >admin@airid-africa.com</a> </span>
-                                <br> Phone number: <span class="text-right"> <a href="tel:(+229) 01 67 16 44 99" > (+229) 01 67 16 44 99</a> </span>
-                            </div>
-                        </div><!-- Col end -->
-
-                        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
-                            <h3 class="widget-title">Quick  links</h3>
-                            <ul class="list-arrow">
-                                <li><a href="{{ route("aboutPage") }}">About us</a></li>
-                                <li><a href="{{ route("allProjectsPage") }}">All our projects</a></li>
-                                <li><a href="#">News</a></li>
-                                <li><a href="{{ route("allServicesPage") }}">All departments</a></li>
-                                <li><a href="{{ route("allPublicationsPage") }}">Scientific Publications</a></li>
-                            </ul>
-                        </div><!-- Col end -->
-                    </div><!-- Row end -->
-                </div><!-- Container end -->
-            </div><!-- Footer main end -->
-
-            <div class="copyright">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <div class="copyright-info">
-                                <span>Copyright &copy;
-                                    <script>
-                                        document.write(new Date().getFullYear())
-                                    </script>
-
-                                AIRID
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="footer-menu text-center text-md-right">
-                                <ul class="list-unstyled">
-                                    <li><a href="{{ route("contactPage") }}">Contact Us</a></li>
-                                    <li><a href="{{ route("aboutPage") }}">Our Vision & Mission</a></li>
-                                    <li><a href="{{ route("staffAirid") }}">Our Staff</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div><!-- Row end -->
-
-                    <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
-                        <button class="btn btn-primary" title="Back to Top">
-                            <i class="fa fa-angle-double-up"></i>
-                        </button>
-                    </div>
-
-                </div><!-- Container end -->
-            </div><!-- Copyright end -->
-        </footer><!-- Footer end -->
+        @include('partials.footer')
 
 
         <!-- Javascript Files

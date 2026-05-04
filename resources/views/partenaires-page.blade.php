@@ -39,7 +39,7 @@
             border: 2px solid #e0e0e0;
             background: #fff;
             border-radius: 50px;
-            color: #7f8c8d;
+            color: var(--airid-text-color);
             font-weight: 600;
             transition: all 0.3s ease;
             cursor: pointer;
@@ -57,7 +57,7 @@
 
         .results-count {
             text-align: center;
-            color: #7f8c8d;
+            color: var(--airid-text-color);
             font-weight: 600;
             margin-top: 1rem;
         }
@@ -115,14 +115,14 @@
         }
 
         .partner-name {
-            font-size: 1.1rem;
+            font-size: var(--airid-text-size);
             font-weight: 700;
-            color: #2c3e50;
+            color: var(--airid-title-color);
             margin-bottom: 0.5rem;
         }
 
         .partner-name a {
-            color: #2c3e50;
+            color: var(--airid-title-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -135,7 +135,7 @@
             display: inline-block;
             padding: 0.4rem 1rem;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: var(--airid-tagline-size);
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -177,7 +177,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #7f8c8d;
+            color: var(--airid-text-color);
             text-decoration: none;
             transition: all 0.3s ease;
         }
@@ -194,7 +194,7 @@
         .no-results {
             text-align: center;
             padding: 4rem 2rem;
-            color: #7f8c8d;
+            color: var(--airid-text-color);
         }
 
         .no-results i {
@@ -222,7 +222,7 @@
 
             .filter-btn {
                 padding: 0.5rem 1rem;
-                font-size: 0.85rem;
+                font-size: var(--airid-tagline-size);
             }
         }
     </style>
@@ -238,7 +238,7 @@ style="background-image:url({{ asset('storage/assets_vendor/images/banner/banner
             <div class="col-lg-12">
                 <div class="banner-heading">
                             <h1 class="banner-title top_title fade-in-up">Our Partners</h1>
-                            <p class="text-white mt-3 fade-in-up" style="font-size: 1.2rem;">
+                            <p class="text-white mt-3 fade-in-up tagline mb-0" style="font-size: 1.4rem;">
                                 Building strong partnerships for impactful research
                             </p>
                         </div>
@@ -279,11 +279,25 @@ style="background-image:url({{ asset('storage/assets_vendor/images/banner/banner
         <div class="container">
             <div class="row text-center mb-5 fade-in-up">
                 <div class="col-12">
-                    <h2 class="section-title" style="font-size: 2.5rem; font-weight: 700; color: #2c3e50;">Our Valued Partners</h2>
-                    <p class="text-muted mb-4" style="font-size: 1.1rem;">
+                    <h3 class="section-title">Our Valued Partners</h3>
+                    <p class="section-lead mb-4">
                         We collaborate with leading organizations worldwide to advance infectious disease research
                     </p>
                     <div class="title-divider mx-auto mt-3 mb-4" style="width: 100px; height: 4px; background: linear-gradient(135deg, #c20102 0%, #8b0101 100%); border-radius: 2px;"></div>
+                </div>
+            </div>
+
+            <div class="row mb-5 fade-in-up">
+                <div class="col-12">
+                    <div class="partnership-contact-card" style="background: #fff; border-radius: 14px; padding: 1.5rem 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-left: 5px solid #c20102;">
+                        <h3 class="mb-3" style="font-size: 1.2rem; font-weight: 700; color: #1a1a1a;"><i class="fas fa-envelope me-2" style="color: #c20102;"></i> Partnership enquiries</h3>
+                        <p class="mb-2" style="font-size: 1rem; line-height: 1.6; color: #444;">Interested in partnering with AIRID? Contact our partnerships team for collaboration opportunities, funding discussions, or research partnerships.</p>
+                        <p class="mb-0">
+                            <a href="mailto:partnerships@airid-africa.com" class="btn btn-danger">
+                                <i class="fas fa-envelope me-1"></i> partnerships@airid-africa.com
+                            </a>
+                        </p>
+                    </div>
                 </div>
             </div>
 
@@ -300,13 +314,13 @@ style="background-image:url({{ asset('storage/assets_vendor/images/banner/banner
                         ];
                         $typeLabel = $typeMapping[$partenaire->type_partenaire ?? 'industry_partner'] ?? ucfirst(str_replace('_', ' ', $partenaire->type_partenaire ?? 'Industry Partners'));
                     @endphp
-                    <div class="col-lg-3 col-md-4 col-sm-6 partner-item fade-in-up" 
+                    <div class="col-lg-3 col-md-4 col-sm-6 partner-item fade-in-up"
                          data-type="{{ $partenaire->type_partenaire ?? 'industry_partner' }}"
                          style="transition-delay: {{ ($index % 4) * 0.1 }}s">
                         <div class="partner-card-modern">
                             <div class="partner-logo-wrapper">
                                 <a href="{{ $partenaire->site_web ?? '#' }}" target="_blank" rel="noopener noreferrer">
-                                    <img 
+                                    <img
                                         loading="lazy"
                                         src="{{ asset('storage/assets/logo/' . $partenaire->logo_partenaire) }}"
                                         alt="{{ $partenaire->nom_partenaire }}"
@@ -319,17 +333,17 @@ style="background-image:url({{ asset('storage/assets_vendor/images/banner/banner
                                     {{ $partenaire->nom_partenaire }}
                                 </a>
                             </h4>
-                           
-                            
+
+
                             <div class="partner-links">
                                 @if($partenaire->site_web)
-                                    <a href="{{ $partenaire->site_web }}" target="_blank" rel="noopener noreferrer" 
+                                    <a href="{{ $partenaire->site_web }}" target="_blank" rel="noopener noreferrer"
                                        class="partner-link-icon" title="Website">
                                         <i class="fas fa-globe"></i>
                                     </a>
                                 @endif
                                 @if($partenaire->linkedin)
-                                    <a href="{{ $partenaire->linkedin }}" target="_blank" rel="noopener noreferrer" 
+                                    <a href="{{ $partenaire->linkedin }}" target="_blank" rel="noopener noreferrer"
                                        class="partner-link-icon" title="LinkedIn">
                                         <i class="fab fa-linkedin-in"></i>
                                     </a>
@@ -341,7 +355,7 @@ style="background-image:url({{ asset('storage/assets_vendor/images/banner/banner
                     <div class="col-12 fade-in-up">
                         <div class="no-results">
                             <i class="fas fa-handshake"></i>
-                            <h3 class="mt-3 mb-2" style="color: #2c3e50;">No partners registered yet</h3>
+                            <h3 class="mt-3 mb-2 section-title">No partners registered yet</h3>
                             <p>Partners will be displayed here once they are added to the system.</p>
                         </div>
                     </div>
@@ -353,7 +367,7 @@ style="background-image:url({{ asset('storage/assets_vendor/images/banner/banner
                 <div class="col-12">
                     <div class="no-results">
                         <i class="fas fa-filter"></i>
-                        <h3 class="mt-3 mb-2" style="color: #2c3e50;">No partners match your filter</h3>
+                        <h3 class="mt-3 mb-2 section-title">No partners match your filter</h3>
                         <p>Try selecting a different partner category.</p>
                     </div>
                 </div>
@@ -406,7 +420,7 @@ style="background-image:url({{ asset('storage/assets_vendor/images/banner/banner
                     // Mettre à jour les boutons actifs
                     filterButtons.forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
-                    
+
                     currentFilter = this.getAttribute('data-filter');
                     filterPartners();
                 });
@@ -419,13 +433,13 @@ style="background-image:url({{ asset('storage/assets_vendor/images/banner/banner
 
                 partnerItems.forEach(item => {
                     const type = item.getAttribute('data-type') || 'industry_partner';
-                    
+
                     // Normaliser les types pour la comparaison
                     const normalizedFilter = currentFilter === 'Work partner' ? 'Work partner' : currentFilter;
                     const normalizedType = type === 'Work partner' ? 'Work partner' : type;
-                    
+
                     const matchesFilter = currentFilter === 'all' || normalizedType === normalizedFilter;
-                    
+
                     if (matchesFilter) {
                         item.style.display = '';
                         visibleCount++;

@@ -74,7 +74,7 @@
             align-items: center;
             justify-content: center;
             color: #fff;
-            font-size: 2.5rem;
+            font-size: var(--airid-h2-size);
             margin-bottom: 1.5rem;
             transition: transform 0.3s ease;
         }
@@ -94,23 +94,23 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: var(--airid-h3-size);
             font-weight: 700;
             color: #c20102;
         }
 
         .domain-title {
-            font-size: 1.5rem;
+            font-size: var(--airid-h2-size);
             font-weight: 700;
-            color: #2c3e50;
+            color: var(--airid-title-color);
             margin-bottom: 1rem;
             line-height: 1.4;
         }
 
         .domain-description {
-            color: #7f8c8d;
-            line-height: 1.8;
-            font-size: 1rem;
+            font-size: var(--airid-text-size);
+            line-height: var(--airid-text-line-height);
+            color: var(--airid-text-color);
         }
 
         .domain-features {
@@ -137,7 +137,7 @@
             content: '✓';
             color: #c20102;
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: var(--airid-text-size);
         }
 
         /* ============================================
@@ -171,16 +171,16 @@
         }
 
         .stat-number {
-            font-size: 3.5rem;
+            font-size: var(--airid-h1-size);
             font-weight: 700;
             margin-bottom: 0.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         .stat-label {
-            font-size: 1.2rem;
+            font-size: var(--airid-tagline-size);
             opacity: 0.95;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         /* ============================================
@@ -194,11 +194,11 @@
             .domain-icon {
                 width: 60px;
                 height: 60px;
-                font-size: 2rem;
+                font-size: var(--airid-h3-size);
             }
 
             .stat-number {
-                font-size: 2.5rem;
+                font-size: var(--airid-h2-size);
             }
         }
 
@@ -233,6 +233,85 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(194, 1, 2, 0.4);
         }
+
+        /* Carte lien Insecticide Testing */
+        .facility-cta-card {
+            display: block;
+            background: #fff;
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border-top: 5px solid #c20102;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.4s ease;
+            margin-top: 1rem;
+        }
+
+        .facility-cta-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            color: inherit;
+            border-top-color: #8b0101;
+        }
+
+        .facility-cta-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #c20102 0%, #8b0101 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.75rem;
+            flex-shrink: 0;
+        }
+
+        .facility-cta-card:hover .facility-cta-icon {
+            transform: scale(1.08);
+            transition: transform 0.3s ease;
+        }
+
+        .facility-cta-title {
+            font-size: var(--airid-h2-size);
+            font-weight: 700;
+            color: var(--airid-title-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .facility-cta-desc {
+            font-size: var(--airid-text-size);
+            line-height: var(--airid-text-line-height);
+            color: var(--airid-text-color);
+            margin-bottom: 0;
+        }
+
+        .facility-cta-arrow-wrap {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #c20102;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            border: 2px solid #c20102;
+        }
+
+        .facility-cta-card:hover .facility-cta-arrow-wrap {
+            background: #8b0101;
+            border-color: #8b0101;
+            transform: translateX(6px);
+        }
+
+        .facility-cta-arrow-wrap .facility-cta-arrow {
+            color: #fff;
+            font-size: 1.1rem;
+        }
     </style>
 @endsection
 
@@ -246,7 +325,7 @@
                     <div class="col-lg-12">
                         <div class="banner-heading">
                             <h1 class="banner-title top_title fade-in-up">Research Activities</h1>
-                            <p class="text-white mt-3 fade-in-up" style="font-size: 1.2rem;">
+                            <p class="text-white mt-3 fade-in-up tagline mb-0" style="font-size: 1.4rem;">
                                 Advancing science through innovative research and evidence-based solutions
                             </p>
                         </div>
@@ -262,14 +341,14 @@
             <div class="research-intro fade-in-up">
                 <div class="row text-center">
                     <div class="col-lg-10 mx-auto">
-                        <h2 class="mb-4" style="font-size: 2.5rem; font-weight: 700; color: #2c3e50;">
+                        <h1 class="section-title mb-4">
                             <i class="fas fa-flask me-3" style="color: #c20102;"></i>
                             Our Research Domains
-                        </h2>
-                        <p class="lead" style="color: #555; font-size: 1.2rem; line-height: 1.8;">
-                            AIRID conducts multidisciplinary research across five key domains, 
-                            each contributing to our mission of reducing the burden of infectious diseases in Africa. 
-                            Our work spans from laboratory-based studies to community-level interventions, 
+                        </h1>
+                        <p class="section-lead mb-0" style="font-size: var(--airid-text-size); line-height: var(--airid-text-line-height); color: var(--airid-text-color);">
+                            AIRID conducts multidisciplinary research across five key domains,
+                            each contributing to our mission of reducing the burden of infectious diseases in Africa.
+                            Our work spans from laboratory-based studies to community-level interventions,
                             ensuring that scientific discoveries translate into real-world impact.
                         </p>
                     </div>
@@ -291,9 +370,9 @@
                         </div>
                         <h3 class="domain-title">Vector Control and Public Health Entomology</h3>
                         <p class="domain-description">
-                            AIRID conducts cutting-edge research to develop and evaluate innovative tools for the control 
-                            of disease vectors such as mosquitoes. Our expertise includes testing insecticide-treated nets (ITNs), 
-                            indoor residual sprays (IRS), attractive targeted sugar baits (ATSBs), and spatial repellents under 
+                            AIRID conducts cutting-edge research to develop and evaluate innovative tools for the control
+                            of disease vectors such as mosquitoes. Our expertise includes testing insecticide-treated nets (ITNs),
+                            indoor residual sprays (IRS), attractive targeted sugar baits (ATSBs), and spatial repellents under
                             both laboratory and semi-field conditions.
                         </p>
                         <div class="domain-features">
@@ -316,9 +395,9 @@
                         </div>
                         <h3 class="domain-title">Disease Surveillance, Diagnostics, and Molecular Epidemiology</h3>
                         <p class="domain-description">
-                            We strengthen national and regional disease control efforts through integrated surveillance 
-                            and molecular research. Our teams evaluate the accuracy and usability of diagnostic tools, 
-                            conduct epidemiological studies to map disease burden, and apply molecular techniques to identify 
+                            We strengthen national and regional disease control efforts through integrated surveillance
+                            and molecular research. Our teams evaluate the accuracy and usability of diagnostic tools,
+                            conduct epidemiological studies to map disease burden, and apply molecular techniques to identify
                             pathogens and track resistance mutations.
                         </p>
                         <div class="domain-features">
@@ -341,9 +420,9 @@
                         </div>
                         <h3 class="domain-title">Health Policy, Systems, and Economics</h3>
                         <p class="domain-description">
-                            AIRID is committed to transforming scientific evidence into actionable public health policy. 
-                            We work alongside national governments, donors, and technical partners to assess the impact, 
-                            feasibility, and cost-effectiveness of interventions. Our work supports policy formulation, 
+                            AIRID is committed to transforming scientific evidence into actionable public health policy.
+                            We work alongside national governments, donors, and technical partners to assess the impact,
+                            feasibility, and cost-effectiveness of interventions. Our work supports policy formulation,
                             resource allocation, and program design.
                         </p>
                         <div class="domain-features">
@@ -366,8 +445,8 @@
                         </div>
                         <h3 class="domain-title">Community Health, Social Science & Community Acceptance</h3>
                         <p class="domain-description">
-                            We believe that impactful and sustainable health interventions must be grounded in the lived 
-                            experiences and perspectives of the communities they serve. AIRID designs and conducts research 
+                            We believe that impactful and sustainable health interventions must be grounded in the lived
+                            experiences and perspectives of the communities they serve. AIRID designs and conducts research
                             that emphasizes community engagement, social science, and behavioral insight.
                         </p>
                         <div class="domain-features">
@@ -380,6 +459,11 @@
                         </div>
                     </div>
                 </div>
+
+
+
+
+
 
                 <!-- Domaine 5 -->
                 <div class="col-lg-12 fade-in-up" style="transition-delay: 0.4s">
@@ -394,10 +478,10 @@
                             <div class="col-lg-10">
                                 <h3 class="domain-title">Data Science, Analytics, and Modelling</h3>
                                 <p class="domain-description">
-                                    AIRID leverages data science to transform research into actionable insights. We employ 
-                                    statistical modelling, geospatial mapping, and predictive analytics to understand disease 
-                                    patterns, project intervention outcomes, and improve surveillance systems. By integrating data 
-                                    from laboratory, field, and health system sources, we support real-time decision-making and 
+                                    AIRID leverages data science to transform research into actionable insights. We employ
+                                    statistical modelling, geospatial mapping, and predictive analytics to understand disease
+                                    patterns, project intervention outcomes, and improve surveillance systems. By integrating data
+                                    from laboratory, field, and health system sources, we support real-time decision-making and
                                     enhance program efficiency.
                                 </p>
                                 <div class="domain-features">
@@ -412,6 +496,26 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Carte Insecticide Testing -->
+                <div class="col-lg-12 fade-in-up" style="transition-delay: 0.5s">
+                    <a href="{{ route('facilitiesLanding') }}" class="facility-cta-card">
+                        <div class="row align-items-center g-3">
+                            <div class="col-auto">
+                                <div class="facility-cta-icon">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <h3 class="facility-cta-title">Insecticide Testing</h3>
+                                <p class="facility-cta-desc mb-0">The Insecticide Bioassay and Testing Laboratories provide core capacity for the controlled evaluation of vector control tools and strategies. Scope includes WHO cone, tunnel and regeneration assays for insecticide-treated nets; IRS efficacy and residual activity; testing of larvicides, ATSBs, repellents; and insecticide susceptibility testing—all in accordance with OECD GLP and WHO guidelines.</p>
+                            </div>
+                            <div class="col-auto">
+                                <span class="facility-cta-arrow-wrap"><i class="fas fa-arrow-right facility-cta-arrow"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -421,11 +525,11 @@
         <div class="container">
             <div class="row text-center mb-4">
                 <div class="col-12">
-                    <h2 class="text-white mb-3" style="font-size: 2.5rem; font-weight: 700;">
+                    <h2 class="text-white mb-3 section-title" style="color: #fff !important;">
                         <i class="fas fa-chart-bar me-3"></i>
                         Research Impact
                     </h2>
-                    <p class="text-white opacity-90" style="font-size: 1.2rem;">
+                    <p class="text-white opacity-90 tagline mb-0">
                         Our research activities contribute to evidence-based solutions across Africa
                     </p>
                 </div>
@@ -464,10 +568,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center fade-in-up">
-                    <h2 class="mb-4" style="font-size: 2.5rem; font-weight: 700; color: #2c3e50;">
+                    <h2 class="section-title mb-4">
                         Interested in Our Research?
                     </h2>
-                    <p class="lead mb-4" style="color: #7f8c8d; font-size: 1.2rem;">
+                    <p class="section-lead mb-4">
                         Explore our projects, publications, and facilities to learn more about our work
                     </p>
                     <div class="d-flex flex-wrap justify-content-center gap-3">

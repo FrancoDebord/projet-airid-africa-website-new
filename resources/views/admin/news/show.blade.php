@@ -19,20 +19,7 @@
                             @if($news->photo_couverture)
                                 @php
                                     $photoName = basename($news->photo_couverture);
-                                    $photoPath = null;
-                                    
-                                    // Vérifier dans assets/news/ (nouveau système)
-                                    if (file_exists(public_path('assets/news/' . $photoName))) {
-                                        $photoPath = asset('assets/news/' . $photoName);
-                                    } 
-                                    // Vérifier dans storage/assets/news/ (ancien système)
-                                    elseif (file_exists(public_path('storage/assets/news/' . $photoName))) {
-                                        $photoPath = asset('storage/assets/news/' . $photoName);
-                                    } 
-                                    // Par défaut, essayer assets/news/
-                                    else {
-                                        $photoPath = asset('assets/news/' . $photoName);
-                                    }
+                                    $photoPath = file_exists(public_path('assets/news/' . $photoName)) ? asset('assets/news/' . $photoName) : asset('storage/assets/news/' . $photoName);
                                 @endphp
                                 <img src="{{ $photoPath }}" alt="Photo de couverture" class="img-fluid rounded shadow" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
                                 <div class="bg-light rounded d-flex flex-column align-items-center justify-content-center p-4" style="height: 300px; border: 2px dashed #ccc; display: none;">

@@ -39,8 +39,8 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: #7f8c8d;
-            font-size: 0.95rem;
+            color: var(--airid-text-color);
+            font-size: var(--airid-text-size);
         }
 
         .publication-meta-item i {
@@ -55,20 +55,20 @@
             background: #c20102;
             color: #fff;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: var(--airid-tagline-size);
             margin-bottom: 1rem;
         }
 
         .publication-title {
             font-size: 2rem;
             font-weight: 700;
-            color: #2c3e50;
+            color: var(--airid-title-color);
             line-height: 1.3;
             margin-bottom: 1rem;
         }
 
         .publication-authors {
-            font-size: 1.1rem;
+            font-size: var(--airid-text-size);
             color: #555;
             line-height: 1.8;
             margin-bottom: 0.5rem;
@@ -88,14 +88,14 @@
         .publication-content h2,
         .publication-content h3,
         .publication-content h4 {
-            color: #2c3e50;
+            color: var(--airid-title-color);
             margin-top: 2rem;
             margin-bottom: 1rem;
             font-weight: 700;
         }
 
         .publication-content h2 {
-            font-size: 1.8rem;
+            font-size: var(--airid-h1-size);
             border-bottom: 3px solid #c20102;
             padding-bottom: 0.5rem;
         }
@@ -119,7 +119,7 @@
 
         .info-card-label {
             font-weight: 700;
-            color: #2c3e50;
+            color: var(--airid-title-color);
             margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
@@ -209,9 +209,9 @@
         }
 
         .sidebar-title {
-            font-size: 1.3rem;
+            font-size: var(--airid-h3-size);
             font-weight: 700;
-            color: #2c3e50;
+            color: var(--airid-title-color);
             margin-bottom: 1.5rem;
             padding-bottom: 0.75rem;
             border-bottom: 3px solid #c20102;
@@ -269,15 +269,15 @@
         }
 
         .other-publication-title {
-            font-size: 0.95rem;
+            font-size: var(--airid-text-size);
             font-weight: 600;
-            color: #2c3e50;
+            color: var(--airid-title-color);
             margin-bottom: 0.25rem;
             line-height: 1.4;
         }
 
         .other-publication-title a {
-            color: #2c3e50;
+            color: var(--airid-title-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -287,8 +287,8 @@
         }
 
         .other-publication-year {
-            font-size: 0.85rem;
-            color: #7f8c8d;
+            font-size: var(--airid-tagline-size);
+            color: var(--airid-text-color);
         }
 
         /* ============================================
@@ -325,7 +325,7 @@ style="background-image:url({{ asset('storage/assets_vendor/images/banner/banner
             <div class="col-lg-12">
                 <div class="banner-heading">
                             <h1 class="banner-title top_title fade-in-up">Publication Details</h1>
-                            <p class="text-white mt-3 fade-in-up" style="font-size: 1.2rem;">
+                            <p class="text-white mt-3 fade-in-up tagline mb-0" style="font-size: 1.4rem;">
                                 Scientific Research Publication
                             </p>
                         </div>
@@ -346,7 +346,7 @@ style="background-image:url({{ asset('storage/assets_vendor/images/banner/banner
                         <span class="publication-year-badge">
                             <i class="far fa-calendar-alt me-2"></i>{{ $publication->annee_publication }}
                         </span>
-                        
+
                         <div class="publication-meta">
                             @if($publication->date_publication)
                                 <div class="publication-meta-item">
@@ -361,7 +361,7 @@ style="background-image:url({{ asset('storage/assets_vendor/images/banner/banner
                         </div>
 
                         <h1 class="publication-title">{{ $publication->titre_publication }}</h1>
-                        
+
                         @if($publication->auteurs)
                             <div class="publication-authors">
                                 <strong><i class="fas fa-users me-2" style="color: #c20102;"></i>Authors:</strong>
@@ -375,13 +375,13 @@ style="background-image:url({{ asset('storage/assets_vendor/images/banner/banner
                         @if($publication->resume_publication)
                             <div class="mb-4">
                                 <h2>Abstract</h2>
-                                <p style="font-size: 1.05rem; line-height: 1.8; color: #555;">{!! $publication->resume_publication !!}</p>
+                                <p class="section-lead">{!! $publication->resume_publication !!}</p>
                             </div>
                         @endif
 
                         <div>
                             <h2>Publication Information</h2>
-                            
+
                             @if($publication->url_publication)
                                 <div class="info-card">
                                     <div class="info-card-label">
@@ -403,8 +403,8 @@ style="background-image:url({{ asset('storage/assets_vendor/images/banner/banner
                                         Download PDF
                                     </div>
                                     <div class="info-card-value">
-                                        <a href="{{ asset('storage/assets/publications/pdf/' . $publication->fichier_publication) }}" 
-                                           target="_blank" 
+                                        <a href="{{ asset('storage/assets/publications/pdf/' . $publication->fichier_publication) }}"
+                                           target="_blank"
                                            rel="noopener noreferrer">
                                             {{ $publication->fichier_publication }}
                                         </a>
@@ -458,15 +458,15 @@ style="background-image:url({{ asset('storage/assets_vendor/images/banner/banner
                         <!-- Actions -->
                         <div class="publication-actions">
                             @if($publication->url_publication)
-                                <a href="{{ $publication->url_publication }}" 
-                                   target="_blank" 
+                                <a href="{{ $publication->url_publication }}"
+                                   target="_blank"
                                    rel="noopener noreferrer"
                                    class="action-btn btn-view-article">
                                     <i class="fas fa-external-link-alt"></i>
                                     View Full Article
                                 </a>
                             @endif
-                            
+
                             @if($publication->fichier_publication)
                                 <a href="{{ asset('storage/assets/publications/pdf/' . $publication->fichier_publication) }}"
                                    target="_blank"
@@ -493,7 +493,7 @@ style="background-image:url({{ asset('storage/assets_vendor/images/banner/banner
                                     <div class="other-publication-thumb">
                                         @if($other_publication->photo_couverture)
                                             <a href="{{ route('detailPublication', ['id' => $other_publication->id, 'slug' => \Str::slug($other_publication->titre_publication)]) }}">
-                                                <img loading="lazy" 
+                                                <img loading="lazy"
                                                      alt="{{ $other_publication->titre_publication }}"
                                                      src="{{ asset('storage/assets/publications/couverture/' . $other_publication->photo_couverture) }}">
                                             </a>

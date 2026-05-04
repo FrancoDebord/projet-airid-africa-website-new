@@ -31,10 +31,11 @@
             border-left: 5px solid #c20102;
         }
 
+        /* Typo alignée sur typography.css (mêmes variables que la home) */
         .section-title {
-            font-size: 1.8rem;
+            font-size: var(--airid-h2-size);
             font-weight: 700;
-            color: #2c3e50;
+            color: var(--airid-title-color);
             margin-bottom: 1.5rem;
             padding-bottom: 0.75rem;
             border-bottom: 3px solid #c20102;
@@ -48,9 +49,9 @@
         }
 
         .section-subtitle {
-            font-size: 1.4rem;
+            font-size: var(--airid-h3-size);
             font-weight: 700;
-            color: #2c3e50;
+            color: var(--airid-title-color);
             margin-top: 2rem;
             margin-bottom: 1rem;
             display: flex;
@@ -67,9 +68,9 @@
         }
 
         .section-content {
-            line-height: 1.9;
-            color: #555;
-            font-size: 1.05rem;
+            font-size: var(--airid-text-size);
+            line-height: var(--airid-text-line-height);
+            color: var(--airid-text-color);
         }
 
         .section-content p {
@@ -171,9 +172,9 @@
         }
 
         .info-card-title {
-            font-size: 1.2rem;
+            font-size: var(--airid-h3-size);
             font-weight: 700;
-            color: #2c3e50;
+            color: var(--airid-title-color);
             margin-bottom: 0.75rem;
         }
 
@@ -183,10 +184,6 @@
         @media (max-width: 768px) {
             .content-section {
                 padding: 1.5rem;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
             }
 
             .image-gallery {
@@ -207,7 +204,7 @@
                         <div class="banner-heading">
                             <h1 class="banner-title top_title fade-in-up">{{ $pageTitle ?? 'Page' }}</h1>
                             @if(isset($pageSubtitle))
-                                <p class="text-white mt-3 fade-in-up" style="font-size: 1.2rem;">
+                                <p class="text-white mt-3 fade-in-up tagline mb-0">
                                     {{ $pageSubtitle }}
                                 </p>
                             @endif

@@ -38,9 +38,10 @@
             padding: 0.6rem 1.5rem;
             border: 2px solid #dee2e6;
             background: #fff;
-            color: #666;
+            color: var(--airid-text-color);
             border-radius: 50px;
             font-weight: 600;
+            font-size: var(--airid-text-size);
             transition: all 0.3s ease;
             cursor: pointer;
         }
@@ -57,6 +58,16 @@
         /* ============================================
            CARTES NEWS
            ============================================ */
+        /* Espace après chaque ligne de cartes */
+        #news-grid .news-item {
+            margin-bottom: 1.5rem;
+        }
+        @media (min-width: 992px) {
+            #news-grid .news-item {
+                margin-bottom: 2rem;
+            }
+        }
+
         .news-item-card {
             background: #fff;
             border-radius: 15px;
@@ -78,11 +89,13 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
+            object-position: center;
+            /* transform: scale(1.12); */
             transition: transform 0.6s ease;
         }
 
         .news-item-card:hover .news-item-image {
-            transform: scale(1.1);
+            transform: scale(1.2);
         }
 
         .news-item-badge {
@@ -91,7 +104,7 @@
             right: 1rem;
             padding: 0.4rem 1rem;
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: var(--airid-tagline-size);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -134,32 +147,37 @@
 
         .news-item-content {
             padding: 1.5rem;
+            background-color: #c7c3c3;
             flex: 1;
             display: flex;
             flex-direction: column;
         }
 
         .news-item-type {
-            font-size: 0.75rem;
+            font-size: var(--airid-tagline-size);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #999;
+            color: var(--airid-tagline-color);
             margin-bottom: 0.5rem;
         }
 
         .news-item-title {
-            font-size: 1.2rem;
+            font-size: 0.9375rem;
             font-weight: 700;
-            color: #2c3e50;
+            color: var(--airid-title-color);
             margin-bottom: 0.75rem;
             line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .news-item-text {
-            font-size: 0.95rem;
-            color: #666;
-            line-height: 1.6;
+            font-size: 0.8125rem;
+            line-height: 1.4;
+            color: var(--airid-text-color);
             margin-bottom: 1rem;
             flex: 1;
         }
@@ -173,8 +191,8 @@
         }
 
         .news-item-date {
-            font-size: 0.85rem;
-            color: #999;
+            font-size: var(--airid-tagline-size);
+            color: var(--airid-text-color);
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -184,7 +202,7 @@
             color: #c20102;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: var(--airid-text-size);
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -235,23 +253,11 @@
         }
 
         .news-item-icon i {
-            font-size: 1.5rem;
+            font-size: var(--airid-h3-size);
             color: #fff;
         }
 
-        /* Section titre */
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-sub-title {
-            font-size: 1.3rem;
-            color: #7f8c8d;
-            font-weight: 500;
-        }
+        /* Section titre : hérite de typography.css */
 
         .title-divider {
             width: 80px;
@@ -273,23 +279,19 @@
         }
 
         .empty-state p {
-            font-size: 1.1rem;
-            color: #999;
+            font-size: var(--airid-text-size);
+            color: var(--airid-text-color);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .section-title {
-                font-size: 2rem;
-            }
-
             .filter-buttons {
                 justify-content: flex-start;
             }
 
             .filter-btn {
                 padding: 0.5rem 1.2rem;
-                font-size: 0.9rem;
+                font-size: var(--airid-text-size);
             }
 
             .news-item-image {
@@ -305,8 +307,8 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-12">
-                    <h1 class="text-white mb-3" style="font-size: 3rem; font-weight: 700;">News & Updates</h1>
-                    <p class="text-white opacity-90" style="font-size: 1.2rem;">Stay informed about our latest projects, job opportunities, publications, news and blog posts</p>
+                    <h1 class="text-white mb-3 section-title" style="color: #fff !important;">News & Updates</h1>
+                    <p class="text-white opacity-90 tagline mb-0" style="font-size: 1.4rem;">Stay informed about our latest projects, job opportunities, publications, news and blog posts</p>
                 </div>
             </div>
         </div>
@@ -321,9 +323,6 @@
                 </button>
                 <button class="filter-btn" data-filter="project">
                     <i class="fas fa-project-diagram me-2"></i>Projects
-                </button>
-                <button class="filter-btn" data-filter="vacancy">
-                    <i class="fas fa-briefcase me-2"></i>Vacancies
                 </button>
                 <button class="filter-btn" data-filter="publication">
                     <i class="fas fa-book me-2"></i>Publications
@@ -344,7 +343,7 @@
             <div class="row g-4" id="news-grid">
                 @php
                     $allItems = collect();
-                    
+
                     // Ajouter les projets
                     foreach ($all_projects as $project) {
                         $allItems->push([
@@ -358,8 +357,9 @@
                             'date_formatted' => $project->date_debut_project ? date('M j, Y', strtotime($project->date_debut_project)) : 'Ongoing'
                         ]);
                     }
-                    
-                    // Ajouter les vacancies
+
+                    // Ajouter les vacancies (image par défaut: /public/assets/vacancies/vacancy.png)
+                    /*
                     foreach ($all_vacancies as $vacancy) {
                         $allItems->push([
                             'type' => 'vacancy',
@@ -367,58 +367,72 @@
                             'title' => $vacancy->job_title,
                             'text' => Str::limit($vacancy->resume_poste ?? '', 120),
                             'date' => $vacancy->application_deadline,
-                            'image' => null,
+                            'image' => asset('assets/vacancies/vacancy.png'),
                             'url' => route('vacanciesPage') . '#vacancy-' . $vacancy->id,
                             'date_formatted' => $vacancy->application_deadline ? 'Deadline: ' . date('M j, Y', strtotime($vacancy->application_deadline)) : 'Open',
                             'is_open' => $vacancy->application_deadline && date('Y-m-d') <= $vacancy->application_deadline
                         ]);
                     }
-                    
+                    */
+
                     // Ajouter les publications (gérer la pagination si nécessaire)
-                    $publications = is_a($all_publications, 'Illuminate\Pagination\LengthAwarePaginator') 
-                        ? $all_publications->items() 
+                    $publications = is_a($all_publications, 'Illuminate\Pagination\LengthAwarePaginator')
+                        ? $all_publications->items()
                         : $all_publications;
                     foreach ($publications as $publication) {
+                        // Toujours utiliser l'image générique pour les publications
+                        $publicationImage = asset('assets/news/publications.png');
                         $allItems->push([
                             'type' => 'publication',
                             'id' => $publication->id,
                             'title' => $publication->titre_publication,
                             'text' => Str::limit($publication->resume_publication ?? '', 120),
                             'date' => $publication->annee_publication,
-                            'image' => $publication->photo_couverture ? asset('storage/assets/publications/' . $publication->photo_couverture) : null,
+                            'image' => $publicationImage,
                             'url' => route('detailPublication', ['id' => $publication->id, 'slug' => Str::slug($publication->titre_publication)]),
                             'date_formatted' => $publication->annee_publication ?? 'Recent'
                         ]);
                     }
-                    
-                    // Ajouter les news
+
+                    // Ajouter les news (image: photo_couverture ou seconde_photo depuis assets/news — asset() pour prod + local)
                     foreach ($all_news as $news) {
+                        $coverName = !empty($news->photo_couverture) ? basename($news->photo_couverture) : null;
+                        $secondName = !empty($news->seconde_photo) ? basename($news->seconde_photo) : null;
+                        $defaultNewsImage = asset('assets/news/news.png');
+                        $imgUrl = $defaultNewsImage;
+                        if ($coverName && file_exists(public_path('assets/news/' . $coverName))) {
+                            $imgUrl = asset('assets/news/' . $coverName);
+                        } elseif ($secondName && file_exists(public_path('assets/news/' . $secondName))) {
+                            $imgUrl = asset('assets/news/' . $secondName);
+                        }
                         $allItems->push([
                             'type' => 'news',
                             'id' => $news->id,
                             'title' => $news->titre_news ?? 'News',
-                            'text' => Str::limit($news->description_riche ?? $news->description_sans_html ?? $news->resume ?? '', 120),
+                            'text' => Str::limit($news->resume ?? $news->description_sans_html ?? strip_tags($news->description_riche ?? ''), 120),
                             'date' => $news->date_news ?? $news->created_at,
-                            'image' => $news->photo_couverture ? (file_exists(public_path('assets/news/' . basename($news->photo_couverture))) ? asset('assets/news/' . basename($news->photo_couverture)) : asset('storage/assets/news/' . basename($news->photo_couverture))) : null,
-                            'url' => '#', // À définir si une route existe
+                            'image' => $imgUrl,
+                            'url' => route('news-detail', ['id' => $news->id, 'slug' => Str::slug($news->titre_news ?? 'news')]),
                             'date_formatted' => $news->date_news ? date('M j, Y', strtotime($news->date_news)) : ($news->created_at ? date('M j, Y', strtotime($news->created_at)) : 'Recent')
                         ]);
                     }
-                    
+
                     // Ajouter les blogs
                     foreach ($all_blogs as $blog) {
+                        // Toujours utiliser l'image générique pour les blogs
+                        $blogImage = asset('assets/news/blog.png');
                         $allItems->push([
                             'type' => 'blog',
                             'id' => $blog->id,
                             'title' => $blog->titre_blog ?? 'Blog Post',
-                            'text' => Str::limit($blog->description_riche ?? $blog->description_sans_html ?? $blog->resume ?? '', 120),
+                            'text' => Str::limit($blog->resume ?? $blog->description_sans_html ?? strip_tags($blog->description_riche ?? ''), 120),
                             'date' => $blog->date_blog ?? $blog->created_at,
-                            'image' => $blog->photo_couverture_blog ? (file_exists(public_path('assets/blogs/' . basename($blog->photo_couverture_blog))) ? asset('assets/blogs/' . basename($blog->photo_couverture_blog)) : asset('storage/assets/blogs/' . basename($blog->photo_couverture_blog))) : null,
-                            'url' => '#', // À définir si une route existe
+                            'image' => $blogImage,
+                            'url' => route('blog-detail', ['id' => $blog->id, 'slug' => Str::slug($blog->titre_blog ?? 'blog')]),
                             'date_formatted' => $blog->date_blog ? date('M j, Y', strtotime($blog->date_blog)) : ($blog->created_at ? date('M j, Y', strtotime($blog->created_at)) : 'Recent')
                         ]);
                     }
-                    
+
                     // Trier par date (plus récent en premier)
                     // Normaliser toutes les dates en timestamps pour le tri
                     $allItems = $allItems->map(function($item) {
@@ -450,28 +464,57 @@
                 @endphp
 
                 @forelse($allItems as $index => $item)
-                    <div class="col-lg-4 col-md-6 news-item fade-in-up" data-type="{{ $item['type'] }}" style="transition-delay: {{ ($index % 3) * 0.1 }}s">
+                    <div class="col-lg-3 col-md-6 news-item fade-in-up" data-type="{{ $item['type'] }}" style="transition-delay: {{ ($index % 4) * 0.1 }}s">
                         <div class="news-item-card">
+                            @php
+                                $hasDetailUrl = !empty($item['url']) && $item['url'] !== '#';
+                            @endphp
                             @if($item['image'])
                                 <div class="position-relative overflow-hidden" style="height: 200px;">
-                                    <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="news-item-image w-100 h-100">
+                                    @if($hasDetailUrl)
+                                        <a href="{{ $item['url'] }}" class="d-block w-100 h-100" aria-label="Open {{ $item['title'] }}">
+                                            <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="news-item-image w-100 h-100">
+                                        </a>
+                                    @else
+                                        <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="news-item-image w-100 h-100">
+                                    @endif
                                     <span class="news-item-badge badge-{{ $item['type'] }}">
                                         {{ ucfirst($item['type']) }}
                                     </span>
                                 </div>
                             @else
-                                <div class="position-relative" style="height: 200px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); display: flex; align-items: center; justify-content: center;">
-                                    <div class="news-item-icon icon-{{ $item['type'] }}">
-                                        @if($item['type'] == 'project')
-                                            <i class="fas fa-project-diagram"></i>
-                                        @elseif($item['type'] == 'vacancy')
-                                            <i class="fas fa-briefcase"></i>
-                                        @elseif($item['type'] == 'publication')
-                                            <i class="fas fa-book"></i>
-                                        @elseif($item['type'] == 'news')
-                                            <i class="fas fa-newspaper"></i>
-                                        @elseif($item['type'] == 'blog')
-                                            <i class="fas fa-blog"></i>
+                                <div class="position-relative" style="height: 200px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+                                    <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+                                        @if($hasDetailUrl)
+                                            <a href="{{ $item['url'] }}" class="d-flex align-items-center justify-content-center w-100 h-100 text-decoration-none" aria-label="Open {{ $item['title'] }}">
+                                                <div class="news-item-icon icon-{{ $item['type'] }}">
+                                                    @if($item['type'] == 'project')
+                                                        <i class="fas fa-project-diagram"></i>
+                                                    @elseif($item['type'] == 'publication')
+                                                        <i class="fas fa-book"></i>
+                                                    @elseif($item['type'] == 'news')
+                                                        <i class="fas fa-newspaper"></i>
+                                                    @elseif($item['type'] == 'blog')
+                                                        <i class="fas fa-blog"></i>
+                                                    @elseif($item['type'] == 'vacancy')
+                                                        <i class="fas fa-briefcase"></i>
+                                                    @endif
+                                                </div>
+                                            </a>
+                                        @else
+                                            <div class="news-item-icon icon-{{ $item['type'] }}">
+                                                @if($item['type'] == 'project')
+                                                    <i class="fas fa-project-diagram"></i>
+                                                @elseif($item['type'] == 'publication')
+                                                    <i class="fas fa-book"></i>
+                                                @elseif($item['type'] == 'news')
+                                                    <i class="fas fa-newspaper"></i>
+                                                @elseif($item['type'] == 'blog')
+                                                    <i class="fas fa-blog"></i>
+                                                @elseif($item['type'] == 'vacancy')
+                                                    <i class="fas fa-briefcase"></i>
+                                                @endif
+                                            </div>
                                         @endif
                                     </div>
                                     <span class="news-item-badge badge-{{ $item['type'] }}" style="position: absolute; top: 1rem; right: 1rem;">
@@ -481,8 +524,15 @@
                             @endif
 
                             <div class="news-item-content">
-                                <div class="news-item-type">{{ ucfirst($item['type']) }}</div>
-                                <h3 class="news-item-title">{{ Str::limit($item['title'], 80) }}</h3>
+                                <h3 class="news-item-title">
+                                    @if($hasDetailUrl)
+                                        <a href="{{ $item['url'] }}" class="text-decoration-none" style="color: inherit;">
+                                            {{ Str::limit($item['title'], 80) }}
+                                        </a>
+                                    @else
+                                        {{ Str::limit($item['title'], 80) }}
+                                    @endif
+                                </h3>
                                 @if($item['text'])
                                     <p class="news-item-text">{{ $item['text'] }}</p>
                                 @endif
@@ -519,28 +569,35 @@
             const filterButtons = document.querySelectorAll('.filter-btn');
             const newsItems = document.querySelectorAll('.news-item');
 
+            function applyFilter(filter) {
+                filterButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('data-filter') === filter);
+                });
+                newsItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-type') === filter) {
+                        item.style.display = 'block';
+                        setTimeout(() => item.classList.add('visible'), 10);
+                    } else {
+                        item.style.display = 'none';
+                        item.classList.remove('visible');
+                    }
+                });
+            }
+
             filterButtons.forEach(button => {
                 button.addEventListener('click', function() {
-                    const filter = this.getAttribute('data-filter');
-
-                    // Mettre à jour les boutons actifs
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-
-                    // Filtrer les éléments
-                    newsItems.forEach(item => {
-                        if (filter === 'all' || item.getAttribute('data-type') === filter) {
-                            item.style.display = 'block';
-                            setTimeout(() => {
-                                item.classList.add('visible');
-                            }, 10);
-                        } else {
-                            item.style.display = 'none';
-                            item.classList.remove('visible');
-                        }
-                    });
+                    applyFilter(this.getAttribute('data-filter'));
                 });
             });
+
+            // Appliquer le filtre au chargement si hash présent (ex: /news#filter-project)
+            const hash = window.location.hash;
+            if (hash && hash.startsWith('#filter-')) {
+                const filter = hash.replace('#filter-', '');
+                if (['all', 'project', 'vacancy', 'publication', 'news', 'blog'].indexOf(filter) !== -1) {
+                    applyFilter(filter);
+                }
+            }
 
             // Animation au scroll
             const observerOptions = {

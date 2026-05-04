@@ -56,6 +56,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Frontend Asset URL
+    |--------------------------------------------------------------------------
+    |
+    | This URL is used to generate asset() links for the public frontend.
+    | It lets local/dev environments mirror production assets.
+    |
+    */
+
+    // Racine du site sans /public : le serveur web a déjà sa document root sur public/
+    'frontend_asset_url' => env('FRONTEND_ASSET_URL', 'https://airid-africa.com'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Timezone
     |--------------------------------------------------------------------------
     |
@@ -121,6 +134,22 @@ return [
     'maintenance' => [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Mail (AIRID – envoi accusés de réception et notifications)
+    |--------------------------------------------------------------------------
+    */
+    'mail' => [
+        'mailer' => 'smtp',
+        'host' => 'smtp.gmail.com',
+        'port' => 587,
+        'encryption' => 'tls',
+        'username' => 'airidafrica@gmail.com',
+        'password' => 'wxvr uxgz iomj ugnj',
+        'from_address' => 'airidafrica@gmail.com',
+        'from_name' => 'African Institute for Research in Infectious Diseases (AIRID)',
     ],
 
 ];

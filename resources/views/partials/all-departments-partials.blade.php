@@ -15,35 +15,18 @@
                 <div class="col-lg-4 col-md-6 fade-in-up" style="transition-delay: {{ ($index % 3) * 0.1 }}s">
                     <div class="department-card">
                         <div class="department-image-wrapper">
-                            <a href="{{ route('detailDepartementPage', ['id' => $departement->id, 'slug' => \Str::slug($departement->nom_departement)]) }}">
-                                <img 
-                                    loading="lazy" 
-                                    alt="{{ $departement->nom_departement }}" 
-                                    class="department-image"
-                                    src="{{ asset('storage/assets/departements/' . $departement->photo) }}"
-                                >
-                                <div class="department-overlay">
-                                    <span class="view-details-btn">
-                                        <i class="fas fa-arrow-right me-2"></i>
-                                        View Details
-                                    </span>
-                                </div>
-                            </a>
+                            <img
+                                loading="lazy"
+                                alt="{{ $departement->nom_departement }}"
+                                class="department-image"
+                                src="{{ asset('storage/assets/departements/' . $departement->photo) }}"
+                            >
                         </div>
                         <div class="department-content">
-                            <h3 class="department-title">
-                                <a href="{{ route('detailDepartementPage', ['id' => $departement->id, 'slug' => \Str::slug($departement->nom_departement)]) }}">
-                                    {{ $departement->nom_departement }}
-                                </a>
-                            </h3>
+                            <h3 class="department-title">{{ $departement->nom_departement }}</h3>
                             <div class="department-description">
                                 {!! Str::limit(strip_tags($departement->description_accueil), 120) !!}
                             </div>
-                            <a class="department-link" 
-                               href="{{ route('detailDepartementPage', ['id' => $departement->id, 'slug' => \Str::slug($departement->nom_departement)]) }}">
-                                Learn More
-                                <i class="fas fa-arrow-right ms-2"></i>
-                            </a>
                         </div>
                     </div>
                 </div>

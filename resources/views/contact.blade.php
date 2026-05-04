@@ -46,7 +46,7 @@
             align-items: center;
             justify-content: center;
             color: #fff;
-            font-size: 2rem;
+            font-size: var(--airid-h3-size);
             margin: 0 auto 1.5rem;
             transition: transform 0.3s ease;
         }
@@ -56,16 +56,17 @@
         }
 
         .contact-info-card h4 {
-            color: #2c3e50;
-            font-size: 1.3rem;
+            font-size: var(--airid-h3-size);
             font-weight: 700;
+            color: var(--airid-title-color);
             margin-bottom: 1rem;
         }
 
         .contact-info-card p {
-            color: #7f8c8d;
+            font-size: var(--airid-text-size);
+            line-height: var(--airid-text-line-height);
+            color: var(--airid-text-color);
             margin-bottom: 0;
-            line-height: 1.6;
         }
 
         .contact-info-card a {
@@ -94,7 +95,8 @@
         }
 
         .form-group label {
-            color: #2c3e50;
+            font-size: var(--airid-text-size);
+            color: var(--airid-title-color);
             font-weight: 600;
             margin-bottom: 0.5rem;
             display: block;
@@ -105,7 +107,7 @@
             border: 2px solid #e0e0e0;
             padding: 0.75rem 1rem;
             transition: all 0.3s ease;
-            font-size: 1rem;
+            font-size: var(--airid-text-size);
         }
 
         .form-control:focus {
@@ -135,14 +137,14 @@
         .invalid-feedback {
             display: block;
             color: #e74c3c;
-            font-size: 0.875rem;
+            font-size: var(--airid-text-size);
             margin-top: 0.25rem;
         }
 
         .valid-feedback {
             display: block;
             color: #27ae60;
-            font-size: 0.875rem;
+            font-size: var(--airid-text-size);
             margin-top: 0.25rem;
         }
 
@@ -263,7 +265,7 @@
                     <div class="col-lg-12">
                         <div class="banner-heading">
                             <h1 class="banner-title top_title fade-in-up">Contact Us</h1>
-                            <p class="text-white mt-3 fade-in-up" style="font-size: 1.2rem;">
+                            <p class="text-white mt-3 fade-in-up tagline mb-0" style="font-size: 1.4rem;">
                                 Get in touch with our team
                             </p>
                         </div>
@@ -278,9 +280,9 @@
         <div class="container">
             <div class="row text-center mb-5 fade-in-up">
                 <div class="col-12">
-                    <h2 class="section-title" style="font-size: 2.5rem; font-weight: 700; color: #2c3e50;">Reaching Our Office</h2>
-                    <h3 class="section-sub-title" style="font-size: 1.3rem; color: #7f8c8d; font-weight: 500;">Find Our Location</h3>
-                    <div class="title-divider mx-auto mt-3 mb-4" style="width: 100px; height: 4px; background: linear-gradient(135deg, #c20102 0%, #8b0101 100%); border-radius: 2px;"></div>
+                    <h2 class="section-title">Reaching Our Office</h2>
+                    <p class="section-sub-title mb-0">Find Our Location</p>
+                    <div class="title-divider mx-auto mt-3 mb-4"></div>
                 </div>
             </div>
 
@@ -292,8 +294,8 @@
                         </div>
                         <h4>Visit Our Office</h4>
                         <p>
-                            Secrétariat AIRID, Maison 115, Rue 1543 Donaten, AKPAKPA<br>
-                            (Rue SOBEPEC, 4e Von à gauche, dernier immeuble à gauche)<br>
+                            AIRID Secretariat, House 5507, Street 1543 Donaten Street, AKPAKPA<br>
+                            (SOBEPEC Street, 4th turn on the left, last building on the left)<br>
                             Cotonou, Benin Republic
                         </p>
                     </div>
@@ -305,11 +307,17 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <h4>Email Us</h4>
-                        <p>
-                            <a href="mailto:admin@airid-africa.com">
-                                <i class="fas fa-envelope me-2"></i>
-                                admin@airid-africa.com
-                            </a>
+                        <p class="mb-2"><strong>General enquiries</strong><br>
+                            <a href="mailto:info@airid-africa.com">info@airid-africa.com</a>
+                        </p>
+                        <p class="mb-2"><strong>Admin</strong><br>
+                            <a href="mailto:admin@airid-africa.com">admin@airid-africa.com</a>
+                        </p>
+                        <p class="mb-2"><strong>Partnerships</strong><br>
+                            <a href="mailto:partnerships@airid-africa.com">partnerships@airid-africa.com</a>
+                        </p>
+                        <p class="mb-0"><strong>Board affairs</strong><br>
+                            <a href="mailto:boardaffairs@airid-africa.com">boardaffairs@airid-africa.com</a>
                         </p>
                     </div>
                 </div>
@@ -343,7 +351,7 @@
                 <!-- Formulaire -->
                 <div class="col-lg-6 col-md-12 fade-in-up">
                     <div class="contact-form-card">
-                        <h3 class="mb-4" style="font-size: 2rem; font-weight: 700; color: #2c3e50;">
+                        <h3 class="section-title mb-4">
                             <i class="fas fa-paper-plane me-2" style="color: #c20102;"></i>
                             Get in Touch
                         </h3>
@@ -368,11 +376,11 @@
                                             <i class="fas fa-user me-2" style="color: #c20102;"></i>
                                             Full Name <span class="text-danger">*</span>
                                         </label>
-                                        <input 
+                                        <input
                                             class="form-control @error('full_name') is-invalid @enderror"
-                                            name="full_name" 
-                                            id="name" 
-                                            type="text" 
+                                            name="full_name"
+                                            id="name"
+                                            type="text"
                                             placeholder="Enter your full name"
                                             value="{{ old('full_name') }}"
                                             required
@@ -392,11 +400,11 @@
                                             <i class="fas fa-envelope me-2" style="color: #c20102;"></i>
                                             Email Address <span class="text-danger">*</span>
                                         </label>
-                                        <input 
+                                        <input
                                             class="form-control @error('adresse_mail') is-invalid @enderror"
-                                            name="adresse_mail" 
-                                            id="email" 
-                                            type="email" 
+                                            name="adresse_mail"
+                                            id="email"
+                                            type="email"
                                             placeholder="your.email@example.com"
                                             value="{{ old('adresse_mail') }}"
                                             required
@@ -414,10 +422,10 @@
                                             <i class="fas fa-tag me-2" style="color: #c20102;"></i>
                                             Subject <span class="text-danger">*</span>
                                         </label>
-                                        <input 
+                                        <input
                                             class="form-control @error('subject') is-invalid @enderror"
-                                            name="subject" 
-                                            id="subject" 
+                                            name="subject"
+                                            id="subject"
                                             placeholder="What is this regarding?"
                                             value="{{ old('subject') }}"
                                             required
@@ -435,11 +443,11 @@
                                     <i class="fas fa-comment-alt me-2" style="color: #c20102;"></i>
                                     Message <span class="text-danger">*</span>
                                 </label>
-                                <textarea 
+                                <textarea
                                     class="form-control @error('detailed_message') is-invalid @enderror"
-                                    name="detailed_message" 
-                                    id="message" 
-                                    rows="6" 
+                                    name="detailed_message"
+                                    id="message"
+                                    rows="6"
                                     placeholder="Please provide details about your inquiry..."
                                     required
                                 >{{ old('detailed_message') }}</textarea>
@@ -459,17 +467,17 @@
                                     Security Verification <span class="text-danger">*</span>
                                 </label>
                                 <div class="d-flex align-items-center gap-2 mb-2">
-                                    <span class="badge bg-light text-dark p-2" style="font-size: 1rem;">
+                                    <span class="badge bg-light text-dark p-2">
                                         What is {{ $math_question ?? '5 + 3' }} = ?
                                     </span>
                                 </div>
-                                <input 
+                                <input
                                     class="form-control @error('math_answer') is-invalid @enderror"
-                                    name="math_answer" 
-                                    id="math_answer" 
-                                    type="number" 
+                                    name="math_answer"
+                                    id="math_answer"
+                                    type="number"
                                     placeholder="Enter the answer"
-                                    min="0" 
+                                    min="0"
                                     step="1"
                                     required
                                 >
@@ -494,7 +502,7 @@
                     <div class="map-container">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3965.2521939531684!2d2.466331!3d6.361396999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMjEnNDEuMCJOIDLCsDI3JzU4LjgiRQ!5e0!3m2!1sfr!2sbj!4v1749480672092!5m2!1sfr!2sbj"
-                            allowfullscreen="" 
+                            allowfullscreen=""
                             loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
@@ -563,7 +571,7 @@
                 emailInput.addEventListener('input', function() {
                     const email = this.value.trim();
                     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    
+
                     if (email && !emailRegex.test(email)) {
                         this.classList.remove('is-valid');
                         this.classList.add('is-invalid');
@@ -595,7 +603,7 @@
                 messageInput.addEventListener('input', function() {
                     const length = this.value.length;
                     charCount.textContent = length;
-                    
+
                     if (length < 10) {
                         this.classList.remove('is-valid');
                         this.classList.add('is-invalid');
@@ -611,7 +619,7 @@
                 // Extraire la réponse attendue depuis le label
                 const mathLabel = document.querySelector('label[for="math_answer"]');
                 let expectedAnswer = 8; // Valeur par défaut
-                
+
                 if (mathLabel) {
                     const mathText = mathLabel.textContent;
                     const match = mathText.match(/(\d+)\s*\+\s*(\d+)/);
@@ -619,10 +627,10 @@
                         expectedAnswer = parseInt(match[1]) + parseInt(match[2]);
                     }
                 }
-                
+
                 mathInput.addEventListener('blur', function() {
                     const answer = parseInt(this.value);
-                    
+
                     if (answer === expectedAnswer) {
                         this.classList.remove('is-invalid');
                         this.classList.add('is-valid');

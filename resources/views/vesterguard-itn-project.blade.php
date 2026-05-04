@@ -4,6 +4,18 @@
 
 @section('css')
     @include('partials.modern-css')
+    <style>
+        .project-parallel-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 1.5rem 1.75rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid #c20102;
+            height: 100%;
+        }
+        .project-parallel-card .section-subtitle { margin-bottom: 0.75rem; }
+        .project-parallel-card .section-content p { font-size: var(--airid-text-size); line-height: 1.6; color: var(--airid-text-color); }
+    </style>
 @endsection
 
 @section('content')
@@ -67,28 +79,27 @@
                 </div>
             </div>
 
-            <div class="content-section fade-in-up">
-                <h3 class="section-subtitle">Our Impact</h3>
-                <div class="section-content">
-                    <p>
-                        By generating high-quality data on the performance and
-                        longevity of Vestergaard ITNs, AIRID helps accelerate the
-                        development, optimization, and regulatory approval
-                        of tools that strengthen malaria control and resistance management strategies across Africa.
-                    </p>
+            {{-- Our Impact & Collaborative Science – deux cadres parallèles --}}
+            <div class="row g-4 fade-in-up">
+                <div class="col-lg-6">
+                    <div class="project-parallel-card">
+                        <h3 class="section-subtitle"><i class="fas fa-chart-line text-danger me-2"></i>Our Impact</h3>
+                        <div class="section-content">
+                            <p class="mb-0">
+                                By generating high-quality data on the performance and longevity of Vestergaard ITNs, AIRID helps accelerate the development, optimization, and regulatory approval of tools that strengthen malaria control and resistance management strategies across Africa.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="content-section fade-in-up">
-                <h3 class="section-subtitle">Collaborative Science for African Health</h3>
-                <div class="section-content">
-                    <p>
-                        This partnership reinforces AIRID's commitment
-                        to science-led innovation, evidence-based public health,
-                        and African leadership in global health R&D. Through PAMVERC
-                        and other regional networks, AIRID is advancing a shared vision for
-                        sustainable malaria control driven by African institutions and local expertise.
-                    </p>
+                <div class="col-lg-6">
+                    <div class="project-parallel-card">
+                        <h3 class="section-subtitle"><i class="fas fa-handshake text-danger me-2"></i>Collaborative Science for African Health</h3>
+                        <div class="section-content">
+                            <p class="mb-0">
+                                This partnership reinforces AIRID's commitment to science-led innovation, evidence-based public health, and African leadership in global health R&D. Through PAMVERC and other regional networks, AIRID is advancing a shared vision for sustainable malaria control driven by African institutions and local expertise.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

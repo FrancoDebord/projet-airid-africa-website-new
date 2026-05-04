@@ -34,14 +34,14 @@
                 <div class="section-content">
                     <p>
                         AIRID is in the process of developing a high-containment laboratory
-                        dedicated to the experimental infection of mosquitoes with human malaria 
+                        dedicated to the experimental infection of mosquitoes with human malaria
                         parasites (Plasmodium falciparum and P. vivax). Once completed, this facility
                         will enable controlled, reproducible studies essential
                         for evaluating transmission-blocking interventions, malaria vaccine candidates, and antimalarial therapies.
                     </p>
                     <p>
                         Designed to meet biosafety level 2+ (BSL-2+) standards, the laboratory
-                        will operate under strict containment protocols and align with WHO and 
+                        will operate under strict containment protocols and align with WHO and
                         Good Laboratory Practice (GLP) guidelines. It will be one of the few facilities
                         of its kind in West Africa,
                         offering advanced capacity for vector–parasite interaction studies and translational malaria research.
@@ -81,7 +81,7 @@
                 <h3 class="section-subtitle">Why It Matters</h3>
                 <div class="section-content">
                     <p>
-                        The development of this facility is a major step toward making AIRID a regional leader in malaria 
+                        The development of this facility is a major step toward making AIRID a regional leader in malaria
                         transmission research. Once operational, the laboratory will:
                     </p>
                     <ul>
@@ -90,8 +90,8 @@
                         <li>Strengthen Africa-led contributions to global malaria elimination strategies</li>
                     </ul>
                     <p>
-                        By establishing this advanced capability, AIRID is building 
-                        the foundation for high-impact research that will accelerate 
+                        By establishing this advanced capability, AIRID is building
+                        the foundation for high-impact research that will accelerate
                         innovation and help close the gap between discovery and implementation.
                     </p>
                 </div>

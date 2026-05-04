@@ -23,9 +23,9 @@
            ============================================ */
         .about-intro {
             background: #fff;
-            padding: 3rem 2.5rem;
+            padding: 2rem 2rem;
             border-radius: 15px;
-            margin: 2rem 0;
+            margin: 0 0 1rem 0;
             box-shadow: 0 5px 25px rgba(0,0,0,0.08);
             border-left: 5px solid #c20102;
         }
@@ -76,7 +76,7 @@
             align-items: center;
             justify-content: center;
             color: #fff;
-            font-size: 2.5rem;
+            font-size: var(--airid-h2-size);
             margin-bottom: 1.5rem;
             transition: transform 0.3s ease;
         }
@@ -86,16 +86,16 @@
         }
 
         .vmv-title {
-            font-size: 1.8rem;
+            font-size: var(--airid-h2-size);
             font-weight: 700;
-            color: #2c3e50;
+            color: var(--airid-title-color);
             margin-bottom: 1rem;
         }
 
         .vmv-description {
-            color: #7f8c8d;
-            line-height: 1.8;
-            font-size: 1.05rem;
+            font-size: var(--airid-text-size);
+            line-height: var(--airid-text-line-height);
+            color: var(--airid-text-color);
         }
 
         /* ============================================
@@ -163,15 +163,16 @@
         }
 
         .timeline-year {
-            font-size: 1.5rem;
+            font-size: var(--airid-h3-size);
             font-weight: 700;
             color: #c20102;
             margin-bottom: 0.5rem;
         }
 
         .timeline-text {
-            color: #7f8c8d;
-            line-height: 1.8;
+            font-size: var(--airid-text-size);
+            line-height: var(--airid-text-line-height);
+            color: var(--airid-text-color);
         }
 
         /* ============================================
@@ -193,9 +194,9 @@
         }
 
         .what-we-do-title {
-            font-size: 1.3rem;
+            font-size: var(--airid-h3-size);
             font-weight: 700;
-            color: #2c3e50;
+            color: var(--airid-title-color);
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
@@ -213,12 +214,13 @@
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: var(--airid-text-size);
         }
 
         .what-we-do-text {
-            color: #7f8c8d;
-            line-height: 1.8;
+            font-size: var(--airid-text-size);
+            line-height: var(--airid-text-line-height);
+            color: var(--airid-text-color);
         }
 
         /* ============================================
@@ -256,7 +258,7 @@
                     <div class="col-lg-12">
                         <div class="banner-heading">
                             <h1 class="banner-title top_title fade-in-up">About AIRID</h1>
-                            <p class="text-white mt-3 fade-in-up" style="font-size: 1.2rem;">
+                            <p class="text-white mt-3 fade-in-up tagline mb-0" style="font-size: 1.4rem;">
                                 Pioneering African-led research for infectious disease control
                             </p>
                         </div>
@@ -267,60 +269,26 @@
     </div>
 
     <!-- Section Introduction -->
-    <section class="py-5">
+    <section class="py-4">
         <div class="container">
             <div class="about-intro fade-in-up">
-                <p class="mb-4" style="font-size: 1.2rem; color: #2c3e50; line-height: 1.9; text-align: justify; font-weight: 400;">
+                <p class="mb-4 section-lead" style="text-align: justify;">
                     The African Institute for Research in Infectious Diseases (AIRID) is a pioneering non-governmental research institution based in Benin, West Africa. Established in 2021, AIRID is committed to addressing the continent's most pressing health challenges through cutting-edge scientific research, innovative solutions, and strong partnerships.
                 </p>
-                <p style="color: #555; font-size: 1.05rem; line-height: 1.9; text-align: justify; margin-bottom: 0;">
+                <p class="section-lead mb-0" style="text-align: justify;">
                     At AIRID, we believe that Africa's public health priorities are best addressed through African leadership, expertise, and innovation. Sustainable solutions to the continent's health challenges must be rooted in local knowledge and scientific excellence. Our mission is to generate high-impact research that informs national and regional policies, enhances disease control strategies, and contributes meaningfully to global efforts to eliminate infectious diseases and improve health equity.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Timeline Section -->
-    <section class="py-5" style="background: #f8f9fa;">
-        <div class="container">
-            <div class="row text-center mb-5 fade-in-up">
-                <div class="col-12">
-                    <h2 class="section-title" style="font-size: 2.5rem; font-weight: 700; color: #2c3e50;">Our History</h2>
-                    <div class="title-divider mx-auto mt-3 mb-4" style="width: 100px; height: 4px; background: linear-gradient(135deg, #c20102 0%, #8b0101 100%); border-radius: 2px;"></div>
-                </div>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-item fade-in-up">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2021</div>
-                        <div class="timeline-text">
-                            The African Institute for Research in Infectious Diseases (AIRID) was established to address the burden of infectious diseases in Africa. It was created through collaboration between local health authorities, international research institutions, and development partners.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item fade-in-up" style="transition-delay: 0.2s">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2021 - Present</div>
-                        <div class="timeline-text">
-                            AIRID strengthens research capacity and fosters partnerships to design and evaluate interventions tailored to African populations. Its work focuses on interdisciplinary research, building local expertise, and translating findings into impactful public health programs.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Vision, Mission Section -->
-    <section class="py-5">
+    <section class="py-4">
         <div class="container">
-            <div class="row text-center mb-5 fade-in-up">
+                        <div class="row text-center mb-4 fade-in-up">
                 <div class="col-12">
-                    <h2 class="section-title" style="font-size: 2.5rem; font-weight: 700; color: #2c3e50;">Our Vision & Mission</h2>
-                    <div class="title-divider mx-auto mt-3 mb-4" style="width: 100px; height: 4px; background: linear-gradient(135deg, #c20102 0%, #8b0101 100%); border-radius: 2px;"></div>
+                    <h2 class="section-title"><strong>Our Vision & Mission</strong></h2>
+                    <div class="title-divider mx-auto mt-3 mb-3"></div>
                 </div>
             </div>
 
@@ -353,12 +321,12 @@
     </section>
 
     <!-- What We Do Section -->
-    <section class="py-5" style="background: #f8f9fa;">
+    <section class="py-4" style="background: #f8f9fa;">
         <div class="container">
-            <div class="row text-center mb-5 fade-in-up">
+                        <div class="row text-center mb-4 fade-in-up">
                 <div class="col-12">
-                    <h2 class="section-title" style="font-size: 2.5rem; font-weight: 700; color: #2c3e50;">What We Do</h2>
-                    <div class="title-divider mx-auto mt-3 mb-4" style="width: 100px; height: 4px; background: linear-gradient(135deg, #c20102 0%, #8b0101 100%); border-radius: 2px;"></div>
+                    <h2 class="section-title"><strong>What We Do</strong></h2>
+                    <div class="title-divider mx-auto mt-3 mb-3"></div>
                 </div>
             </div>
 
@@ -401,10 +369,6 @@
             </div>
         </div>
     </section>
-
-
-
-    @include('partials.all-departments-partials')
 @endsection
 
 @section('js')

@@ -1,0 +1,208 @@
+/**
+ * Typographie AIRID – Définie pour tout le projet
+ * Référence : accueil.blade.php (hero, sections, titres, textes)
+ * Toutes les vues qui utilisent le layout index héritent de ces styles.
+ * Même taille de texte, police et titres sur tout le site.
+ */
+
+:root {
+    --airid-font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    /* Base lecture confortable (~16px) — avant 0.875rem trop petit sur beaucoup d’écrans */
+    --airid-text-size: 1rem;
+    --airid-text-color: #444;
+    --airid-text-line-height: 1.6;
+    --airid-title-color: #1a1a1a;
+    --airid-h1-size: clamp(1.2rem, 2.1vw + 0.5rem, 1.75rem);
+    --airid-h2-size: clamp(1.1rem, 1.5vw + 0.65rem, 1.45rem);
+    --airid-h3-size: clamp(1.05rem, 1.2vw + 0.6rem, 1.25rem);
+    --airid-h4-size: clamp(1rem, 1vw + 0.55rem, 1.1rem);
+    --airid-tagline-size: 0.9375rem;
+    --airid-tagline-color: #555;
+}
+
+.body-inner {
+    font-family: var(--airid-font-family);
+}
+
+.body-inner,
+.body-inner p {
+    font-size: var(--airid-text-size);
+    line-height: var(--airid-text-line-height);
+    color: var(--airid-text-color);
+}
+
+.body-inner h1 {
+    font-size: var(--airid-h1-size);
+    font-weight: 700;
+    color: var(--airid-title-color);
+    line-height: 1.25;
+}
+
+.body-inner h2 {
+    font-size: var(--airid-h2-size);
+    font-weight: 700;
+    color: var(--airid-title-color);
+    line-height: 1.3;
+}
+
+.body-inner h3 {
+    font-size: var(--airid-h3-size);
+    font-weight: 700;
+    color: var(--airid-title-color);
+}
+
+.body-inner h4,
+.body-inner h5,
+.body-inner h6 {
+    font-size: var(--airid-h4-size);
+    font-weight: 700;
+    color: var(--airid-title-color);
+}
+
+.body-inner .section-title {
+    font-size: var(--airid-h2-size);
+    font-weight: 700;
+    color: var(--airid-title-color);
+}
+
+.body-inner .tagline,
+.body-inner .section-sub-title {
+    font-size: var(--airid-tagline-size);
+    font-weight: 600;
+    color: var(--airid-tagline-color);
+    line-height: 1.4;
+}
+
+.body-inner .intro,
+.body-inner .section-lead {
+    font-size: var(--airid-text-size);
+    line-height: var(--airid-text-line-height);
+    color: var(--airid-text-color);
+}
+
+/* Cartes, listes, contenus secondaires */
+.body-inner .card-title,
+.body-inner .news-card-title,
+.body-inner .service-box-title {
+    font-size: var(--airid-h3-size);
+    font-weight: 700;
+    color: var(--airid-title-color);
+}
+
+.body-inner .card-text,
+.body-inner .news-card-text,
+.body-inner small.text-muted {
+    font-size: var(--airid-text-size);
+    line-height: var(--airid-text-line-height);
+    color: var(--airid-text-color);
+}
+
+/* ============================================
+   BANNER / HERO (toutes les pages)
+   ============================================ */
+.body-inner .banner-title,
+.body-inner .banner-area .banner-title,
+.body-inner #banner-area .banner-title,
+.body-inner .top_title {
+    font-size: var(--airid-h1-size);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.25;
+}
+
+.body-inner .banner-area .banner-heading p,
+.body-inner #banner-area .banner-text p {
+    font-size: var(--airid-tagline-size);
+    line-height: var(--airid-text-line-height);
+}
+
+.body-inner .banner-area .tagline,
+.body-inner .banner-area .banner-heading p {
+    color: rgba(255,255,255,0.95);
+}
+
+/* ============================================
+   SECTIONS PAGE (About, Contact, Vacancies, etc.)
+   ============================================ */
+.body-inner .vmv-title,
+.body-inner .what-we-do-title {
+    font-size: var(--airid-h2-size);
+    font-weight: 700;
+    color: var(--airid-title-color);
+}
+
+.body-inner .vmv-description,
+.body-inner .what-we-do-text {
+    font-size: var(--airid-text-size);
+    line-height: var(--airid-text-line-height);
+    color: var(--airid-text-color);
+}
+
+.body-inner .about-intro p,
+.body-inner .content-section p,
+.body-inner .page-body,
+.body-inner .page-body p {
+    font-size: var(--airid-text-size);
+    line-height: var(--airid-text-line-height);
+    color: var(--airid-text-color);
+}
+
+.body-inner .content-section h1,
+.body-inner .page-body h1 {
+    font-size: var(--airid-h1-size);
+    font-weight: 700;
+    color: var(--airid-title-color);
+}
+
+.body-inner .content-section h2,
+.body-inner .page-body h2 {
+    font-size: var(--airid-h2-size);
+    font-weight: 700;
+    color: var(--airid-title-color);
+}
+
+.body-inner .content-section h3,
+.body-inner .page-body h3 {
+    font-size: var(--airid-h3-size);
+    font-weight: 700;
+    color: var(--airid-title-color);
+}
+
+/* Cartes contact, infos */
+.body-inner .contact-info-card h4,
+.body-inner .contact-info-card .card-title {
+    font-size: var(--airid-h3-size);
+    font-weight: 700;
+    color: var(--airid-title-color);
+}
+
+.body-inner .contact-info-card p,
+.body-inner .contact-info-card .card-text {
+    font-size: var(--airid-text-size);
+    line-height: var(--airid-text-line-height);
+    color: var(--airid-text-color);
+}
+
+/* Titres de liste / offres */
+.body-inner .vacancy-card-title,
+.body-inner .vacancy-item h3,
+.body-inner .vacancy-item .job-title {
+    font-size: var(--airid-h3-size);
+    font-weight: 700;
+    color: var(--airid-title-color);
+}
+
+.body-inner .vacancy-card-desc,
+.body-inner .vacancy-item p {
+    font-size: var(--airid-text-size);
+    line-height: var(--airid-text-line-height);
+    color: var(--airid-text-color);
+}
+
+/* Title divider (trait sous titres) */
+.body-inner .title-divider {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #c20102, #8b0101);
+    border-radius: 2px;
+}

@@ -1,7 +1,7 @@
 @extends('index')
 
 @section('title',"Director's Message")
-    
+
 
 @section('content')
      <div id="banner-area" class="banner-area"
@@ -32,7 +32,7 @@
             <div class="row">
 
                 <div class="col-12 col-md-6 justify-content-center">
-                        <img src="{{ asset("storage/assets/staff/avatar_femme_default.jpg") }}" class="img-thumbnail img-" alt="photo Dr " >
+                        <img src="{{ asset('assets/staff/DrCorine.jpeg') }}" class="img-thumbnail img-fluid" alt="Photo Dr Corine NGUFOR - Executive Director" loading="lazy">
                 </div>
 
                 <div class="col-12 col-md-6">
@@ -57,10 +57,10 @@
                     </p>
 
                     <p class="">
-                         
-                        <strong>Dr. </strong> <br>
 
-                        <span>Director, AIRID</span>
+                        <strong>Dr. Corine NGUFOR </strong> <br>
+
+                        <span>Executive Director, AIRID</span>
                     </p>
 
                 </div>

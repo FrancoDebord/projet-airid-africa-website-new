@@ -91,9 +91,9 @@
                                                     elseif (file_exists(public_path('storage/assets/staff/' . $photoName))) {
                                                         $photoPath = asset('storage/assets/staff/' . $photoName);
                                                     }
-                                                    // 3. Par défaut, essayer avec storage/assets/staff (compatibilité ancien système)
+                                                    // 3. Par défaut, essayer avec assets/staff (images dans public/assets/staff)
                                                     else {
-                                                        $photoPath = asset('storage/assets/staff/' . $photoName);
+                                                        $photoPath = asset('assets/staff/' . $photoName);
                                                     }
                                                 @endphp
                                                 <img src="{{ $photoPath }}"

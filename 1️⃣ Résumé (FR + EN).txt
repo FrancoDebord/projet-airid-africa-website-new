@@ -1,0 +1,133 @@
+ 1️⃣ Résumé (FR + EN)
+ 
+Résumé (Français)
+
+Le AIRID AFRICA–WISE Fund : African Women in Science Empowerment Fund 2026 est un programme de soutien académique destiné aux jeunes femmes poursuivant des études dans les domaines des sciences, de la technologie, de l’ingénierie et des mathématiques (STEM).
+
+Mis en place par l’Institut africain de recherche sur les maladies infectieuses (AIRID), ce fonds vise à promouvoir l’égalité de genre dans les carrières scientifiques et à renforcer le vivier de femmes engagées dans la recherche et l’innovation au Bénin.
+
+Pour la cohorte 2026, le programme offrira :
+
+Six (6) bourses de licence d’un montant de 150 000 FCFA chacune
+Cinq (5) bourses de niveau master d’un montant de 200 000 FCFA chacune
+
+Toutes les bourses sont des subventions non remboursables destinées à soutenir directement la progression académique des bénéficiaires.
+
+
+ Summary (English)
+
+The AIRID AFRICA–WISE Fund: African Women in Science Empowerment Fund 2026 is an academic support programme designed for young women pursuing studies in Science, Technology, Engineering, and Mathematics (STEM).
+
+Established by the African Institute for Research in Infectious Diseases (AIRID), the fund aims to promote gender equity in scientific careers and strengthen the pipeline of women entering research and innovation fields in Benin.
+
+For the 2026 cohort, the programme will provide:
+
+ Six (6) undergraduate awards of 150,000 FCFA
+Five (5) Master’s-level awards of 200,000 FCFA
+
+All awards are non-repayable grants intended to directly support the academic progression of students.
+
+
+
+2️⃣ Intro page Apply (FR + EN)
+
+ Introduction à la candidature (Français)
+
+Bienvenue sur la page de candidature du AIRID AFRICA–WISE Fund : African Women in Science Empowerment Fund 2026.
+
+Ce programme soutient les étudiantes inscrites dans des disciplines STEM (sciences, technologie, ingénierie et mathématiques) dans les universités publiques du Bénin.
+
+Les candidates éligibles sont invitées à remplir le formulaire de candidature et à soumettre les documents requis afin que leur dossier puisse être examiné par le Comité du Fonds AIRID AFRICA–WISE.
+
+Les candidatures doivent être soumises en ligne via la plateforme officielle.
+
+Date limite de soumission des candidatures : 31 mars 2026.
+
+
+ Application Introduction (English)
+
+Welcome to the application page for the AIRID AFRICA–WISE Fund: African Women in Science Empowerment Fund 2026.
+
+This programme supports female students enrolled in STEM disciplines (Science, Technology, Engineering, and Mathematics) at public universities in Benin.
+
+Eligible applicants are invited to complete the application form and submit the required documentation so that their applications can be reviewed by the AIRID AFRICA–WISE Fund Committee.
+
+Applications must be submitted online through the official platform.
+
+Application deadline: 31 March 2026.
+
+
+
+ 3️⃣ Contenu (HTML) – FR + EN
+
+<h2>AIRID AFRICA-WISE Fund: Fonds pour l’autonomisation des femmes africaines dans le domaine scientifique</h2>
+
+<h3>A Propos de AIRID</h3>
+
+<p>L’Institut africain de recherche sur les maladies infectieuses (AIRID) est un établissement de recherche indépendant et à but non lucratif, créé en 2021 pour renforcer la capacité de l’Afrique à prévenir et à contrôler les maladies infectieuses et tropicales grâce à une recherche scientifique rigoureuse et pertinente pour les politiques publiques.</p>
+
+<p>AIRID produit des données probantes de haute qualité afin d’éclairer la conception, l’évaluation et l’optimisation d’interventions adaptées aux contextes épidémiologiques et sociaux africains.</p>
+
+<p>Guidé par la vision de promouvoir une science dirigée par les Africains pour l’élimination des maladies et le renforcement de la résilience en santé publique, AIRID s’appuie sur les principes d’excellence, d’intégrité, d’innovation, de collaboration, d’équité et d’impact mesurable.</p>
+
+<h3>Présentation du programme</h3>
+
+<p>Le Fonds AIRID AFRICA–WISE soutient les jeunes femmes poursuivant des études dans les domaines des sciences, de la technologie, de l’ingénierie et des mathématiques (STEM) à travers l’Afrique.</p>
+
+<p>La première cohorte est ouverte aux femmes inscrites dans les universités publiques du Bénin.</p>
+
+<h4>Le programme vise à :</h4>
+
+<ul>
+<li>Soutenir la progression académique dans les disciplines STEM (sciences, technologie, ingénierie et mathématiques)</li>
+<li>Promouvoir l’égalité de genre au sein de la main-d’œuvre scientifique au Bénin</li>
+<li>Renforcer le vivier de femmes s’engageant dans des carrières de recherche</li>
+<li>Contribuer au renforcement des capacités nationales de recherche et des systèmes d’innovation</li>
+</ul>
+
+<h3>Bourses disponibles</h3>
+
+<ul>
+<li>Six (6) bourses de licence d’un montant de 150 000 FCFA chacune</li>
+<li>Cinq (5) bourses de niveau master d’un montant de 200 000 FCFA chacune</li>
+</ul>
+
+<p>Toutes les bourses sont des subventions non remboursables destinées à soutenir directement la progression académique des bénéficiaires.</p>
+
+<hr>
+
+
+<h2>AIRID AFRICA-WISE Fund: African Women in Science Empowerment Fund</h2>
+
+<h3>About AIRID</h3>
+
+<p>The African Institute for Research in Infectious Diseases (AIRID) is an independent, non-profit research institution established in 2021 to strengthen Africa’s capacity to prevent and control infectious and tropical diseases through rigorous, policy-relevant science.</p>
+
+<p>AIRID generates high-quality evidence to inform the design, evaluation, and optimisation of interventions tailored to African epidemiological and social contexts.</p>
+
+<p>Guided by a vision to advance African-led science for disease elimination and public health resilience, AIRID is anchored in the principles of excellence, integrity, innovation, collaboration, equity, and measurable impact.</p>
+
+<h3>Programme Overview</h3>
+
+<p>The AIRID AFRICA–WISE Fund supports young women pursuing education in Science, Technology, Engineering, and Mathematics (STEM) across Africa.</p>
+
+<p>The inaugural cohort is open to women enrolled at public universities in Benin.</p>
+
+<h4>The programme seeks to:</h4>
+
+<ul>
+<li>Support academic progression in STEM disciplines</li>
+<li>Promote gender equity within Benin’s scientific workforce</li>
+<li>Strengthen the pipeline of women entering research careers</li>
+<li>Contribute to national research capacity and innovation systems</li>
+</ul>
+
+<h3>Available Awards</h3>
+
+<ul>
+<li>Six (6) undergraduate awards of 150,000 FCFA</li>
+<li>Five (5) Master’s-level awards of 200,000 FCFA</li>
+</ul>
+
+<p>All awards are non-repayable grants intended to directly support academic progression.</p>
+

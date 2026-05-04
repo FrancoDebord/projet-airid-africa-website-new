@@ -44,7 +44,7 @@
 
             <div class="content-section fade-in-up">
                 <div class="hero-image">
-                    <img src="{{ asset('storage/assets/facility/molecular-lab/IMG_1314.jpg') }}" alt="Molecular Lab">
+                    <img src="{{ asset('storage/assets/facility/molecular-lab/PM.jpg') }}" alt="Molecular Lab">
                 </div>
                 <h3 class="section-subtitle">Overview</h3>
                 <div class="section-content">
@@ -68,16 +68,10 @@
                 <h3 class="section-subtitle">Key Activities</h3>
                 <div class="section-content">
                     <ul>
-                        <li><strong>PCR and quantitative PCR (qPCR)</strong> for detecting Plasmodium spp., arboviruses
-                            (e.g., dengue, Zika), and other infectious agents</li>
-                        <li><strong>Genotyping and sequencing</strong> to differentiate vector species and detect
-                            resistance mutations (e.g., kdr, ace-1, metabolic markers)</li>
-                        <li><strong>Gene expression studies</strong> to explore mechanisms of resistance or infection
-                            response</li>
-                        <li><strong>Knockdown and validation studies</strong> using RNAi and CRISPR tools (in development)</li>
-                        <li><strong>DNA and RNA extraction</strong>, quantification, and integrity assessments</li>
-                        <li><strong>Molecular quality control</strong> for cross-contamination prevention, reference sample
-                            validation, and reagent performance</li>
+                        <li><strong>Molecular lab:</strong> DNA extraction, quantification, and integrity assessments</li>
+                        <li><strong>PCR and quantitative PCR (qPCR)</strong> for detecting Plasmodium spp., arboviruses (e.g., dengue, Zika), and other infectious agents</li>
+                        <li><strong>Genotyping and sequencing (with partners)</strong> to differentiate vector species and detect resistance mutations (e.g., kdr, ace-1, metabolic markers)</li>
+                        <li><strong>Molecular quality control</strong> for cross-contamination prevention, reference sample validation</li>
                     </ul>
                 </div>
             </div>
@@ -123,8 +117,8 @@
                 </h3>
                 <div class="image-gallery">
                     <div class="gallery-item">
-                        <img src="{{ asset('storage/assets/facility/molecular-lab/IMG_1320.jpg') }}" 
-                             alt="Molecular Lab Entrance" 
+                        <img src="{{ asset('storage/assets/facility/molecular-lab/IMG_2505.jpg') }}"
+                             alt="Molecular Lab Entrance"
                              class="gallery-image"
                              loading="lazy">
                         <div class="gallery-caption">
@@ -132,8 +126,8 @@
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="{{ asset('storage/assets/facility/molecular-lab/IMG_1307.jpg') }}" 
-                             alt="Molecular Lab QuantStudio" 
+                        <img src="{{ asset('storage/assets/facility/molecular-lab/IMG.jpg') }}"
+                             alt="Molecular Lab QuantStudio"
                              class="gallery-image"
                              loading="lazy">
                         <div class="gallery-caption">
@@ -141,8 +135,8 @@
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="{{ asset('storage/assets/facility/molecular-lab/IMG_1314.jpg') }}" 
-                             alt="Molecular Lab Installations" 
+                        <img src="{{ asset('storage/assets/facility/molecular-lab/IMG_24.jpg') }}"
+                             alt="Molecular Lab Installations"
                              class="gallery-image"
                              loading="lazy">
                         <div class="gallery-caption">
@@ -150,8 +144,8 @@
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="{{ asset('storage/assets/facility/molecular-lab/IMG_1301.jpg') }}" 
-                             alt="Molecular Lab Installations" 
+                        <img src="{{ asset('storage/assets/facility/molecular-lab/IMG_1301.jpg') }}"
+                             alt="Molecular Lab Installations"
                              class="gallery-image"
                              loading="lazy">
                         <div class="gallery-caption">
@@ -159,17 +153,18 @@
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="{{ asset('storage/assets/facility/molecular-lab/IMG_1300.jpg') }}" 
-                             alt="Molecular Lab Installations" 
+                        <img src="{{ asset('storage/assets/facility/molecular-lab/IMG_2.jpg') }}"
+                             alt="Molecular Lab Installations"
                              class="gallery-image"
                              loading="lazy">
                         <div class="gallery-caption">
                             <strong>Molecular Lab Installations</strong>
                         </div>
                     </div>
+                    
                     <div class="gallery-item">
-                        <img src="{{ asset('storage/assets/facility/molecular-lab/IMG_1303.jpg') }}" 
-                             alt="Molecular Lab Installations" 
+                        <img src="{{ asset('storage/assets/facility/molecular-lab/IMG_2484.jpg') }}"
+                             alt="Molecular Lab Installations"
                              class="gallery-image"
                              loading="lazy">
                         <div class="gallery-caption">

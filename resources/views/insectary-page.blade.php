@@ -44,7 +44,7 @@
 
             <div class="content-section fade-in-up">
                 <div class="hero-image">
-                    <img src="{{ asset('storage/assets/facility/insectary/IMG_1372.jpg') }}" alt="Insectary">
+                    <img src="{{ asset('storage/assets/facility/insectary/IMG_1342.jpg') }}" alt="Insectary">
                 </div>
                 <h3 class="section-subtitle">Overview</h3>
                 <div class="section-content">
@@ -215,8 +215,8 @@
                         </tbody>
                     </table>
                     <p style="font-style: italic; margin-top: 1rem;">
-                        Our mosquito strains have important characteristics (for example, susceptibility or resistance to insecticides) 
-                        that are essential for the testing of Malaria vector control products. The insectary is designed to prevent 
+                        Our mosquito strains have important characteristics (for example, susceptibility or resistance to insecticides)
+                        that are essential for the testing of Malaria vector control products. The insectary is designed to prevent
                         any forms of contamination between mosquito strains. We can provide you with mosquito eggs, larvae or adults.
                     </p>
                 </div>
@@ -228,8 +228,8 @@
                 </h3>
                 <div class="image-gallery">
                     <div class="gallery-item">
-                        <img src="{{ asset('storage/assets/facility/insectary/IMG_1342.jpg') }}" 
-                             alt="Insectary Entrance" 
+                        <img src="{{ asset('storage/assets/facility/insectary/65.jpg') }}"
+                             alt="Insectary Entrance"
                              class="gallery-image"
                              loading="lazy">
                         <div class="gallery-caption">
@@ -237,8 +237,18 @@
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="{{ asset('storage/assets/facility/insectary/IMG_1368.jpg') }}" 
-                             alt="Insectary" 
+                        <img src="{{ asset('storage/assets/facility/insectary/55.jpg') }}"
+                             alt="Insectary"
+                             class="gallery-image"
+                             loading="lazy">
+                        <div class="gallery-caption">
+                            <strong>Insectary</strong>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="{{ asset('storage/assets/facility/insectary/68.jpg') }}"
+                             alt="Insectary"
                              class="gallery-image"
                              loading="lazy">
                         <div class="gallery-caption">
@@ -246,8 +256,36 @@
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="{{ asset('storage/assets/facility/insectary/IMG_1379.jpg') }}" 
-                             alt="Insectary" 
+                        <img src="{{ asset('storage/assets/facility/insectary/63.jpg') }}"
+                             alt="Insectary"
+                             class="gallery-image"
+                             loading="lazy">
+                        <div class="gallery-caption">
+                            <strong>Insectary</strong>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="{{ asset('storage/assets/facility/insectary/42.jpg') }}"
+                             alt="Insectary"
+                             class="gallery-image"
+                             loading="lazy">
+                        <div class="gallery-caption">
+                            <strong>Insectary</strong>
+                        </div>
+                    </div>
+                    {{-- <div class="gallery-item">
+                        <img src="{{ asset('storage/assets/facility/insectary/46.jpg') }}"
+                             alt="Insectary"
+                             class="gallery-image"
+                             loading="lazy">
+                        <div class="gallery-caption">
+                            <strong>Insectary</strong>
+                        </div>
+                    </div> --}}
+
+                    <div class="gallery-item">
+                        <img src="{{ asset('storage/assets/facility/insectary/IMG_1379.jpg') }}"
+                             alt="Insectary"
                              class="gallery-image"
                              loading="lazy">
                         <div class="gallery-caption">

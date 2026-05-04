@@ -80,7 +80,7 @@
             display: block;
         }
 
-        .photo-item:hover {
+        .photo-item-link:hover .photo-item {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
@@ -99,7 +99,7 @@
             transition: transform 0.6s ease;
         }
 
-        .photo-item:hover .photo-image {
+        .photo-item-link:hover .photo-image {
             transform: scale(1.15);
         }
 
@@ -115,7 +115,7 @@
             transition: opacity 0.4s ease;
         }
 
-        .photo-item:hover .photo-overlay {
+        .photo-item-link:hover .photo-overlay {
             opacity: 1;
         }
 
@@ -137,14 +137,30 @@
             transition: all 0.3s ease;
         }
 
-        .photo-item:hover .photo-icon {
+        .photo-item-link:hover .photo-icon {
             opacity: 1;
             transform: translate(-50%, -50%) scale(1.1);
+        }
+        .photo-icon i {
+            font-size: 1.25rem;
+        }
+
+        .photo-item-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            height: 100%;
+        }
+        .photo-item-link:hover {
+            text-decoration: none;
+            color: inherit;
         }
 
         .photo-info {
             padding: 1.5rem;
-            background: #fff;
+            background:#c7c3c3;
+            position: relative;
+            padding-right: 3rem;
         }
 
         .photo-title {
@@ -155,14 +171,30 @@
             line-height: 1.4;
         }
 
-        .photo-title a {
-            color: #2c3e50;
-            text-decoration: none;
-            transition: color 0.3s ease;
+        .photo-item-link:hover .photo-title {
+            color: #c20102;
         }
 
-        .photo-title a:hover {
+        .photo-card-arrow {
+            position: absolute;
+            right: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(194, 1, 2, 0.1);
             color: #c20102;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .photo-item-link:hover .photo-card-arrow {
+            background: #c20102;
+            color: #fff;
+            transform: translateY(-50%) translateX(4px);
         }
 
         .photo-category {
@@ -219,6 +251,100 @@
                 font-size: 0.85rem;
             }
         }
+
+        /* ============================================
+           CADRES CLIQUABLES (explorer par catégorie)
+           ============================================ */
+        .gallery-cards-intro {
+            background: linear-gradient(135deg, rgba(194, 1, 2, 0.06) 0%, rgba(139, 1, 1, 0.06) 100%);
+            padding: 1.75rem 1.5rem;
+            border-radius: 16px;
+            margin: 2rem 0 1.5rem;
+            border-left: 5px solid #c20102;
+        }
+        .gallery-cards-intro .section-lead { font-size: 1.05rem; line-height: 1.7; color: #333; margin: 0; }
+        .gallery-cards-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .gallery-cards-title i { color: #c20102; }
+        .gallery-card-link {
+            display: block;
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid #eee;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .gallery-card-link:hover {
+            box-shadow: 0 12px 32px rgba(194, 1, 2, 0.18);
+            border-color: #c20102;
+            transform: translateY(-6px);
+            text-decoration: none;
+            color: inherit;
+        }
+        .gallery-card-img-wrap {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background: #f0f0f0;
+        }
+        .gallery-card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .gallery-card-link:hover .gallery-card-img-wrap img { transform: scale(1.06); }
+        .gallery-card-body {
+            padding: 1.25rem 1.25rem;
+            position: relative;
+            background-color: #c7c3c3;
+            padding-right: 3rem;
+        }
+        .gallery-card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.35rem;
+        }
+        .gallery-card-link:hover .gallery-card-title { color: #c20102; }
+        .gallery-card-desc {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #555;
+            margin-bottom: 0;
+        }
+        .gallery-card-arrow {
+            position: absolute;
+            right: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(194, 1, 2, 0.1);
+            color: #c20102;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .gallery-card-link:hover .gallery-card-arrow {
+            background: #c20102;
+            color: #fff;
+            transform: translateY(-50%) translateX(4px);
+        }
     </style>
 @endsection
 
@@ -232,7 +358,7 @@
                     <div class="col-lg-12">
                         <div class="banner-heading">
                             <h1 class="banner-title top_title fade-in-up">Photo Gallery</h1>
-                            <p class="text-white mt-3 fade-in-up" style="font-size: 1.2rem;">
+                            <p class="text-white mt-3 fade-in-up" style="font-size: 1.4rem;">
                                 Discover our research activities and events
                             </p>
                         </div>
@@ -241,6 +367,59 @@
             </div>
         </div>
     </div>
+
+    <!-- Section Cadres cliquables : explorer par catégorie -->
+    <section class="py-4" id="gallery-cards">
+        <div class="container">
+            <div class="gallery-cards-intro fade-in-up">
+                <p class="section-lead">Browse the gallery by theme. Click a card to view photos in that category.</p>
+            </div>
+            <h2 class="gallery-cards-title fade-in-up"><i class="fas fa-th-large"></i> Explore by category</h2>
+            <div class="row g-4 fade-in-up">
+                {{-- Carte "Toutes les photos" --}}
+                <div class="col-md-6 col-lg-4">
+                    <a href="#photo-gallery" class="gallery-card-link gallery-card-filter" data-filter="all">
+                        <div class="gallery-card-img-wrap">
+                            @php $firstPhoto = $all_photos->first(); @endphp
+                            @if($firstPhoto)
+                                <img src="{{ asset('storage/assets/gallery/' . $firstPhoto->nom_photo) }}" alt="All Photos" loading="lazy">
+                            @else
+                                <img src="{{ asset('storage/assets_vendor/images/banner/banner2_new.png') }}" alt="All Photos">
+                            @endif
+                        </div>
+                        <div class="gallery-card-body">
+                            <h3 class="gallery-card-title">All photos</h3>
+                            <p class="gallery-card-desc">{{ $all_photos->count() }} photo(s) in the gallery</p>
+                            <span class="gallery-card-arrow"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </div>
+                @foreach($all_photos_categories as $photo_categorie)
+                    @php
+                        $catSlug = \Str::slug($photo_categorie->categorie_photo);
+                        $firstInCat = $all_photos->where('categorie_photo', $photo_categorie->categorie_photo)->first();
+                        $countInCat = $all_photos->where('categorie_photo', $photo_categorie->categorie_photo)->count();
+                    @endphp
+                    <div class="col-md-6 col-lg-4">
+                        <a href="#photo-gallery" class="gallery-card-link gallery-card-filter" data-filter="{{ $catSlug }}">
+                            <div class="gallery-card-img-wrap">
+                                @if($firstInCat)
+                                    <img src="{{ asset('storage/assets/gallery/' . $firstInCat->nom_photo) }}" alt="{{ $photo_categorie->categorie_photo }}" loading="lazy">
+                                @else
+                                    <img src="{{ asset('storage/assets_vendor/images/banner/banner2_new.png') }}" alt="{{ $photo_categorie->categorie_photo }}">
+                                @endif
+                            </div>
+                            <div class="gallery-card-body">
+                                <h3 class="gallery-card-title">{{ $photo_categorie->categorie_photo }}</h3>
+                                <p class="gallery-card-desc">{{ $countInCat }} photo(s) in this category</p>
+                                <span class="gallery-card-arrow"><i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
 
     <!-- Section Filtres -->
     <section class="photo-filters">
@@ -274,41 +453,37 @@
 
             <div class="photo-gallery" id="photo-gallery">
                 @forelse ($all_photos as $index => $photo)
-                    <div class="photo-item fade-in-up active" 
-                         data-category="{{ \Str::slug($photo->categorie_photo) }}"
-                         style="transition-delay: {{ ($index % 6) * 0.1 }}s">
-                        <div class="photo-image-wrapper">
-                            <a class="gallery-popup"
-                               href="{{ asset('storage/assets/gallery/' . $photo->nom_photo) }}"
-                               aria-label="{{ $photo->titre_photo }}">
+                    <a href="{{ route('photoDetailPage', ['tag' => $photo->tag]) }}"
+                       class="photo-item-link"
+                       data-category="{{ \Str::slug($photo->categorie_photo) }}">
+                        <div class="photo-item fade-in-up active"
+                             style="transition-delay: {{ ($index % 6) * 0.1 }}s">
+                            <div class="photo-image-wrapper">
                                 <img class="photo-image"
                                      src="{{ asset('storage/assets/gallery/' . $photo->nom_photo) }}"
                                      alt="{{ $photo->titre_photo }}"
                                      loading="lazy">
                                 <div class="photo-overlay">
                                     <div class="photo-icon">
-                                        <i class="fas fa-plus"></i>
+                                        <i class="fas fa-arrow-right"></i>
                                     </div>
                                 </div>
-                            </a>
+                            </div>
+                            <div class="photo-info">
+                                <h3 class="photo-title">{{ $photo->titre_photo }}</h3>
+                                <span class="photo-category">
+                                    <i class="fas fa-tag me-1"></i>{{ $photo->categorie_photo }}
+                                </span>
+                                @if($photo->date_event)
+                                    <div class="photo-date">
+                                        <i class="far fa-calendar me-1"></i>
+                                        {{ date('F j, Y', strtotime($photo->date_event)) }}
+                                    </div>
+                                @endif
+                                <span class="photo-card-arrow"><i class="fas fa-arrow-right"></i></span>
+                            </div>
                         </div>
-                        <div class="photo-info">
-                            <h3 class="photo-title">
-                                <a href="{{ route('photoDetailPage', ['tag' => $photo->tag]) }}">
-                                    {{ $photo->titre_photo }}
-                                </a>
-                            </h3>
-                            <span class="photo-category">
-                                <i class="fas fa-tag me-1"></i>{{ $photo->categorie_photo }}
-                            </span>
-                            @if($photo->date_event)
-                                <div class="photo-date">
-                                    <i class="far fa-calendar me-1"></i>
-                                    {{ date('F j, Y', strtotime($photo->date_event)) }}
-                                </div>
-                            @endif
-                        </div>
-                    </div>
+                    </a>
                 @empty
                     <div class="no-results">
                         <i class="fas fa-images"></i>
@@ -363,7 +538,7 @@
         // ============================================
         document.addEventListener('DOMContentLoaded', function() {
             const filterButtons = document.querySelectorAll('.filter-btn');
-            const photoItems = document.querySelectorAll('.photo-item');
+            const photoItems = document.querySelectorAll('.photo-item-link');
             const photoGallery = document.getElementById('photo-gallery');
             const noResultsMessage = document.getElementById('no-results-message');
 
@@ -374,7 +549,7 @@
                 btn.addEventListener('click', function() {
                     filterButtons.forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
-                    
+
                     currentFilter = this.getAttribute('data-filter');
                     filterPhotos();
                 });
@@ -388,15 +563,17 @@
                 photoItems.forEach(item => {
                     const category = item.getAttribute('data-category') || '';
                     const matchesFilter = currentFilter === 'all' || category === currentFilter;
-                    
+
                     if (matchesFilter) {
-                        item.classList.add('active');
                         item.style.display = 'block';
+                        const innerItem = item.querySelector('.photo-item');
+                        if (innerItem) innerItem.classList.add('active');
                         visibleCount++;
                         hasVisible = true;
                     } else {
-                        item.classList.remove('active');
                         item.style.display = 'none';
+                        const innerItem = item.querySelector('.photo-item');
+                        if (innerItem) innerItem.classList.remove('active');
                     }
                 });
 
@@ -412,6 +589,52 @@
 
             // Initialiser le filtrage
             filterPhotos();
+        });
+
+        // ============================================
+        // CADRES CLIQUABLES : scroll + appliquer le filtre
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryCards = document.querySelectorAll('.gallery-card-filter');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const photoItems = document.querySelectorAll('.photo-item-link');
+            const photoGallery = document.getElementById('photo-gallery');
+            const noResultsMessage = document.getElementById('no-results-message');
+
+            galleryCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const filter = this.getAttribute('data-filter');
+                    // Activer le bouton filtre correspondant
+                    filterButtons.forEach(btn => {
+                        btn.classList.toggle('active', btn.getAttribute('data-filter') === filter);
+                    });
+                    // Appliquer le filtre
+                    let visibleCount = 0;
+                    photoItems.forEach(item => {
+                        const category = item.getAttribute('data-category') || '';
+                        const matches = filter === 'all' || category === filter;
+                        item.style.display = matches ? 'block' : 'none';
+                        const innerItem = item.querySelector('.photo-item');
+                        if (innerItem) innerItem.classList.toggle('active', matches);
+                        if (matches) visibleCount++;
+                    });
+                    if (noResultsMessage) {
+                        if (visibleCount > 0) noResultsMessage.classList.add('d-none');
+                        else { photoGallery.style.display = 'none'; noResultsMessage.classList.remove('d-none'); }
+                    }
+                    // Scroll vers la galerie
+                    const target = document.getElementById('photo-gallery');
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            // Au chargement, si hash (ex: #category-slug), appliquer le filtre
+            const hash = window.location.hash.replace('#', '');
+            if (hash && hash !== 'photo-gallery') {
+                const matchCard = document.querySelector('.gallery-card-filter[data-filter="' + hash + '"]');
+                if (matchCard) matchCard.click();
+            }
         });
     </script>
 @endsection

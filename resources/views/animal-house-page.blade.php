@@ -134,7 +134,7 @@
                 </h2>
                 <div class="section-content">
                     <p>
-                        We raise various animals in our animal house, such as rabbits, guinea pigs, etc.
+                        The AIRID animal house supports essential vector biology research by maintaining animals used for mosquito feeding and WHO tunnel tests. All animals are housed, handled, and monitored in strict compliance with national guidelines for the ethical use of animals in research, under the supervision of a qualified veterinarian. The facility operates under robust welfare, husbandry, and biosafety standards to ensure both scientific integrity and high standards of animal care.
                     </p>
                 </div>
             </div>

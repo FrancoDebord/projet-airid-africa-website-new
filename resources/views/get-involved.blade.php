@@ -5,8 +5,8 @@
 @section('css')
     <style>
         /* ============================================
-           ANIMATIONS AU SCROLL
-           ============================================ */
+               ANIMATIONS AU SCROLL
+               ============================================ */
         .fade-in-up {
             opacity: 0;
             transform: translateY(30px);
@@ -19,8 +19,8 @@
         }
 
         /* ============================================
-           HERO SECTION
-           ============================================ */
+               HERO SECTION
+               ============================================ */
         .hero-section {
             background: url("{{ asset('storage/assets_vendor/images/banner/banner2_new.png') }}") center/cover no-repeat;
             padding: 5rem 0;
@@ -36,42 +36,45 @@
         }
 
         .hero-title {
-            font-size: 3.5rem;
+            font-size: var(--airid-h1-size);
             font-weight: 700;
             margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
-            font-weight: 300;
+            font-size: var(--airid-tagline-size);
+            font-weight: 600;
             margin-bottom: 2rem;
             opacity: 0.95;
         }
 
         .hero-icon {
-            font-size: 4rem;
+            font-size: var(--airid-h2-size);
             margin-bottom: 1.5rem;
             animation: float 3s ease-in-out infinite;
         }
 
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0);
             }
+
             50% {
                 transform: translateY(-20px);
             }
         }
 
         /* ============================================
-           CARTES D'INFORMATIONS
-           ============================================ */
+               CARTES D'INFORMATIONS
+               ============================================ */
         .info-card {
             background: #fff;
             border-radius: 20px;
             padding: 2.5rem;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             height: 100%;
             text-align: center;
@@ -98,7 +101,7 @@
 
         .info-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
         .info-icon {
@@ -110,7 +113,7 @@
             align-items: center;
             justify-content: center;
             color: #fff;
-            font-size: 2.5rem;
+            font-size: var(--airid-h2-size);
             margin: 0 auto 1.5rem;
             transition: transform 0.3s ease;
             position: relative;
@@ -122,19 +125,19 @@
         }
 
         .info-card h3 {
-            color: #2c3e50;
-            font-size: 1.5rem;
+            font-size: var(--airid-h2-size);
             font-weight: 700;
+            color: var(--airid-title-color);
             margin-bottom: 1rem;
             position: relative;
             z-index: 1;
         }
 
         .info-card p {
-            color: #7f8c8d;
+            font-size: var(--airid-text-size);
+            line-height: var(--airid-text-line-height);
+            color: var(--airid-text-color);
             margin-bottom: 1.5rem;
-            line-height: 1.8;
-            font-size: 1.05rem;
             position: relative;
             z-index: 1;
         }
@@ -157,8 +160,8 @@
         }
 
         /* ============================================
-           SECTION MESSAGE PRINCIPAL
-           ============================================ */
+               SECTION MESSAGE PRINCIPAL
+               ============================================ */
         .main-message-section {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 4rem 0;
@@ -168,7 +171,7 @@
             background: #fff;
             border-radius: 20px;
             padding: 3rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
             border-left: 6px solid #c20102;
             position: relative;
         }
@@ -185,9 +188,9 @@
         }
 
         .message-text {
-            font-size: 1.3rem;
-            line-height: 1.9;
-            color: #2c3e50;
+            font-size: var(--airid-text-size);
+            line-height: var(--airid-text-line-height);
+            color: var(--airid-title-color);
             font-style: italic;
             margin-bottom: 2rem;
             position: relative;
@@ -196,16 +199,16 @@
 
         .message-author {
             text-align: right;
-            color: #7f8c8d;
-            font-size: 1.1rem;
+            font-size: var(--airid-text-size);
             font-weight: 600;
+            color: var(--airid-text-color);
             position: relative;
             z-index: 1;
         }
 
         /* ============================================
-           BOUTONS D'ACTION
-           ============================================ */
+               BOUTONS D'ACTION
+               ============================================ */
         .action-buttons {
             display: flex;
             gap: 1.5rem;
@@ -228,7 +231,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            font-size: 1.1rem;
+            font-size: var(--airid-text-size);
             box-shadow: 0 4px 15px rgba(194, 1, 2, 0.3);
         }
 
@@ -240,7 +243,7 @@
             width: 0;
             height: 0;
             border-radius: 50%;
-            background: rgba(255,255,255,0.3);
+            background: rgba(255, 255, 255, 0.3);
             transform: translate(-50%, -50%);
             transition: width 0.6s, height 0.6s;
         }
@@ -269,19 +272,19 @@
         }
 
         /* ============================================
-           RESPONSIVE
-           ============================================ */
+               RESPONSIVE
+               ============================================ */
         @media (max-width: 768px) {
             .hero-title {
-                font-size: 2.5rem;
+                font-size: var(--airid-h1-size);
             }
 
             .hero-subtitle {
-                font-size: 1.2rem;
+                font-size: var(--airid-tagline-size);
             }
 
             .hero-icon {
-                font-size: 3rem;
+                font-size: var(--airid-h2-size);
             }
 
             .message-card {
@@ -319,7 +322,7 @@
                     <i class="fas fa-hand-holding-heart"></i>
                 </div>
                 <h1 class="hero-title">Get Involved</h1>
-                <p class="hero-subtitle">Support African-Led Science and Health Innovation</p>
+                <p class="hero-subtitle" style="font-size: 1.4rem;" >Support African-Led Science and Health Innovation</p>
             </div>
         </div>
     </div>
@@ -330,11 +333,12 @@
             <div class="row">
                 <div class="col-lg-10 mx-auto fade-in-up">
                     <div class="message-card">
-                        <p class="message-text">
-                            By supporting AIRID, you are investing in African-led science, stronger health systems, and long-term solutions to infectious diseases.
+                        <p class="message-text" style="font-size: 1.4rem;">
+                            By supporting AIRID, you are investing in African-led science, stronger health systems, and
+                            long-term solutions to infectious diseases.
                         </p>
                         <p class="message-author">
-                            — 
+                            —
                         </p>
                     </div>
                 </div>
@@ -347,9 +351,11 @@
         <div class="container">
             <div class="row text-center mb-5 fade-in-up">
                 <div class="col-12">
-                    <h2 class="section-title" style="font-size: 2.5rem; font-weight: 700; color: #2c3e50;">How to Get Involved</h2>
-                    <h3 class="section-sub-title" style="font-size: 1.3rem; color: #7f8c8d; font-weight: 500;">Donate or Partner with Us</h3>
-                    <div class="title-divider mx-auto mt-3 mb-4" style="width: 100px; height: 4px; background: linear-gradient(135deg, #c20102 0%, #8b0101 100%); border-radius: 2px;"></div>
+                    <h2 class="section-title">How to Get Involved</h2>
+                    <p class="section-sub-title mb-0">Donate or Partner with Us</p>
+                    <div class="title-divider mx-auto mt-3 mb-4"
+                        style="width: 100px; height: 4px; background: linear-gradient(135deg, #c20102 0%, #8b0101 100%); border-radius: 2px;">
+                    </div>
                 </div>
             </div>
 

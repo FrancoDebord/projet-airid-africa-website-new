@@ -49,19 +49,29 @@
             margin-bottom: 2rem;
         }
 
+        /* Meta + badge sur la même ligne */
+        .project-header-top {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
         .project-meta {
             display: flex;
             flex-wrap: wrap;
             gap: 1.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0;
         }
 
         .project-meta-item {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: #7f8c8d;
-            font-size: 0.95rem;
+            font-size: var(--airid-text-size);
+            color: var(--airid-text-color);
         }
 
         .project-meta-item i {
@@ -74,8 +84,9 @@
             padding: 0.5rem 1.2rem;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
+            font-size: var(--airid-tagline-size);
+            margin-bottom: 0;
+            flex-shrink: 0;
         }
 
         .badge-ongoing {
@@ -89,17 +100,17 @@
         }
 
         .project-title {
-            font-size: 2rem;
+            font-size: var(--airid-h1-size);
             font-weight: 700;
-            color: #2c3e50;
+            color: var(--airid-title-color);
             line-height: 1.3;
             margin-bottom: 0.5rem;
         }
 
         .project-short-title {
-            font-size: 1.2rem;
-            color: #7f8c8d;
-            font-weight: 500;
+            font-size: var(--airid-tagline-size);
+            color: var(--airid-text-color);
+            font-weight: 600;
         }
 
         /* ============================================
@@ -116,21 +127,22 @@
         .project-content h2,
         .project-content h3,
         .project-content h4 {
-            color: #2c3e50;
+            font-size: var(--airid-h2-size);
+            color: var(--airid-title-color);
             margin-top: 2rem;
             margin-bottom: 1rem;
             font-weight: 700;
         }
 
         .project-content h2 {
-            font-size: 1.8rem;
             border-bottom: 3px solid #c20102;
             padding-bottom: 0.5rem;
         }
 
         .project-content p {
-            line-height: 1.8;
-            color: #555;
+            font-size: var(--airid-text-size);
+            line-height: var(--airid-text-line-height);
+            color: var(--airid-text-color);
             margin-bottom: 1rem;
         }
 
@@ -146,9 +158,9 @@
         }
 
         .sidebar-title {
-            font-size: 1.3rem;
+            font-size: var(--airid-h3-size);
             font-weight: 700;
-            color: #2c3e50;
+            color: var(--airid-title-color);
             margin-bottom: 1.5rem;
             padding-bottom: 0.75rem;
             border-bottom: 3px solid #c20102;
@@ -197,15 +209,15 @@
         }
 
         .other-project-title {
-            font-size: 0.95rem;
+            font-size: var(--airid-text-size);
             font-weight: 600;
-            color: #2c3e50;
+            color: var(--airid-title-color);
             margin-bottom: 0.25rem;
             line-height: 1.4;
         }
 
         .other-project-title a {
-            color: #2c3e50;
+            color: var(--airid-title-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -235,14 +247,14 @@
         }
 
         .director-name {
-            font-size: 1.2rem;
+            font-size: var(--airid-h3-size);
             font-weight: 700;
-            color: #2c3e50;
+            color: var(--airid-title-color);
             margin-bottom: 0.5rem;
         }
 
         .director-name a {
-            color: #2c3e50;
+            color: var(--airid-title-color);
             text-decoration: none;
         }
 
@@ -251,8 +263,8 @@
         }
 
         .director-position {
-            color: #7f8c8d;
-            font-size: 0.95rem;
+            font-size: var(--airid-text-size);
+            color: var(--airid-text-color);
             margin-bottom: 1rem;
         }
 
@@ -270,7 +282,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #7f8c8d;
+            color: var(--airid-text-color);
             text-decoration: none;
             transition: all 0.3s ease;
         }
@@ -290,7 +302,7 @@
             }
 
             .project-title {
-                font-size: 1.5rem;
+                font-size: var(--airid-h2-size);
             }
 
             .project-meta {
@@ -311,7 +323,7 @@
                     <div class="col-lg-12">
                         <div class="banner-heading">
                             <h1 class="banner-title top_title fade-in-up">Project Details</h1>
-                            <p class="text-white mt-3 fade-in-up" style="font-size: 1.2rem;">
+                            <p class="text-white mt-3 fade-in-up tagline mb-0" style="font-size: large" >
                                 {{ $projet->short_title_project ?? 'Research Project' }}
                             </p>
                         </div>
@@ -329,53 +341,55 @@
                 <div class="col-lg-8 mb-5 mb-lg-0">
                     <!-- Image Hero -->
                     <div class="project-hero-image fade-in-up">
-                        <img loading="lazy" 
+                        <img loading="lazy"
                              src="{{ asset('storage/assets/projects/' . $projet->photo_couverture) }}"
                              alt="{{ $projet->short_title_project }}">
                     </div>
 
                     <!-- Header du Projet -->
                     <div class="project-header fade-in-up">
-                        <div class="project-meta">
-                            <div class="project-meta-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <span>Started: {{ $projet->date_debut_project ? date("F j, Y", strtotime($projet->date_debut_project)) : 'N/A' }}</span>
+                        <div class="project-header-top">
+                            <div class="project-meta">
+                                <div class="project-meta-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Started: {{ $projet->date_debut_project ? date("F j, Y", strtotime($projet->date_debut_project)) : 'N/A' }}</span>
+                                </div>
+                                
+                                @if($projet->date_fin_project)
+                                    <div class="project-meta-item">
+                                        <i class="fas fa-calendar-check"></i>
+                                        <span>Ended: {{ date("F j, Y", strtotime($projet->date_fin_project)) }}</span>
+                                    </div>
+                                @endif
+                                @if($projet->category)
+                                    <div class="project-meta-item">
+                                        <i class="fas fa-folder"></i>
+                                        <span>{{ $projet->category->nom_categorie ?? 'Project' }}: {{ $projet->short_title_project ?? 'Research Project' }}</span>
+                                    </div>
+                                @endif
                             </div>
-                            @if($projet->date_fin_project)
-                                <div class="project-meta-item">
-                                    <i class="fas fa-calendar-check"></i>
-                                    <span>Ended: {{ date("F j, Y", strtotime($projet->date_fin_project)) }}</span>
-                                </div>
-                            @endif
-                            @if($projet->category)
-                                <div class="project-meta-item">
-                                    <i class="fas fa-folder"></i>
-                                    <span>{{ $projet->category->nom_categorie ?? 'Project' }}</span>
-                                </div>
-                            @endif
+                            @php
+                                $statusClass = $projet->etat_projet === 'ongoing' ? 'badge-ongoing' : 'badge-ended';
+                                $statusText = ucfirst($projet->etat_projet ?? 'ongoing');
+                            @endphp
+                            <span class="project-status-badge {{ $statusClass }}">
+                                <i class="fas {{ $projet->etat_projet === 'ongoing' ? 'fa-spinner' : 'fa-check-circle' }} me-2"></i>
+                                {{ $statusText }}
+                            </span>
                         </div>
 
-                        @php
-                            $statusClass = $projet->etat_projet === 'ongoing' ? 'badge-ongoing' : 'badge-ended';
-                            $statusText = ucfirst($projet->etat_projet ?? 'ongoing');
-                        @endphp
-                        <span class="project-status-badge {{ $statusClass }}">
-                            <i class="fas {{ $projet->etat_projet === 'ongoing' ? 'fa-spinner' : 'fa-check-circle' }} me-2"></i>
-                            {{ $statusText }}
-                                  </span>
-
-                        <h1 class="project-title">{{ $projet->long_title_project }}</h1>
+                        {{-- <h1 class="project-title">{{ $projet->long_title_project }}</h1>
                         @if($projet->short_title_project)
                             <p class="project-short-title">{{ $projet->short_title_project }}</p>
-                        @endif
-                                </div>
+                        @endif --}}
+                     </div>
 
                     <!-- Contenu du Projet -->
                     <div class="project-content fade-in-up">
                         @if($projet->resume)
                             <div class="mb-4">
                                 <h2>Overview</h2>
-                                <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">{{ $projet->resume }}</p>
+                                <p class="section-lead">{{ $projet->resume }}</p>
                             </div>
                         @endif
 
@@ -398,7 +412,7 @@
                                 <div class="other-project-item">
                                     <div class="other-project-thumb">
                                         <a href="{{ route('detailProject', ['id' => $other_projet->id, 'slug' => \Str::slug($other_projet->short_title_project)]) }}">
-                                            <img loading="lazy" 
+                                            <img loading="lazy"
                                                  alt="{{ $other_projet->short_title_project }}"
                                                  src="{{ asset('storage/assets/projects/' . $other_projet->photo_couverture) }}">
                                         </a>
@@ -422,11 +436,11 @@
                     @if($supervisor)
                         <div class="sidebar-card fade-in-up">
                             <h3 class="sidebar-title">
-                                <i class="fas fa-user-tie me-2"></i>Study Director
+                                <i class="fas fa-user-tie me-2" style="color: #c20102;"></i>Principal Investigator
                             </h3>
                             <div class="director-card">
                                     <img loading="lazy"
-                                        src="{{ asset('storage/assets/staff/' . $supervisor->photo_personnel) }}"
+                                        src="{{ $supervisor->photo_url ?? '/storage/assets_vendor/images/team/placeholder.jpg' }}"
                                      alt="{{ $supervisor->prenom_personnel . ' ' . $supervisor->nom_personnel }}"
                                      class="director-image">
                                 <h4 class="director-name">
@@ -435,13 +449,13 @@
                                     </a>
                                 </h4>
                                 @if($supervisor->posteOccupe)
-                                    <p class="director-position">{{ $supervisor->posteOccupe->intitule_poste }}</p>
+                                    <p class="director-position" style="color: #c20102;">{{ $supervisor->posteOccupe->intitule_poste }}</p>
                                 @endif
-                                <div class="director-social">
+                                {{-- <div class="director-social">
                                     <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                                     <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
                                     <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     @endif
@@ -453,11 +467,11 @@
                     @if($projectManager)
                         <div class="sidebar-card fade-in-up">
                             <h3 class="sidebar-title">
-                                <i class="fas fa-user-cog me-2"></i>Project Manager
+                                <i class="fas fa-user-cog me-2" style="color: #c20102;"></i>Project Manager
                                     </h3>
                             <div class="director-card">
                                 <img loading="lazy"
-                                     src="{{ asset('storage/assets/staff/' . $projectManager->photo_personnel) }}"
+                                     src="{{ $projectManager->photo_url ?? asset('storage/assets_vendor/images/team/placeholder.jpg') }}"
                                      alt="{{ $projectManager->prenom_personnel . ' ' . $projectManager->nom_personnel }}"
                                      class="director-image">
                                 <h4 class="director-name">
@@ -466,7 +480,7 @@
                                     </a>
                                 </h4>
                                 @if($projectManager->posteOccupe)
-                                    <p class="director-position">{{ $projectManager->posteOccupe->intitule_poste }}</p>
+                                    <p class="director-position" style="color: #c20102;">{{ $projectManager->posteOccupe->intitule_poste }}</p>
                                 @endif
                                     </div>
                                 </div>
@@ -488,7 +502,7 @@
                                          alt="{{ $sponsor->nom_partenaire }}"
                                          style="max-height: 100px; max-width: 200px; margin-bottom: 1rem;">
                                 @endif
-                                <h5 style="color: #2c3e50; font-weight: 600;">{{ $sponsor->nom_partenaire }}</h5>
+                                <h5 style="color: var(--airid-title-color); font-weight: 600;">{{ $sponsor->nom_partenaire }}</h5>
                                 @if($sponsor->site_web)
                                     <a href="{{ $sponsor->site_web }}" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
                                         <i class="fas fa-external-link-alt me-2"></i>Visit Website
@@ -530,7 +544,7 @@
         });
     </script>
 @endsection
-{{-- 
+{{--
         <div class="container">
             <h3>Key Personnel associated</h3>
             <div class="row">
@@ -539,21 +553,21 @@
                     <div class="col-lg-4 col-md-6 mb-5">
                         <div class="ts-service-box">
                             <div class="ts-service-image-wrapper">
-                                
+
                                     <img loading="lazy" class="w-100"
-                                        src="{{ asset('storage/assets/staff/' . $personnelsTeam->photo_personnel) }}"
+                                        src="{{ $personnelsTeam->photo_url ?? '/storage/assets_vendor/images/team/placeholder.jpg' }}"
                                         alt="service-image">
-                                
+
                             </div>
                             <div class="d-flex">
                                 <div class="ts-service-box-img">
-                                   
+
                                 </div>
                                 <div class="ts-service-info">
                                     <h3 class="service-box-title">{{ $personnelsTeam->titre." ".$personnelsTeam->prenom_personnel." ".$personnelsTeam->nom_personnel }}
                                     </h3>
                                     <p>{{ $personnelsTeam->posteOccupe->intitule_poste }}</p>
-                                  
+
                                 </div>
                             </div>
                         </div><!-- Service1 end -->

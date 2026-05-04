@@ -58,15 +58,16 @@
         }
 
         .subscribe-form-card h3 {
-            color: #2c3e50;
-            font-size: 2rem;
+            font-size: var(--airid-h2-size);
             font-weight: 700;
+            color: var(--airid-title-color);
             margin-bottom: 1rem;
         }
 
         .subscribe-form-card p {
-            color: #7f8c8d;
-            font-size: 1.1rem;
+            font-size: var(--airid-text-size);
+            line-height: var(--airid-text-line-height);
+            color: var(--airid-text-color);
             margin-bottom: 2rem;
         }
 
@@ -140,6 +141,35 @@
         .info-card p {
             color: #7f8c8d;
             line-height: 1.8;
+        }
+
+        .info-card-link {
+            color: inherit;
+        }
+        .info-card-link:hover {
+            color: inherit;
+        }
+        .info-card-link:hover .info-card-icon {
+            color: #8b0101;
+        }
+
+        .info-card-arrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: rgba(194, 1, 2, 0.1);
+            color: #c20102;
+            font-size: 1rem;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        .info-card-link:hover .info-card-arrow {
+            background: #c20102;
+            color: #fff;
+            transform: translateX(5px);
         }
 
         /* ============================================
@@ -324,7 +354,7 @@
 
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 fade-in-up">
-                    <div class="info-card">
+                    <a href="{{ route('newsPage') }}#filter-project" class="info-card info-card-link text-decoration-none d-block">
                         <div class="info-card-icon">
                             <i class="fas fa-flask"></i>
                         </div>
@@ -333,11 +363,12 @@
                             Get the latest information about our ongoing research projects, 
                             breakthrough discoveries, and scientific publications.
                         </p>
-                    </div>
+                        <span class="info-card-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </a>
                 </div>
 
                 <div class="col-lg-4 col-md-6 fade-in-up" style="transition-delay: 0.1s">
-                    <div class="info-card">
+                    <a href="{{ route('newsPage') }}#filter-news" class="info-card info-card-link text-decoration-none d-block">
                         <div class="info-card-icon">
                             <i class="fas fa-calendar-alt"></i>
                         </div>
@@ -346,11 +377,12 @@
                             Stay informed about upcoming conferences, workshops, training programs, 
                             and other events organized by AIRID.
                         </p>
-                    </div>
+                        <span class="info-card-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </a>
                 </div>
 
                 <div class="col-lg-4 col-md-6 fade-in-up" style="transition-delay: 0.2s">
-                    <div class="info-card">
+                    <a href="{{ route('newsPage') }}#filter-all" class="info-card info-card-link text-decoration-none d-block">
                         <div class="info-card-icon">
                             <i class="fas fa-trophy"></i>
                         </div>
@@ -359,7 +391,8 @@
                             Celebrate our milestones, awards, partnerships, and important announcements 
                             that shape the future of infectious disease research in Africa.
                         </p>
-                    </div>
+                        <span class="info-card-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </a>
                 </div>
             </div>
         </div>

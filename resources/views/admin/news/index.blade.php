@@ -50,19 +50,7 @@
                                             @if($item->photo_couverture)
                                                 @php
                                                     $photoName = basename($item->photo_couverture);
-                                                    
-                                                    // Essayer d'abord assets/news/
-                                                    if (file_exists(public_path('assets/news/' . $photoName))) {
-                                                        $photoPath = asset('assets/news/' . $photoName);
-                                                    } 
-                                                    // Sinon essayer storage/assets/news/
-                                                    elseif (file_exists(public_path('storage/assets/news/' . $photoName))) {
-                                                        $photoPath = asset('storage/assets/news/' . $photoName);
-                                                    } 
-                                                    // Par défaut, utiliser assets/news/
-                                                    else {
-                                                        $photoPath = asset('assets/news/' . $photoName);
-                                                    }
+                                                    $photoPath = file_exists(public_path('assets/news/' . $photoName)) ? asset('assets/news/' . $photoName) : asset('storage/assets/news/' . $photoName);
                                                 @endphp
                                                 <img src="{{ $photoPath }}" alt="Photo" style="width: 60px; height: 60px; object-fit: cover; border-radius: 5px;" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='inline';">
                                                 <span class="text-muted" style="display: none;">Image non trouvée</span>

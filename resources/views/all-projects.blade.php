@@ -58,7 +58,7 @@
             left: 1rem;
             top: 50%;
             transform: translateY(-50%);
-            color: #7f8c8d;
+            color: var(--airid-text-color);
         }
 
         .filter-buttons {
@@ -72,7 +72,7 @@
             border: 2px solid #e0e0e0;
             background: #fff;
             border-radius: 50px;
-            color: #7f8c8d;
+            color: var(--airid-text-color);
             font-weight: 600;
             transition: all 0.3s ease;
             cursor: pointer;
@@ -87,7 +87,7 @@
         }
 
         .results-count {
-            color: #7f8c8d;
+            color: var(--airid-text-color);
             font-weight: 600;
             padding: 0.5rem 0;
         }
@@ -134,7 +134,7 @@
             right: 1rem;
             padding: 0.5rem 1rem;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: var(--airid-tagline-size);
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -157,21 +157,40 @@
 
         .project-card-body {
             padding: 1.5rem;
+            background: #c7c3c3;
+
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
 
-        .project-card-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 1rem;
+        .project-card-desc {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 2.8em;
+            margin-bottom: 0.75rem;
+            font-size: var(--airid-text-size);
             line-height: 1.4;
+            color: var(--airid-text-color);
+        }
+
+        .project-card-title {
+            font-size: var(--airid-h3-size);
+            font-weight: 700;
+            color: var(--airid-title-color);
+            margin-bottom: 0.75rem;
+            line-height: 1.35;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 2.7em;
         }
 
         .project-card-title a {
-            color: #2c3e50;
+            color: var(--airid-title-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -180,15 +199,22 @@
             color: #c20102;
         }
 
-        .project-card-meta {
+        /* Date et "View Details" sur la même ligne */
+        .project-card-bottom-row {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: 1rem;
             margin-top: auto;
             padding-top: 1rem;
             border-top: 1px solid #f0f0f0;
-            color: #7f8c8d;
-            font-size: 0.9rem;
+        }
+
+        .project-card-meta {
+            display: flex;
+            align-items: center;
+            color: var(--airid-text-color);
+            font-size: var(--airid-text-size);
         }
 
         .project-card-meta i {
@@ -196,7 +222,8 @@
         }
 
         .project-card-footer {
-            margin-top: 1rem;
+            margin-top: 0;
+            flex-shrink: 0;
         }
 
         .project-card-footer a {
@@ -219,7 +246,7 @@
         .no-results {
             text-align: center;
             padding: 4rem 2rem;
-            color: #7f8c8d;
+            color: var(--airid-text-color);
         }
 
         .no-results i {
@@ -242,7 +269,7 @@
         .pagination-modern .page-link {
             border-radius: 50px;
             border: 2px solid #e0e0e0;
-            color: #7f8c8d;
+            color: var(--airid-text-color);
             padding: 0.5rem 1rem;
             margin: 0 0.25rem;
             transition: all 0.3s ease;
@@ -259,6 +286,16 @@
             background: #c20102;
             border-color: #c20102;
             color: #fff;
+        }
+
+        /* Espace entre la 1re rangée et les rangées suivantes */
+        #projects-grid .projects-second-row {
+            margin-top: 1.5rem;
+        }
+        @media (min-width: 992px) {
+            #projects-grid .projects-second-row {
+                margin-top: 2rem;
+            }
         }
 
         /* ============================================
@@ -290,7 +327,7 @@
                     <div class="col-lg-12">
                         <div class="banner-heading">
                             <h1 class="banner-title top_title fade-in-up">All Projects</h1>
-                            <p class="text-white mt-3 fade-in-up" style="font-size: 1.2rem;">
+                            <p class="text-white mt-3 fade-in-up tagline mb-0"style="font-size: 1.4rem;" >
                                 Discover our research projects and their impact
                             </p>
                         </div>
@@ -306,9 +343,9 @@
             <div class="filter-group">
                 <div class="search-box">
                     <i class="fas fa-search"></i>
-                    <input 
-                        type="text" 
-                        id="project-search" 
+                    <input
+                        type="text"
+                        id="project-search"
                         placeholder="Search projects by title..."
                         autocomplete="off"
                     >
@@ -336,8 +373,8 @@
         <div class="container">
             <div class="row text-center mb-5 fade-in-up">
                 <div class="col-12">
-                    <h2 class="section-title" style="font-size: 2.5rem; font-weight: 700; color: #2c3e50;">Work of Excellence</h2>
-                    <h3 class="section-sub-title" style="font-size: 1.3rem; color: #7f8c8d; font-weight: 500;">Our Research Projects</h3>
+                    <h2 class="section-title">Work of Excellence</h2>
+                    <p class="section-sub-title mb-0">Our Research Projects</p>
                     <div class="title-divider mx-auto mt-3 mb-4" style="width: 100px; height: 4px; background: linear-gradient(135deg, #c20102 0%, #8b0101 100%); border-radius: 2px;"></div>
                 </div>
             </div>
@@ -345,14 +382,14 @@
             <!-- Grille de Projets -->
             <div class="row g-4" id="projects-grid">
                 @forelse ($all_projects as $index => $projet)
-                    <div class="col-lg-4 col-md-6 project-item fade-in-up" 
+                    <div class="col-lg-3 col-md-6 project-item fade-in-up {{ $index >= 4 ? 'projects-second-row' : '' }}"
                          data-status="{{ $projet->etat_projet ?? 'ongoing' }}"
                          data-title="{{ strtolower($projet->short_title_project) }}"
                          style="transition-delay: {{ ($index % 3) * 0.1 }}s">
                         <div class="project-card-modern">
                             <div class="project-card-image">
                                 <a href="{{ route('detailProject', ['id' => $projet->id, 'slug' => Str::slug($projet->short_title_project)]) }}">
-                                    <img 
+                                    <img
                                         loading="lazy"
                                         src="{{ asset('storage/assets/projects/' . $projet->photo_couverture) }}"
                                         alt="{{ $projet->short_title_project }}"
@@ -377,21 +414,25 @@
                                     </a>
                                 </h3>
                                 @if($projet->resume)
-                                    <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6;">
-                                        {{ Str::limit($projet->resume, 120) }}
+                                    <p class="project-card-desc">
+                                        {{ Str::limit(strip_tags($projet->resume), 150) }}
                                     </p>
+                                @else
+                                    <p class="project-card-desc">&nbsp;</p>
                                 @endif
-                                <div class="project-card-meta">
-                                    <span>
-                                        <i class="far fa-calendar-alt me-1"></i>
-                                        {{ $projet->date_debut_project ? date('M j, Y', strtotime($projet->date_debut_project)) : 'Not yet started' }}
-                                    </span>
-                                </div>
-                                <div class="project-card-footer">
-                                    <a href="{{ route('detailProject', ['id' => $projet->id, 'slug' => Str::slug($projet->short_title_project)]) }}">
-                                        View Details
-                                        <i class="fas fa-arrow-right"></i>
-                                    </a>
+                                <div class="project-card-bottom-row">
+                                    <div class="project-card-meta">
+                                        <span>
+                                            <i class="far fa-calendar-alt me-1"></i>
+                                            {{ $projet->date_debut_project ? date('M j, Y', strtotime($projet->date_debut_project)) : 'Not yet started' }}
+                                        </span>
+                                    </div>
+                                    <div class="project-card-footer">
+                                        <a href="{{ route('detailProject', ['id' => $projet->id, 'slug' => Str::slug($projet->short_title_project)]) }}">
+                                            View Details
+                                            <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -400,7 +441,7 @@
                     <div class="col-12">
                         <div class="no-results fade-in-up">
                             <i class="fas fa-folder-open"></i>
-                            <h3 class="mt-3 mb-2" style="color: #2c3e50;">No projects found</h3>
+                            <h3 class="mt-3 mb-2 section-title">No projects found</h3>
                             <p>There are no projects available at the moment.</p>
                         </div>
                     </div>
@@ -412,7 +453,7 @@
                 <div class="col-12">
                     <div class="no-results">
                         <i class="fas fa-search"></i>
-                        <h3 class="mt-3 mb-2" style="color: #2c3e50;">No projects match your search</h3>
+                        <h3 class="mt-3 mb-2 section-title">No projects match your search</h3>
                         <p>Try adjusting your filters or search terms.</p>
                     </div>
                 </div>
@@ -475,7 +516,7 @@
                     // Mettre à jour les boutons actifs
                     filterButtons.forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
-                    
+
                     currentFilter = this.getAttribute('data-filter');
                     filterProjects();
                 });
@@ -497,10 +538,10 @@
                 projectItems.forEach(item => {
                     const status = item.getAttribute('data-status') || 'ongoing';
                     const title = item.getAttribute('data-title') || '';
-                    
+
                     const matchesFilter = currentFilter === 'all' || status === currentFilter;
                     const matchesSearch = !currentSearch || title.includes(currentSearch);
-                    
+
                     if (matchesFilter && matchesSearch) {
                         item.style.display = '';
                         visibleCount++;

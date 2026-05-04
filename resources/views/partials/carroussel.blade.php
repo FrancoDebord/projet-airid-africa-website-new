@@ -9,6 +9,32 @@
     $recentPublications = \App\Models\AIRID_Publication::orderBy('annee_publication', 'desc')->take(1)->first();
 @endphp
 
+<style>
+    .slide-badge {
+        display: inline-block;
+        background: rgba(10, 10, 10, 0.55);
+        /* backdrop-filter: blur(6px); */
+        -webkit-backdrop-filter: blur(6px);
+        color: #fff;
+        font-size: 1.15rem;
+        font-weight: 600;
+        line-height: 1.45;
+        letter-spacing: 0.02em;
+        padding: 0.85rem 1.75rem;
+        border-radius: 10px;
+        border-left: 4px solid #c20102;
+        /* box-shadow: 0 6px 28px rgba(0,0,0,0.35); */
+        max-width: 680px;
+    }
+    @media (max-width: 768px) {
+        .slide-badge {
+            font-size: 0.92rem;
+            padding: 0.65rem 1.1rem;
+            max-width: 90%;
+        }
+    }
+</style>
+
 <div class="banner-carousel banner-carousel-1 mb-0" style="position: relative;">
 
     {{-- <div class="banner-carousel-item">
@@ -33,12 +59,9 @@
             <div class="container h-100">
                 <div class="row align-items-center h-100">
                     <div class="col-md-12 text-center">
-                        {{-- <h2 class="slide-title bg-danger" data-animation-in="slideInLeft">African Institute for Research in </h2>
-                        <h3 class="slide-sub-title bg-secondary" data-animation-in="slideInRight">Infectious Diseases
-                        </h3> --}}
-                        {{-- <p data-animation-in="slideInLeft" data-duration-in="1.2">
-                            <a href="{{ route('allServicesPage') }}" class="slider btn btn-primary">Our Services</a>
-                        </p> --}}
+                        <span class="slide-badge" data-animation-in="fadeIn" data-duration-in="1.2">
+                            AIRID operates the only OECD GLP-accredited vector control product evaluation facility in Benin
+                        </span>
                     </div>
                 </div>
             </div>
@@ -67,18 +90,15 @@
             <div class="container h-100">
                 <div class="row align-items-center h-100">
                     <div class="col-md-12 text-center">
-                        {{-- <h2 class="slide-title bg-danger" data-animation-in="slideInLeft">African Institute for Research in </h2>
-                        <h3 class="slide-sub-title bg-warning" data-animation-in="slideInRight">Infectious Diseases
-                        </h3> --}}
-                        {{-- <p data-animation-in="slideInLeft" data-duration-in="1.2">
-                            <a href="{{ route('allServicesPage') }}" class="slider btn btn-primary">Our Services</a>
-                        </p> --}}
+                        <span class="slide-badge" data-animation-in="fadeIn" data-duration-in="1.2">
+                            AIRID operates the only OECD GLP-accredited vector control product evaluation facility in Benin
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     {{-- <div class="banner-carousel-item"
         style="background-image:url({{ asset('storage/assets/images/slider/IMG_1453.jpg') }})">
         <div class="slider-content">
@@ -102,19 +122,16 @@
             <div class="container h-100">
                 <div class="row align-items-center h-100">
                     <div class="col-md-12 text-center">
-                        {{-- <h2 class="slide-title bg-danger" data-animation-in="slideInLeft">African Institute for Research in </h2>
-                        <h3 class="slide-sub-title bg-warning" data-animation-in="slideInRight">Infectious Diseases
-                        </h3> --}}
-                        {{-- <p data-animation-in="slideInLeft" data-duration-in="1.2">
-                            <a href="{{ route('allServicesPage') }}" class="slider btn btn-primary">Our Services</a>
-                        </p> --}}
+                        <span class="slide-badge" data-animation-in="fadeIn" data-duration-in="1.2">
+                            AIRID operates the only OECD GLP-accredited vector control product evaluation facility in Benin
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-   
+
 
 
     <div class="banner-carousel-item"
@@ -123,12 +140,9 @@
             <div class="container h-100">
                 <div class="row align-items-center h-100">
                     <div class="col-md-12 text-center">
-                        {{-- <h2 class="slide-title" data-animation-in="slideInLeft">African Institute for Research in </h2>
-                        <h3 class="slide-sub-title" data-animation-in="slideInRight">Infectious Diseases
-                        </h3> --}}
-                        {{-- <p data-animation-in="slideInLeft" data-duration-in="1.2">
-                            <a href="{{ route('allServicesPage') }}" class="slider btn btn-primary">Our Services</a>
-                        </p> --}}
+                        <span class="slide-badge" data-animation-in="fadeIn" data-duration-in="1.2">
+                            AIRID operates the only OECD GLP-accredited vector control product evaluation facility in Benin
+                        </span>
                     </div>
                 </div>
             </div>

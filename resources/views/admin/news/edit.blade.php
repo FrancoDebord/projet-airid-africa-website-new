@@ -64,16 +64,7 @@
                                 @if($news->photo_couverture)
                                     @php
                                         $photoName = basename($news->photo_couverture);
-                                        $photoPath = null;
-                                        
-                                        // Vérifier plusieurs emplacements possibles
-                                        if (file_exists(public_path('assets/news/' . $photoName))) {
-                                            $photoPath = asset('assets/news/' . $photoName);
-                                        } elseif (file_exists(public_path('storage/assets/news/' . $photoName))) {
-                                            $photoPath = asset('storage/assets/news/' . $photoName);
-                                        } else {
-                                            $photoPath = asset('assets/news/' . $photoName);
-                                        }
+                                        $photoPath = file_exists(public_path('assets/news/' . $photoName)) ? asset('assets/news/' . $photoName) : asset('storage/assets/news/' . $photoName);
                                     @endphp
                                     <small class="form-text text-muted d-block mt-2">Laissez vide pour garder l'image actuelle.</small>
                                     <img src="{{ $photoPath }}" alt="Photo actuelle" width="200" class="mt-2 rounded" onerror="this.onerror=null; this.style.display='none';">
@@ -90,15 +81,7 @@
                                 @if($news->seconde_photo)
                                     @php
                                         $photoName = basename($news->seconde_photo);
-                                        $photoPath = null;
-                                        
-                                        if (file_exists(public_path('assets/news/' . $photoName))) {
-                                            $photoPath = asset('assets/news/' . $photoName);
-                                        } elseif (file_exists(public_path('storage/assets/news/' . $photoName))) {
-                                            $photoPath = asset('storage/assets/news/' . $photoName);
-                                        } else {
-                                            $photoPath = asset('assets/news/' . $photoName);
-                                        }
+                                        $photoPath = file_exists(public_path('assets/news/' . $photoName)) ? asset('assets/news/' . $photoName) : asset('storage/assets/news/' . $photoName);
                                     @endphp
                                     <small class="form-text text-muted d-block mt-2">Laissez vide pour garder l'image actuelle.</small>
                                     <img src="{{ $photoPath }}" alt="Seconde photo actuelle" width="200" class="mt-2 rounded" onerror="this.onerror=null; this.style.display='none';">

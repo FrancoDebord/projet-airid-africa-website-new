@@ -49,6 +49,9 @@
                 </a>
                     @php
                     $personnel = Auth::guard('personnel')->user();
+                    $fullName = trim(($personnel->prenom_personnel ?? '') . ' ' . ($personnel->nom_personnel ?? ''));
+                    $role = $personnel->posteOccupe->intitule_poste ?? '';
+                    $isConflictOnly = ($fullName === 'Romaric AKOTON' && $role === 'Scientific Officer');
                 @endphp
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -72,56 +75,75 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="{{ route('admin.dashboard') }}" class="nav-item nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-users me-2"></i>Staff</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{ route('admin.staff.index') }}" class="dropdown-item">Liste Staff</a>
-                            <a href="{{ route('admin.staff.create') }}" class="dropdown-item">Ajouter Staff</a>
+                    @if($isConflictOnly)
+                        <a href="{{ route('admin.dashboard') }}" class="nav-item nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    @else
+                        <a href="{{ route('admin.dashboard') }}" class="nav-item nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-users me-2"></i>Staff</a>
+                            <div class="dropdown-menu bg-transparent border-0">
+                                <a href="{{ route('admin.staff.index') }}" class="dropdown-item">Liste Staff</a>
+                                <a href="{{ route('admin.staff.create') }}" class="dropdown-item">Ajouter Staff</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-book me-2"></i>Publications</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{ route('admin.publications.index') }}" class="dropdown-item">Liste Publications</a>
-                            <a href="{{ route('admin.publications.create') }}" class="dropdown-item">Ajouter Publication</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-book me-2"></i>Publications</a>
+                            <div class="dropdown-menu bg-transparent border-0">
+                                <a href="{{ route('admin.publications.index') }}" class="dropdown-item">Liste Publications</a>
+                                <a href="{{ route('admin.publications.create') }}" class="dropdown-item">Ajouter Publication</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-briefcase me-2"></i>Vacancies</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{ route('admin.vacancies.index') }}" class="dropdown-item" >Liste Vacancies</a>
-                            <a href="{{ route('admin.vacancies.create') }}" class="dropdown-item" >Ajouter Vacancy</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-briefcase me-2"></i>Vacancies</a>
+                            <div class="dropdown-menu bg-transparent border-0">
+                                <a href="{{ route('admin.vacancies.index') }}" class="dropdown-item" >Liste Vacancies</a>
+                                <a href="{{ route('admin.vacancies.create') }}" class="dropdown-item" >Ajouter Vacancy</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-handshake me-2"></i>Partenaires</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{ route('admin.partners.index') }}" class="dropdown-item">Liste Partenaires</a>
-                            <a href="{{ route('admin.partners.create') }}" class="dropdown-item">Ajouter Partenaire</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-handshake me-2"></i>Partenaires</a>
+                            <div class="dropdown-menu bg-transparent border-0">
+                                <a href="{{ route('admin.partners.index') }}" class="dropdown-item">Liste Partenaires</a>
+                                <a href="{{ route('admin.partners.create') }}" class="dropdown-item">Ajouter Partenaire</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-project-diagram me-2"></i>Projets</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{ route('admin.projects.index') }}" class="dropdown-item">Liste Projets</a>
-                            <a href="{{ route('admin.projects.create') }}" class="dropdown-item">Ajouter Projet</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-project-diagram me-2"></i>Projets</a>
+                            <div class="dropdown-menu bg-transparent border-0">
+                                <a href="{{ route('admin.projects.index') }}" class="dropdown-item">Liste Projets</a>
+                                <a href="{{ route('admin.projects.create') }}" class="dropdown-item">Ajouter Projet</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-newspaper me-2"></i>News</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{ route('admin.news.index') }}" class="dropdown-item">Liste News</a>
-                            <a href="{{ route('admin.news.create') }}" class="dropdown-item">Ajouter News</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-newspaper me-2"></i>News</a>
+                            <div class="dropdown-menu bg-transparent border-0">
+                                <a href="{{ route('admin.news.index') }}" class="dropdown-item">Liste News</a>
+                                <a href="{{ route('admin.news.create') }}" class="dropdown-item">Ajouter News</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-blog me-2"></i>Blog</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{ route('admin.blogs.index') }}" class="dropdown-item">Liste Blogs</a>
-                            <a href="{{ route('admin.blogs.create') }}" class="dropdown-item">Ajouter Blog</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-hand-holding-heart me-2"></i>Philanthropy</a>
+                            <div class="dropdown-menu bg-transparent border-0">
+                                <a href="{{ route('admin.philanthropy.index') }}" class="dropdown-item">Liste des pages</a>
+                                <a href="{{ route('admin.philanthropy.create') }}" class="dropdown-item">Ajouter une page</a>
+                                <a href="{{ route('admin.hardship-fund.index') }}" class="dropdown-item">Candidatures Hardship</a>
+                            </div>
                         </div>
-                    </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-blog me-2"></i>Blog</a>
+                            <div class="dropdown-menu bg-transparent border-0">
+                                <a href="{{ route('admin.blogs.index') }}" class="dropdown-item">Liste Blogs</a>
+                                <a href="{{ route('admin.blogs.create') }}" class="dropdown-item">Ajouter Blog</a>
+                            </div>
+                        </div>
+                        <a href="{{ route('admin.analytics.index') }}" class="nav-item nav-link {{ request()->routeIs('admin.analytics.*') ? 'active' : '' }}"><i class="fa fa-chart-line me-2"></i>Statistiques</a>
+                    @endif
+                    <a href="{{ route('admin.conflicts.index') }}" class="nav-item nav-link {{ request()->routeIs('admin.conflicts.index') || request()->routeIs('admin.conflicts.show') ? 'active' : '' }}">
+                        <i class="fa fa-clipboard-list me-2"></i>COI Register
+                    </a>
+                    <a href="{{ route('admin.conflicts.access-code.form') }}" class="nav-item nav-link {{ request()->routeIs('admin.conflicts.access-code.*') ? 'active' : '' }}">
+                        <i class="fa fa-key me-2"></i>Code d'accès
+                    </a>
                     <div class="nav-item mt-3 pt-3 border-top">
                         <form action="{{ route('admin.logout') }}" method="POST" style="display: inline;">
                             @csrf
@@ -146,10 +168,10 @@
                 <a href="#" class="sidebar-toggler flex-shrink-0" style="color: darkred">
                     <i class="fa fa-bars"></i>
                 </a>
-               
+
                 <div class="navbar-nav align-items-center ms-auto">
-                   
-                   
+
+
                     @php
                         $personnel = Auth::guard('personnel')->user();
                     @endphp
@@ -166,7 +188,14 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-white border-0 rounded-0 rounded-bottom m-0">
                             @if($personnel)
-                                <a href="{{ route('admin.staff.edit', $personnel->id) }}" class="dropdown-item">My Profile</a>
+                                @php
+                                    $fullName = trim(($personnel->prenom_personnel ?? '') . ' ' . ($personnel->nom_personnel ?? ''));
+                                    $role = $personnel->posteOccupe->intitule_poste ?? '';
+                                    $isConflictOnly = ($fullName === 'Romaric AKOTON' && $role === 'Scientific Officer');
+                                @endphp
+                                @unless($isConflictOnly)
+                                    <a href="{{ route('admin.staff.edit', $personnel->id) }}" class="dropdown-item">My Profile</a>
+                                @endunless
                             @endif
                             {{-- <a href="{{ route('detail-staff', ['id' => session('admin_personnel')->id, 'slug' => \Illuminate\Support\Str::slug(session('admin_personnel')->nom_personnel)]) }}" class="dropdown-item">View Profile</a> --}}
                             <form action="{{ route('admin.logout') }}" method="POST" style="display: inline;">
@@ -212,7 +241,7 @@ textarea.form-control:active,
 select.form-control,
 select.form-control:focus,
 select.form-control:active {
-    background-color: white !important; 
+    background-color: white !important;
     color: black !important;
     border-color: #ced4da !important;
 }

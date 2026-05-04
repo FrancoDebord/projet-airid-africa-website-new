@@ -15,7 +15,7 @@
                     <div class="col-lg-12">
                         <div class="banner-heading">
                             <h1 class="banner-title top_title fade-in-up">Our Experimental Huts Station</h1>
-                            <p class="text-white mt-3 fade-in-up" style="font-size: 1.2rem;">
+                            <p class="text-white mt-3 fade-in-up" style="font-size: 1.4rem;">
                                 World-class semi-field research platform
                             </p>
                         </div>
@@ -48,31 +48,37 @@
                 </div>
             </div>
 
-            <div class="content-section fade-in-up">
-                <h3 class="section-subtitle">Local Vector Population</h3>
-                <div class="section-content">
-                    <p>
-                        Covè provides ideal conditions for semi-field testing due to its abundant,
-                        free-flying mosquito population, dominated by:
-                    </p>
-                    <ul>
-                        <li>Anopheles gambiae sensu lato, especially An. coluzzii and An. gambiae s.s.</li>
-                        <li>Populations with high levels of insecticide resistance, ideal for evaluating next-generation tools</li>
-                        <li>Stable year-round presence, particularly in the rainy season, due to extensive rice cultivation</li>
-                    </ul>
+            {{-- Deux cadres parallèles : droite = Local Vector Population, gauche = Core Research Activities --}}
+            <div class="row g-4 fade-in-up">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="content-section h-100">
+                        <h3 class="section-subtitle">Local Vector Population</h3>
+                        <div class="section-content">
+                            <p>
+                                Covè provides ideal conditions for semi-field testing due to its abundant,
+                                free-flying mosquito population, dominated by:
+                            </p>
+                            <ul>
+                                <li>Anopheles gambiae sensu lato, especially An. coluzzii and An. gambiae s.s.</li>
+                                <li>Populations with high levels of insecticide resistance, ideal for evaluating next-generation tools</li>
+                                <li>Stable year-round presence, particularly in the rainy season, due to extensive rice cultivation</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="content-section fade-in-up">
-                <h3 class="section-subtitle">Core Research Activities</h3>
-                <div class="section-content">
-                    <ul>
-                        <li>Experimental hut evaluations of ITNs, IRS, spatial repellents, and innovative tools</li>
-                        <li>Mosquito behavior monitoring, including host-seeking, feeding, exiting, and mortality</li>
-                        <li>Longitudinal assessment of residual efficacy and insecticide performance over time</li>
-                        <li>Release recapture evaluation of vector control products using mosquitoes of known characteristics</li>
-                        <li>Data generation to support WHO PQT submissions, national policy development, and donor investment</li>
-                    </ul>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="content-section h-100">
+                        <h3 class="section-subtitle">Core Research Activities</h3>
+                        <div class="section-content">
+                            <ul>
+                                <li>Experimental hut evaluations of ITNs, IRS, spatial repellents, and innovative tools</li>
+                                <li>Mosquito behavior monitoring, including host-seeking, feeding, exiting, and mortality</li>
+                                <li>Longitudinal assessment of residual efficacy and insecticide performance over time</li>
+                                <li>Release recapture evaluation of vector control products using mosquitoes of known characteristics</li>
+                                <li>Data generation to support WHO PQT submissions, national policy development, and donor investment</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -116,8 +122,8 @@
                 </h3>
                 <div class="image-gallery">
                     <div class="gallery-item">
-                        <img src="{{ asset('storage/assets/facility/field-station/DJI_0152.jpg') }}" 
-                             alt="Experimental Huts" 
+                        <img src="{{ asset('storage/assets/facility/field-station/DJI_0152.jpg') }}"
+                             alt="Experimental Huts"
                              class="gallery-image"
                              loading="lazy">
                         <div class="gallery-caption">
@@ -125,8 +131,8 @@
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="{{ asset('storage/assets/facility/field-station/DJI_0160.jpg') }}" 
-                             alt="Experimental Huts" 
+                        <img src="{{ asset('storage/assets/facility/field-station/DJI_0160.jpg') }}"
+                             alt="Experimental Huts"
                              class="gallery-image"
                              loading="lazy">
                         <div class="gallery-caption">
@@ -134,8 +140,8 @@
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="{{ asset('storage/assets/facility/field-station/DJI_0191.jpg') }}" 
-                             alt="Experimental Huts" 
+                        <img src="{{ asset('storage/assets/facility/field-station/DJI_0191.jpg') }}"
+                             alt="Experimental Huts"
                              class="gallery-image"
                              loading="lazy">
                         <div class="gallery-caption">
@@ -143,8 +149,8 @@
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="{{ asset('storage/assets/facility/field-station/DJI_0170.jpg') }}" 
-                             alt="Experimental Huts" 
+                        <img src="{{ asset('storage/assets/facility/field-station/DJI_0170.jpg') }}"
+                             alt="Experimental Huts"
                              class="gallery-image"
                              loading="lazy">
                         <div class="gallery-caption">
@@ -152,8 +158,8 @@
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="{{ asset('storage/assets/facility/field-station/DJI_0171.jpg') }}" 
-                             alt="Experimental Huts" 
+                        <img src="{{ asset('storage/assets/facility/field-station/DJI_0171.jpg') }}"
+                             alt="Experimental Huts"
                              class="gallery-image"
                              loading="lazy">
                         <div class="gallery-caption">
@@ -161,8 +167,8 @@
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="{{ asset('storage/assets/facility/field-station/DJI_0173.jpg') }}" 
-                             alt="Experimental Huts" 
+                        <img src="{{ asset('storage/assets/facility/field-station/DJI_0173.jpg') }}"
+                             alt="Experimental Huts"
                              class="gallery-image"
                              loading="lazy">
                         <div class="gallery-caption">

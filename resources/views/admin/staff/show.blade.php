@@ -19,14 +19,12 @@
                             @if($staff->photo_personnel)
                                 @php
                                     $photoName = basename($staff->photo_personnel);
-                                    $photoPath = null;
-                                    
                                     if (file_exists(public_path('assets/staff/' . $photoName))) {
                                         $photoPath = asset('assets/staff/' . $photoName);
                                     } elseif (file_exists(public_path('storage/assets/staff/' . $photoName))) {
                                         $photoPath = asset('storage/assets/staff/' . $photoName);
                                     } else {
-                                        $photoPath = asset('storage/assets/staff/' . $photoName);
+                                        $photoPath = asset('assets/staff/' . $photoName);
                                     }
                                 @endphp
                                 <img src="{{ $photoPath }}" alt="Photo" class="img-fluid rounded shadow" onerror="this.onerror=null; this.src='{{ asset('img/default-avatar.png') }}';">
@@ -86,6 +84,13 @@
                                             {{ $staff->posteOccupe->intitule_poste ?? 'N/A' }}
                                         </div>
                                     </div>
+
+                                    @if($staff->description_poste)
+                                    <div class="row mb-3">
+                                        <div class="col-sm-4"><strong>Description du profil:</strong></div>
+                                        <div class="col-sm-8">{{ $staff->description_poste }}</div>
+                                    </div>
+                                    @endif
 
                                     <div class="row mb-3">
                                         <div class="col-sm-4"><strong>Niveau Poste:</strong></div>

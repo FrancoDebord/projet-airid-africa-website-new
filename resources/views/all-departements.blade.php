@@ -73,7 +73,7 @@
         .view-details-btn {
             color: #fff;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: var(--airid-text-size);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -86,15 +86,15 @@
         }
 
         .department-title {
-            font-size: 1.4rem;
+            font-size: var(--airid-h2-size);
             font-weight: 700;
-            color: #2c3e50;
+            color: var(--airid-title-color);
             margin-bottom: 1rem;
             line-height: 1.4;
         }
 
         .department-title a {
-            color: #2c3e50;
+            color: var(--airid-title-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -104,11 +104,11 @@
         }
 
         .department-description {
-            color: #7f8c8d;
+            color: var(--airid-text-color);
             line-height: 1.8;
             margin-bottom: 1.5rem;
             flex-grow: 1;
-            font-size: 0.95rem;
+            font-size: var(--airid-text-size);
         }
 
         .department-link {
@@ -159,7 +159,7 @@
                     <div class="col-lg-12">
                         <div class="banner-heading">
                             <h1 class="banner-title top_title fade-in-up">All Departments</h1>
-                            <p class="text-white mt-3 fade-in-up" style="font-size: 1.2rem;">
+                            <p class="text-white mt-3 fade-in-up tagline mb-0">
                                 Discover our specialized research departments
                             </p>
                         </div>
@@ -174,8 +174,8 @@
         <div class="container">
             <div class="row text-center mb-5 fade-in-up">
                 <div class="col-12">
-                    <h2 class="section-title" style="font-size: 2.5rem; font-weight: 700; color: #2c3e50;">Our Departments</h2>
-                    <p class="text-muted mb-4" style="font-size: 1.1rem;">
+                    <h2 class="section-title">Our Departments</h2>
+                    <p class="section-lead mb-4">
                         Explore our specialized research departments and their contributions to infectious disease research
                     </p>
                     <div class="title-divider mx-auto mt-3 mb-4" style="width: 100px; height: 4px; background: linear-gradient(135deg, #c20102 0%, #8b0101 100%); border-radius: 2px;"></div>
@@ -187,35 +187,18 @@
                     <div class="col-lg-4 col-md-6 fade-in-up" style="transition-delay: {{ ($index % 3) * 0.1 }}s">
                         <div class="department-card">
                             <div class="department-image-wrapper">
-                                <a href="{{ route('detailDepartementPage', ['id' => $departement->id, 'slug' => \Str::slug($departement->nom_departement)]) }}">
-                                    <img 
-                                        loading="lazy" 
-                                        alt="{{ $departement->nom_departement }}" 
-                                        class="department-image"
-                                        src="{{ asset('storage/assets/departements/' . $departement->photo) }}"
-                                    >
-                                    <div class="department-overlay">
-                                        <span class="view-details-btn">
-                                            <i class="fas fa-arrow-right me-2"></i>
-                                            View Details
-                                        </span>
-                                    </div>
-                                </a>
+                                <img
+                                    loading="lazy"
+                                    alt="{{ $departement->nom_departement }}"
+                                    class="department-image"
+                                    src="{{ asset('storage/assets/departements/' . $departement->photo) }}"
+                                >
                             </div>
                             <div class="department-content">
-                                <h3 class="department-title">
-                                    <a href="{{ route('detailDepartementPage', ['id' => $departement->id, 'slug' => \Str::slug($departement->nom_departement)]) }}">
-                                        {{ $departement->nom_departement }}
-                                    </a>
-                                </h3>
+                                <h3 class="department-title">{{ $departement->nom_departement }}</h3>
                                 <div class="department-description">
                                     {!! Str::limit(strip_tags($departement->description_accueil), 120) !!}
                                 </div>
-                                <a class="department-link" 
-                                   href="{{ route('detailDepartementPage', ['id' => $departement->id, 'slug' => \Str::slug($departement->nom_departement)]) }}">
-                                    Learn More
-                                    <i class="fas fa-arrow-right ms-2"></i>
-                                </a>
                             </div>
                         </div>
                     </div>

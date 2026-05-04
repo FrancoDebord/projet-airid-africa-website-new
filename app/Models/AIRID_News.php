@@ -26,12 +26,12 @@ class AIRID_News extends Model
     }
 
     /**
-     * Get all of the photosGallery for the AIRID_News
+     * Get all of the photosGallery for the AIRID_News (by event_id).
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function photosGallery(): HasMany
     {
-        return $this->hasMany(AIRID_Gallery_Photo::class, 'event_id', 'id')->where("type_vent","airid_news");
+        return $this->hasMany(AIRID_Gallery_Photo::class, 'event_id', 'id');
     }
 }

@@ -11,8 +11,13 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
+        $middleware->web(append: [
+            \App\Http\Middleware\TrackSiteVisit::class,
+        ]);
         $middleware->alias([
             'admin.auth' => \App\Http\Middleware\AdminAuth::class,
+            'conflict.access' => \App\Http\Middleware\ConflictAccess::class,
+            'conflict.register' => \App\Http\Middleware\ConflictRegisterAccess::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

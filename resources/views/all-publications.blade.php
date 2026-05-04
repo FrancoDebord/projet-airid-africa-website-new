@@ -58,7 +58,7 @@
             left: 1rem;
             top: 50%;
             transform: translateY(-50%);
-            color: #7f8c8d;
+            color: var(--airid-text-color);
         }
 
         .filter-buttons {
@@ -72,11 +72,11 @@
             border: 2px solid #e0e0e0;
             background: #fff;
             border-radius: 50px;
-            color: #7f8c8d;
+            color: var(--airid-text-color);
             font-weight: 600;
             transition: all 0.3s ease;
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: var(--airid-text-size);
         }
 
         .filter-btn:hover,
@@ -88,7 +88,7 @@
         }
 
         .results-count {
-            color: #7f8c8d;
+            color: var(--airid-text-color);
             font-weight: 600;
             padding: 0.5rem 0;
             text-align: center;
@@ -127,26 +127,47 @@
             color: #fff;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: var(--airid-text-size);
             margin-bottom: 1rem;
         }
 
         .publication-title {
-            font-size: 1.2rem;
+            font-size: var(--airid-h3-size);
             font-weight: 700;
-            color: #2c3e50;
+            color: var(--airid-title-color);
             line-height: 1.4;
             margin-bottom: 0.5rem;
+            /* Limiter à 2 lignes max avec "..." si le titre dépasse */
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .publication-title a {
-            color: #2c3e50;
+            color: var(--airid-title-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .publication-title a:hover {
             color: #c20102;
+        }
+
+        /* Titre de section sur deux lignes avec espace entre les lignes */
+        .section-title-two-lines .d-block {
+            line-height: 1.3;
+        }
+        .section-title-two-lines .d-block:first-child {
+            margin-bottom: 0.25em;
+        }
+
+        /* Espace après chaque ligne de cadres (cartes) */
+        .publications-rows-spaced > [class*="col-"] {
+            margin-bottom: 2rem;
+        }
+        .publications-rows-spaced > [class*="col-"]:last-child {
+            margin-bottom: 0;
         }
 
         .publication-body {
@@ -156,23 +177,39 @@
             flex-direction: column;
         }
 
+        /* Authors : limité à 2 lignes avec "..." si la liste dépasse */
         .publication-authors {
-            color: #7f8c8d;
-            font-size: 0.95rem;
+            color: var(--airid-text-color);
+            font-size: 0.9rem;
+            line-height: 1.5;
             margin-bottom: 1rem;
-            line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .publication-authors strong {
-            color: #2c3e50;
+            color: var(--airid-title-color);
         }
 
-        .publication-abstract {
-            color: #7f8c8d;
-            font-size: 0.9rem;
-            line-height: 1.7;
+        /* Description : hauteur fixe (4 lignes) + points de suspension quand tronqué */
+        .publication-abstract-wrap {
+            min-height: 6rem;
             margin-bottom: 1.5rem;
-            flex-grow: 1;
+        }
+        .publication-abstract {
+            color: var(--airid-text-color);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            min-height: 6rem;
+            height: 6rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            line-clamp: 4;
         }
 
         .publication-actions {
@@ -190,7 +227,7 @@
             padding: 0.6rem 1.2rem;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: var(--airid-text-size);
             text-decoration: none;
             text-align: center;
             transition: all 0.3s ease;
@@ -214,7 +251,7 @@
 
         .btn-download {
             background: #f8f9fa;
-            color: #2c3e50;
+            color: var(--airid-title-color);
             border: 2px solid #e0e0e0;
         }
 
@@ -231,7 +268,7 @@
         .no-results {
             text-align: center;
             padding: 4rem 2rem;
-            color: #7f8c8d;
+            color: var(--airid-text-color);
         }
 
         .no-results i {
@@ -254,7 +291,7 @@
         .pagination-modern .page-link {
             border-radius: 50px;
             border: 2px solid #e0e0e0;
-            color: #7f8c8d;
+            color: var(--airid-text-color);
             padding: 0.5rem 1rem;
             margin: 0 0.25rem;
             transition: all 0.3s ease;
@@ -326,7 +363,7 @@
                     <div class="col-lg-12">
                         <div class="banner-heading">
                             <h1 class="banner-title top_title fade-in-up">Scientific Publications</h1>
-                            <p class="text-white mt-3 fade-in-up" style="font-size: 1.2rem;">
+                            <p class="text-white mt-3 fade-in-up tagline mb-0" style="font-size: 1.4rem;">
                                 Discover our research contributions to the scientific community
                             </p>
                         </div>
@@ -342,9 +379,9 @@
             <div class="filter-group">
                 <div class="search-box">
                     <i class="fas fa-search"></i>
-                    <input 
-                        type="text" 
-                        id="publication-search" 
+                    <input
+                        type="text"
+                        id="publication-search"
                         placeholder="Search by title, authors..."
                         autocomplete="off"
                     >
@@ -380,18 +417,21 @@
     <section class="py-5">
         <div class="container">
             <div class="row text-center mb-5 fade-in-up">
-                        <div class="col-12">
-                    <h2 class="section-title" style="font-size: 2.5rem; font-weight: 700; color: #2c3e50;">Our Publications</h2>
-                    <p class="text-muted mb-4" style="font-size: 1.1rem;">
+                <div class="col-12">
+                    <h2 class="section-title section-title-two-lines">
+                        <span class="d-block">Our</span>
+                        <span class="d-block">Publications</span>
+                    </h2>
+                    <p class="section-lead mb-4">
                         Peer-reviewed research articles and scientific contributions
                     </p>
                     <div class="title-divider mx-auto mt-3 mb-4" style="width: 100px; height: 4px; background: linear-gradient(135deg, #c20102 0%, #8b0101 100%); border-radius: 2px;"></div>
                 </div>
             </div>
 
-            <div class="row g-4" id="publications-grid">
+            <div class="row g-4 publications-rows-spaced" id="publications-grid">
                 @forelse ($all_publications as $index => $publication)
-                    <div class="col-lg-4 col-md-6 col-12 publication-item fade-in-up" 
+                    <div class="col-lg-4 col-md-6 col-12 publication-item fade-in-up"
                          data-year="{{ $publication->annee_publication }}"
                          data-title="{{ strtolower($publication->titre_publication) }}"
                          data-authors="{{ strtolower($publication->auteurs) }}"
@@ -414,15 +454,11 @@
                                     <strong><i class="fas fa-users me-2" style="color: #c20102;"></i>Authors:</strong>
                                     {{ $publication->auteurs }}
                                 </div>
-                                @if($publication->resume_publication)
-                                    <div class="publication-abstract">
-                                        {{ Str::limit(strip_tags($publication->resume_publication), 150) }}
-                                    </div>
-                                @endif
+
                                 <div class="publication-actions">
                                     @if($publication->url_publication)
-                                        <a href="{{ $publication->url_publication }}" 
-                                           target="_blank" 
+                                        <a href="{{ $publication->url_publication }}"
+                                           target="_blank"
                                            rel="noopener noreferrer"
                                            class="publication-btn btn-view">
                                             <i class="fas fa-external-link-alt"></i>
@@ -445,7 +481,7 @@
                     <div class="col-12 fade-in-up">
                         <div class="no-results">
                             <i class="fas fa-book-open"></i>
-                            <h3 class="mt-3 mb-2" style="color: #2c3e50;">No publications registered yet</h3>
+                            <h3 class="mt-3 mb-2 section-title">No publications registered yet</h3>
                             <p>Publications will be displayed here once they are added to the system.</p>
                         </div>
                     </div>
@@ -457,7 +493,7 @@
                 <div class="col-12">
                     <div class="no-results">
                         <i class="fas fa-search"></i>
-                        <h3 class="mt-3 mb-2" style="color: #2c3e50;">No publications match your search</h3>
+                        <h3 class="mt-3 mb-2 section-title">No publications match your search</h3>
                         <p>Try adjusting your filters or search terms.</p>
                     </div>
                 </div>
@@ -519,7 +555,7 @@
                 btn.addEventListener('click', function() {
                     filterButtons.forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
-                    
+
                     currentFilter = this.getAttribute('data-filter');
                     filterPublications();
                 });
@@ -542,12 +578,12 @@
                     const year = item.getAttribute('data-year') || '';
                     const title = item.getAttribute('data-title') || '';
                     const authors = item.getAttribute('data-authors') || '';
-                    
+
                     const matchesFilter = currentFilter === 'all' || year === currentFilter;
-                    const matchesSearch = !currentSearch || 
-                        title.includes(currentSearch) || 
+                    const matchesSearch = !currentSearch ||
+                        title.includes(currentSearch) ||
                         authors.includes(currentSearch);
-                    
+
                     if (matchesFilter && matchesSearch) {
                         item.style.display = '';
                         visibleCount++;

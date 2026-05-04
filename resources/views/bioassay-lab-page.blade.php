@@ -44,7 +44,7 @@
 
             <div class="content-section fade-in-up">
                 <div class="hero-image">
-                    <img src="{{ asset('storage/assets/facility/bioassay-lab/lab_nadia.jpg') }}" alt="Bioassay Lab">
+                    <img src="{{ asset('storage/assets/facility/bioassay-lab/IMG_2787.jpg') }}" alt="Bioassay Lab">
                 </div>
                 <h3 class="section-subtitle">Overview</h3>
                 <div class="section-content">
@@ -112,18 +112,18 @@
                     <i class="fas fa-images" style="color: #c20102;"></i>Gallery
                 </h3>
                 <div class="image-gallery">
-                    <div class="gallery-item">
+                    {{-- <div class="gallery-item">
                             <img src="{{ asset('storage/assets/facility/bioassay-lab/lab_nadia.jpg') }}"
-                             alt="Lab Photo" 
+                             alt="Lab Photo"
                              class="gallery-image"
                              loading="lazy">
                         <div class="gallery-caption">
                                 <strong>Lab Photo</strong>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="gallery-item">
                             <img src="{{ asset('storage/assets/facility/bioassay-lab/lab1.jpg') }}"
-                             alt="Lab Photo" 
+                             alt="Lab Photo"
                              class="gallery-image"
                              loading="lazy">
                         <div class="gallery-caption">
@@ -132,7 +132,7 @@
                     </div>
                     <div class="gallery-item">
                             <img src="{{ asset('storage/assets/facility/bioassay-lab/lab2.jpg') }}"
-                             alt="Lab Photo" 
+                             alt="Lab Photo"
                              class="gallery-image"
                              loading="lazy">
                         <div class="gallery-caption">
@@ -141,7 +141,7 @@
                     </div>
                     <div class="gallery-item">
                             <img src="{{ asset('storage/assets/facility/bioassay-lab/lab3.jpg') }}"
-                             alt="Lab Photo" 
+                             alt="Lab Photo"
                              class="gallery-image"
                              loading="lazy">
                         <div class="gallery-caption">
@@ -149,14 +149,65 @@
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="{{ asset('storage/assets/facility/bioassay-lab/IMG_1487.jpg') }}" 
-                             alt="ARM-IN-CAGE TEST" 
+                        <img src="{{ asset('storage/assets/facility/insectary/IMG_1858.jpg') }}"
+                             alt="Insectary"
+                             class="gallery-image"
+                             loading="lazy">
+                        <div class="gallery-caption">
+                            <strong>Lab Photo</strong>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="{{ asset('storage/assets/facility/bioassay-lab/56PM.jpg') }}"
+                             alt="ARM-IN-CAGE TEST"
+                             class="gallery-image"
+                             loading="lazy">
+                        <div class="gallery-caption">
+                            <strong>Lab Photo</strong>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="{{ asset('storage/assets/facility/bioassay-lab/IMG_1487.jpg') }}"
+                             alt="ARM-IN-CAGE TEST"
                              class="gallery-image"
                              loading="lazy">
                         <div class="gallery-caption">
                             <strong>ARM-IN-CAGE TEST</strong>
                         </div>
                     </div>
+
+                    <div class="gallery-item">
+                            <img src="{{ asset('storage/assets/facility/bioassay-lab/L1.jpg') }}"
+                             alt="Lab Photo"
+                             class="gallery-image"
+                             loading="lazy">
+                        <div class="gallery-caption">
+                                <strong>Lavage</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="gallery-item">
+                            <img src="{{ asset('storage/assets/facility/bioassay-lab/L2.jpg') }}"
+                             alt="Lab Photo"
+                             class="gallery-image"
+                             loading="lazy">
+                        <div class="gallery-caption">
+                                <strong>Lavage</strong>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                            <img src="{{ asset('storage/assets/facility/bioassay-lab/L3.jpg') }}"
+                             alt="Lab Photo"
+                             class="gallery-image"
+                             loading="lazy">
+                        <div class="gallery-caption">
+                                <strong>Lavage</strong>
+                        </div>
+                    </div>
+
+
                 </div>
         </div>
         </div>

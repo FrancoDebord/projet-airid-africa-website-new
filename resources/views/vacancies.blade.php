@@ -23,7 +23,7 @@
            ============================================ */
         .vacancies-filters {
             background: #f8f9fa;
-            padding: 2rem 0;
+            padding: 1.25rem 0;
             border-bottom: 1px solid #e0e0e0;
         }
 
@@ -72,11 +72,11 @@
             border: 2px solid #e0e0e0;
             background: #fff;
             border-radius: 50px;
-            color: #7f8c8d;
+            color: var(--airid-tagline-color);
             font-weight: 600;
             transition: all 0.3s ease;
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: var(--airid-text-size);
         }
 
         .filter-btn:hover,
@@ -88,7 +88,8 @@
         }
 
         .results-count {
-            color: #7f8c8d;
+            font-size: var(--airid-text-size);
+            color: var(--airid-text-color);
             font-weight: 600;
             padding: 0.5rem 0;
             text-align: center;
@@ -99,43 +100,53 @@
            ============================================ */
         .vacancy-card {
             background: #fff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 12px;
+            overflow: visible;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+            transition: all 0.3s ease;
             height: 100%;
             display: flex;
             flex-direction: column;
-            border-top: 4px solid #c20102;
+            border-top: 3px solid #c20102;
             position: relative;
+        }
+        .vacancy-card .vacancy-header { border-radius: 12px 12px 0 0; overflow: hidden; }
+        .vacancy-actions { overflow: visible; }
+        .vacancy-actions .dropdown { position: relative; }
+        .vacancy-actions .dropdown-menu {
+            position: absolute !important;
+            top: 100% !important;
+            bottom: auto !important;
+            margin-top: 0.25rem;
+            z-index: 1050;
         }
 
         .vacancy-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
         }
 
         .vacancy-header {
             background: linear-gradient(135deg, rgba(194, 1, 2, 0.05) 0%, rgba(139, 1, 1, 0.05) 100%);
-            padding: 1.5rem;
+            padding: 1rem 1.25rem;
             border-bottom: 1px solid #f0f0f0;
         }
 
         .vacancy-badges {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
+            gap: 0.35rem;
+            margin-bottom: 0.5rem;
         }
 
         .vacancy-badge {
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
+            padding: 0.25rem 0.65rem;
+            border-radius: 6px;
+            font-size: var(--airid-tagline-size);
             font-weight: 600;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.35rem;
         }
 
         .badge-status {
@@ -173,15 +184,15 @@
         }
 
         .vacancy-title {
-            font-size: 1.3rem;
+            font-size: var(--airid-h3-size);
             font-weight: 700;
-            color: #2c3e50;
-            line-height: 1.4;
-            margin-bottom: 0.5rem;
+            color: var(--airid-title-color);
+            line-height: 1.35;
+            margin-bottom: 0.25rem;
         }
 
         .vacancy-title a {
-            color: #2c3e50;
+            color: var(--airid-title-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -191,7 +202,7 @@
         }
 
         .vacancy-body {
-            padding: 1.5rem;
+            padding: 1rem 1.25rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -200,31 +211,32 @@
         .vacancy-info {
             display: flex;
             flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.75rem;
             border-bottom: 1px solid #f0f0f0;
         }
 
         .vacancy-info-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            color: #7f8c8d;
-            font-size: 0.95rem;
+            gap: 0.4rem;
+            font-size: var(--airid-text-size);
+            color: var(--airid-text-color);
         }
 
         .vacancy-info-item i {
             color: #c20102;
-            width: 20px;
+            width: 16px;
+            font-size: var(--airid-tagline-size);
         }
 
         .vacancy-deadline {
             background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
+            border-left: 3px solid #ffc107;
+            padding: 0.6rem 0.85rem;
+            border-radius: 6px;
+            margin-bottom: 0.75rem;
         }
 
         .vacancy-deadline.closed {
@@ -235,7 +247,8 @@
         .vacancy-deadline-text {
             font-weight: 600;
             color: #856404;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.15rem;
+            font-size: var(--airid-tagline-size);
         }
 
         .vacancy-deadline.closed .vacancy-deadline-text {
@@ -244,7 +257,7 @@
 
         .vacancy-deadline-date {
             color: #856404;
-            font-size: 0.9rem;
+            font-size: var(--airid-text-size);
         }
 
         .vacancy-deadline.closed .vacancy-deadline-date {
@@ -253,20 +266,20 @@
 
         .vacancy-actions {
             display: flex;
-            gap: 0.75rem;
+            gap: 0.5rem;
             flex-wrap: wrap;
             margin-top: auto;
-            padding-top: 1rem;
+            padding-top: 0.75rem;
             border-top: 1px solid #f0f0f0;
         }
 
         .vacancy-btn {
             flex: 1;
-            min-width: 140px;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
+            min-width: 120px;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: var(--airid-text-size);
             text-decoration: none;
             text-align: center;
             transition: all 0.3s ease;
@@ -369,7 +382,7 @@
                     <div class="col-lg-12">
                         <div class="banner-heading">
                             <h1 class="banner-title top_title fade-in-up">Job Opportunities</h1>
-                            <p class="text-white mt-3 fade-in-up" style="font-size: 1.2rem;">
+                            <p class="text-white mt-3 fade-in-up tagline mb-0" style="font-size: 1.4rem;">
                                 Join our team and contribute to groundbreaking research
                             </p>
                         </div>
@@ -385,9 +398,9 @@
             <div class="filter-group">
                 <div class="search-box">
                     <i class="fas fa-search"></i>
-                    <input 
-                        type="text" 
-                        id="vacancy-search" 
+                    <input
+                        type="text"
+                        id="vacancy-search"
                         placeholder="Search by job title, location..."
                         autocomplete="off"
                     >
@@ -411,26 +424,29 @@
     </section>
 
     <!-- Section Offres d'emploi -->
-    <section class="py-5">
+    <section class="py-3 py-md-4">
         <div class="container">
-            <div class="row text-center mb-5 fade-in-up">
+            <div class="row text-center mb-3 fade-in-up">
                 <div class="col-12">
-                    <h2 class="section-title" style="font-size: 2.5rem; font-weight: 700; color: #2c3e50;">Current Vacancies</h2>
-                    <p class="text-muted mb-4" style="font-size: 1.1rem;">
+                    <h2 class="section-title">Current Vacancies</h2>
+                    <p class="section-lead mb-2">
                         Explore career opportunities at AIRID
                     </p>
-                    <div class="title-divider mx-auto mt-3 mb-4" style="width: 100px; height: 4px; background: linear-gradient(135deg, #c20102 0%, #8b0101 100%); border-radius: 2px;"></div>
+                    <div class="title-divider mx-auto mt-2 mb-3" style="width: 80px; height: 3px; background: linear-gradient(135deg, #c20102 0%, #8b0101 100%); border-radius: 2px;"></div>
                 </div>
             </div>
 
-            <div class="row g-4" id="vacancies-grid">
+            <div class="row g-3" id="vacancies-grid">
                 @forelse ($all_vacancies as $index => $vacancy)
                     @php
                         $isOpen = $vacancy->application_deadline && date('Y-m-d') <= $vacancy->application_deadline;
-                        $daysLeft = $vacancy->application_deadline ? \Carbon\Carbon::parse($vacancy->application_deadline)->diffInDays(now(), false) : null;
-                        $isUrgent = $isOpen && $daysLeft !== null && $daysLeft <= 7 && $daysLeft >= 0;
+                        $deadlineDate = $vacancy->application_deadline ? \Carbon\Carbon::parse($vacancy->application_deadline)->startOfDay() : null;
+                        $daysLeftRaw = $deadlineDate ? $deadlineDate->diffInDays(now()->startOfDay(), false) : null;
+                        $daysLeft = $daysLeftRaw !== null ? (int) round($daysLeftRaw) : null;
+                        if ($daysLeft !== null && $daysLeft < 0) { $daysLeft = 0; }
+                        $isUrgent = $isOpen && $daysLeft !== null && $daysLeft <= 7 && $daysLeft > 0;
                     @endphp
-                    <div class="col-lg-6 vacancy-item fade-in-up" 
+                    <div class="col-lg-6 vacancy-item fade-in-up"
                          data-status="{{ $isOpen ? 'open' : 'closed' }}"
                          data-title="{{ strtolower($vacancy->job_title ?? '') }}"
                          data-location="{{ strtolower($vacancy->location ?? '') }}"
@@ -463,30 +479,13 @@
                                     @endif
                                 </div>
                                 <h3 class="vacancy-title">
-                                    @if($vacancy->url_page)
-                                        <a href="{{ url($vacancy->url_page) }}" target="_blank">
-                                            {{ $vacancy->job_title }}
-                                        </a>
-                                    @else
+                                    <a href="{{ route('vacancyDetail', ['id' => $vacancy->id, 'slug' => Str::slug($vacancy->job_title ?? 'vacancy')]) }}">
                                         {{ $vacancy->job_title }}
-                                    @endif
+                                    </a>
                                 </h3>
                             </div>
                             <div class="vacancy-body">
-                                <div class="vacancy-info">
-                                    @if($vacancy->location)
-                                        <div class="vacancy-info-item">
-                                            <i class="fas fa-map-marker-alt"></i>
-                                            <span>{{ $vacancy->location }}</span>
-                                        </div>
-                                    @endif
-                                    @if($vacancy->contract_type)
-                                        <div class="vacancy-info-item">
-                                            <i class="fas fa-briefcase"></i>
-                                            <span>{{ $vacancy->contract_type }}</span>
-                                        </div>
-                                    @endif
-                                </div>
+
 
                                 @if($vacancy->application_deadline)
                                     <div class="vacancy-deadline {{ !$isOpen ? 'closed' : '' }}">
@@ -495,60 +494,26 @@
                                             {{ $isOpen ? 'Application Deadline' : 'Application Closed' }}
                                         </div>
                                         <div class="vacancy-deadline-date">
-                                            {{ \Carbon\Carbon::parse($vacancy->application_deadline)->format('F d, Y') }}
+                                            {{ \Carbon\Carbon::parse($vacancy->application_deadline)->format('l, F j, Y') }}
                                             @if($isOpen && $daysLeft !== null)
-                                                <span class="ms-2">
-                                                    ({{ $daysLeft == 0 ? 'Today' : ($daysLeft == 1 ? '1 day left' : $daysLeft . ' days left') }})
-                                                </span>
+                                                @if($daysLeft > 0)
+                                                    <span class="ms-2">({{ $daysLeft == 1 ? '1 day left' : (int)$daysLeft . ' days left' }})</span>
+                                                @else
+                                                    <span class="ms-2">(Today)</span>
+                                                @endif
                                             @endif
                                         </div>
                                     </div>
                                 @endif
 
                                 <div class="vacancy-actions">
-                                    @if($vacancy->url_page)
-                                        <a href="{{ url($vacancy->url_page) }}" 
-                                           target="_blank"
-                                           class="vacancy-btn btn-details">
-                                            <i class="fas fa-info-circle"></i>
-                                            View Details
-                                        </a>
-                                    @endif
+                                    <a href="{{ route('vacancyDetail', ['id' => $vacancy->id, 'slug' => Str::slug($vacancy->job_title ?? 'vacancy')]) }}"
+                                       class="vacancy-btn btn-details">
+                                        <i class="fas fa-info-circle"></i>
+                                        View Details
+                                    </a>
 
                                     @if($isOpen)
-                                        @if($vacancy->application_file_fr || $vacancy->application_file_en)
-                                            <div class="dropdown" style="flex: 1; min-width: 140px;">
-                                                <button class="vacancy-btn btn-download dropdown-toggle w-100" 
-                                                        type="button" 
-                                                        id="dropdownMenuButton_{{ $vacancy->id }}" 
-                                                        data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                    <i class="fas fa-download"></i>
-                                                    Download
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton_{{ $vacancy->id }}">
-                                                    @if($vacancy->application_file_fr)
-                                                        <li>
-                                                            <a class="dropdown-item" 
-                                                               target="_blank"
-                                                               href="{{ asset('storage/documents_recrutement/' . $vacancy->application_file_fr) }}">
-                                                                <i class="fas fa-file-pdf me-2"></i>Français
-                                                            </a>
-                                                        </li>
-                                                    @endif
-                                                    @if($vacancy->application_file_en)
-                                                        <li>
-                                                            <a class="dropdown-item" 
-                                                               target="_blank"
-                                                               href="{{ asset('storage/documents_recrutement/' . $vacancy->application_file_en) }}">
-                                                                <i class="fas fa-file-pdf me-2"></i>English
-                                                            </a>
-                                                        </li>
-                                                    @endif
-                                                </ul>
-                                            </div>
-                                        @endif
-
                                         @if($vacancy->email_apply)
                                             <a href="mailto:{{ $vacancy->email_apply }}?subject={{ urlencode($vacancy->subject ?? 'Application for ' . $vacancy->job_title) }}"
                                                class="vacancy-btn btn-apply">
@@ -636,7 +601,7 @@
                 btn.addEventListener('click', function() {
                     filterButtons.forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
-                    
+
                     currentFilter = this.getAttribute('data-filter');
                     filterVacancies();
                 });
@@ -660,13 +625,13 @@
                     const title = item.getAttribute('data-title') || '';
                     const location = item.getAttribute('data-location') || '';
                     const contract = item.getAttribute('data-contract') || '';
-                    
+
                     const matchesFilter = currentFilter === 'all' || status === currentFilter;
-                    const matchesSearch = !currentSearch || 
-                        title.includes(currentSearch) || 
+                    const matchesSearch = !currentSearch ||
+                        title.includes(currentSearch) ||
                         location.includes(currentSearch) ||
                         contract.includes(currentSearch);
-                    
+
                     if (matchesFilter && matchesSearch) {
                         item.style.display = '';
                         visibleCount++;

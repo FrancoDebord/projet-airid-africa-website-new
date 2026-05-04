@@ -54,16 +54,69 @@ class AIRID_Personnel extends Authenticatable
         'prenom_personnel',
         'nom_personnel',
         'email_personnel',
+        'link_facebook',
+        'link_twitter',
+        'link_linkedin',
         'photo_personnel',
         'departement_id',
         'poste_id',
+        'description_poste',
         'niveau_poste',
         'poids_personnel',
+        'staff_category',
         'email_verified_at',
         'remember_token',
         'password',
         'password_plain',
     ];
+
+    /** Staff category slugs for Our Team filter */
+    public const CATEGORY_MANAGEMENT = 'management_operations';
+    public const CATEGORY_FACILITY = 'facility_platform_supervisors';
+    public const CATEGORY_RESEARCH = 'research_team';
+
+    public static function categorySlugs(): array
+    {
+        return [
+            self::CATEGORY_MANAGEMENT => 'Management & Operations',
+            self::CATEGORY_FACILITY   => 'Facility & Platform Supervisors',
+            self::CATEGORY_RESEARCH   => 'Research Team',
+        ];
+    }
+
+    /**
+     * Get staff_category as array (one or multiple values).
+     * Stored as comma-separated string; empty/null returns [].
+     */
+    public function getStaffCategoriesListAttribute(): array
+    {
+        if (empty($this->staff_category)) {
+            return [];
+        }
+        return array_values(array_filter(array_map('trim', explode(',', $this->staff_category))));
+    }
+
+    /**
+     * Check if this personnel belongs to a given category slug.
+     */
+    public function hasStaffCategory(string $slug): bool
+    {
+        return in_array($slug, $this->staff_categories_list, true);
+    }
+
+    /**
+     * Scope: filter personnel that have the given category in their list.
+     * staff_category is stored as comma-separated (e.g. "management_operations,research_team").
+     */
+    public function scopeInStaffCategory($query, string $slug)
+    {
+        return $query->where(function ($q) use ($slug) {
+            $q->where('staff_category', $slug)
+                ->orWhere('staff_category', 'LIKE', $slug . ',%')
+                ->orWhere('staff_category', 'LIKE', '%,' . $slug)
+                ->orWhere('staff_category', 'LIKE', '%,' . $slug . ',%');
+        });
+    }
 
     /**
      * The attributes that should be hidden for serialization.
@@ -199,6 +252,24 @@ class AIRID_Personnel extends Authenticatable
 
         // Si le fichier n'existe pas, retourner le nom tel quel
         return $fileName;
+    }
+
+    /**
+     * URL publique de la photo (URL absolue via asset() pour affichage correct sur toutes les pages).
+     */
+    public function getPhotoUrlAttribute(): ?string
+    {
+        if (!$this->photo_personnel) {
+            return null;
+        }
+        $photoName = basename($this->photo_personnel);
+        if (file_exists(public_path('assets/staff/' . $photoName))) {
+            return asset('assets/staff/' . $photoName);
+        }
+        if (file_exists(public_path('storage/assets/staff/' . $photoName))) {
+            return asset('storage/assets/staff/' . $photoName);
+        }
+        return asset('storage/assets/staff/' . $photoName);
     }
 
     /**
